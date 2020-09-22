@@ -1,207 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 
 <head>
-
-  <meta charset="UTF-8">
-  
-
-
-
-  <title>CodePen - URL Shortener</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  
-  
-<style>
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-section {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center;
-  padding: 1rem;
-}
-
-body {
-  min-height: 100vh;
-  font-family: "Lato", sans-serif;
-  line-height: 1.5;
-  color: #111;
-}
-
-main {
-  max-width: 720px;
-  width: 100%;
-  border: 2.5px solid #330867;
-  border-radius: 2.5px;
-  box-shadow: 0 10px 20px rgba(17, 17, 17, 0.125), 0 5px 5px rgba(17, 17, 17, 0.25);
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
-
-h1 {
-  padding: 1rem;
-  color: white;
-}
-
-input,
-button {
-  font-family: inherit;
-  line-height: inherit;
-  color: inherit;
-  border: 0;
-  padding: 1rem;
-}
-
-input {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.buttons {
-  display: -webkit-box;
-  display: flex;
-}
-
-button {
-  cursor: pointer;
-  -webkit-box-flex: 1;
-          flex: 1;
-  background-color: transparent;
-  color: white;
-}
-button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-section {
-  min-height: 120px;
-  text-align: center;
-  background-color: white;
-}
-</style>
-
-  <script>
-  window.console = window.console || function(t) {};
-</script>
-
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
-
-
+    <meta charset="utf-8">
+    <title>URL Shortener Microservice</title>
+    <style></style>
 </head>
 
-<body translate="no" >
-  <main>
-  <h1>URL Shortener</h1>
-  <input type="text" id="input" placeholder="Enter URL here">
-  <div class="buttons">
-    <button id="expand">Expand</button>
-    <button id="shorten">Shorten</button>
-  </div>
-  <section id="section"></section>
-</main>
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<body>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  
-      <script id="rendered-js" >
-// Data for accessing Google API
-const apiKey = "AIzaSyCSetuPyxYQDVm7ZDIov4uujZZAz8U13uE";
-const url = "https://www.googleapis.com/urlshortener/v1/url";
+    <h1 id="urlshortenermicroservice">URL Shortener Microservice</h1>
 
-// Page elements
-const $urlBox = $("#input");
-const $expandButton = $("#expand");
-const $shortenButton = $("#shorten");
-const $section = $("#section");
+    <p>For <a href="http://freecodecamp.com">freeCodeCamp</a> - <a href="https://www.freecodecamp.org/challenges/url-shortener-microservice">Back end → API Projects → URL Shortener Microservice</a></p>
 
-// AJAX function to expand URL
-async function expandUrl() {
-  const urlToExpand = `${url}?shortUrl=${$urlBox.val()}&key=${apiKey}`;
+    <h2 id="userstories">User Stories</h2>
 
-  try {
-    let response = await fetch(urlToExpand);
-    if (response.ok) {
-      let jsonResponse = await response.json();
+    <ol>
+        <li>
+            <p>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</p>
+        </li>
 
-      // Name data
-      const longUrl = jsonResponse.longUrl;
+        <li>
+            <p>If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will
+                contain an error instead.</p>
+        </li>
 
-      // Insert expanded URL
-      $section.append(`<p>Your expanded URL is<br>${longUrl}</p>`);
-      return jsonResponse;
+        <li>
+            <p>When I visit that shortened URL, it will redirect me to my original link.</p>
+        </li>
+    </ol>
+
+    <h2 id="usage">Usage</h2>
+
+    <pre><code>    // Generate new short URL:
+    https://url-shortener-js.glitch.me/new/http://www.example.com
+    </code></pre>
+
+    <pre><code>    // Accesses a previously generated short URL:
+    https://url-shortener-js.glitch.me/5178
+    </code></pre>
+
+    <h2 id="output">Output</h2>
+
+    <pre><code>    {
+        "original_url": "http://www.example.com",
+        "short_url": "https://url-shortener-js.glitch.me/5178"
     }
-  } catch (error) {
-    console.log(error);
-  }
-}
+    </code></pre>
 
-async function shortenUrl() {
-  const urlToShorten = $urlBox.val();
-  const urlWithKey = `${url}?key=${apiKey}`;
-
-  try {
-    let response = await fetch(urlWithKey, {
-      method: "POST",
-      body: JSON.stringify({ longUrl: urlToShorten }),
-      headers: {
-        "Content-type": "application/json" } });
-
-
-    if (response.ok) {
-      let jsonResponse = await response.json();
-
-      // Name data
-      const shortUrl = jsonResponse.id;
-
-      // Insert shortened URL
-      $section.append(`<p>Your shortened URL is<br>${shortUrl}</p>`);
-      return jsonResponse;
+    <pre><code>    {
+        "error": "Invalid URL."
     }
-    throw new Error("Request failed!");
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-// Clear page and call AJAX functions
-function expand() {
-  $section.empty();
-  expandUrl();
-  return false;
-}
-
-function shorten() {
-  $section.empty();
-  shortenUrl();
-  return false;
-}
-
-$expandButton.click(expand);
-$shortenButton.click(shorten);
-//# sourceURL=pen.js
-    </script>
-
-  
+    </code></pre>
 
 </body>
 
 </html>
- 
