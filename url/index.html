@@ -1,67 +1,207 @@
-{% with "URL Shortener" as title %}
-{% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta charset="UTF-8">
+  
+
+
+
+  <title>CodePen - URL Shortener</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ title }}{% endblock %}</title>
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  {# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> #}
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <link rel="stylesheet" href="{% static 'url_shortener/main.css' %}" />
-</head>
-<body>
-  <div id="wrapper">
-    <div class="jumbotron" id="banner" style="padding-bottom: 0;">
-      <div class="container">
-        <h1><a href="{% url 'url_shortener:index' %}">URL Shortener</a></h1>
-        <p>Shorten your long URLs and share them with your friends!</p>
-        <ul class="nav nav-tabs" style="border: 0;">
-          <li role="presentation" class="{% block index_nav %}{% endblock %}"><a href="{% url 'url_shortener:index' %}">Home</a></li>
-          <li role="presentation" class="{% block analytics_nav %}{% endblock %}"><a href="{% url 'url_shortener:analytics' %}">Analytics</a></li>
-          {% block navextra %}{% endblock %}
-        </ul>
-      </div>
-    </div>
-    <div class="container">
-      {% block content %}{% endblock %}
-    </div>
-    <div id="push"></div>
-  </div>
-  <div id="footer">
-    <div class="container">
-      <p class="muted credit">
-        Copyright &copy; 2016 Sumit Chahal.
-        Source code available on <a href="https://github.com/smtchahal/url-shortener">GitHub</a>.
-      </p>
-    </div>
-  </div>
-  <!-- jQuery CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- jQuery local fallback -->
-  <script>window.jQuery || document.write('<script src="{% static 'jquery-1.11.3/jquery.min.js' %}"><\/script>')</script>
-  <!-- Bootstrap JS CDN -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- Bootstrap JS local fallback -->
-  <script>if(typeof($.fn.modal) == 'undefined') {document.write('<script src="{% static 'bootstrap-3.3.6/js/bootstrap.min.js' %}"><\/script>')}</script>
-  <!-- Bootstrap CSS local fallback -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+  
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+section {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  color: #111;
+}
+
+main {
+  max-width: 720px;
+  width: 100%;
+  border: 2.5px solid #330867;
+  border-radius: 2.5px;
+  box-shadow: 0 10px 20px rgba(17, 17, 17, 0.125), 0 5px 5px rgba(17, 17, 17, 0.25);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+h1 {
+  padding: 1rem;
+  color: white;
+}
+
+input,
+button {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  border: 0;
+  padding: 1rem;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  -webkit-box-flex: 1;
+          flex: 1;
+  background-color: transparent;
+  color: white;
+}
+button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+section {
+  min-height: 120px;
+  text-align: center;
+  background-color: white;
+}
+</style>
+
   <script>
-    $(document).ready(function() {
-      var bodyColor = $('body').css('color');
-      if (bodyColor != 'rgb(51, 51, 51)') {
-        $('head').prepend('<link rel="stylesheet" href="{% static 'bootstrap-3.3.6/css/bootstrap.min.css' %}" />');
-      }
-    });
-  </script>
-  {% block bodyextra %}{% endblock %}
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <main>
+  <h1>URL Shortener</h1>
+  <input type="text" id="input" placeholder="Enter URL here">
+  <div class="buttons">
+    <button id="expand">Expand</button>
+    <button id="shorten">Shorten</button>
+  </div>
+  <section id="section"></section>
+</main>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  
+      <script id="rendered-js" >
+// Data for accessing Google API
+const apiKey = "AIzaSyCSetuPyxYQDVm7ZDIov4uujZZAz8U13uE";
+const url = "https://www.googleapis.com/urlshortener/v1/url";
+
+// Page elements
+const $urlBox = $("#input");
+const $expandButton = $("#expand");
+const $shortenButton = $("#shorten");
+const $section = $("#section");
+
+// AJAX function to expand URL
+async function expandUrl() {
+  const urlToExpand = `${url}?shortUrl=${$urlBox.val()}&key=${apiKey}`;
+
+  try {
+    let response = await fetch(urlToExpand);
+    if (response.ok) {
+      let jsonResponse = await response.json();
+
+      // Name data
+      const longUrl = jsonResponse.longUrl;
+
+      // Insert expanded URL
+      $section.append(`<p>Your expanded URL is<br>${longUrl}</p>`);
+      return jsonResponse;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function shortenUrl() {
+  const urlToShorten = $urlBox.val();
+  const urlWithKey = `${url}?key=${apiKey}`;
+
+  try {
+    let response = await fetch(urlWithKey, {
+      method: "POST",
+      body: JSON.stringify({ longUrl: urlToShorten }),
+      headers: {
+        "Content-type": "application/json" } });
+
+
+    if (response.ok) {
+      let jsonResponse = await response.json();
+
+      // Name data
+      const shortUrl = jsonResponse.id;
+
+      // Insert shortened URL
+      $section.append(`<p>Your shortened URL is<br>${shortUrl}</p>`);
+      return jsonResponse;
+    }
+    throw new Error("Request failed!");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Clear page and call AJAX functions
+function expand() {
+  $section.empty();
+  expandUrl();
+  return false;
+}
+
+function shorten() {
+  $section.empty();
+  shortenUrl();
+  return false;
+}
+
+$expandButton.click(expand);
+$shortenButton.click(shorten);
+//# sourceURL=pen.js
+    </script>
+
+  
+
 </body>
+
 </html>
-{% endwith %}
+ 
