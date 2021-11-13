@@ -1,5 +1,5 @@
 
-#hero{background:linear-gradient(to right, #22a7f0, #0081ff); z-index:0;position}
+#hero{background:linear-gradient(to right, #22a7f0, #0081ff); z-index:0;}
 .trans-bg{background:linear-gradient(to right, #22a7f0, #0081ff); z-index:0;}
 .wave{z-index:-1}
 .wave .a{fill:#424ef4}.wave .b,.wave2 .b{clip-path:url(#a)}.wave .c,.wave .d{fill:#fbfbfb}.wave2 .c,.wave2 .d{fill:#fbfbfb}.wave .d,.wave2 .d{opacity:.5;isolation:isolate}
