@@ -108,3 +108,5 @@ bottom:1080px;
 transform:translateX(-200px);
 }
 }
+
+.card{min-width:20rem; float:left}
