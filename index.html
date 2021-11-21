@@ -495,7 +495,32 @@ Find a perfect template with SEO Optimized and improve your blog right now.
       setTimeout(setTransitionProperties, 1);
   });
 </script>
+<script>//<![CDATA[
+$("#modedark").click(function(){$("body").toggleClass("dark")}),$("body").toggleClass(localStorage.toggled),$("#modedark").click(function(){"dark"!=localStorage.toggled?($("body").toggleClass("dark",!0,2000),localStorage.toggled="dark"):($("body").toggleClass("dark",!1,2000),localStorage.toggled="")});
 
+
+if ($("body").hasClass("dark")) {
+
+}
+if (!$("body").hasClass("dark")) {
+ 
+}
+$(function () {$(window).scroll(function () {$(this).scrollTop() > 100 ? $(".backtotop").fadeIn(170) : $(".backtotop").fadeOut(170);}), $(".backtotop").click(function () {return $("html,body").animate({ scrollTop: 0 }, 500), !1;});});
+
+$(document).ready(function(){
+$(".sidebar .PopularPosts .row .col:first-child").addClass('col-12');});
+
+
+/* Smooth Sidenav by kkupgrader.blogspot.com */
+
+$(document).ready((function(){$("#toggle-button,a#sidenav-toggler").click((function(){var t=250==$("#sidenavify").width()?"0":"250px";$("#sidenavify").animate({width:t},"slow")}))})),$((function(){var t=function(t,e){this.el=t||{},this.multiple=e||!1,this.el.find(".sidenav-btn").on("click",{el:this.el,multiple:this.multiple},this.dropdown)};t.prototype.dropdown=function(t){var e=t.data.el;$this=$(this),$next=$this.next(),$next.slideToggle(),$this.parent().toggleClass("open"),t.data.multiple||e.find(".sidenav-collapse").not($next).slideUp(1500).parent().removeClass("open")};new t($("li.sidenav-item"),!1)})),$(document).on("click",(function(t){$(t.target).closest("#sidenav").length||$this.parent().toggleClass("open")}));	
+const $menu = $("#sidenavify");
+$(document).mouseup(e => {  if (!$menu.is(e.target) 
+  && $menu.has(e.target).length === 0) 
+  { $menu.animate({width: "0px"}); }});
+
+
+//]]></script>
 <script async='async' defer='defer' src='/assets/js/jquery/3.6.0/jquery.min.js' type='text/javascript'></script>
 <script async='async' defer='defer' src='/assets/js/sidenav.js' type='text/javascript'></script>
 <script async='async' defer='defer' src='/assets/js/default.min.js' type='text/javascript'></script>
