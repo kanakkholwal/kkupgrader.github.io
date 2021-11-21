@@ -513,7 +513,7 @@ $(".sidebar .PopularPosts .row .col:first-child").addClass('col-12');});
 
 /* Smooth Sidenav by kkupgrader.blogspot.com */
 
-$(document).ready((function(){$("#toggle-button,a#sidenav-toggler").click((function(){var t=250==$("#sidenavify").width()?"0":"250px";$("#sidenavify").animate({width:t},"slow")}))})),$((function(){var t=function(t,e){this.el=t||{},this.multiple=e||!1,this.el.find(".sidenav-btn").on("click",{el:this.el,multiple:this.multiple},this.dropdown)};t.prototype.dropdown=function(t){var e=t.data.el;$this=$(this),$next=$this.next(),$next.slideToggle(),$this.parent().toggleClass("open"),t.data.multiple||e.find(".sidenav-collapse").not($next).slideUp(1500).parent().removeClass("open")};new t($("li.sidenav-item"),!1)})),$(document).on("click",(function(t){$(t.target).closest("#sidenav").length||$this.parent().toggleClass("open")}));	
+$(document).ready((function(){$("#toggle-button,#sidenav-toggler").click((function(){var t=250==$("#sidenavify").width()?"0":"250px";$("#sidenavify").animate({width:t},"slow")}))})),$((function(){var t=function(t,e){this.el=t||{},this.multiple=e||!1,this.el.find(".sidenav-btn").on("click",{el:this.el,multiple:this.multiple},this.dropdown)};t.prototype.dropdown=function(t){var e=t.data.el;$this=$(this),$next=$this.next(),$next.slideToggle(),$this.parent().toggleClass("open"),t.data.multiple||e.find(".sidenav-collapse").not($next).slideUp(1500).parent().removeClass("open")};new t($("li.sidenav-item"),!1)})),$(document).on("click",(function(t){$(t.target).closest("#sidenav").length||$this.parent().toggleClass("open")}));	
 const $menu = $("#sidenavify");
 $(document).mouseup(e => {  if (!$menu.is(e.target) 
   && $menu.has(e.target).length === 0) 
