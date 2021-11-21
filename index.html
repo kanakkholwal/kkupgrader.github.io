@@ -12,6 +12,102 @@
 </head>
 <body>
 <header>
+<div class="sidenav" data-mdb-mode="over" data-mdb-hidden="true" data-mdb-accordion="true" id="mdb-sidenav" role="navigation">
+
+  
+  <a class="ripple d-flex justify-content-center py-4" href="/" data-mdb-ripple-color="primary">
+    <img id="MDB-logo" src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.png" alt="MDB Logo" draggable="false">
+  </a>
+
+  <!-- Links -->
+  <ul class="sidenav-menu" style="padding-bottom: 300px;">
+    <!-- Side navigation links -->
+
+<!-- Getting started -->
+<li class="sidenav-item">
+  <a class="sidenav-link"><i class="fas fa-download fa-fw me-3"></i><span>Getting started</span></a>
+  <ul class="sidenav-collapse">
+    <li class="sidenav-item" style="border-bottom: 1px solid #eee;">
+      <a class="sidenav-link " href="/docs/standard/">About MDB</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/approach/">Approach</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/installation/">Installation</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/quick-start/">Quick start</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/">Tutorials</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/optimization/">Optimization</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/changelog/">Changelog</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/faq/">FAQ</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/migration/">Migration</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/vsc-snippets/">VSC snippets</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/rtl/">RTL</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/supported-browsers/">Supported Browsers</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/getting-started/webpack-starter/">Webpack starter</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/freebies/">Free starter templates</a>
+    </li>
+  </ul>
+</li>
+<!-- Getting started -->
+
+<!-- MDB Pro -->
+<li class="sidenav-item">
+  <a class="sidenav-link"><i class="fas fa-gem fa-fw me-3"></i><span>MDB Pro</span></a>
+  <ul class="sidenav-collapse">
+    <li class="sidenav-item" style="border-bottom: 1px solid #eee;">
+      <a class="sidenav-link " href="/docs/standard/pro/">About MDB Pro</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/installation/">Installation</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/plugins-installation/">Plugins installation</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/quick-start/">Quick start</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/faq/">FAQ</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/git/">Git & repository</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/support/">Premium support</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/updates/">Updates</a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link " href="/docs/standard/pro/builder/">Builder</a>
+    </li>
+  </ul>
+</li>
+</ul>
+</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">K K UPGRADER.<small class="text-success">eu.org</small></a>
@@ -344,7 +440,59 @@ Find a perfect template with SEO Optimized and improve your blog right now.
 </footer>
  
 
+<script>
 
+  jQuery(document).ready(function ($) {
+
+      function checkSidenavActiveLinks() {
+
+          $('.sidenav-menu').find('li').each(function() {
+
+              var $this = $(this);
+              var collapse = $this.find('ul.sidenav-collapse');
+
+              collapse.find('li').each(function() {
+
+                  var is_active = $(this).find('a.sidenav-link').hasClass('active');
+
+                  if ( is_active ) {
+
+                      collapse.addClass('show');
+
+                      var collapseIcon = $this.find('.rotate-icon');
+
+                      collapseIcon.css({
+                          transform: "rotate(180deg)"
+                      });
+                      return false;
+                  }
+              });
+          });
+      }
+
+
+      checkSidenavActiveLinks();
+
+      const setTransitionProperties = () => {
+        const sidenav = document.getElementById('mdb-sidenav');
+        const rotateIcons = sidenav.querySelectorAll('.rotate-icon');
+        const collapse = sidenav.querySelectorAll('.sidenav-collapse');
+
+        rotateIcons.forEach(icon => {
+          icon.style.transitionProperty = 'transform'
+        });
+
+        collapse.forEach(collapse => {
+          collapse.style.transitionProperty = 'height'
+        });
+      }
+
+
+      setTimeout(setTransitionProperties, 1);
+  });
+</script>
+
+<script async='async' defer='defer' src='/assets/js/jquery/3.6.0/jquery.min.js' type='text/javascript'></script>
 
 <script async='async' defer='defer' src='/assets/js/default.min.js' type='text/javascript'></script>
 </body>
