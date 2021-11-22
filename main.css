@@ -1,7 +1,53 @@
 html{
 --trans-bg:linear-gradient(to right, #00c3ff, #126d9a);
-
+--default-color:#00c3ff;
+--main-color:#00c3ff;
+--nav-bg:#ffffff;
+--nav-clr:#262626;
+--link-clr:#6351ce;
+--link-hvr:#126d9a;
+--trans-bg:linear-gradient(to right, #22a7f0, #0081ff);
+--primary:#2396c3;
+--secondary:#B23CFD;
+--success:#00B74A;
+--danger:#F93154;
+--warning:#FFA900;
+--info:#39C0ED;
+--dark:#262626;
+--yellow-d:#f19f00;
+--yellow-l:#f3ae25;
+--border-clr:#eee;
+--body-bg:#fff;
+--title-clr:#666666;
+--title-color:var(--title-clr);
+--text-clr:#262626;
+--title-font:"Roboto"
+--post-font:"Poppins";
+--body-font:"Roboto";
 }
+/* Set Colors */
+a{color:var(--link-clr)}
+a:hover{color:var(--link.hvr)}
+.btn-default,.btn-default:hover{background:var(--default-color);color:#fff}
+.btn-outline-default,.btn-outline:hover{color:var(--default-color);border-color:var(--default-color);}
+.trans-default,.trans-default:hover{background:var(--trans-bg);color:#fff}
+.bg-primary{background:var(--primary)!important}
+.text-primary,a.link-primary,a.link-primary:hover,a.link-primary:focus{color:var(--primary)!important}
+.bg-danger{background:var(--danger)!important}
+.text-danger,a.link-danger,a.link-danger:hover,a.link-danger:focus{color:var(--danger!)important}
+.bg-info{background:var(--info)!important}
+.text-info,a.link-info,a.link-info:hover,a.link-info:focus{color:var(--info)!important}
+.bg-success{background:var(--success)!important}
+.text-success,a.link-success,a.link-success:hover,a.link-success:focus{color:var(--success)!important}
+.bg-warning{background:var(--warning)!important}
+.text-warning,a.link-warning,a.link-warning:hover,a.link-warning:focus{color:var(--warning)!important}
+.bg-dark{background:var(--dark)!important}
+.text-dark,a.link-dark,a.link-dark:hover,a.link-dark:focus{color:var(--dark)!important}
+.bg-secondary{background:var(--secondary)!important}
+.text-secondary,a.link-secondary,a.link-secondary:hover,a.link-secondary:focus{color:var(--secondary)!important}
+.img{aspect-ratio:16/9!important}
+.bg-trans{background:transparent!important}
+nav{background:var(--nav-bg);color:var(--nav-clr)}
 #hero{background:var(--trans-bg); z-index:0;}
 .trans-bg{background:var(--trans-bg); z-index:0;}
 .wave{z-index:-1}
