@@ -14,6 +14,7 @@
 .bottomify{position:absolute;bottom:2px}
 .sidenav .fas{color:#9FA6B2}
 .sidenav a{color:#4B5563}
+.sidenav  h6{margin-left:1rem}
 .sidenav a.active{background-color:rgba(18,102,241,.05)}
 /* Colors */
 9v.sidenav-link:active,.sidenav-link:focus,.sidenav-link:hover{color:#1266f1;background-color:#f6f9fc;outline:none}
