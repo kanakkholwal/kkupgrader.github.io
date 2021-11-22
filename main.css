@@ -1,5 +1,5 @@
 html{
---trans-bg:linear-gradient(to right, #6351ce, #8b7cda);
+--trans-bg:linear-gradient(to right, #00c3ff, #126d9a);
 
 }
 #hero{background:var(--trans-bg); z-index:0;}
