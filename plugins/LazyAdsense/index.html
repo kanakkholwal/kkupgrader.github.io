@@ -1,0 +1,5 @@
+<script id='flying-scripts' type='text/javascript'>//<![CDATA[
+const loadScriptsTimer=setTimeout(loadScripts,5*1000);const userInteractionEvents=["mouseover","keydown","touchstart","touchmove","wheel"];userInteractionEvents.forEach(function(event){window.addEventListener(event,triggerScriptLoader,{passive:!0})});function triggerScriptLoader(){loadScripts();clearTimeout(loadScriptsTimer);userInteractionEvents.forEach(function(event){window.removeEventListener(event,triggerScriptLoader,{passive:!0})})}function loadScripts(){document.querySelectorAll("script,iframe[data-type='lazy']").forEach(function(elem){elem.setAttribute("src",elem.getAttribute("data-src"))})}
+//]]>
+</script>
+<script data-ad-client='ca-pub-6988693445063744' data-src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' data-type='lazy'></script>
