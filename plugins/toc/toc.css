@@ -1,0 +1,23 @@
+
+/* Table of Content v2.0 by K K UPGRADER */
+.tocify-wrap{display:flex;width:100%;clear:both;margin:0}
+.tocify-inner{position:relative;max-width:100%;background-color:rgba(155,155,155,0.05);display:flex;flex-direction:column;overflow:hidden;font-size:14px;color:#2F353B;line-height:1.6em;border:1px solid rgba(155,155,155,0.1);border-radius:5px}
+a.tocify-title{position:relative;height:38px;font-size:16px;color:#1a72c9;font-weight:600;display:flex;align-items:center;justify-content:space-between;padding:0 15px;margin:0;border-radius:5px}
+a.tocify-title.is-expanded{transition:all 1s ease;border-bottom:1px solid rgba(155,155,155,0.1);border-radius:5px 5px 0 0}
+.tocify-title-text{display:flex}
+.tocify-title-text:before{content:"\f0cb";font-family:"Font Awesome 5 Pro","Font Awesome 5 Free";font-size:14px;font-weight:900;margin:0 6px 0 0}
+.rtl .tocify-title-text:after{margin:0 0 0 6px}
+.tocify-title:after{content:"\f078";font-family:"Font Awesome 5 Pro","Font Awesome 5 Free";font-size:12px;font-weight:900;margin:0 0 0 25px;-webkit-transform:rotate(0deg);
+transform: rotate(0deg);}
+.rtl .tocify-title:after{margin:0 25px 0 0}
+.tocify-title.is-expanded:after{-webkit-transform:rotate(180deg);
+transform: rotate(180deg);}
+a.tocify-title:hover{text-decoration:none}
+#tocify{display:none;padding:8px 15px;margin:0;}
+#tocify ol{padding:0 0 0 15px}
+#tocify ol > li{counter-increment:ify;list-style:none}
+#tocify ol > li:before{display:inline-block;content:counters(ify,'.')'.';margin:0 5px 0 0}  
+#tocify li{font-size:14px;margin:7px 0}
+#tocify li a{color:#0049ce}
+#tocify li a:hover{color:#0049ce;text-decoration:underline! important}
+    
