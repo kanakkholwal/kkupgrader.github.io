@@ -131,19 +131,7 @@
 
 
 
-.control{
-    display: flex;
-    flex-direction: column;
-}
 
-.vertical-space{
-    height:40px
-}
-
-.label{
-    font-size:14px;
-    padding-bottom:12px;
-}
 
 .range-selector {
     -webkit-appearance: none;
