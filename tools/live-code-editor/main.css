@@ -6,6 +6,8 @@
 
 body {
   background: #002240;
+  font-family: 'Roboto', sans-serif;
+	
 }
 
 .header-wrap {
@@ -26,6 +28,7 @@ body {
 /*ace*/
 .ace_editor {
 	font-size: 14px !important;
+	font-family: 'Source Code Pro', monospace;
 }
 
 #ide-parent {
