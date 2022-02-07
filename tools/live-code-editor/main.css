@@ -13,7 +13,6 @@ body {
 .header-wrap {
   margin: 120px 0;
   text-align: center;
-  font-family: sans-serif;
   color: #ddd;
 }
 
@@ -53,7 +52,6 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   color: #ddd;
-  font-family: "Arial", sans-serif;
   letter-spacing: 2px;
   font-size: 13px;
   outline: none;
@@ -196,7 +194,6 @@ body {
 .footer {
   text-align: center;
   color: rgba(221, 221, 221, 0.6);
-  font-family: sans-serif;
   font-size: 13px;
   background: #000E1B;
   padding: 70px 0;
