@@ -20,6 +20,7 @@ if ($("pre").length) {
   loadCSS(
     "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap"
   );
+
   var highlight_js = document.createElement("script");
   function addCopyButtons(t) {
     document.querySelectorAll("pre > code").forEach(function (n) {
