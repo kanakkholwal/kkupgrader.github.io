@@ -133,246 +133,246 @@
     <!-- Navbar -->
   </header>
 
-  <main>
+  <main class="container-lg">
 
-
-    <section class="generate-image-section">
-      <form id="generate-image-form">
-        <!-- Generate Image Section -->
-        <div class="display-flex output-grid responsive-flex">
-          <div class="flex-1 page-container-super">
-            <div>
-              <h2 style="margin-top: 0px;">Input</h2>
-              <label class="form-label" for="note">Type/Paste text here</label>
-            </div>
-
-            <div class="flex-1 page-container">
-              <div class="page-a margined lines">
-                <div contenteditable="true" class="top-margin"></div>
-                <div class="display-flex left-margin-and-content">
-                  <div contenteditable="true" class="left-margin"></div>
-                  <div class="paper-content" id="note" contenteditable="true" spellcheck="false">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Ut rhoncus dui eget tortor feugiat iaculis. Morbi et dolor
-                    in felis viverra efficitur. Integer id laoreet arcu.
-                    Mauris turpis nibh, scelerisque sed tristique non,
-                    hendrerit in erat. Duis interdum nisl risus, ac ultrices
-                    ipsum auctor at. Aliquam faucibus iaculis metus sit amet
-                    tincidunt. Vestibulum cursus urna vel nunc imperdiet
-                    suscipit. Ut eu augue egestas, porta orci lobortis,
-                    pharetra orci. Morbi eu tellus quis nisi tempor accumsan
-                    nec eu urna. empor, ullamcorper tortor. Mauris quis
-                    fermentum augue. Phasellus ac nisl hendrerit, fringilla
-                    enim aliquam, placerat odio. Ut tortor nisi, pellentesque
-                    sed nisi at, hendrerit imperdiet turpis. Proin interdum
-                    porttitor metus at hendrerit. Proin ipsum nisl, lacinia
-                    vitae purus ullamcorper, maximus convallis sem. Sed nec
-                    lacinia lorem. Duis arcu metus, cursus non odio quis,
-                    tincidunt tempor augue. Donec eget vestibulum risus.
-                    Nullam blandit quis est vitae feugiat.
-                  </div>
-                </div>
-                <div class="overlay"></div>
+    <div class="">
+      <section class="">
+        <form id="generate-image-form">
+          <!-- Generate Image Section -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div>
+                <h2 style="margin-top: 0px;">Input</h2>
+                <label class="form-label" for="note">Type/Paste text here</label>
               </div>
-              <br />
+
+              <div class="flex-1 page-container">
+                <div class="page-a margined lines">
+                  <div contenteditable="true" class="top-margin"></div>
+                  <div class="display-flex left-margin-and-content">
+                    <div contenteditable="true" class="left-margin"></div>
+                    <div class="paper-content" id="note" contenteditable="true" spellcheck="false">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Ut rhoncus dui eget tortor feugiat iaculis. Morbi et dolor
+                      in felis viverra efficitur. Integer id laoreet arcu.
+                      Mauris turpis nibh, scelerisque sed tristique non,
+                      hendrerit in erat. Duis interdum nisl risus, ac ultrices
+                      ipsum auctor at. Aliquam faucibus iaculis metus sit amet
+                      tincidunt. Vestibulum cursus urna vel nunc imperdiet
+                      suscipit. Ut eu augue egestas, porta orci lobortis,
+                      pharetra orci. Morbi eu tellus quis nisi tempor accumsan
+                      nec eu urna. empor, ullamcorper tortor. Mauris quis
+                      fermentum augue. Phasellus ac nisl hendrerit, fringilla
+                      enim aliquam, placerat odio. Ut tortor nisi, pellentesque
+                      sed nisi at, hendrerit imperdiet turpis. Proin interdum
+                      porttitor metus at hendrerit. Proin ipsum nisl, lacinia
+                      vitae purus ullamcorper, maximus convallis sem. Sed nec
+                      lacinia lorem. Duis arcu metus, cursus non odio quis,
+                      tincidunt tempor augue. Donec eget vestibulum risus.
+                      Nullam blandit quis est vitae feugiat.
+                    </div>
+                  </div>
+                  <div class="overlay"></div>
+                </div>
+                <br />
+              </div>
+
+              <div>
+                <button id="draw-diagram-button" type="button" style="font-size: 0.9rem; margin-top: 5px;"
+                  class=" btn btn-sm btn-outline-primary">
+                  Draw <small>(Beta)</small>
+                </button>
+              </div>
             </div>
 
-            <div>
-              <button id="draw-diagram-button" type="button" style="font-size: 0.9rem; margin-top: 5px;"
-                class=" btn btn-sm btn-outline-primary">
-                Draw <small>(Beta)</small>
-              </button>
-            </div>
-          </div>
-
-          <div class="customization-col">
-            <!-- Handwriting Font -->
-            <div style="padding: 5px 0px 5px 0px;">
-              <b>Customizations</b> <small>(Optional)</small>
-              <p style="font-size: 0.8rem;">
-                <em>Note: Few changes may reflect only in the generated image
-                  and not in the preview</em>
-              </p>
-            </div>
-            <fieldset>
-              <legend>Handwriting Options</legend>
-              <hr />
-              <div class="d-flex justify-content-center mb-3 border-bottom">
-                <div>
-                  <label class="form-label" for="handwriting-font">Handwriting Font</label>
-                  <select class="form-control" id="handwriting-font">
-                    <option selected style="font-family: 'Homemade Apple';" value="'Homemade Apple', cursive">
-                      Homemade Apple
-                    </option>
-                    <option value="Hindi_Font">Kruti-dev(Hindi)</option>
-                    <option style="font-family: 'Caveat', cursive; font-size: 13pt;" value="'Caveat', cursive">
-                      Caveat
-                    </option>
-                    <option style="
+            <div class=" col-sm-6">
+              <!-- Handwriting Font -->
+              <div style="padding: 5px 0px 5px 0px;">
+                <b>Customizations</b> <small>(Optional)</small>
+                <p style="font-size: 0.8rem;">
+                  <em>Note: Few changes may reflect only in the generated image
+                    and not in the preview</em>
+                </p>
+              </div>
+              <fieldset>
+                <legend>Handwriting Options</legend>
+                <hr />
+                <div class="d-flex justify-content-center mb-3 border-bottom">
+                  <div>
+                    <label class="form-label" for="handwriting-font">Handwriting Font</label>
+                    <select class="form-control" id="handwriting-font">
+                      <option selected style="font-family: 'Homemade Apple';" value="'Homemade Apple', cursive">
+                        Homemade Apple
+                      </option>
+                      <option value="Hindi_Font">Kruti-dev(Hindi)</option>
+                      <option style="font-family: 'Caveat', cursive; font-size: 13pt;" value="'Caveat', cursive">
+                        Caveat
+                      </option>
+                      <option style="
                           font-family: 'Liu Jian Mao Cao';
                           font-size: 13pt;
                         " value="'Liu Jian Mao Cao', cursive">
-                      Liu Jian Mao Cao
-                    </option>
-                  </select>
-                </div>
-                <div class=" mb-4 ms-3">
-                  <label class="form-label" for="font-file">Upload your handwriting font <small>(Beta)</small>&nbsp;
-                    <a style="font-size: 1.1rem;" data-mdb-toggle="tooltip" title="How to add your own handwriting"
-                      href="#how-to-add-handwriting">
-                      <i class="far fa-question-circle ms-2 fa-xs"></i>
-                    </a>
-                  </label>
-                  <input accept=".ttf, .otf" class="form-control" type="file" id="font-file" />
-                </div>
-              </div>
-            </fieldset>
-
-            <!-- Pen ink color, Font size, Vertical position text, Word Spacing -->
-            <fieldset class="mb-4">
-              <legend>Page & Text Options</legend>
-              <hr class="mb-2" />
-              <div class="row g-2 pb-3 border-bottom justify-content-center">
-                <div class="col-3 col-sm-2">
-                  <label class="form-label">Adjust Font-Size</label>
-
-                  <div class="form-outline  " data-postfix="pt">
-                    <input class="form-control" id="font-size" min="0" step="0.5" value="10" type="number" /> <label
-                      class="form-label" for="font-size">Font Size</label>
-
+                        Liu Jian Mao Cao
+                      </option>
+                    </select>
+                  </div>
+                  <div class=" mb-4 ms-3">
+                    <label class="form-label" for="font-file">Upload your handwriting font <small>(Beta)</small>&nbsp;
+                      <a style="font-size: 1.1rem;" data-mdb-toggle="tooltip" title="How to add your own handwriting"
+                        href="#how-to-add-handwriting">
+                        <i class="far fa-question-circle ms-2 fa-xs"></i>
+                      </a>
+                    </label>
+                    <input accept=".ttf, .otf" class="form-control" type="file" id="font-file" />
                   </div>
                 </div>
-                <div class="col-5 col-sm-2">
-                  <label class="form-label" for="ink-color">Ink Color</label>
-                  <select class="form-control" id="ink-color">
-                    <option default value="#000f55">Blue</option>
-                    <option value="black">Black</option>
-                    <option value="#ba3807">Red</option>
-                  </select>
-                </div>
-                <div class="col-3 col-sm-2">
-                  <label class="form-label" for="page-size">Page Size</label>
-                  <select class="form-control" id="page-size">
-                    <option default value="a4">A4 &nbsp;</option>
-                  </select>
-                </div>
-                <div class="col-3 col-sm-2">
-                  <label class="form-label" for="page-effects">Effects</label>
-                  <select class="form-control" id="page-effects">
-                    <option default value="shadows">Shadows</option>
-                    <option value="scanner">Scanner</option>
-                    <option value="no-effect">No Effect</option>
-                  </select>
-                </div>
-                <div class="col-3 col-sm-2">
-                  <label class="form-label" for="resolution">Resolution</label>
-                  <select class="form-control" id="resolution">
-                    <option value="0.8">Very Low</option>
-                    <option value="1">Low</option>
-                    <option selected value="2">Normal</option>
-                    <option value="3">High</option>
-                    <option value="4">Very High</option>
-                  </select>
-                </div>
-              </div>
-            </fieldset>
+              </fieldset>
 
-            <fieldset class="mb-4">
-              <legend>Spacing Options</legend>
-              <hr class="mb-3" />
-              <div class="row g-2 border-bottom pb-3 justify-content-center">
-                <div class="col-3">
-                  <div class="form-outline mb-4" data-postfix="px">
-                    <input class="form-control" id="top-padding" min="0" value="5" type="number" />
-                    <label class="form-label" for="top-padding">Vertical Position</label>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="form-outline mb-4" data-postfix="px">
-                    <input class="form-control" id="word-spacing" min="0" max="100" value="0" type="number" />
-                    <label class="form-label" for="word-spacing">Word Spacing</label>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="form-outline mb-4" data-postfix="pt">
-                    <input class="form-control" id="letter-spacing" min="0" max="40" value="0" type="number" />
-                    <label class="form-label" for="letter-spacing">Letter Spacing</label>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
+              <!-- Pen ink color, Font size, Vertical position text, Word Spacing -->
+              <fieldset class="mb-4">
+                <legend>Page & Text Options</legend>
+                <hr class="mb-2" />
+                <div class="row g-2 pb-3 border-bottom justify-content-center">
+                  <div class="col-3 col-sm-2">
+                    <label class="form-label">Adjust Font-Size</label>
 
-            <!-- Letter spacing, Paper Margin, Paper Lines, Paper Curvature -->
-            <fieldset class="mb-4">
-              <legend>Margin & Line Options</legend>
-              <hr class="mb-3" />
-              <div class="row pb-3 border-bottom ">
-                <div class="col-3"> <label class="form-label" for="paper-margin-toggle">Paper Margin:
-                    <span aria-label="paper margin status" class="status">on</span>
-                  </label><br />
-                  <label class="switch-toggle outer">
-                    <div class="form-check form-switch m-auto">
+                    <div class="form-outline  " data-postfix="pt">
+                      <input class="form-control" id="font-size" min="0" step="0.5" value="10" type="number" /> <label
+                        class="form-label" for="font-size">Font Size</label>
 
-                      <input aria-checked="true" class="form-check-input" checked aria-label="Paper Margin Button"
-                        id="paper-margin-toggle" type="checkbox" />
-                      <div></div>
                     </div>
-                  </label>
-                </div>
-
-                <div class="col-3"> <label class="form-label" for="paper-line-toggle">Paper Lines:
-                    <span aria-label="paper line status" class="status">on</span>
-                  </label><br />
-                  <label class="switch-toggle outer">
-                    <div class="form-check form-switch">
-
-                      <input aria-checked="true" class="form-check-input" checked aria-label="Paper Line Button"
-                        id="paper-line-toggle" type="checkbox" />
-                      <div></div>
-                    </div>
-                  </label>
-                </div>
-                <div class="col">
-                  <!-- Removed option -->
-                  <div class="">
-                    <label class="form-label" for="paper-file">Upload Paper Image as Background</label>
-                    <input accept=".jpg, .jpeg, .png" type="file" class="form-control" id="paper-file" />
+                  </div>
+                  <div class="col-5 col-sm-2">
+                    <label class="form-label" for="ink-color">Ink Color</label>
+                    <select class="form-control" id="ink-color">
+                      <option default value="#000f55">Blue</option>
+                      <option value="black">Black</option>
+                      <option value="#ba3807">Red</option>
+                    </select>
+                  </div>
+                  <div class="col-3 col-sm-2">
+                    <label class="form-label" for="page-size">Page Size</label>
+                    <select class="form-control" id="page-size">
+                      <option default value="a4">A4 &nbsp;</option>
+                    </select>
+                  </div>
+                  <div class="col-3 col-sm-2">
+                    <label class="form-label" for="page-effects">Effects</label>
+                    <select class="form-control" id="page-effects">
+                      <option default value="shadows">Shadows</option>
+                      <option value="scanner">Scanner</option>
+                      <option value="no-effect">No Effect</option>
+                    </select>
+                  </div>
+                  <div class="col-3 col-sm-2">
+                    <label class="form-label" for="resolution">Resolution</label>
+                    <select class="form-control" id="resolution">
+                      <option value="0.8">Very Low</option>
+                      <option value="1">Low</option>
+                      <option selected value="2">Normal</option>
+                      <option value="3">High</option>
+                      <option value="4">Very High</option>
+                    </select>
                   </div>
                 </div>
-              </div>
-            </fieldset>
+              </fieldset>
 
-            <!-- GENERATE IMAGE BUTTONS -->
-            <hr style="
+              <fieldset class="mb-4">
+                <legend>Spacing Options</legend>
+                <hr class="mb-3" />
+                <div class="row g-2 border-bottom pb-3 justify-content-center">
+                  <div class="col-3">
+                    <div class="form-outline mb-4" data-postfix="px">
+                      <input class="form-control" id="top-padding" min="0" value="5" type="number" />
+                      <label class="form-label" for="top-padding">Vertical Position</label>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-outline mb-4" data-postfix="px">
+                      <input class="form-control" id="word-spacing" min="0" max="100" value="0" type="number" />
+                      <label class="form-label" for="word-spacing">Word Spacing</label>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-outline mb-4" data-postfix="pt">
+                      <input class="form-control" id="letter-spacing" min="0" max="40" value="0" type="number" />
+                      <label class="form-label" for="letter-spacing">Letter Spacing</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Letter spacing, Paper Margin, Paper Lines, Paper Curvature -->
+              <fieldset class="mb-4">
+                <legend>Margin & Line Options</legend>
+                <hr class="mb-3" />
+                <div class="row pb-3 border-bottom ">
+                  <div class="col-3"> <label class="form-label" for="paper-margin-toggle">Paper Margin:
+                      <span aria-label="paper margin status" class="status">on</span>
+                    </label><br />
+                    <label class="switch-toggle outer">
+                      <div class="form-check form-switch m-auto">
+
+                        <input aria-checked="true" class="form-check-input" checked aria-label="Paper Margin Button"
+                          id="paper-margin-toggle" type="checkbox" />
+                        <div></div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="col-3"> <label class="form-label" for="paper-line-toggle">Paper Lines:
+                      <span aria-label="paper line status" class="status">on</span>
+                    </label><br />
+                    <label class="switch-toggle outer">
+                      <div class="form-check form-switch">
+
+                        <input aria-checked="true" class="form-check-input" checked aria-label="Paper Line Button"
+                          id="paper-line-toggle" type="checkbox" />
+                        <div></div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col">
+                    <!-- Removed option -->
+                    <div class="">
+                      <label class="form-label" for="paper-file">Upload Paper Image as Background</label>
+                      <input accept=".jpg, .jpeg, .png" type="file" class="form-control" id="paper-file" />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- GENERATE IMAGE BUTTONS -->
+              <hr style="
                   border: 0.3px solid var(--elevation-background);
                   width: 80%;
                 " />
-            <div style="text-align: center; padding: 30px 0px;">
-              <button type="submit" data-testid="generate-image-button" class="btn btn-primary generate-image-button">
-                Generate Image
-              </button>
+              <div style="text-align: center; padding: 30px 0px;">
+                <button type="submit" data-testid="generate-image-button" class="btn btn-primary generate-image-button">
+                  Generate Image
+                </button>
+              </div>
             </div>
           </div>
+        </form>
+      </section>
+
+      <!-- OUTPUT -->
+      <section class="">
+        <h2 id="output-header">Output</h2>
+        <div id="output" class="output" style="text-align: center;">
+          Click "Generate Image" Button to generate new image.
         </div>
-      </form>
-    </section>
-
-    <!-- OUTPUT -->
-    <section>
-      <h2 id="output-header">Output</h2>
-      <div id="output" class="output" style="text-align: center;">
-        Click "Generate Image" Button to generate new image.
-      </div>
-      <div style="text-align: center; padding: 30px;">
-        <button class="btn btn-primary" id="download-as-pdf-button">
-          Download All Images as PDF
-        </button>
-        <button class="btn btn-outline-danger" id="delete-all-button">
-          Clear all images
-        </button>
-      </div>
-    </section>
-
+        <div style="text-align: center; padding: 30px;">
+          <button class="btn btn-primary" id="download-as-pdf-button">
+            Download All Images as PDF
+          </button>
+          <button class="btn btn-outline-danger" id="delete-all-button">
+            Clear all images
+          </button>
+        </div>
+      </section>
+   
     <section id="how-to-add-handwriting">
       <h2>🤓 Guide to add your own handwriting</h2>
       <div>
