@@ -176,8 +176,8 @@ body.dark .github-corner {
 }
 
 .page-a {
-  width: 400px;
-  height: calc(11.7 * 400px / 8.3); /* A4 Ratio */
+  width: 550px;
+  height: calc(11.7 * 550px / 8.3); /* A4 Ratio */
   background: #fff;
   border: 1px solid var(--elevation-background);
   font-size: 10pt;
