@@ -276,3 +276,10 @@ body.modal-open {
     font-size: 24px;
   }
 }
+.col-lg-4 .bg-image img {
+  width: 100;
+height: auto;
+max-height: 15rem;
+}
+.row .card{
+  box-shadow: 9.91px 9.91px 15px #DADADA, -9.91px -9.91px 15px #dae4e4;}
