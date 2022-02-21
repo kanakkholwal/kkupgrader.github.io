@@ -44,12 +44,9 @@ body.dark .dark-mode-toggle .sun {
   left: 0;
   height: 100%;
   width: 100%;
-  max-width:720px;
-  max-height: 500px;
- 
-  background-color: #000;
+  background-color: rgb(252, 244, 244);
   z-index: 999999;
-  color: #ddd;
+  color: rgb(20, 19, 19);
   padding: 100px;
   display: none;
 }
