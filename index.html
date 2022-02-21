@@ -17,25 +17,30 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container-fluid justify-content-between">
-        <div class="d-flex">
-          <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="#"><img src="logo.svg" height="50"
-              alt="UpShop logo" loading="lazy" style="margin-top:2px"></a>
-        </div>
-        <ul class="navbar-nav flex-row d-none d-md-flex">
-          <li class="nav-item me-3 me-lg-1">
-            <form class="input-group w-auto my-auto d-none d-sm-flex">
-              <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"
-                style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
-                  class="fas fa-search"></i></span>
-            </form>
-          </li>
-        </ul>
-        <div class="d-flex align-items-center"><a type="button" class="btn btn-primary me-3"
-            href="https://kkupgrader.blogspot.com" target="_blank" role="button">Blogger</a> <a
-            class="btn-dark btn me-3" href="#!" role="button" target="_blank"><i class="fab fa-github"></i></a></div>
-      </div>
-    </nav>
+      <div class="container-fluid ">
+          <div class="d-flex">
+              <a class="navbar-brand home me-2 mb-1 d-flex align-items-center"><img src="/logo.svg" height="50"
+                      alt="K K UPGRADER" loading="lazy" style="margin-top:2px"></a>
+          </div>
+          <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
+              <li class="nav-item me-3 me-lg-1">
+                  <form class="input-group w-auto my-auto d-none d-lg-flex">
+                      <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"
+                          style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
+                              class="fas fa-search"></i></span>
+                  </form>
+              </li>
+          </ul>
+          <ul class="float-end navbar-nav d-flex flex-row align-items-center">
+              <li class="nav-item me-2"><a class="nav-link active" aria-current="page"
+                      href="https://kkupgrader.blogspot.com/">Blog</a></li>
+              <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a></li>
+              <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/portfolio/">PortFolio</a></li>
+
+              
+          </ul>
+          </div>
+  </nav>
 
 
     <main class='w-100 position-relative' id='hero' style='margin-top:65px'>
@@ -91,8 +96,8 @@
       <div class="col-sm-6 col-md-5 col-lg-4">
         <div class="card text-center m-auto">
           <div class="card-body">
-            <div class="bg-image mb-3">
-              <img src="/tools/text-to-handwriting/text-to-handwriting-tool.svg" class="card-img-top rounded shadow-5"
+            <div class="bg-image mb-3 ripple" data-mdb-ripple-color="light">
+              <img src="/tools/text-to-handwriting/text-to-handwriting-tool.svg" class="img-fluid rounded shadow-5"
                 alt="Text tO Handwriting " />
               <a href="/tools/text-to-handwriting/">
                 <div class="mask">
@@ -106,7 +111,8 @@
             </p>
 
             <div class="  d-flex justify-content-center">
-              <a role="button" href="/tools/text-to-handwriting/" class="btn btn-primary w-50 btn-rounded mx-2">Use This
+              <a role="button" href="/tools/text-to-handwriting/" class="btn btn-primary w-auto btn-rounded mx-2">Use
+                This
                 Tool </a>
 
             </div>
@@ -116,8 +122,8 @@
       <div class="col-sm-6 col-md-5 col-lg-4">
         <div class="card text-center m-auto">
           <div class="card-body">
-            <div class="bg-image mb-3 rounded">
-              <img src="/tools/meta-tag-generator/meta-tag-generator.svg" class="card-img-top rounded shadow-5"
+            <div class="bg-image mb-3 rounded ripple" data-mdb-ripple-color="light">
+              <img src="/tools/meta-tag-generator/meta-tag-generator.svg" class="img-fluid rounded shadow-5"
                 alt="Meta Tag Generator " />
               <a href="/tools/meta-tag-generator/">
                 <div class="mask">
@@ -132,7 +138,7 @@
             </p>
 
             <div class="  d-flex justify-content-center">
-              <a role="button" href="tools/meta-tag-generator/" class="btn btn-primary w-50 btn-rounded mx-2">Use This
+              <a role="button" href="tools/meta-tag-generator/" class="btn btn-primary w-auto btn-rounded mx-2">Use This
                 ToOL </a>
 
             </div>

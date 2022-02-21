@@ -51,6 +51,7 @@ nav{background:var(--nav-bg);color:var(--nav-clr)}
 #hero{background:var(--trans-bg); z-index:0;}
 .trans-bg{background:var(--trans-bg); z-index:0;}
 body{background:#fff;font-family:"Roboto"}
+li{list-style: none;}
 .ellipsis-1,.ellipsis-2,.ellipsis-3,.snippet-item,.ellipsis-4{display: -webkit-box;
   -webkit-box-orient: vertical;overflow: hidden;}
   .ellipsis-1{-webkit-line-clamp: 1;}
@@ -287,5 +288,6 @@ body.modal-open {
 height: auto;
 max-height: 15rem;
 }
+
 .row .card{
   box-shadow: 9.91px 9.91px 15px #DADADA, -9.91px -9.91px 15px #dae4e4;}
