@@ -73,8 +73,7 @@ li{list-style: none;}
   bottom: 0;
   left: 0;
   transform: translateX(-100%);
-  background: linear-gradient(to right, #e2e2e2 25%, #d5d5d5 50%, #e2e2e2 100%);
-
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
   -webkit-animation: shimmer 1s infinite;
   animation: shimmer 1s infinite;
   content: "";
