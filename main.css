@@ -58,7 +58,6 @@ li{list-style: none;}
   .ellipsis-2{-webkit-line-clamp: 2;}
   .snippet-item,.ellipsis-3{-webkit-line-clamp: 3;}
   .ellipsis-4{-webkit-line-clamp: 4;}
-img{width: 100%;height: auto;}
 
 [data-src] {
   display: inline-block;
@@ -378,10 +377,10 @@ button{position:relative;display:inline-block;}
   }
 }
 .col-lg-4 .bg-image img {
-  width: 100;
-height: auto;
+
 max-height: 15rem;
 }
 
 .row .card{
-  box-shadow: 9.91px 9.91px 15px #DADADA, -9.91px -9.91px 15px #dae4e4;}
+  box-shadow: 9.91px 9.91px 15px #DADADA, -9.91px -9.91px 15px #dae4e4;
+}
