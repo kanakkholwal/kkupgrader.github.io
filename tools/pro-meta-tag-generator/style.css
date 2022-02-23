@@ -1,0 +1,112 @@
+/* Google */
+
+#google-preview {
+    max-width: 600px;
+}
+
+#google-preview .page-breadcrumbs {
+    font-size: 14px;
+    color: #202124;
+    line-height: 1.3;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+#google-preview .page-title {
+    font-size: 20px;
+    color: #1a0dab;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+#google-preview .page-description {
+    font-size: 14px;
+    color: #6a6a6a;
+    line-height: 1.57;
+    font-weight: 400;
+}
+
+
+/* Open graph */
+
+#open-graph-preview {
+    width: 100%;
+}
+
+#open-graph-preview #og-image-wrapper {
+    width: 100%;
+    height: 380px;
+    background-image: url("https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/pro/_main/assets/mdb5-pro.jpg");
+    border-bottom: 1px solid #eee;
+}
+
+#open-graph-preview #og-data-wrapper {
+    background-color: #e9ebec;
+    padding: 5px 10px;
+}
+
+#open-graph-preview .og-link {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #666;
+}
+
+#open-graph-preview .og-title {
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+#open-graph-preview .og-description {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #666;
+}
+
+
+/* Twitter */
+
+#twitter-preview {
+    width: 100%;
+}
+
+#twitter-preview #twitter-image-wrapper {
+    width: 100%;
+    height: 220px;
+    background: no-repeat cover;
+    background-image: url("https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/pro/_main/assets/mdb5-pro.jpg");
+    border-bottom: 1px solid #eee;
+}
+
+#twitter-preview #twitter-data-wrapper {
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+#twitter-preview .twitter-title {
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+#twitter-preview .twitter-description {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #000;
+}
+
+#twitter-preview .twitter-link {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #8899a6;
+}
+
+#dpl-gtm-scroll,
+#gtmDC-scroll-unlogged,
+#gtmDC-scroll-sub,
+#gtmDC-scroll-pro,
+#gtmDC-scroll-logged {
+    margin-top: -88px;
+}
