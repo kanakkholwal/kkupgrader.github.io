@@ -412,7 +412,7 @@ footer a:hover {
     color: #FF5722;
 }
 
-main ul>li:before {
+#app ul>li:before {
     content: '\f061';
     font-family: 'Font Awesome 5 Pro';
     margin: 0 15px 0 0;
