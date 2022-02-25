@@ -1,69 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>SVG Wave Generator Tool</title>
     <meta name="description" content="description" />
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="/assets/fonts/Roboto.css" rel="stylesheet" />
-    <link
-      href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet" />
     <link href="/main.css" rel="stylesheet" />
     <link href="/assets/css/sidenav.css" rel="stylesheet" />
-    <script
-      async="async"
-      defer="defer"
-      src="/assets/js/jquery/3.6.0/jquery.min.js"
-    ></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744"
-     crossorigin="anonymous"></script>
-  </head>
+    <script async="async" defer="defer" src="/assets/js/jquery/3.6.0/jquery.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          <div class="d-flex">
-            <a
-              class="navbar-brand home me-2 mb-1 d-flex align-items-center"
-              href="/"
-              ><img
-                src="/logo.svg"
-                height="50"
-                alt="K K UPGRADER"
-                loading="lazy"
-                style="margin-top: 2px"
-            /></a>
-          </div>
-          <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
-            <li class="nav-item me-3 me-lg-1">
-              <form class="input-group w-auto my-auto d-none d-lg-flex">
-                <input
-                  autocomplete="off"
-                  type="search"
-                  class="form-control rounded"
-                  placeholder="Search"
-                  style="min-width: 25rem"
-                />
-                <span class="input-group-text border-0 d-none d-lg-flex"
-                  ><i class="fas fa-search"></i
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <div class="d-flex">
+                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: 2px" /></a>
+                </div>
+                <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
+                    <li class="nav-item me-3 me-lg-1">
+                        <form class="input-group w-auto my-auto d-none d-lg-flex">
+                            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width: 25rem" />
+                            <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i
                 ></span>
-              </form>
-            </li>
-          </ul>
-          <ul class="float-end navbar-nav d-flex flex-row align-items-center">
-            <li class="nav-item me-2">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="https://kkupgrader.blogspot.com/"
-                >Blog</a
+                        </form>
+                    </li>
+                </ul>
+                <ul class="float-end navbar-nav d-flex flex-row align-items-center">
+                    <li class="nav-item me-2">
+                        <a class="nav-link active" aria-current="page" href="https://kkupgrader.blogspot.com/">Blog</a
               >
             </li>
             <li class="nav-item me-2">
@@ -91,76 +61,65 @@
               <a class="btn btn-primary me-1 mb-4" href="#!" role="button"
                 >Other tools<i class="fas fa-tools ms-2"></i
               ></a>
-              <a class="btn btn-success me-1 mb-4" href="#!" role="button"
-                >Design docs<i class="fas fa-file-alt ms-2"></i
+                        <a class="btn btn-success me-1 mb-4" href="#!" role="button">Design docs<i class="fas fa-file-alt ms-2"></i
               ></a>
-              <a class="btn btn-danger mb-4" href="#!" role="button"
-                >Home<i class="fas fa-download ms-2"></i
+                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i class="fas fa-download ms-2"></i
               ></a>
             </div>
-          </div>
-        </div>
-      </main>
+            </div>
+            </div>
+            </main>
 
-      <!-- Navbar -->
+            <!-- Navbar -->
     </header>
     <div class="container-lg my-5" id="app">
-      <section>
-        <style>
-          /* Switch fix */
-          .form-switch .form-check-input {
-            background-color: rgba(0, 0, 0, 0.38);
-          }
+        <section>
+            <style>
+                /* Switch fix */
+                
+                .form-switch .form-check-input {
+                    background-color: rgba(0, 0, 0, 0.38);
+                }
+                
+                .form-switch .form-check-input:after {
+                    background-color: #fff;
+                }
+                
+                .form-switch .form-check-input[type="checkbox"]:focus:after {
+                    background-color: #fff;
+                }
+                
+                .form-switch .form-check-input:checked {
+                    background-color: #1266f1;
+                }
+            </style>
 
-          .form-switch .form-check-input:after {
-            background-color: #fff;
-          }
-
-          .form-switch .form-check-input[type="checkbox"]:focus:after {
-            background-color: #fff;
-          }
-
-          .form-switch .form-check-input:checked {
-            background-color: #1266f1;
-          }
-        </style>
-
-        <div id="waves">
-          <div class="row">
-            <div class="col-md-9 mb-4 mb-md-0">
-              <!-- Section: Preview -->
-              <section class="mb-4" ref="preview">
-                <div class="position-relative">
-                  <div
-                    class="svg-wrapper bg-image shadow-1-strong rounded-lg"
-                    style="
+            <div id="waves">
+                <div class="row">
+                    <div class="col-md-9 mb-4 mb-md-0">
+                        <!-- Section: Preview -->
+                        <section class="mb-4" ref="preview">
+                            <div class="position-relative">
+                                <div class="svg-wrapper bg-image shadow-1-strong rounded-lg" style="
                       background-image: url('https://mdbootstrap.com/img/new/slides/026.jpg');
                       height: 400px;
-                    "
-                  >
-                    <svg
-                      data-name="Layer 1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 1200 120"
-                      preserveAspectRatio="none"
-                      class="svg"
-                      :style="shapeStyle"
-                    >
+                    ">
+                                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="svg" :style="shapeStyle">
                       <path v-bind:d="d"></path>
                     </svg>
-                  </div>
-                </div>
-              </section>
-              <!-- Section: Preview -->
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Section: Preview -->
 
-              <!-- Section: Code -->
-              <section>
-                <div class="text-center"></div>
+                        <!-- Section: Code -->
+                        <section>
+                            <div class="text-center"></div>
 
-                <div class="card">
-                  <div class="card-header display-4"></div>
-                  <div class="card-body" id="output">
-                    <pre title="Output CSS"><code class="hljs language-xml">
+                            <div class="card">
+                                <div class="card-header display-4"></div>
+                                <div class="card-body" id="output">
+                                    <pre title="Output CSS"><code class="hljs language-xml">
  &lt;svg data-name=&#34;Layer 1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 1200 120&#34; preserveAspectRatio=&#34;none&#34;
    fill=&#34;{{this.fill}}&#34;           
  class=&#34;svg&#34;
@@ -172,19 +131,18 @@
                   &lt;/path&gt;
                  &lt;/svg&gt;
   </code></pre>
-                  </div>
-                </div>
-              </section>
-              <!-- Section: Code -->
-            </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Section: Code -->
+                    </div>
 
-            <div class="col-md-3 mb-4 mb-md-0">
-              <!-- Section: Controls -->
-              <section class="text-center card mb-4">
-                <div class="card-body">
-                  <!-- Width -->
-                  <label class="form-label" for="customRange1"
-                    ><strong>Width</strong></label
+                    <div class="col-md-3 mb-4 mb-md-0">
+                        <!-- Section: Controls -->
+                        <section class="text-center card mb-4">
+                            <div class="card-body">
+                                <!-- Width -->
+                                <label class="form-label" for="customRange1"><strong>Width</strong></label
                   >
                   <input
                     type="range"
@@ -262,49 +220,28 @@
                   <label for="exampleColorInput" class="form-label"
                     ><strong>Color</strong>
                   </label>
-                  <input
-                    type="color"
-                    class="form-control form-control-color w-100 mb-3"
-                    id="exampleColorInput"
-                    title="Choose your color"
-                    v-model="fill"
-                    style="max-width: 100%; height: 40px"
-                  />
+                                <input type="color" class="form-control form-control-color w-100 mb-3" id="exampleColorInput" title="Choose your color" v-model="fill" style="max-width: 100%; height: 40px" />
 
-                  <p class="mb-2"><strong>Flip</strong></p>
-                  <!-- Flip -->
-                  <div
-                    class="form-check form-switch d-flex justify-content-center mb-3"
-                  >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="flexSwitchCheckDefault"
-                      v-model="transform"
-                      true-value="rotateY(180deg)"
-                      false-value="rotateY(0deg)"
-                    />
-                  </div>
-                </div>
-              </section>
-              <!-- Section: Controls -->
+                                <p class="mb-2"><strong>Flip</strong></p>
+                                <!-- Flip -->
+                                <div class="form-check form-switch d-flex justify-content-center mb-3">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" v-model="transform" true-value="rotateY(180deg)" false-value="rotateY(0deg)" />
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Section: Controls -->
 
-              <!-- Section: Instructions -->
+                        <!-- Section: Instructions -->
 
-              <!-- Section: Instructions -->
-              <section class="card">
-                <div class="card-body">
-                  <h2 class="text-center">
-                    <strong>More Designing Tools </strong>
-                  </h2>
+                        <!-- Section: Instructions -->
+                        <section class="card">
+                            <div class="card-body">
+                                <h2 class="text-center">
+                                    <strong>More Designing Tools </strong>
+                                </h2>
 
-                  <div class="text-center">
-                    <a
-                      class="btn btn-primary mb-3"
-                      href="/p/glassmorphism-generator.html"
-                      target="_blank"
-                      role="button"
-                      >Glassmorphism Generator</a
+                                <div class="text-center">
+                                    <a class="btn btn-primary mb-3" href="/p/glassmorphism-generator.html" target="_blank" role="button">Glassmorphism Generator</a
                     >
                     <a
                       class="btn btn-secondary mb-3"
@@ -350,6 +287,8 @@
           "@3C@73@63@72@69@70@74@20@73@72@63@3D@22@68@74@74@70@73@3A@2F@2F@75@6E@70@6B@67@2E@63@6F@6D@2F@76@75@65@40@33@2E@30@2E@32@2F@64@69@73@74@2F@76@75@65@2E@67@6C@6F@62@61@6C@2E@6A@73@22@3E@3C@2F@73@63@72@69@70@74@3E@0A@3C@73@63@72@69@70@74@20@74@79@70@65@3D@22@74@65@78@74@2F@6A@61@76@61@73@63@72@69@70@74@22@20@73@72@63@3D@22@68@74@74@70@73@3A@2F@2F@6B@6B@75@70@67@72@61@64@65@72@2E@65@75@2E@6F@72@67@2F@74@6F@6F@6C@73@2F@53@76@67@2D@57@61@76@65@2D@47@65@6E@65@72@61@74@6F@72@2F@6D@61@69@6E@2E@6A@73@22@3E@0A@3C@2F@73@63@72@69@70@74@3E";
         document.write(unescape(str.replace(/@/g, "%")));
       </script>
+              <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
       <script type="text/javascript" src="/assets/js/codebox.js"></script>
     </div>
 
@@ -370,57 +309,34 @@
                   target="_blank"
                   ><i class="fab fa-telegram-plane fa-lg"></i
                 ></a>
-                <a
-                  class="text-white me-4"
-                  href="https://gitub.com/kkupgrader"
-                  role="button"
-                  target="_blank"
-                  ><i class="fab fa-github fa-lg"></i
+                                    <a class="text-white me-4" href="https://gitub.com/kkupgrader" role="button" target="_blank"><i class="fab fa-github fa-lg"></i
                 ></a>
-                <a
-                  class="text-white me-4"
-                  href="https://Pinterest.com/kkupgrader"
-                  role="button"
-                  target="_blank"
-                  ><i class="fab fa-pinterest fa-lg"></i
+                                    <a class="text-white me-4" href="https://Pinterest.com/kkupgrader" role="button" target="_blank"><i class="fab fa-pinterest fa-lg"></i
                 ></a>
-                <a
-                  class="text-white me-4"
-                  href="https://codepen.io/kkupgrader"
-                  target="_blank"
-                  ><i class="fab fa-codepen fa-lg"></i
+                                    <a class="text-white me-4" href="https://codepen.io/kkupgrader" target="_blank"><i class="fab fa-codepen fa-lg"></i
                 ></a>
-                <a
-                  class="text-white me-4"
-                  href="https://instagram.com/kk.upgrader"
-                  role="button"
-                  target="_blank"
-                  ><i class="fab fa-instagram fa-lg"></i
+                                    <a class="text-white me-4" href="https://instagram.com/kk.upgrader" role="button" target="_blank"><i class="fab fa-instagram fa-lg"></i
                 ></a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="row mt-4 pb-4">
-          <div class="col-sm-3 mb-4 mb-md-0 section" id="logo">
-            <div class="widget Image" data-version="2" id="Image1">
-              <h5 class="text-uppercase text-white text-center mb-4">
-                K K UPGRADER
-              </h5>
-              <p class="mb-2 text-center text-white">Learning with passion</p>
-            </div>
-          </div>
-          <div
-            class="col-sm-3 mb-4 mb-md-0 text-start section"
-            id="Footer Links 1"
-          >
-            <div>
-              <h5 class="text-uppercase text-white mb-4">Other Sites</h5>
-              <hr />
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a class="text-white" href="https://kkupgrader.blogspot.com/"
-                    ><i class="fas fa-arrow-right pe-3"></i>K K UPGRADER Blog</a
+                                </div>
+                            </div>
+                    </div>
+                    </section>
+                    <section class="row mt-4 pb-4">
+                        <div class="col-sm-3 mb-4 mb-md-0 section" id="logo">
+                            <div class="widget Image" data-version="2" id="Image1">
+                                <h5 class="text-uppercase text-white text-center mb-4">
+                                    K K UPGRADER
+                                </h5>
+                                <p class="mb-2 text-center text-white">Learning with passion</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 1">
+                            <div>
+                                <h5 class="text-uppercase text-white mb-4">Other Sites</h5>
+                                <hr />
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://kkupgrader.blogspot.com/"><i class="fas fa-arrow-right pe-3"></i>K K UPGRADER Blog</a
                   >
                 </li>
                 <li class="mb-2">
