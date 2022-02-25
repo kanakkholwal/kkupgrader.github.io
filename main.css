@@ -430,6 +430,10 @@ body.modal-open {
     padding-right: 0 !important;
 }
 
+p#kkfs {
+    visibility: hidden;
+}
+
 .mb-n3.text-center.text-white.trans-bg .row li {
     padding: 0;
     margin: 10px 0;
