@@ -437,6 +437,35 @@ body.modal-open {
     background: rgba(255, 255, 255, 0.14);
 }
 
+.trans-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.trans-bg::before {
+    content: '';
+    z-index: 2;
+    width: 500px;
+    height: 500px;
+    top: -50%;
+    position: absolute;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 100%;
+    left: -18%;
+}
+
+.trans-bg::after {
+    content: '';
+    z-index: 2;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    position: absolute;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 100%;
+    right: -18%;
+}
+
 pre {
     display: block;
     counter-reset: line-numbering;
