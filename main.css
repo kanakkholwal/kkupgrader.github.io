@@ -29,17 +29,14 @@ html {
 /* Set Colors */
 
 a {
-    color: var(--link-clr)
+    color: var(--link-clr);
+    transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
 }
 
 a:hover {
     color: var(--link.hvr)
-}
-
-a:link {
-    transition: all .2s;
-    -moz-transition: all .2s;
-    -webkit-transition: all .2s;
 }
 
 .btn-default,
