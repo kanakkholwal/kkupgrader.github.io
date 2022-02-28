@@ -325,7 +325,7 @@
             </section>
             <hr/>
             <!-- OUTPUT -->
-            <section class="">
+            <section class="border-bottom">
                 <h2 id="output-header" class="badge rounded-pill h2 display-2 bg-primary">Output</h2>
                 <div id="output" class="output text-center bg-light border">
                     Click "Generate Image" Button to generate new image.
@@ -361,33 +361,67 @@
 
 
             <section id="faq">
-                <h2>❓ FAQs (Frequently Asked Questions)</h2>
-                <div>
-                    <h3>1. How can I add my own Handwriting?</h3>
-                    <p>
-                        Check out
-                        <a href="#how-to-add-handwriting">Guide to add your own Handwriting</a>
-                    </p>
-                </div>
-                <div>
-                    <h3>2. Where can I get more fonts?</h3>
-                    <p>
-                        You can use fonts from
-                        <a href="https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm">https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm</a>
-                    </p>
-                </div>
-                <div>
-                    <h3>3. There are gaps between letters in custom fonts</h3>
-                    <p>
-                        This is a known issue that we haven't figured out the solution for. As a temporary workaround, there is letter spacing and word spacing option to adjust the gap.
-                    </p>
-                </div>
-                <div>
-                    <h3>4. Where can I request for features and report bugs?</h3>
-                    <p>
-                        You can't. This is a read-only project and there will not be any improvements in the project
-                    </p>
-                </div>
+                <h1 class="card-title mb-3"><i class="fas fa-question me-3 text-danger"></i> FAQs (Frequently Asked Questions)</h1>
+                <div class="accordion w-100" id="basicAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <h3>1. How can I add my own Handwriting?</h3>
+                      </button>
+                        </h2>
+                        <div id="basicAccordionCollapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-mdb-parent="#basicAccordion" style="">
+                            <div class="accordion-body">
+                                <p>
+                                    Check out
+                                    <a href="#how-to-add-handwriting">Guide to add your own Handwriting</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h3>2. Where can I get more fonts?</h3>
+                      </button>
+                        </h2>
+                        <div id="basicAccordionCollapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-mdb-parent="#basicAccordion" style="">
+                            <div class="accordion-body">
+                                <p>
+                                    You can use fonts from
+                                    <a href="https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm">https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h3>3. There are gaps between letters in custom fonts</h3>
+                      </button>
+                        </h2>
+                        <div id="basicAccordionCollapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-mdb-parent="#basicAccordion" style="">
+                            <div class="accordion-body">
+                                <p>
+                                    This is a known issue that we haven't figured out the solution for. As a temporary workaround, there is letter spacing and word spacing option to adjust the gap.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              <h3>4. Where can I request for features and report bugs?</h3>
+                            </button>
+                        </h2>
+                        <div id="basicAccordionCollapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-mdb-parent="#basicAccordion" style="">
+                            <div class="accordion-body">
+                                <p>
+                                    Pull Request or Contact Us
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
             </section>
     </main>
 
