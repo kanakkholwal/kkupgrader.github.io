@@ -98,12 +98,14 @@ function renderOutput(outputImages) {
         <br/>
 
         <button 
-        type="button" class="btn btn-primary prev"          data-index="${index}" 
+        type="button" class="btn btn-primary prev"        
+          data-index="${index}" 
         >
         <i class="fas fa-arrow-left me-2"></i>   Move Left
         </button>
         <button 
-        type="button" class="btn btn-primary next"           data-index="${index}" 
+        type="button" class="btn btn-primary next"   
+           data-index="${index}" 
         >
           Move Right <i class="fas fa-arrow-right ms-2"></i>
         </button>
