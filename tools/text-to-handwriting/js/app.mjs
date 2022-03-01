@@ -10,7 +10,7 @@ import {
 } from './generate-images.mjs';
 import { setInkColor, toggleDrawCanvas } from './utils/draw.mjs';
 
-/**
+/**generated
  *
  * Hi there! This is the entry file of the tool and deals with adding event listeners
  * and some other functions.
