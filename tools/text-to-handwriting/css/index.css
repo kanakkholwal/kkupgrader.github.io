@@ -301,6 +301,12 @@ body.dark .github-corner {
     color: #fff;
     font-size: 15pt;
     font-weight: bold;
+    transition: all .15s linear;
+}
+
+.output .close-button:hover {
+    opacity: 1;
+    transform: rotate(90deg);
 }
 
 .download-image-button {
