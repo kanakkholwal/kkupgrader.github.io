@@ -102,7 +102,7 @@ export const deleteAll = () => {
     outputImages.splice(0, outputImages.length);
     renderOutput(outputImages);
     document.querySelector('#output-header').textContent =
-        'Output' + (outputImages.length ? ' ( ' + outputImages.length + ' )' : '');
+        '' + (outputImages.length ? '  ' + outputImages.length + ' ' : '');
 };
 
 const arrayMove = (arr, oldIndex, newIndex) => {
@@ -145,8 +145,8 @@ function setRemoveImageListeners() {
                 // Displaying no. of images on deletion
                 if (outputImages.length >= 0) {
                     document.querySelector('#output-header').textContent =
-                        'Output' +
-                        (outputImages.length ? ' ( ' + outputImages.length + ' )' : '');
+                        '' +
+                        (outputImages.length ? ' ' + outputImages.length + ' ' : '');
                 }
                 renderOutput(outputImages);
                 // When output changes, we have to set remove listeners again
