@@ -283,6 +283,7 @@ body.dark .github-corner {
     padding: 30px;
     white-space: nowrap;
     overflow-x: auto;
+    border-radius: 8px;
 }
 
 .btn.next,
