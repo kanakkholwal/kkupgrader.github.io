@@ -1,51 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
+<?xml version='1.0' encoding='UTF-8'?><urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <url>
   <loc>https://kkupgrader.eu.org/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/tools/text-to-handwriting/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/tools/meta-tag-generator/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/tools/Svg-Wave-Generator/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/tools/svg-to-css-generator/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/tools/pro-meta-tag-generator/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/contact-us/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://kkupgrader.eu.org/privacy-policy/</loc>
   <lastmod>2022-02-24T06:03:10+00:00</lastmod>
-  <priority>0.64</priority>
 </url>
 
 
