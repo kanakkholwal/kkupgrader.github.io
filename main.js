@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.lazysrc;
+                    lazyImage.src = lazyImage.dataset.src;
                     lazyImage.removeAttribute('data-src');
                     lazyImageObserver.unobserve(lazyImage);
                 }
