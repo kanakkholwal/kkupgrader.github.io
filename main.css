@@ -431,7 +431,7 @@ footer a:hover {
     color: #FF5722;
 }
 
-#app ul>li:before {
+#app ul.list>li:before {
     content: '\f061';
     font-family: 'Font Awesome 5 Pro';
     margin: 0 15px 0 0;
@@ -498,7 +498,7 @@ p#kkfs {
     right: -18%;
 }
 
-pre {
+pre.fs {
     display: block;
     counter-reset: line-numbering;
     background: #2c3e50;
@@ -521,7 +521,7 @@ pre {
     hyphens: none
 }
 
-pre code {
+pre.fs code {
     font-family: "Source Code Pro";
     font-size: 12px;
     box-shadow: none;
@@ -537,14 +537,14 @@ pre code {
     padding: 0.75rem
 }
 
-pre::before,
-pre::after,
-pre code::before,
-pre code::after {
+pre.fs::before,
+pre.fs::after,
+pre.fs code::before,
+pre.fs code::after {
     position: absolute
 }
 
-pre::before {
+pre.fs::before {
     content: attr(title);
     white-space: nowrap;
     overflow: hidden;
