@@ -17,6 +17,8 @@
 
 document.querySelector(".date").innerHTML = creditsyear.getFullYear();
 
+
+
 //var script = document.createElement("script");
 /////script.src = "";
 

@@ -1,0 +1,52 @@
+:root {
+    --main: gray;
+    --secondary: black;
+    --bg: #eee;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+label {
+    cursor: pointer;
+    margin: .5rem auto;
+}
+
+button,
+.upload-label {
+    background: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--main);
+    padding: .5rem 1rem;
+    border: 2px solid var(--main);
+    background: var(--bg);
+    border-radius: 4px;
+}
+
+button:hover,
+button:focus,
+.upload-label:hover,
+.upload-label:focus {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.hide {
+    display: none;
+}
+
+.item {
+    color: var(--main);
+    font-size: small;
+    display: inline;
+    margin: 0.3rem;
+}
+
+.item:not(:last-child):after {
+    content: ','
+}

@@ -1,0 +1,27 @@
+#loading {
+    width: 60px;
+    margin: auto;
+}
+
+#canvas-area {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    border: #cfcfcf 2px solid;
+    border-radius: 8px;
+}
+
+.row canvas {
+    flex: 0 0 auto;
+    width: 25%;
+    margin: auto 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .21)!important;
+    border: #cfcfcf 2px solid;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    #loading {
+        width: 45px;
+    }
+}

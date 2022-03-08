@@ -1,5 +1,5 @@
 const config = {
-    imageFileName: '',
+    imageFileName: 'Image ',
     folderName: 'pdf-image',
 
     // Modal Window
@@ -10,7 +10,7 @@ const config = {
     threeDigit: true,
     noUnderscore: false,
 
-    openModal: function () {
+    openModal: function() {
         const nameList = [
             { property: 'type' },
             { property: 'quality' },
@@ -24,17 +24,17 @@ const config = {
             }
         }
     },
-    closeModal: function () {
+    closeModal: function() {
         document.getElementById('close-modal-btn').click();
     },
-    applyConfigOfModal: function () {
+    applyConfigOfModal: function() {
         this.type = configElement.type.value;
         this.quality = parseFloat(configElement.quality.value);
         this.scale = parseFloat(configElement.scale.value);
 
         this.closeModal();
     },
-    applyConfigOfProcess: function () {
+    applyConfigOfProcess: function() {
         if (configElement.folderName.value === '') {
             this.folderName = 'pdf-image';
         } else {
