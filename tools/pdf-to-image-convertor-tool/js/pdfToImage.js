@@ -252,7 +252,6 @@ function downloadAsZip(PDFlength) {
 
     // Load display
     // displayLoadingAnimation();
-    loadingAnimation();
 
     if (config.type === 'image/jpeg') {
         extension = '.jpg';
