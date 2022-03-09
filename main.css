@@ -412,7 +412,16 @@ body {
     font-size: 16px;
     font-weight: 400;
     background: #fff;
-    font-family: "Roboto"
+    font-family: "Roboto", 'Sofia Pro', sans-serif;
+}
+
+.btn {
+    font-family: "Roboto";
+}
+
+nav,
+.card {
+    font-family: 'Sofia Pro', sans-serif;
 }
 
 footer {
