@@ -14,8 +14,9 @@
         });
     }
 })();
+//var creditsyear = new Date().getFullYear();
 
-document.querySelector(".date").innerHTML = creditsyear.getFullYear();
+// document.querySelector(".date").InnerHTML = creditsyear;
 
 
 

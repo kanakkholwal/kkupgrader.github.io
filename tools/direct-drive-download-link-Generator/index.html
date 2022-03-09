@@ -84,54 +84,24 @@
     <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
         <main class="col-md-8">
-            <div class="row mb-4 ">
 
-
-                <div class="col-12">
-                    <form action="#" id="direct-link-form">
-                        <div class="form-outline mb-4">
-                            <textarea class="form-control" id="url" placeholder="E.g.https://drive.google.com/file/d/1kazyfB4JHoZSmczN-FBVXB4C8qN5b46G/view?usp=sharing" rows="9"></textarea>
-
-                            <label class="form-label" for="url">Place your shareable links here
-                      </label>
-                        </div>
-                        <div class="text-center d-flex justify-content-evenly">
-                            <button class="btn btn-outline-primary p-2" type="submit">
-                        Get Direct Link
-                      </button>
-                            <button class="btn btn-outline-warning p-2" type="reset">
-              
-                        Clear
-              
-                      </button>
-                        </div>
-                    </form>
-
-                    <div class="text-center">
-                        <div class="m-auto my-3 spinner-border text-warning hide" id="progress"></div>
-
-                        <div class="hide my-3" id="result">
-                            <button id="copy-btn" class="btn btn-success mb-2 thumb-bg" data-target="#data">
-                        Copy Result
-                      </button>
-
-                            <p class="form-control" type="url" id="data"></p>
-
-                            <br />
-
-                            <div class="alert  alert-success m-auto p-3 hide">
-                                Copied Sucessfully
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label for="sharelink">Share link</label>
+                <input type="text" class="form-control" id="sharelink" placeholder="https://drive.google.com/file/d/XX-X__XXXXX-XXXXXXXXXXXXXXXX/view?usp=sharing" autofocus="true">
             </div>
-
+            <div class="form-group">
+                <label for="downloadlink">Download link</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="downloadlink" readonly>
+                    <span class="input-group-btn">
+        <button id="copylinkbtn" class="btn btn-primary" type="button" data-clipboard-target="#downloadlink" disabled>Copy link</button>
+      </span>
+                </div>
+            </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 
-            <script type="text/javascript" src="app.js">
-            </script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.5/bootstrap-notify.min.js'></script>
+            <script src="app.js"></script>
         </main>
 
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
