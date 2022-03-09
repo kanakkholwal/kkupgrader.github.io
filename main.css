@@ -30,7 +30,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -55,7 +55,7 @@ a {
 }
 
 a:hover {
-    color: var(--link.hvr)
+    color: var(--link-hvr)
 }
 
 .btn-default,
@@ -95,7 +95,7 @@ a.link-primary:focus {
 a.link-danger,
 a.link-danger:hover,
 a.link-danger:focus {
-    color: var(--danger!)important
+    color: var(--danger)!important
 }
 
 .bg-info {
@@ -174,11 +174,6 @@ nav {
 .trans-bg {
     background: var(--trans-bg);
     z-index: 0;
-}
-
-body {
-    background: #fff;
-    font-family: "Roboto"
 }
 
 li {
@@ -414,9 +409,10 @@ li {
 }
 
 body {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #fff;
+    font-family: "Roboto"
 }
 
 footer {
@@ -558,10 +554,26 @@ p#kkfs {
     content: " or drag it here. ";
     display: block;
     margin: 0 auto;
-    color: #2ea591;
+    color: #006188;
     font-weight: 600;
     text-transform: capitalize;
     text-align: center
+}
+
+.ads-here {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 80px;
+    height: 100%;
+    background-color: #f6f8fa;
+    font-size: 13px;
+    color: #838a90;
+    font-style: italic;
+    margin: 0;
+    border: 1px solid rgb(207, 205, 205)
 }
 
 pre.fs {
@@ -871,6 +883,79 @@ button {
     }
     h1 {
         font-size: 24px;
+    }
+}
+
+#icon-download .download-arrow {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.04, 1.04);
+    animation-timing-function: cubic-bezier(0.42, 0, 0.04, 1.04);
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+@-webkit-keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    40%,
+    43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0);
+    }
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0);
+    }
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0);
+    }
+}
+
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    40%,
+    43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0);
+    }
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0);
+    }
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0);
     }
 }
 

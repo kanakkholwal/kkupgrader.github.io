@@ -72,6 +72,16 @@ downloadButton.addEventListener('click', function() {
     downloadAsZip(PDFlength);
 });
 
+function loadingAnimation() {
+    loading.classList.remove("hidden");
+
+}
+
+function loadingAnimationRemove() {
+    loading.classList.add("hidden");
+
+}
+
 // Execution process
 function convertPdfToImage() {
     let PDFbase64;
@@ -128,12 +138,14 @@ function getPDFpageLength(PDFdata) {
     return new Promise(function(resolve, reject) {
         // Load display
         //  displayLoadingAnimation();
+        loadingAnimation();
         let loadingTask = pdfjsLib.getDocument({ data: PDFdata });
         loadingTask.promise.then(function(pdf) {
             // console.log(pdf.numPages);
 
             // Load remove
             //  deleteLoadingAnimation();
+            loadingAnimationRemove();
             resolve(pdf.numPages);
 
             loadingTask.destroy();
@@ -147,6 +159,7 @@ function drawPDFinCanvas(PDFlength, PDFdata) {
 
         // Load display
         //  displayLoadingAnimation();
+        loadingAnimation();
 
         let count = 0;
         for (let pageNum = 1; pageNum <= PDFlength; pageNum++) {
@@ -177,6 +190,8 @@ function drawPDFinCanvas(PDFlength, PDFdata) {
 
                             // Load remove
                             //  deleteLoadingAnimation();
+                            loadingAnimationRemove();
+
                             loadingTask.destroy();
                         } else {
                             count++;
@@ -196,6 +211,8 @@ function compressToZip(PDFlength) {
 
     // Load display
     // displayLoadingAnimation();
+    loadingAnimation();
+
     if (config.type === 'image/jpeg') {
         extension = '.jpg';
     } else if (config.type === 'image/png') {
@@ -224,6 +241,8 @@ function compressToZip(PDFlength) {
             }
         }, config.type, config.quality);
     }
+    loadingAnimationRemove();
+
 }
 
 function downloadAsZip(PDFlength) {
@@ -233,6 +252,8 @@ function downloadAsZip(PDFlength) {
 
     // Load display
     // displayLoadingAnimation();
+    loadingAnimation();
+
     if (config.type === 'image/jpeg') {
         extension = '.jpg';
     } else if (config.type === 'image/png') {

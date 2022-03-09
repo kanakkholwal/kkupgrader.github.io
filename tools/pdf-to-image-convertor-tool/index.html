@@ -19,7 +19,7 @@
     <!-- Preload Cdns -->
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <!-- Chrome, Firefox OS and Opera -->
-    <meta content='' name='theme-color' />
+    <meta content='#F0F2F5' name='theme-color' />
     <!-- Windows Phone -->
     <meta content='' name='msapplication-navbutton-color' />
     <link href='/favicon.ico' rel='icon' type='image/x-icon' />
@@ -44,13 +44,14 @@
                     <li class="nav-item me-3 me-lg-1">
                         <form class="input-group w-auto my-auto d-none d-lg-flex">
                             <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
-                      class="fas fa-search"></i></span>
+                                    class="fas fa-search"></i></span>
                         </form>
                     </li>
                 </ul>
                 <ul class="float-end navbar-nav d-flex flex-row align-items-center">
                     <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="https://kkupgrader.blogspot.com/">Blog</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a></li>
+                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a>
+                    </li>
                     <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/portfolio/">PortFolio</a></li>
 
 
@@ -68,10 +69,11 @@
                     <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.</p>
                     <div class="mt-3">
                         <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
-                    class="fas fa-tools ms-2"></i></a>
+                                class="fas fa-tools ms-2"></i></a>
                         <a class="btn btn-success me-1 mb-4" href="#!" role="button">Design docs<i
-                    class="fas fa-file-alt ms-2"></i></a>
-                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i class="fas fa-download ms-2"></i></a>
+                                class="fas fa-file-alt ms-2"></i></a>
+                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i
+                                class="fas fa-download ms-2"></i></a>
                     </div>
 
 
@@ -82,110 +84,150 @@
 
         <!-- Navbar -->
     </header>
-    <div class="container-lg my-5" id="app">
-        <div id="drag-drop-area">
-            <div class=" upload">
-                <input id="file-input" type="file" class=" form-control" name="pdf" accept="application/pdf"></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col">
-                <label for="image-file-name">Image file name</label>
-                <input class="form-control" id="image-file-name" type="text" placeholder="No image file name">
-            </div>
-            <div class="form-group col">
-                <label for="folder-name">Output folder</label>
-                <input class="form-control" id="folder-name" type="text" placeholder="No folder name">
-            </div>
-            <div class="check-area col-12 d-flex flex-row justify-content-evenly g-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="three-digit-number" checked>
-                    <label class="form-check-label" for="three-digit-number">Format number as 3 digits</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="no-underscore" checked>
-                    <label class="form-check-label" for="no-underscore">Restrict underscore</label>
+    <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
+        <aside class="col-md-2"><a href="" class="ads-here">Advertisement</a></aside>
+        <main class="col-md-8">
+            <div id="drag-drop-area">
+                <div class=" upload">
+                    <input id="file-input" type="file" class=" form-control" name="pdf" accept="application/pdf"></p>
                 </div>
             </div>
+            <div class="row">
+                <a class="ads-here col-12 mb-4">Advertisement</a>
 
-            <div class="d-flex justify-content-between">
-                <div id="attention">
-                    <p class="attention">※<strong>Formats other than JPEG</strong> - Cannot compress due to quality</p>
+                <div class="form-group col-md-6">
+                    <div class="form-outline mb-4">
+                        <input class="form-control" id="image-file-name" type="text" placeholder="No image file name">
+                        <label for="image-file-name" class="form-label">Image file name</label>
+                    </div>
                 </div>
-                <div id="config">
-                    <!-- Button trigger modal -->
-                    <button id="modal-link-btn" type="button" class="btn btn-link btn-sm" data-mdb-toggle="modal" data-mdb-target="#configModalCenter" onclick="config.openModal()">
-                Advanced Setting <i class="fas fa-cog ms-2 text-danger"></i>
-            </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="configModalCenter" tabindex="-1" role="dialog" aria-labelledby="configModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="configModalCenterTitle">Advanced Setting</h5>
-                                    <button type="button" class="close" data-mdb-dismiss="modal" aria-label="Close">
-                                    <button type="button" class="btn-close close-button" data-mdb-dismiss="modal" aria-label="Close"></button>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="image-file-type">Image file type</label>
-                                        <select class="form-control" id="image-file-type">
-                                    <option selected>image/jpeg</option>
-                                    <option>image/png</option>
-                                </select>
+
+                <div class=" col-md-6">
+                    <div class="form-outline mb-4">
+                        <input class="form-control" id="folder-name" type="text" placeholder="No folder name">
+                        <label for="folder-name" class="form-label">Output folder</label>
+                    </div>
+                </div>
+                <a class="ads-here col-12">Advertisement</a>
+                <div class="check-area col-12 d-flex flex-row justify-content-evenly g-3 ">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="three-digit-number" checked>
+                        <label class="form-check-label" for="three-digit-number">Format number as 3 digits</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="no-underscore" checked>
+                        <label class="form-check-label" for="no-underscore">Restrict underscore</label>
+                    </div>
+                    <div id="config">
+                        <!-- Button trigger modal -->
+                        <button id="modal-link-btn" type="button" class="btn btn-link active btn-sm " data-mdb-toggle="modal" data-mdb-target="#configModalCenter" onclick="config.openModal()">
+                            <i class="fas fa-cog ms-2 " data-mdb-toggle="tooltip" title="Advanced Settings"></i>
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="configModalCenter" tabindex="-1" role="dialog" aria-labelledby="configModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="configModalCenterTitle">Advanced Setting</h5>
+                                        <button type="button" class="close" data-mdb-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="btn-close close-button"
+                                                data-mdb-dismiss="modal" aria-label="Close"></button>
+                                        </button>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="file-quality">Quality (applies only to image/jpeg)</label>
-                                        <select class="form-control" id="file-quality">
-                                    <option>0</option>
-                                    <option>0.1</option>
-                                    <option>0.2</option>
-                                    <option>0.3</option>
-                                    <option>0.4</option>
-                                    <option>0.5</option>
-                                    <option>0.6</option>
-                                    <option>0.7</option>
-                                    <option selected>0.8</option>
-                                    <option>0.9</option>
-                                    <option>1</option>
-                                </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image-scale">Scale (affects image quality)</label>
-                                        <input class="form-control" id="image-scale" type="number" min="0" value="2.0" step="0.1">
-                                    </div>
-                                    <!--
-                              <div class="form-group">
-                                <label for="max-width">Largest banner</label>
-                                <input class="form-control" id="max-width" type="number" min="0" placeholder="Default">
-                              </div>
-                              <div class="form-group">
-                                <label for="max-height">Maximum width</label>
-                                <input class="form-control" id="max-height" type="number" min="0" placeholder="Default">
-                              </div>
-                            -->
-                                    <div class="modal-footer">
-                                        <button id="close-modal-btn" type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                                        <button id="apply-config-btn" type="button" class="btn btn-primary" onclick="config.applyConfigOfModal()">Apply</button>
+                                    <div class="modal-body">
+                                        <div class="form-group mb-4">
+                                            <label for="image-file-type">Image file type</label>
+                                            <select class="form-control" id="image-file-type">
+                                                <option selected>image/jpeg</option>
+                                                <option>image/png</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="file-quality">Quality (applies only to image/jpeg)</label>
+                                            <select class="form-control" id="file-quality">
+                                                <option>0</option>
+                                                <option>0.1</option>
+                                                <option>0.2</option>
+                                                <option>0.3</option>
+                                                <option>0.4</option>
+                                                <option>0.5</option>
+                                                <option>0.6</option>
+                                                <option>0.7</option>
+                                                <option selected>0.8</option>
+                                                <option>0.9</option>
+                                                <option>1</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="image-scale">Scale (affects image quality)</label>
+                                            <input class="form-control" id="image-scale" type="number" min="0" value="2.0" step="0.1">
+                                        </div>
+                                        <!--
+                                                  <div class="form-group">
+                                                           <label for="max-width">Largest banner</label>
+                                                            <input class="form-control" id="max-width" type="number" min="0" placeholder="Default">
+                                                     </div>
+                                                  <div class="form-group">
+                                                    <label for="max-height">Maximum width</label>
+                                                     <input class="form-control" id="max-height" type="number" min="0" placeholder="Default">
+                                                    </div>
+                                        -->
+                                        <div class="modal-footer">
+                                            <button id="close-modal-btn" type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                                            <button id="apply-config-btn" type="button" class="btn btn-primary" onclick="config.applyConfigOfModal()">Apply</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="d-flex justify-content-start my-2">
+                    <div id="attention">
+                        <p class="text-muted"><i class="fas fa-arrow-right me-2"></i><strong>Formats other than
+                                JPEG</strong> - Cannot compress due to quality</p>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-evenly">
-            <button id="execute" type="button" class="btn btn-primary ">Convert </button>
-            <button id="download" type="button" class="btn btn-primary ">Download as zip file</button>
+            <div class="d-flex justify-content-evenly">
+                <button id="execute" type="button" class="btn btn-primary ">Convert <svg viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                        <style>
+                            @keyframes rotate-center {
+                                0% {
+                                    transform: rotate(0)
+                                }
 
-        </div>
-        <div id="loading" class="hidden">
-            <img id="loading" src="/content/images/preloader.svg" />
-        </div>
-        <div id="canvas-area" class="row bg-image  flex-row flex-nowrap g-2 my-4 p-3"></div>
+                                to {
+                                    transform: rotate(360deg)
+                                }
+                            }
+                        </style>
+                        <g style="animation:rotate-center 2s ease-in-out infinite both;transform-origin:center center"
+                            stroke-width="1.5">
+                            <path stroke="#fff" stroke-linecap="round" d="M15.473 8.41a5 5 0 10.939 5.952" />
+                            <path fill="#fff" stroke="#fff"
+                                d="M17.195 10.373l-2.308-.347a.065.065 0 01-.018-.005.023.023 0 01-.007-.005.056.056 0 01-.015-.024.056.056 0 01-.002-.03.03.03 0 01.002-.007.069.069 0 01.013-.015l1.995-1.964a.066.066 0 01.015-.012.027.027 0 01.007-.003.056.056 0 01.029.003c.012.004.02.01.024.015a.027.027 0 01.005.007.069.069 0 01.004.019l.313 2.312a.047.047 0 01-.002.023.053.053 0 01-.013.02.053.053 0 01-.02.012.046.046 0 01-.022.001z" />
+                        </g>
+                    </svg></button>
+                <button id="download" type="button" class="btn btn-dark ">Download as zip file <svg id="icon-download"
+                        class="ms-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <g class="download-arrow">
+                            <polyline points="7 10 12 15 17 10" stroke="#ea3970"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3" stroke="#ea3970"></line>
+                    </svg></button>
 
+            </div>
+            <div id="loading" class="hidden">
+                <img id="loading" src="/content/images/preloader.svg" />
+            </div>
+            <div id="canvas-area" class="row bg-image  flex-row flex-nowrap g-2 my-4 p-3"></div>
+        </main>
+        <aside class="col-md-2"><a href="" class="ads-here">Advertisement</a></aside>
 
     </div>
 
