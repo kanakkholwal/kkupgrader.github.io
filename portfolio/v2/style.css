@@ -138,10 +138,16 @@ hr {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    padding: 0;
 }
 
 .col-sm-3 {
     width: 25%;
+}
+
+.col-sm-9p,
+.col-sm-3 p {
+    margin: 0.25rem;
 }
 
 .col-sm-9 {
