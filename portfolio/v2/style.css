@@ -286,6 +286,9 @@ a:active {
     .container {
         margin: 0.25rem;
     }
+    .card {
+        margin: 0.25rem 0.25rem 1.25rem 0.25rem;
+    }
 }
 
 @media (min-width:920px) {
