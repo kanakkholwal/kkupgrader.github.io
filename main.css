@@ -20,8 +20,8 @@ html {
     --title-clr: #666666;
     --title-color: var(--title-clr);
     --text-clr: #262626;
-    --title-font: "Roboto" --post-font: "Poppins";
-    --body-font: "Roboto";
+    --body-font: 'Fredoka', sans-serif;
+    /*  "Roboto", 'Sofia Pro', sans-serif; */
 }
 
 html {
@@ -420,10 +420,13 @@ li {
 }
 
 body {
-    font-size: 16px;
     font-weight: 400;
     background: #fff;
-    font-family: "Roboto", 'Sofia Pro', sans-serif;
+    font-family: var(--body-font)
+}
+
+* {
+    font-family: var(--body-font)
 }
 
 .btn {
