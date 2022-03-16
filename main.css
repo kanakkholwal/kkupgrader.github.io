@@ -6,7 +6,6 @@ html {
     --nav-clr: #262626;
     --link-clr: #6351ce;
     --link-hvr: #126d9a;
-    --trans-bg: linear-gradient(to right, #4d6f82, #2196f3);
     --primary: #2396c3;
     --secondary: #B23CFD;
     --success: #00B74A;
@@ -164,6 +163,18 @@ a.link-secondary:focus {
 nav {
     background: var(--nav-bg);
     color: var(--nav-clr)
+}
+
+@media (max-width:468px) {
+    .navbar-brand img {
+        width: 200px;
+    }
+}
+
+@media (min-width:300px) and (max-width:468px) {
+    .navbar-brand img {
+        width: 125px;
+    }
 }
 
 #hero {
