@@ -218,7 +218,8 @@ li {
     -webkit-line-clamp: 4;
 }
 
-[data-src] {
+[data-src],
+.shimImg {
     display: inline-block;
     position: relative;
     aspect-ratio: 16/9;
@@ -226,7 +227,8 @@ li {
     background-color: #eee;
 }
 
-[data-src]::after {
+[data-src]::after,
+.shimImg::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -251,7 +253,8 @@ li {
     }
 }
 
-[data-src]::before {
+[data-src]::before,
+.shimImg::before {
     content: " ";
     display: block;
     height: calc(100% + 10px);
@@ -411,12 +414,38 @@ li {
     display: none;
 }
 
-.divider:after,
-.divider:before {
+.divider-a:after,
+.divider-a:before {
     content: "";
     flex: 1;
     height: 1px;
-    background: #eee;
+    background: rgb(219, 20, 20);
+}
+
+.divider-e:after,
+.divider-s:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgb(219, 20, 20);
+}
+
+.divider {
+    display: flex;
+    vertical-align: middle!important;
+    align-items: center;
+    column-gap: 8px;
+    margin-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+    aside:first-child .ads-here {
+        writing-mode: vertical-rl;
+        transform: rotate(0.5turn);
+    }
+    aside:last-child .ads-here {
+        writing-mode: vertical-lr;
+    }
 }
 
 body {
@@ -537,7 +566,8 @@ p#kkfs {
     text-align: center!important;
     margin: 0;
     width: 100%!important;
-    background-color: #f1f1f1
+    background: #ddd;
+    background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
 }
 
 .upload input[type="file"]:focus {
@@ -599,6 +629,10 @@ p#kkfs {
     font-style: italic;
     margin: 0;
     border: 1px solid rgb(207, 205, 205)
+}
+
+main .ads-here {
+    margin: 1.5rem auto
 }
 
 pre.fs {

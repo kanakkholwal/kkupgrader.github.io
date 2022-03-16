@@ -1,0 +1,56 @@
+.form-control {
+    max-width: 100%
+}
+
+input[type=file] {
+    width: auto;
+    outline: none
+}
+
+.toolify>img {
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+.dropTarget {
+    position: relative;
+    border: 3px dashed silver;
+    flex-basis: auto;
+    flex-grow: 20;
+}
+
+#previews>div {
+    box-sizing: border-box;
+    height: 240px;
+    width: 240px;
+    padding: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+}
+
+#previews>div>progress {
+    width: 80%;
+}
+
+#previews>div>img.m-auto {
+    width: 32px !important;
+    height: 32px !important
+}
+
+.layout {
+    scroll-behavior: smooth;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    height: calc(100vh - 40px);
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
