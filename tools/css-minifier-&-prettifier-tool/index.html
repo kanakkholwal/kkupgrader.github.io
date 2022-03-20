@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>K K UPGRADER</title>
+    <title>Css Beautify and Minify Online Tool</title>
 
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <!-- Preload Cdns -->
@@ -59,13 +59,14 @@
                     <li class="nav-item me-3 me-lg-1">
                         <form class="input-group w-auto my-auto d-none d-lg-flex">
                             <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
-                      class="fas fa-search"></i></span>
+                                    class="fas fa-search"></i></span>
                         </form>
                     </li>
                 </ul>
                 <ul class="float-end navbar-nav d-flex flex-row align-items-center">
                     <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="https://kkupgrader.blogspot.com/">Blog</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a></li>
+                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a>
+                    </li>
                     <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/portfolio/">PortFolio</a></li>
 
 
@@ -77,16 +78,18 @@
             <div class='container-fluid  '>
                 <div class="p-4 px-5 text-center">
 
-                    <h1 class="h4 fw-bold mb-3 mt-4">Meta Tag Generator Tool
+                    <h1 class="h4 fw-bold mb-3 mt-4">Css Beautify and Minify Online Tool
 
                     </h1>
-                    <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.</p>
+                    <p> Online CSS Minifier takes any form of css code and make it minified, compressed by removing white spaces, newlines, indentation and comments and here You can also Beautify Css to make it easy to read and edit. It reduces file size
+                        and optimizes css for your website.</p>
                     <div class="mt-3">
                         <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
-                    class="fas fa-tools ms-2"></i></a>
+                                class="fas fa-tools ms-2"></i></a>
                         <a class="btn btn-success me-1 mb-4" href="#!" role="button">Design docs<i
-                    class="fas fa-file-alt ms-2"></i></a>
-                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i class="fas fa-download ms-2"></i></a>
+                                class="fas fa-file-alt ms-2"></i></a>
+                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i
+                                class="fas fa-download ms-2"></i></a>
                     </div>
 
 
@@ -99,7 +102,78 @@
     </header>
     <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
-        <main class="col-md-8">
+        <main class="col-md-8 clearfix">
+            <div id="cssminifier">
+                <textarea id="cssField" onclick="this.select();this.setSelectionRange(0, 99999);" onfocus="this.select();this.setSelectionRange(0, 99999);"></textarea>
+                <br />
+                <div class="d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input checked="" class="form-check-input" id="stripAllComment" type="checkbox" value="option1" />
+
+                        <label class="form-check-label">Strip Comments</label>
+                    </div>
+
+                    <div class="form-check form-check-inline bx">
+                        <input class="form-check-input" id="superCompact" type="checkbox" value="option2" />
+
+                        <label class="form-check-label">Super Compact</label>
+                    </div>
+
+                    <div class="form-check form-check-inline bx">
+                        <input class="form-check-input" id="betterIndentation" type="checkbox" value="option3" />
+
+                        <label class="form-check-label">Indentation</label>
+                    </div>
+                    <div class="form-check form-check-inline bx">
+                        <input class="form-check-input" id="keepLastComma" type="checkbox" value="option3" />
+
+                        <label class="form-check-label">Last Semicolon</label>
+                    </div>
+                </div>
+                <a class="ads-here">Advertisement</a>
+                <div class="row g-2 ms-2">
+                    <div class=" col-6 col-sm-3">
+                        <button class="btn  btn-outline-info" onclick="compressCSS('cssField');">
+                            Minify CSS <i class="fas fa-compress-arrows-alt"></i>
+                        </button>
+                    </div>
+                    <div class="col-6 col-sm-3 "> <button class="btn  btn-outline-warning" onclick="beautifyCss('#cssField');">
+                            Beautify CSS <i class="fab fa-squarespace"></i>
+                        </button></div>
+                    <div class=" col-6 col-sm-3"> <button class="btn  btn-outline-danger" onclick="clearField('cssField');">
+                            Clear Field <i class="fas fa-trash"></i>
+                        </button></div>
+                    <div class="col-6 col-sm-3 ">
+                        <button class="btn  btn-outline-success" onclick='selectAll("cssField");document.execCommand("copy");alert("Text Successfully Copied!")'>
+                            Copy <i class="far fa-clone"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <script src="./app.js"></script>
+            <script src="./cssbeautify.js"></script>
+            <style>
+                #cssminifier textarea {
+                    width: 100%;
+                    outline: none;
+                    height: 240px;
+                    margin: 20px auto;
+                    display: block;
+                    padding: 20px;
+                    font-family: Monospace;
+                    font-size: 13px;
+                    border: 2px solid #eee;
+                    border-radius: 8px 8px 0 0;
+                    resize: none;
+                }
+                
+                textarea:focus {
+                    background-color: #fff;
+                    color: #303030
+                }
+            </style>
+
         </main>
 
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
