@@ -30,10 +30,10 @@ function loadCSS(e, t, n) {
     });
 }
 loadCSS(
-    "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap"
+    "https://kkupgrader.eu.org/plugins/prism/prism.css"
 );
 
-var highlight_js = document.createElement("script");
+var prism_js = document.createElement("script");
 
 function addCopyButtons(t) {
     document.querySelectorAll("pre > code").forEach(function(n) {
@@ -64,12 +64,13 @@ function addCopyButtons(t) {
     });
 }
 if (
-    ((highlight_js.src =
-            "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"),
-        (highlight_js.onload = function() {
-            hljs.highlightAll();
+    ((prism_js.src =
+            "https://kkupgrader.eu.org/plugins/prism/prism.js"),
+        (prism_js.onload = function() {
+            Prism.highlightAll();
+
         }),
-        document.body.appendChild(highlight_js),
+        document.body.appendChild(prism_js),
         navigator && navigator.clipboard)
 )
     addCopyButtons(navigator.clipboard);
