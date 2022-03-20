@@ -58,6 +58,7 @@ const App = {
                     indent_size: "2",
                 }
             );
+
         },
         getSnippetElement() {
             return this.$refs.code.querySelector(
