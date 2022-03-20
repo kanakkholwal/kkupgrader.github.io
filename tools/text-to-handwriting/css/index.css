@@ -46,7 +46,6 @@ body {
     background-color: var(--background-primary);
     color: var(--font-color-primary);
     font-size: 1.05rem;
-    font-family: var(--font-family-primary);
 }
 
 main {

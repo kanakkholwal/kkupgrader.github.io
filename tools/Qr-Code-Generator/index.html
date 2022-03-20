@@ -77,10 +77,11 @@
             <div class='container-fluid  '>
                 <div class="p-4 px-5 text-center">
 
-                    <h1 class="h4 fw-bold mb-3 mt-4">Meta Tag Generator Tool
+                    <h1 class="h4 fw-bold mb-3 mt-4">Qr Code Generator Tool
 
                     </h1>
-                    <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.</p>
+                    <p>This QR Code Generator tool will help you to generate QR Code for your input. You can switch between QR Code formats and select your desired QR Code style or format and generate your QR Code.
+                    </p>
                     <div class="mt-3">
                         <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
                     class="fas fa-tools ms-2"></i></a>
@@ -100,6 +101,52 @@
     <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
         <main class="col-md-8">
+            <div>
+                <select class="form-control form-select" name="qrcode" id="qrcode">
+                  <option value="select">Select QR code type:</option>
+                  <option  class="form-control" value="text">Plain Text</option>
+                  <option value="url">Website Url</option>
+                  <option value="tel">Telephone</option>
+                  <option value="contact">Contact (MECARD)</option>
+                  <option value="sms">SMS</option>
+                  <option value="geo">Geo location</option>
+                  <option value="wifi">Wifi access</option>
+                  <option value="skype">Skype</option>
+                  <option value="facetime">Facetime</option>
+                  <option value="paypal">Paypal Buy Now Link</option>
+                </select>
+                <div id="custom-fields">
+                    <div class="flex margin-top">
+                        <div>
+                            <div class="hidden">Number</div>
+                            <input type="text" id="number" class="hidden" />
+                        </div>
+                    </div>
+                    <div class="flex margin-top">
+                        <div class="hidden">
+                            <div>Message</div>
+                            <textarea id="message" class="hidden"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="text-center">
+                <div id="qrcode-display"></div>
+            </div>
+            <div id="qrcode-info" class="hidden">
+
+                <div class="d-flex justify-content-evenly my-2 ">
+                    <button class="btn btn-sm btn-outline-primary" id="png">Download PNG</button>
+                    <button class="btn btn-sm btn-outline-primary" id="jpg">Download JPG</button>
+                    <button class="btn btn-sm btn-outline-primary" id="gif">Download GIF</button>
+                </div>
+
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.17.0/jquery-qrcode.min.js"></script>
+            <script src="./app.js"></script>
+
         </main>
 
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>

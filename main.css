@@ -34,12 +34,12 @@ html {
 
 ::-webkit-scrollbar-track {
     background-color: #ebebeb;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
     background: #babac0;
 }
 
@@ -419,7 +419,7 @@ li {
     content: "";
     flex: 1;
     height: 1px;
-    background: rgb(219, 20, 20);
+    background: #eee
 }
 
 .divider-e:after,
@@ -427,7 +427,7 @@ li {
     content: "";
     flex: 1;
     height: 1px;
-    background: rgb(219, 20, 20);
+    background: #eee
 }
 
 .divider {
@@ -435,7 +435,7 @@ li {
     vertical-align: middle!important;
     align-items: center;
     column-gap: 8px;
-    margin-bottom: 4px;
+    margin: 4px auto;
 }
 
 @media (min-width: 768px) {
@@ -635,6 +635,8 @@ main .ads-here {
     margin: 1.5rem auto
 }
 
+
+/*
 pre {
     display: block;
     counter-reset: line-numbering;
@@ -688,12 +690,14 @@ pre::before {
     padding: 0 38px;
     box-sizing: border-box
 }
+*/
 
 pre {
     display: block;
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: .875em
+    font-size: .875em;
+    border: 8px;
 }
 
 pre code {

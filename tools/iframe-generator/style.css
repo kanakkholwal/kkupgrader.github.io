@@ -1,0 +1,17 @@
+#prev {
+    position: relative;
+    background-color: rgb(224, 229, 236);
+    box-shadow: rgba(163, 177, 198, 0.5) 5px 5px 10px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+    border-radius: 11px;
+    -webkit-box-shadow: rgba(163, 177, 198, 0.5) 5px 5px 10px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    margin-right: -23px;
+    margin-top: -7px;
+    margin-left: auto;
+}

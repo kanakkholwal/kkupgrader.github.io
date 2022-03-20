@@ -44,6 +44,7 @@
     <link href='https://pro.fontawesome.com/releases/v5.15.4/css/all.css' rel='stylesheet' />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
     <link href='/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="./plyr.css">
     <script src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
 </head>
@@ -97,9 +98,20 @@
 
         <!-- Navbar -->
     </header>
-    <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
+    <div class="container-lg row justify-content-center  my-5 mx-auto" id="app">
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
         <main class="col-md-8">
+            <video controls crossorigin playsinline data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" class="player" id="player">
+
+                <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"  type="video/mp4" />
+                
+                <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default />
+            </video>
+            <input type="url" name="url" id="low_url" class="form-control" placeholder="Low Quality Url">
+            <button class="btn btn-primary" id="executeBtn">Execute</button>
+            <script src="./plyr.js"></script>
+            <script src="./app.js">
+            </script>
         </main>
 
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>

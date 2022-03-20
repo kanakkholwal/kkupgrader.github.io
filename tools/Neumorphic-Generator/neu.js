@@ -173,22 +173,22 @@ function changeColor(a) {
     document.documentElement.style.setProperty("--color-light", a.colorlight);
 }
 let compStyles = window.getComputedStyle(subject);
-let output = document.querySelector("#css-code");
+let output = document.getElementById("css-code");
 
-let $codeBox = $("pre,.copify");
-
+const beautified = js_beautify(output).css;
 
 function generateCSS() {
-    output.innerHTML = '<span class="hljs-attribute"> background-color</span>: <span class="hljs-number ">' +
+
+    output.innerHTML = '\n .neu{\n background-color: ' +
         compStyles.getPropertyValue('background-color') +
-        '</span>;\n <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">' +
+        ';\n box-shadow:' +
         compStyles.getPropertyValue('box-shadow') +
-        '</span>; \n <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">' +
+        '; \n border-radius: ' +
         compStyles.getPropertyValue('border-radius') +
-        '</span>; \n -webkit-<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number ">' +
+        '; \n -webkit-box-shadow:' +
         compStyles.getPropertyValue('box-shadow') +
-        '</span>;  ';
+        '; \n } ';
+    Prism.highlightAll();
 
 
 }
-loadCopyButton();
