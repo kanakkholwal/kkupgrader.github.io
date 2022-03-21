@@ -1,0 +1,168 @@
+.sidenav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 99999999999;
+    top: 0;
+    right: 0;
+    border-left: #ddd solid 1px;
+    background: #fff;
+    overflow-x: hidden
+}
+
+.sidenav .sidenav-link i {
+    margin-right: 0.75rem
+}
+
+.sidenav-collapse,
+.sidenav-menu {
+    list-style: none;
+    position: relative;
+    padding: 0 .2rem;
+    margin: 0
+}
+
+.sidenav-collapse .sidenav-link {
+    font-size: .78rem;
+    height: 1.5rem;
+    padding-left: 3rem
+}
+
+.sidenav-item {
+    position: relative
+}
+
+.sidenav-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: .89rem;
+    padding: 1rem 1.5rem;
+    height: 3rem;
+    color: unset;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 5px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear
+}
+
+.sidenav-collapse {
+    display: none
+}
+
+.down {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.up {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+}
+
+.rotate-icon {
+    transition: all .2s linear
+}
+
+.endify {
+    position: absolute;
+    right: 2px
+}
+
+.startify {
+    position: absolute;
+    left: 2px
+}
+
+.topify {
+    position: absolute;
+    top: 2px
+}
+
+.bottomify {
+    position: absolute;
+    bottom: 2px
+}
+
+.sidenav .fas {
+    color: #9FA6B2
+}
+
+.sidenav a {
+    color: #4B5563
+}
+
+.sidenav h6 {
+    margin-left: 1rem
+}
+
+.sidenav a.active {
+    background-color: rgba(18, 102, 241, .05)
+}
+
+
+/* Table of Content v2.0 by K K UPGRADER */
+
+#tocify {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    clear: both;
+    margin-left: 5px!important;
+}
+
+.tocList {
+    margin-left: 3px!important;
+    padding-left: 0!important;
+    text-align: left!important;
+}
+
+#tocify a:hover,
+#tocify a:active,
+#tocify a:focus,
+#tocify a:focus-within,
+#tocify a:focus-visible {
+    background-color: #0000;
+    box-shadow: none;
+    color: #1266f1;
+    font-weight: 600;
+    border-left: 0.125rem solid #1266f1;
+    border-radius: 0;
+}
+
+.tocList .tocListElement:not(li li)::before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Pro";
+}
+
+.tocList .tocListElement:not(li li):hover::before {
+    margin-right: 0.125rem;
+}
+
+.tocList .tocListElement:not(li li) a:hover {
+    background-color: #0000;
+    box-shadow: none;
+    color: #1266f1;
+    font-weight: 600;
+    border-radius: 0;
+    border-left: none
+}
+
+.tocListElement a {
+    font-size: .8rem;
+    background-color: #0000;
+    color: #262626;
+    line-height: 1.1rem;
+    padding: 0 5px;
+    font-weight: 400;
+    transition: all .2s ease-in-out;
+    text-transform: none;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
