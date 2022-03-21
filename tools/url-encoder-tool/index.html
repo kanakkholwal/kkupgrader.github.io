@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>K K UPGRADER</title>
+    <title>URL Encoding (Percent Encoding)</title>
 
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <!-- Preload Cdns -->
@@ -19,17 +19,32 @@
     <!-- Preload Cdns -->
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <!-- Chrome, Firefox OS and Opera -->
-    <meta content='' name='theme-color' />
+    <link rel="apple-touch-icon" sizes="57x57" href="/meta/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/meta/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/meta/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/meta/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/meta/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/meta/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/meta/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/meta/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/meta/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/meta/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/meta/applems-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <!-- Windows Phone -->
     <meta content='' name='msapplication-navbutton-color' />
-    <link href='/favicon.ico' rel='icon' type='image/x-icon' />
+    <link href='/meta/favicon.ico' rel='icon' type='image/x-icon' />
     <link href='https://kkupgrader.eu.org/' rel='canonical' />
     <link href='/assets/fonts/Roboto.css' rel='stylesheet' />
     <link href='https://pro.fontawesome.com/releases/v5.15.4/css/all.css' rel='stylesheet' />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
     <link href='/main.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://kkupgrader.eu.org/plugins/codemirror/lib/codemirror.css" />
-    <script async='async' defer='defer' src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
+    <script src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
 </head>
 
@@ -63,10 +78,10 @@
             <div class='container-fluid  '>
                 <div class="p-4 px-5 text-center">
 
-                    <h1 class="h4 fw-bold mb-3 mt-4">Meta Tag Generator Tool
+                    <h1 class="h4 fw-bold mb-3 mt-4">URL Encoding (Percent Encoding)
 
                     </h1>
-                    <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.</p>
+                    <p>URL encoding is a mechanism for translating unprintable or special characters to a universally accepted format by web servers and browsers.</p>
                     <div class="mt-3">
                         <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
                                 class="fas fa-tools ms-2"></i></a>
@@ -84,48 +99,31 @@
 
         <!-- Navbar -->
     </header>
-    <div class="container-lg my-5" id="app">
-        <div class="row g-4">
-            <div class="col-md-6">
-                <ul class="nav nav-tabs nav-fill mb-3" id="codepanel" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="html-panel" data-mdb-toggle="tab" href="#htmlpanel" role="tab" aria-controls="htmlpanel" aria-selected="true">HTML</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="css-panel" data-mdb-toggle="tab" href="#csspanel" role="tab" aria-controls="csspanel" aria-selected="false">CSS</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="js-panel" data-mdb-toggle="tab" href="#jspanel" role="tab" aria-controls="jspanel" aria-selected="false">Javascript</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="code-content">
-                    <div class="tab-pane fade show active" id="htmlpanel" role="tabpanel" aria-labelledby="html-panel">
-                        <textarea id="html_panel"><h2 id="id1"> hellooo</h2></textarea>
-                    </div>
-                    <div class="tab-pane fade" id="csspanel" role="tabpanel" aria-labelledby="css-panel">
-                        <textarea id="css_panel">.img {
-                            aspect-ratio: 16/9!important
-                        }</textarea>
-                    </div>
-                    <div class="tab-pane fade" id="jspanel" role="tabpanel" aria-labelledby="js-panel">
-                        <textarea id="js_panel"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <iframe class="output" id="output_panel">
-			
-                </iframe>
-            </div>
-        </div>
-        <script src="https://kkupgrader.eu.org/plugins/codemirror/lib/codemirror.js"></script>
-        <script src="https://kkupgrader.eu.org/plugins/codemirror/mode/xml/xml.js"></script>
-        <script src="https://kkupgrader.eu.org/plugins/codemirror/mode/css/css.js"></script>
-        <script src="https://kkupgrader.eu.org/plugins/codemirror/mode/javascript/javascript.js"></script>
-        <script src="https://kkupgrader.eu.org/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
+        <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
+        <main class="col-md-8">
 
-        <script src="app.js">
-        </script>
+            <form name="pageform" onsubmit="return doencrypt(this);">
+
+                <textarea class="form-control     supertextarea" name="code" rows="9" placeholder="Your Normal Code" spellcheck="false"></textarea><span id="encrypted1"></span>
+
+                <div class="d-flex justify-content-evenly my-3" id="comand">
+
+                    <input class="btn btn-warning" onclick="doencrypt(pageform);" type="submit" value="Encrypt!" />
+
+                    <input class="btn btn-success" name="sac" data-kkfs-clipboard="output" type="button" value="Copy All" />
+
+                </div>
+
+
+                <textarea class="form-control  supertextarea" name="ecode" placeholder="Your Output Code" readonly="readonly" id="output" rows="9" spellcheck="false"></textarea>
+
+            </form>
+            <script src="./app.js"></script>
+        </main>
+
+        <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
+
     </div>
 
     <div class="mb-n3 pt-4 text-center text-white trans-bg">
@@ -159,7 +157,7 @@
                         <ul class="list-unstyled">
                             <li class="mb-2"><a class="text-white" href="https://kkupgrader.blogspot.com/"><i
                                         class="fas fa-arrow-right pe-3"></i>K K UPGRADER Blog</a></li>
-                            <li class="mb-2"><a class="text-white" href="https://www.fs-themes.eu.org/2021/09/genesis-links-safelink-with-password.html"><i
+                            <li class="mb-2"><a class="text-white" href="https://www.fs-themes.eu.org/"><i
                                         class="fas fa-arrow-right pe-3"></i>Fs Themes</a></li>
                         </ul>
                     </div>
@@ -169,7 +167,7 @@
                         <h5 class="text-uppercase text-white mb-4">Useful Links</h5>
                         <hr>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a class="text-white" href="https://"><i
+                            <li class="mb-2"><a class="text-white" href="/advertise/"><i
                                         class="fas fa-arrow-right pe-3"></i>Advertise</a></li>
                             <li class="mb-2"><a class="text-white" href="/contact-us/"><i
                                         class="fas fa-arrow-right pe-3"></i>Contact

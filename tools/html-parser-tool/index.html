@@ -100,11 +100,24 @@
     <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
         <main class="col-md-8">
-            <textarea id="html_code" class="form-control" rows="8" cols="60" onkeyup="parseHtml()"></textarea>
+            <div class="position-relative">
+                <div id="somehow"></div>
+                <style>
+                    #closeBtn {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 2;
+                        margin-right: -18px;
+                        margin-top: -13px;
+                        margin-left: auto;
+                    }
+                </style>
+                <textarea id="html_code" class="form-control" rows="8" cols="60" placeholder="Enter Code Here" onkeyup="parseHtml()"></textarea>
+            </div>
             <br/>
             <br/>
-            <label><strong>Copy Escaped HTML:</strong></label>
-            <pre class=" language-xml "><code id="parsed_code" style="color: #26998e;"></code></pre>
+            <pre class="language-xml"><code id="parsed_code" style="color: #26998e;">Parsed Code Here</code></pre>
 
 
 

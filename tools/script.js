@@ -6,15 +6,35 @@ $(".card .card-body").hover(function() {
     $(this).find("p").toggleClass("animated pulse");
 
 });
-/* Smooth Sidenav V3 by kkupgrader.blogspot.com */
+/* Animated Sidenav with Animate.css by kkupgrader.blogspot.com */
 const $menu = $("#sidenavify");
 
-$(".sidenav-btn").append('<i class="fas fa-angle-down endify rotate-icon"></i>'), $(document).ready(function() {
-    $(".sidenav-toggler").click(function() {
-        var e = 280 == $menu.width() ? "0" : "280px";
-        $menu.animate({ width: e }, "200")
-    })
-}), $(document).mouseup(e => { $menu.is(e.target) || 0 !== $menu.has(e.target).length || $menu.animate({ width: "0px" }) }), $(document).ready(function() { $(".sidenav-item > a.sidenav-btn").on("click", function() { $(this).hasClass("active") ? ($(this).removeClass("active"), $(this).siblings(".sidenav-collapse").slideUp(200), $(".sidenav-item > a.sidenav-btn i.rotate-icon").removeClass("down").addClass("up")) : ($(".sidenav-item > a.sidenav-btn i.rotate-icon").removeClass("down").addClass("up"), $(this).find("i.rotate-icon").removeClass("up").addClass("down"), $(".sidenav-item > a.sidenav-btn").removeClass("active"), $(this).addClass("active"), $(".sidenav-collapse").slideUp(200), $(this).siblings(".sidenav-collapse").slideDown(200)) }) });
+function checkBlur() {
+    if ($menu.hasClass('bounceInRight')) {
+        $(".blur").removeClass("hide");
+
+
+    }
+    if (!$menu.hasClass('bounceInRight')) {
+        $(".blur").addClass("hide");
+
+    }
+}
+$(document).ready(function() {
+
+    $('.sidenav-toggler').click(function() {
+        $menu.toggleClass("bounceInRight");
+        checkBlur();
+
+    });
+    $(document).mouseup((e) => {
+        $menu.is(e.target) ||
+            0 !== $menu.has(e.target).length ||
+            $menu.removeClass("bounceInRight");
+        checkBlur();
+
+    });
+});
 /* Table of Content, Credit: blustemy.io/creating-a-table-of-contents-in-javascript */
 
 class TableOfContents {

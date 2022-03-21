@@ -27,62 +27,36 @@
     <link href='https://kkupgrader.eu.org/' rel='canonical' />
     <meta name="description" content="This is an online code editor for html css and javascript. ">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="David Mungai">
+    <meta name="author" content="Kanak Kholwal">
     <meta name="keywords" content="Live code editor, online code editor, live html editor, live css editor, live javascript editor">
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="/main.css" />
 </head>
 
 <body>
-    <div class="header-wrap">
-        <h1>Live, Online Code Editor</h1>
-        <h4>Compile HTML, CSS and JavaScript on the web</h4>
-    </div>
-    <div id="ide-parent">
-        <div id="button-wrapper">
-            <button onclick="switchPanel(0)">HTML</button>
-            <button onclick="switchPanel(1)">CSS</button>
-            <button onclick="switchPanel(2)">js</button>
-            <button onclick="runEdit(3)">Result</button>
+    <div id="header">
+        <!--Hactober Update-->
+        <div id="logo"> Live Editor </div>
+        <div id="ButtonContainer">
+            <div class="toggleButtons active" id="html">HTML</div>
+            <div class="toggleButtons" id="css">CSS</div>
+            <div class="toggleButtons" id="javascript">JavaScript</div>
+            <div class="toggleButtons active" id="Output">Output</div>
         </div>
-        <div id="ide-container">
-            <div class="panel-wrapper">
-                <div id="html">
-                    &lt;!--predefined html, but editable--&gt; &lt;div class="circle"&gt; click me! &lt;/div&gt;
 
-                </div>
-            </div>
-            <div class="panel-wrapper">
-                <div id="css">
-                    /*predefined CSS, but editable*/ .circle { display: flex; align-items: center; justify-content: center; width: 200px; height: 200px; border-radius: 50%; background: crimson; margin: auto; margin-top: 50px; transition-duration: 300ms; }
-                </div>
-            </div>
-            <div class="panel-wrapper">
-                <div id="js">
-                    //predefined JavaScript, but editable var circle = document.querySelector(".circle"); var bool = false; circle.addEventListener('click', function() { if (!bool) { circle.style.background = "coral"; bool = true; } else { circle.style.background = "crimson";
-                    bool = false; } });
-                </div>
-            </div>
-            <div class="panel-wrapper">
-                <iframe id="result"></iframe>
-            </div>
-        </div>
     </div>
-    <div class="description">
-        <p>This code editor uses Ace for syntax highlighting and other text editing features. Addition or changes to the code is compiled on the fly when the result tab is clicked.</p>
-
+    <div id="bodyContainer">
+        <pre class="language-html" id="htmlpanel" contenteditable="true"> <h2 id="id1"> hellooo</h2></pre>
+        <textarea id="csspanel" class="panel ">h2{color:blue;}</textarea>
+        <textarea id="javascriptpanel" class="panel "></textarea>
 
 
     </div>
-    <div class="footer">
-        <div class="inner-wrap">
-            <p>&#169; <span></span> abc</p>
-            <div class="icons-wrap">
-
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app.js"></script>
+    <iframe class="panel" id="outputpanel">
+        
+    </iframe>
+    <script src="./app.js"></script>
+    <script src="/main.js"></script>
 </body>
 
 </html>

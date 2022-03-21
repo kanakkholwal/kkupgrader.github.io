@@ -1,61 +1,42 @@
-var htmlEditor = ace.edit("html");
-htmlEditor.setTheme("ace/theme/cobalt");
-htmlEditor.session.setMode("ace/mode/html");
-htmlEditor.resize();
-htmlEditor.setHighlightActiveLine(false);
+function update() {
+    $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() + "</style></head><body>" + $(htmlpanel).val() + "</body></html>");
 
-var cssEditor = ace.edit("css");
-cssEditor.setTheme("ace/theme/cobalt");
-cssEditor.session.setMode("ace/mode/css");
-cssEditor.resize();
-cssEditor.setHighlightActiveLine(false);
-
-var jsEditor = ace.edit("js");
-jsEditor.setTheme("ace/theme/cobalt");
-jsEditor.session.setMode("ace/mode/javascript");
-jsEditor.resize();
-jsEditor.setHighlightActiveLine(false);
-
-function compiler() {
-  var htmlValue = htmlEditor.getValue();
-  var cssValue = cssEditor.getValue();
-  var jsValue = jsEditor.getValue();
-  var result = document.getElementById("result").contentWindow.document;
-
-  result.open();
-  result.writeln(
-    "<style>" +
-    cssValue +
-    "</style>" +
-    htmlValue +
-    "<script>" +
-    jsValue +
-    "</script>"
-  );
-  result.close();
+    // 				document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());
 }
+$(".toggleButtons").hover(
 
-var allButtons = document.querySelectorAll("#button-wrapper button");
-var allPanels = document.querySelectorAll("#ide-container .panel-wrapper");
+    function() {
+        $(this).addClass("highlightedButtons");
+        $(this).css('cursor', 'pointer');
 
-function switchPanel(panelIndex) {
-  switcher(panelIndex);
-}
+    },
+    function() {
+        $(this).removeClass("highlightedButtons")
+    }
+);
+$(".toggleButtons").click(function() {
+    $(this).toggleClass("active");
+    $(this).removeClass("highlightedButtons");
+    var panelId = "#" + $(this).attr("id") + "panel";
+    $(panelId).toggleClass("hidden");
+    var count_hidden = $(".hidden").length;
+    $(".panel").width(($(window).width() / (4 - count_hidden)) - 15);
 
-switchPanel(0);
+});
 
-function runEdit(panelIndex) {
-  switcher(panelIndex);
-  compiler();
-}
 
-function switcher(panelIndex) {
-  allButtons.forEach(function (node) {
-    node.style.background = "";
-  });
-  allButtons[panelIndex].style.background = "#002240";
-  allPanels.forEach(function (node) {
-    node.style.display = "none";
-  });
-  allPanels[panelIndex].style.display = "block";
-}
+$(".panel").height($(window).height() - $("#header").height() - 15);
+
+
+
+
+$("iframe").contents().find("html").html($("#htmlpanel").val());
+
+
+
+update();
+$("pre").on('change keyup paste', function() {
+    update();
+    Prism.highlightAll();
+
+});
