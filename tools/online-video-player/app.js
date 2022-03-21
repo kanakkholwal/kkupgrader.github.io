@@ -3,7 +3,7 @@ const executeBtn = document.getElementById('executeBtn');
 
 function execute() {
     var video = document.getElementById('video');
-    var source = document.getElementById('source');
+    var source = video.getElementsByTagName('source');
     var low_url = document.getElementById('low_url');
 
     source.setAttribute('src', low_url.value);

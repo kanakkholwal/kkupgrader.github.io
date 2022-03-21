@@ -19,12 +19,12 @@ function output() {
     return html_beautify(
         `<iframe src="${url.value}" \n
          name="${nam.value}" \n
-         width="${width.value}${sizetype.options[bortype.selectedIndex].value}" \n
-          height="${height.value}${sizetype.options[bortype.selectedIndex].value}"  \n
+         width="${width.value}${sizetype.options[sizetype.selectedIndex].value}" \n
+          height="${height.value}${sizetype.options[sizetype.selectedIndex].value}"  \n
            scrolling="${scroll.value}" \n
-            marginheight="${margin_height.value}${sizetype.options[bortype.selectedIndex].value}" marginwidth="${margin_width.value}${sizetype.options[bortype.selectedIndex].value}"
+            marginheight="${margin_height.value}${sizetype.options[sizetype.selectedIndex].value}" marginwidth="${margin_width.value}${sizetype.options[sizetype.selectedIndex].value}"
             \n     frameborder="${border.value}"  \n
-             style="border:${borsize.value}${sizetype.options[bortype.selectedIndex].value} ${borcolor.value} ${bortype.options[bortype.selectedIndex].value}" 
+             style="border:${borsize.value}${sizetype.options[sizetype.selectedIndex].value} ${borcolor.value} ${bortype.options[bortype.selectedIndex].value}" 
             \n  allowfullscreen>
              </iframe>
           `, {
