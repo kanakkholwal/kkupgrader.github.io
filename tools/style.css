@@ -109,7 +109,6 @@ ul.tocList * {
 .tocList .tocListElement:not(li li):hover::before {
     margin-right: 0.125rem;
 }
-
 .tocList .tocListElement:not(li li) a:hover {
     background-color: #0000;
     box-shadow: none;
@@ -118,7 +117,6 @@ ul.tocList * {
     border-radius: 0;
     border-left: none
 }
-
 .tocListElement a {
     font-size: .8rem;
     background-color: #0000;
