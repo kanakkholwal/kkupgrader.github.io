@@ -698,12 +698,14 @@ pre {
     margin-bottom: 1rem;
     font-size: .875em;
     border: 8px;
+    white-space: pre-line!important;
 }
 
 pre code {
     font-size: inherit;
     color: inherit;
-    word-break: normal
+    word-break: normal;
+    white-space: pre-line!important;
 }
 
 code {
