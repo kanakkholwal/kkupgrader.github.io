@@ -11,17 +11,17 @@
 var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html"), {
     lineNumbers: true,
     mode: 'htmlmixed',
-    theme: 'material',
+    //  theme: 'material',
 });
 
 var cssEditor = CodeMirror.fromTextArea(document.getElementById("css"), {
     lineNumbers: true,
     mode: 'css',
-    theme: 'material',
+    // theme: 'material',
 });
 
 var jsEditor = CodeMirror.fromTextArea(document.getElementById('js'), {
     lineNumbers: true,
     mode: 'javascript',
-    theme: 'material',
+    //  theme: 'material',
 });
