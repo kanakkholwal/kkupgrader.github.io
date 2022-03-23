@@ -177,6 +177,10 @@ nav {
     }
 }
 
+.navbar-brand img {
+    height: 35px!important;
+}
+
 #hero {
     background: var(--trans-bg);
     z-index: 0;
