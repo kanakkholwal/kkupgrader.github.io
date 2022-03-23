@@ -59,6 +59,11 @@
 
 /* Post Body */
 
+.post-body {
+    position: relative;
+    overflow-x: hidden;
+}
+
 .post-body ul>li:before {
     content: '\f061';
     font-family: 'Font Awesome 5 Pro';
@@ -72,4 +77,145 @@
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .21);
     max-width: 100%;
     height: auto;
+}
+
+.toc-bg {
+    font-family: 'Sofia Pro';
+    height: 100%;
+    width: 280px;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: -280px;
+    border-right: #ddd solid 1px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.toc-bg.show {
+    left: 0;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 10%);
+}
+
+@-webkit-keyframes slideInLeft {
+    0% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible
+    }
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible
+    }
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+.toc-bg.show p.divider {
+    font-size: larger;
+    font-weight: 700
+}
+
+#closeBtn {
+    position: absolute;
+    right: -21px;
+    top: 105px;
+    opacity: 1;
+    border-radius: 0 20px 20px 0;
+    z-index: 999999999999;
+    margin-right: -23px;
+    margin-top: -3px;
+    margin-left: auto;
+    border: 2px solid #265bff;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background: #fffdfc;
+    transition: inherit;
+    z-index: 1;
+}
+
+#closeBtn {
+    transform: none!important;
+}
+
+#closeBtn svg {
+    opacity: .8;
+    fill: none!important;
+    stroke: #08102b;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1;
+    width: 22px;
+    height: 22px;
+}
+
+#tocify {
+    font-family: 'Sofia Pro';
+    position: relative;
+    max-width: 100%;
+    background-color: rgba(155, 155, 155, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 14px;
+    color: #2F353B;
+    line-height: 1.6em;
+    border-radius: 5px;
+    width: 100%;
+    clear: both;
+    padding: 8px 15px;
+    margin: 0;
+}
+
+#tocify ol {
+    padding: 0 0 0 15px
+}
+
+#tocify ol>li {
+    counter-increment: ify;
+    list-style: none
+}
+
+#tocify ol>li:before {
+    display: inline-block;
+    content: counters(ify, '.')'.';
+    margin: 0 5px 0 0;
+    counter-reset: ify;
+}
+
+#tocify li {
+    font-size: 14px;
+    margin: 7px 0
+}
+
+#tocify li a {
+    color: #0049ce;
+    font-weight: 500;
+}
+
+#tocify li a:hover {
+    color: #0049ce;
+    text-decoration: underline! important
 }

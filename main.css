@@ -165,15 +165,9 @@ nav {
     color: var(--nav-clr)
 }
 
-@media (max-width:468px) {
-    .navbar-brand img {
-        width: 200px;
-    }
-}
-
 @media (min-width:300px) and (max-width:468px) {
     .navbar-brand img {
-        width: 125px;
+        width: 165px;
     }
 }
 

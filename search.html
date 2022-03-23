@@ -104,7 +104,24 @@
         </div>
 
     </div>
+    <script>
+        (function() {
+            const searchInput = document.getElementById('mdb-5-search-input');
+            const searchIcon = document.getElementById('mdb-5-search-icon');
+            const searchList = document.getElementById('mdb-5-search-list');
+            const searchForm = document.getElementById('mdb-5-search-container');
+            const searchDropdown = document.getElementById('mdb-5-search-dropdown');
+            const searchCount = document.getElementById('mdb-5-search-count');
 
+            let searchJsonFile = "https://mdbootstrap.com/wp-content/themes/mdbootstrap4/docs-app/js/dist/search/search.json";
+
+
+            const search = new Search(searchInput, searchIcon, searchList, searchForm, searchDropdown, searchCount, searchJsonFile);
+
+            search.init();
+        })();
+    </script>
+    <script src="search.js"></script>
     <div class="mb-n3 pt-4 text-center text-white trans-bg">
         <div class="container-fluid">
             <section class="text-center">
