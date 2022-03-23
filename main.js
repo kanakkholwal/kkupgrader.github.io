@@ -89,6 +89,37 @@ else {
 }
 
 
+function widget() {
+    wpac_init = window.wpac_init || [];
+    (function() {
+        if ('WIDGETPACK_LOADED' in window) return;
+        WIDGETPACK_LOADED = true;
+        var mc = document.createElement('script');
+        mc.type = 'text/javascript';
+        mc.async = true;
+        mc.src = 'https://cdn.widgetpack.com/widget.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+}
+
+function widgetComments() {
+    widget();
+    wpac_init.push({ widget: 'Comment', id: 34275 });
+
+}
+
+function widgetReview() {
+    widget();
+
+    wpac_init.push({ widget: 'Review', id: 34275 });
+}
+
+function widgetRating() {
+    widget();
+
+    wpac_init.push({ widget: 'Rating', id: 34275 });
+}
 
 //var creditsyear = new Date().getFullYear();
 
