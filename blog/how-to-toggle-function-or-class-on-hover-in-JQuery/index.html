@@ -44,6 +44,7 @@
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet" />
     <link href="/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/blog/blog.css" />
     <script src="/assets/js/jquery/3.6.0/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
 </head>
@@ -81,7 +82,7 @@
         <main class="w-100" style="margin-top: 65px; background-color: #f0f2f5">
             <div class="container-fluid">
                 <div class="p-4 px-5 text-center">
-                    <h1 class="h4 fw-bold mb-3 mt-4" id="title"></h1>
+                    <h1 class="h4 fw-bold mb-3 mt-4 title"></h1>
                 </div>
             </div>
         </main>
@@ -93,9 +94,34 @@
             <!--Grid row-->
             <div class="row">
                 <!--Grid column-->
-                <div class="col-md-8 mb-4">
+                <div class="col-md-8 mb-4 ">
                     <!--Section: Post data-mdb-->
-                    <section class="border-bottom mb-4">
+                    <div class="breadcrumbs border" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="#200E32" transform="translate(2.5 2.004)"><path d="M7.92173917,18.2568881 L3.92173915,18.2568881 C2.62561934,18.2521579 1.57473912,17.2051555 1.5652174,15.909062 L1.5652174,7.95254022 C1.56776138,7.51865617 1.76191292,7.1080734 2.09565218,6.83080108 L2.80000001,6.30906195 C3.05714116,6.03509289 3.08328826,5.61704285 2.86228858,5.31316828 C2.6412889,5.00929372 2.23552029,4.90536419 1.89565218,5.06558368 L1.89565218,5.06558368 L1.17391305,5.60471412 C0.445875565,6.16803633 0.0138352771,7.0321169 -7.10542736e-15,7.95254022 L-7.10542736e-15,15.9177576 C0.0047821894,18.0816904 1.75780637,19.8347146 3.92173915,19.8394968 L7.92173917,19.8394968 C8.35396202,19.8394968 8.70434787,19.4891109 8.70434787,19.0568881 C8.70434787,18.6246652 8.35396202,18.2742794 7.92173917,18.2742794 L7.92173917,18.2568881 Z"></path><path d="M18.7913044,7.93514891 C18.7821625,7.02148476 18.3641697,6.15997273 17.652174,5.58732281 L11.6434783,0.796018441 C10.3230761,-0.26533948 8.44214141,-0.26533948 7.12173917,0.796018441 L5.21739133,2.17862714 C4.85960686,2.43555961 4.77785016,2.93388616 5.03478263,3.29167063 C5.29171511,3.6494551 5.79004165,3.7312118 6.14782612,3.47427932 L8.07826091,2.03080106 C8.83595413,1.40700621 9.92926336,1.40700621 10.6869566,2.03080106 L16.6956523,6.82210543 C17.0414821,7.0962427 17.245809,7.51128176 17.252174,7.95254022 L17.252174,15.9177576 C17.252174,17.2144262 16.2010165,18.2655837 14.9043479,18.2655837 L13.1217392,18.2655837 C12.9392451,18.2655837 12.7913044,18.1176431 12.7913044,17.935149 L12.7913044,14.3438446 C12.7913144,13.1994401 11.8661337,12.270372 10.7217392,12.2655837 L8.11304352,12.2655837 C7.56185446,12.2655837 7.03324068,12.4845427 6.64349116,12.8742922 C6.25374164,13.2640418 6.03478264,13.7926555 6.03478264,14.3438446 L6.03478264,15.7177576 C6.03478264,16.1499805 6.38516849,16.5003663 6.81739134,16.5003663 C7.24961419,16.5003663 7.60000004,16.1499805 7.60000004,15.7177576 L7.60000004,14.3438446 C7.59766759,14.208583 7.64977261,14.0780549 7.74461016,13.9815822 C7.83944772,13.8851095 7.96906617,13.830781 8.10434787,13.8308011 L10.7130435,13.8308011 C10.9915871,13.8308011 11.2173914,14.0566053 11.2173914,14.3351489 L11.2173914,14.3351489 L11.2173914,17.935149 C11.2221784,18.9834938 12.0733835,19.8308011 13.1217392,19.8308011 L14.8608696,19.8308011 C17.0267864,19.8308011 18.7826088,18.0749787 18.7826088,15.909062 L18.7913044,7.93514891 Z"></path></g></svg>
+                        <span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+                        <a class="breadhome" href="/" itemprop="item" title="Home">
+                        <span itemprop="name">Home</span>
+                        </a>
+                        <meta content="1" itemprop="position">
+                        </span>
+                        <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+                        </svg>
+                        <span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+                        <a href="/blog" itemprop="item" title="Blog">
+                        <span itemprop="name">
+Blog                        </span>
+                        </a>
+                        <meta content="2" itemprop="position">
+                        </span>
+                        <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+                        </svg>
+
+                        <span class="title">
+                        </span>
+                    </div>
+                    <section class="border-bottom mb-4" id="post-header">
                         <div class="bg-image hover-overlay ripple shadow-3-strong   rounded mb-4" data-mdb-ripple="true" data-mdb-ripple-color="light">
 
                             <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" />
@@ -103,30 +129,28 @@
                         <div class="row align-items-center mb-4">
                             <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
                                 <img src="/content/images/kanakkholwal.png" class="rounded shadow-1-strong me-2" height="35" alt="" loading="lazy" />
-                                <span> Published <u>15.07.2020</u> by</span>
+                                <span> Published <u class='timeago' title='2022-03-22T14:21:00+05:30'></u> by</span>
                                 <a href="/portfolio/" target="_blank" class="text-dark">Kanak</a>
                             </div>
 
                             <div class="col-lg-6 text-center text-lg-end">
-                                <button type="button" class="btn btn-primary px-3 me-1" style="background-color: #3b5998">
-                                    <i class="fab fa-facebook-f"></i>
+                                <button type="button" class="btn btn-primary px-3 me-1  m-share" style="background-color: #7748bf;" role="button">
+                                    <i class="fas fa-share-alt"></i>  
                                 </button>
-                                <button type="button" class="btn btn-primary px-3 me-1" style="background-color: #55acee">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-                                <button type="button" class="btn btn-primary px-3 me-1" style="background-color: #0082ca">
-                                    <i class="fab fa-linkedin"></i>
-                                </button>
-                                <button type="button" class="btn btn-primary px-3 me-1">
+
+                                <a href="#post-footer" type="button" class="btn btn-primary px-3 me-1" style="background-color: #0082ca">
+                                    <i class="fas fa-arrow-down"></i>
+                                </a>
+                                <a href="#comments-section" type="button" class="btn btn-primary px-3 me-1">
                                     <i class="fas fa-comments"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </section>
                     <!--Section: Post data-mdb-->
 
                     <!--Section: Text-->
-                    <section>
+                    <section class="post-body" id="post-body">
                         <p>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sapiente molestias consectetur. Fuga nulla officia error placeat veniam, officiis rerum laboriosam ullam molestiae magni velit laborum itaque minima doloribus eligendi! Lorem ipsum, dolor
                             sit amet consectetur adipisicing elit. Optio sapiente molestias consectetur. Fuga nulla officia error placeat veniam, officiis rerum laboriosam ullam molestiae magni velit laborum itaque minima doloribus eligendi!
@@ -163,9 +187,9 @@
                     <!--Section: Text-->
 
                     <!--Section: Share buttons-->
-                    <section class="text-center border-top border-bottom py-4 mb-4">
+                    <section class="text-center border-top border-bottom py-4 mb-4" id="post-footer">
                         <p><strong>Share with your friends:</strong></p>
-                        <button class="btn btn-primary me-1" id="m-share" style="background-color: #7748bf;" role="button">
+                        <button class="btn btn-primary me-1 m-share" style="background-color: #7748bf;" role="button">
                             <i class="fas fa-share-alt"></i>  
                         </button>
 
@@ -181,6 +205,7 @@
                         <a type="button" class="btn btn-primary me-1" href="#comments-section">
                             <i class="fas fa-comments me-2"></i>Add comment
                         </a>
+
                     </section>
                     <!--Section: Share buttons-->
 
@@ -252,7 +277,7 @@
                     <section class="sticky-top" style="top: 80px">
                         <!--Section: Ad-->
                         <section class="text-center border-bottom pb-4 mb-4">
-                            <div class="bg-image hover-overlay ripple shadow-3-strong mb-4" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                            <div class="bg-image hover-overlay ripple shadow-3-strong rounded  mb-4 " data-mdb-ripple="true" data-mdb-ripple-color="light">
                                 <img src="/tools/free-internet-tools.svg" class="img-fluid" />
                                 <a href="/tools/" target="_blank">
                                     <div class="mask"></div>
@@ -263,16 +288,16 @@
                             <p>
                                 500+ components, free templates, 1-min installation, extensive tutorial, huge community. MIT license - free for personal & commercial use
                             </p>
-                            <a role="button" class="btn btn-primary" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download for free<i class="fas fa-download ms-2"></i></a>
+                            <a role="button" class="btn btn-primary" href="/tools/" target="_blank">Use Tools For Free<i class="fas fa-external-link-alt ms-2"></i></a>
                         </section>
                         <!--Section: Ad-->
 
                         <!--Section: Video-->
                         <section class="text-center">
-                            <h5 class="mb-4">Learn the newest Bootstrap 5</h5>
+                            <h5 class="mb-4">Ads or Something to Share Here</h5>
 
-                            <div class="embed-responsive embed-responsive-16by9 shadow-4-strong">
-                                <iframe class="embed-responsive-item rounded" src="https://www.youtube.com/embed/c9B4TPnak1A" allowfullscreen></iframe>
+                            <div class=" shadow-4-strong">
+                                <img width="200" height="450" data-src="" />
                             </div>
                         </section>
                         <!--Section: Video-->
@@ -284,7 +309,33 @@
             <!--Grid row-->
         </div>
     </main>
+    <div class="fixed-action-btn" id="fixed1">
+        <a class="btn btn-floating btn-primary btn-lg" href="#post-header" style="background-color: #f44336;">
+            <i class="fas fa-arrow-up"></i> </a>
 
+        <ul class="list-unstyled">
+            <li>
+                <a class="btn btn-primary btn-floating btn-lg" style="background-color: #f44336;">
+                    <i class="fas fa-star"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-primary btn-floating btn-lg" style="background-color: #fdd835;">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-primary btn-floating btn-lg" style="background-color: #4caf50;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-primary btn-floating btn-lg" style="background-color: #2196f3;">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
     <div class="mb-n3 pt-4 text-center text-white trans-bg">
         <div class="container-fluid">
             <section class="text-center">
@@ -382,7 +433,8 @@
         </div>
     </footer>
 
-    <script src="../blog.js"></script>
+    <script src="/blog/blog.js"></script>
+    <script src="/plugins/timeAgo/timeago.min.js"></script>
     <script src="/main.js" type="text/javascript"></script>
 
     <!-- Scripts -->
