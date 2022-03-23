@@ -418,6 +418,11 @@ li {
     display: none;
 }
 
+h4.divider-a:after,
+h4.divider-a:before {
+    height: 2.5px;
+}
+
 .divider-a:after,
 .divider-a:before {
     content: "";
@@ -492,7 +497,7 @@ footer a:hover {
     font-weight: 900
 }
 
-img {
+[data-src] {
     display: block;
     width: 100%;
     height: auto;
@@ -833,13 +838,6 @@ a>code {
     color: #ffdcd7;
     background-color: #67060c
 }
-
-.hljs-char.escape_,
-.hljs-link,
-.hljs-params,
-.hljs-property,
-.hljs-punctuation,
-.hljs-tag {}
 
 button {
     position: relative;

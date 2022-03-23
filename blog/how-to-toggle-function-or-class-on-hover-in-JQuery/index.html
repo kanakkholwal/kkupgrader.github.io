@@ -96,13 +96,15 @@
                 <div class="col-md-8 mb-4">
                     <!--Section: Post data-mdb-->
                     <section class="border-bottom mb-4">
-                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid shadow-2-strong rounded mb-4" alt="" />
+                        <div class="bg-image hover-overlay ripple shadow-3-strong   rounded mb-4" data-mdb-ripple="true" data-mdb-ripple-color="light">
 
+                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" />
+                        </div>
                         <div class="row align-items-center mb-4">
                             <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg" class="rounded shadow-1-strong me-2" height="35" alt="" loading="lazy" />
+                                <img src="/content/images/kanakkholwal.png" class="rounded shadow-1-strong me-2" height="35" alt="" loading="lazy" />
                                 <span> Published <u>15.07.2020</u> by</span>
-                                <a href="" class="text-dark">Anna Maria Doe</a>
+                                <a href="/portfolio/" target="_blank" class="text-dark">Kanak</a>
                             </div>
 
                             <div class="col-lg-6 text-center text-lg-end">
@@ -163,7 +165,7 @@
                     <!--Section: Share buttons-->
                     <section class="text-center border-top border-bottom py-4 mb-4">
                         <p><strong>Share with your friends:</strong></p>
-                        <button class="btn btn-primary" id="m-share" style="background-color: #7748bf;" role="button">
+                        <button class="btn btn-primary me-1" id="m-share" style="background-color: #7748bf;" role="button">
                             <i class="fas fa-share-alt"></i>  
                         </button>
 
@@ -176,9 +178,9 @@
                         <button type="button" class="btn btn-primary me-1" style="background-color: #0082ca">
                             <i class="fab fa-linkedin"></i>
                         </button>
-                        <button type="button" class="btn btn-primary me-1">
+                        <a type="button" class="btn btn-primary me-1" href="#comments-section">
                             <i class="fas fa-comments me-2"></i>Add comment
-                        </button>
+                        </a>
                     </section>
                     <!--Section: Share buttons-->
 
@@ -191,7 +193,7 @@
 
                             <div class="col-9">
                                 <h5 class="mb-2">
-                                    <strong id="authorName">Anna Maria Doe</strong>
+                                    <strong id="authorName">Kanak Kholwal</strong>
                                 </h5>
                                 <section>
                                     <!-- Twitter -->
@@ -233,51 +235,14 @@
                     <!--Section: Author-->
 
                     <!--Section: Comments-->
-                    <section class="border-bottom mb-3">
-                        <p class="text-center"><strong>Comments: 3</strong></p>
+                    <section class="border-bottom mb-3" id="comments-section">
+                        <h4 class="text-center divider divider-a"><strong>Comments</strong></h4>
 
                         <div id="wpac-comment"></div>
+
                     </section>
                     <!--Section: Comments-->
 
-                    <!--Section: Reply-->
-                    <section>
-                        <p class="text-center"><strong>Leave a reply</strong></p>
-
-                        <form>
-                            <!-- Name input -->
-                            <div class="form-outline mb-4">
-                                <input type="text" id="form4Example1" class="form-control" />
-                                <label class="form-label" for="form4Example1">Name</label>
-                            </div>
-
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form4Example2" class="form-control" />
-                                <label class="form-label" for="form4Example2">Email address</label>
-                            </div>
-
-                            <!-- Message input -->
-                            <div class="form-outline mb-4">
-                                <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                                <label class="form-label" for="form4Example3">Text</label>
-                            </div>
-
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-center mb-4">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
-                                <label class="form-check-label" for="form4Example4">
-                                    Send me a copy of this comment
-                                </label>
-                            </div>
-
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4">
-                                Publish
-                            </button>
-                        </form>
-                    </section>
-                    <!--Section: Reply-->
                 </div>
                 <!--Grid column-->
 
@@ -287,13 +252,13 @@
                     <section class="sticky-top" style="top: 80px">
                         <!--Section: Ad-->
                         <section class="text-center border-bottom pb-4 mb-4">
-                            <div class="bg-image hover-overlay ripple mb-4">
-                                <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/about/assets/mdb5-about.webp" class="img-fluid" />
-                                <a href="https://mdbootstrap.com/docs/standard/" target="_blank">
-                                    <div class="mask" style="background-color: rgba(57, 192, 237, 0.2)"></div>
+                            <div class="bg-image hover-overlay ripple shadow-3-strong mb-4" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                                <img src="/tools/free-internet-tools.svg" class="img-fluid" />
+                                <a href="/tools/" target="_blank">
+                                    <div class="mask"></div>
                                 </a>
                             </div>
-                            <h5>Material Design for Bootstrap 5</h5>
+                            <h5>Free Internet Tools</h5>
 
                             <p>
                                 500+ components, free templates, 1-min installation, extensive tutorial, huge community. MIT license - free for personal & commercial use

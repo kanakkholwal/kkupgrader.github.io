@@ -88,37 +88,23 @@ else {
     document.body.appendChild(copy_btn);
 }
 
+if (Widget === true) {
 
-function widget() {
-    wpac_init = window.wpac_init || [];
-    (function() {
-        if ('WIDGETPACK_LOADED' in window) return;
-        WIDGETPACK_LOADED = true;
-        var mc = document.createElement('script');
-        mc.type = 'text/javascript';
-        mc.async = true;
-        mc.src = 'https://cdn.widgetpack.com/widget.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(mc, s.nextSibling);
-    })();
-}
+    var widget = document.createElement("script");
+    widget.src = "/assets/js/widget.js";
+    document.body.appendChild(widget);
+    widget.onload = function() {
+        if (comment === true) {
+            wpac_init.push({ widget: 'Comment', id: 34275 });
+        }
+        if (review === true) {
+            wpac_init.push({ widget: 'Review', id: 34275 });
+        }
+        if (rating === true) {
+            wpac_init.push({ widget: 'Rating', id: 34275 });
+        }
 
-function widgetComments() {
-    widget();
-    wpac_init.push({ widget: 'Comment', id: 34275 });
-
-}
-
-function widgetReview() {
-    widget();
-
-    wpac_init.push({ widget: 'Review', id: 34275 });
-}
-
-function widgetRating() {
-    widget();
-
-    wpac_init.push({ widget: 'Rating', id: 34275 });
+    };
 }
 
 //var creditsyear = new Date().getFullYear();
