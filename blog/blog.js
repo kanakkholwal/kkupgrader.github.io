@@ -33,7 +33,7 @@ $share.click(function(e) {
         })
     }
 });
-document.getElementById("schema-head").textContent = '{"@context":"http://schema.org/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kkupgrader.eu.org/blog/how-to-toggle-function-or-class-on-hover-in-JQuery/index.html"},"author":{"@type":"Person","name":"Kanak Kholwal"},"publisher":{"@type":"Organization","name":"K K UPGRADER","logo":{"@type":"ImageObject","url":"https://kkupgrader.eu.org/logo.svg"}},"headline":"PAGE TITLE","image":"https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg","datePublished":"2021-03-01","dateModified":"2022-03-18"}';
+document.getElementById("schema-head").textContent = '{"@context":"http://schema.org/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://kkupgrader.eu.org/blog/how-to-toggle-function-or-class-on-hover-in-JQuery/index.html"},"author":{"@type":"Person","name":"Kanak Kholwal","url":"https://kkupgrader.eu.org/portfolio/"},"publisher":{"@type":"Organization","name":"K K UPGRADER","logo":{"@type":"ImageObject","url":"https://kkupgrader.eu.org/logo.svg"}},"headline":"PAGE TITLE","image":"https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg","datePublished":"2021-03-01","dateModified":"2022-03-18"}';
 
 
 if (tocify === true) {
