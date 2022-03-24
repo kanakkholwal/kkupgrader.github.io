@@ -88,27 +88,7 @@ else {
     document.body.appendChild(copy_btn);
 }
 
-if (Widget === true) {
 
-    var widget = document.createElement("script");
-    widget.src = "/assets/js/widget.js";
-    document.body.appendChild(widget);
-    widget.onload = function() {
-        if (comment === true) {
-            wpac_init.push({ widget: 'Comment', id: 34275 });
-            document.querySelector(".wp-comment-mdata").innerHTML = "";
-            // or
-            $(".wp-comment-mdata").html("");
-        }
-        if (review === true) {
-            wpac_init.push({ widget: 'Review', id: 34275 });
-        }
-        if (rating === true) {
-            wpac_init.push({ widget: 'Rating', id: 34275 });
-        }
-
-    };
-}
 
 //var creditsyear = new Date().getFullYear();
 

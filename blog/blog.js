@@ -132,12 +132,67 @@ if (tocify === true) {
     $(".toc.bg,.toc-toggler").hide();
 }
 
-// Add Comment 
-function addComment() {
+function widget() {
+    if (Widget === true) {
+        wpac_init = window.wpac_init || [];
+        (function() {
+            if ('WIDGETPACK_LOADED' in window) return;
+            WIDGETPACK_LOADED = true;
+            var mc = document.createElement('script');
+            mc.type = 'text/javascript';
+            mc.async = true;
+            mc.src = 'https://cdn.widgetpack.com/widget.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(mc, s.nextSibling);
+        })();
+        CheckWhatEnabled();
+    }
+}
 
 
 
 
+
+function CheckWhatEnabled() {
+    if (comment === true) {
+        wpac_init.push({ widget: 'Comment', id: 34275 });
+        //    document.querySelector(".wp-comment-mdata").innerHTML = " ";
+        // or
+        $(".wp-comment-mdata").html("");
+    } else if (review === true) {
+        wpac_init.push({ widget: 'Review', id: 34275 });
+    } else if (rating === true) {
+        wpac_init.push({ widget: 'Rating', id: 34275 });
+    } else {
+        document.body.removeChild(widget);
+
+    }
 
 }
+// Add Comment 
+const AddCommentBtn = document.getElementById("add-comment-btn");
+const LoadingComment = document.getElementById("loading-comment");
+const CommentArea = document.getElementById("comment-area");
+
+AddCommentBtn.addEventListener("click", function() {
+    // Some Function here 
+    LoadingComment.classList.remove("hide");
+
+    setTimeout(AddComment, 1000);
+
+
+    function AddComment() {
+
+        LoadingComment.classList.add("hide");
+        CommentArea.classList.remove("hide");
+        document.getElementById("final-heading").innerHTML = "Comments";
+        widget();
+
+    }
+
+});
+
+
+
+
 // testing bookmark
