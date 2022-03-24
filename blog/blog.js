@@ -10,7 +10,6 @@ var tocify = true;
 
 // Constants for Dynamically Change Meta and Schema 
 const PageTitle = document.title;
-const PageUrl = document.URL;
 
 
 // Do change Schema and Meta
