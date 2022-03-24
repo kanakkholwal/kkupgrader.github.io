@@ -96,7 +96,9 @@ if (Widget === true) {
     widget.onload = function() {
         if (comment === true) {
             wpac_init.push({ widget: 'Comment', id: 34275 });
-            document.querySelector(".wp-comment-mdata").remove();
+            document.querySelector(".wp-comment-mdata").innerHTML = "";
+            // or
+            $(".wp-comment-mdata").html("");
         }
         if (review === true) {
             wpac_init.push({ widget: 'Review', id: 34275 });
