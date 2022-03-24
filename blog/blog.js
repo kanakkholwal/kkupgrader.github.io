@@ -131,3 +131,13 @@ if (tocify === true) {
 } else {
     $(".toc.bg,.toc-toggler").hide();
 }
+
+// Add Comment 
+function addComment() {
+
+
+
+
+
+}
+// testing bookmark

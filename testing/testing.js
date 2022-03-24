@@ -1,23 +1,13 @@
-$.each($("a[name]"), function(i, e) {
-    var elem = $(e).parent().find('#postviews');
-    var blogStats = new Firebase("https://view-counter-for-github-pages.firebaseio.com/pages/id/" + $(e).attr('name'));
-    blogStats.once('value', function(snapshot) {
-        var data = snapshot.val();
-        var isnew = false;
-        if (data == null) {
-            data = {};
-            data.value = 0;
-            data.url = window.location.href;
-            data.id = $(e).attr('name');
-            isnew = true;
-        }
-        elem.text(data.value);
-        data.value++;
-        if (window.location.pathname != '/') {
-            if (isnew)
-                blogStats.set(data);
-            else
-                blogStats.child('value').set(data.value);
-        }
-    });
+jQuery.getScript("//cdn.firebase.com/js/client/2.3.2/firebase.js").done(function() {
+    $.each($(".post-view[data-id]"), function(e, a) {
+        var i = $(a).parent().find("#postviews").addClass("view-load"),
+            t = new Firebase("https://view-counter-for-github-pages.firebaseio.com/pages/id/" + $(a).attr("data-id"));
+        t.once("value", function(e) {
+            var o = e.val(),
+                d = !1;
+            null == o & ;
+            ((o = {}).value = 0, o.url = window.location.href, o.id = $(a).attr("data-id"), d = !0), i.removeClass("view-load").text(o.value), o.value++, "/" != window.location.pathname & amp; & amp;
+            (d ? t.set(o) : t.child("value").set(o.value))
+        })
+    })
 });

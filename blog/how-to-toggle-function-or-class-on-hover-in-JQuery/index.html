@@ -57,7 +57,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">
             <div class="container-fluid">
                 <div class="d-flex">
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: 2px" /></a>
+                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg" draggable="false" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: 2px" /></a>
                 </div>
                 <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
                     <li class="nav-item me-3 me-lg-1">
@@ -82,14 +82,14 @@
             </div>
         </nav>
 
-        <main class="w-100" style="margin-top: 65px; background-color: #f0f2f5">
+        <section class="w-100 hero">
             <div class="container-fluid">
                 <div class="p-4 px-5 text-center">
                     <h1 class="h4 fw-bold mb-3 mt-4 title" itemprop='headline'></h1>
                     <p class="description"></p>
                 </div>
             </div>
-        </main>
+        </section>
 
         <!-- Navbar -->
     </header>
@@ -126,10 +126,17 @@ Blog                        </span>
                             <span class="title">
                         </span>
                         </div>
-                        <section class="border-bottom mb-4" id="post-header">
-                            <div class="bg-image hover-overlay  shadow-3-strong   rounded mb-4" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                        <section class="border-bottom " id="post-header">
+                            <div class="bg-image  shadow-3-strong   rounded mb-4" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 
                                 <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" draggable="false" itemprop="url" />
+                                <div class="mask position-relative">
+                                    <button type="button" class="btn btn-light position-absolute top-0 end-0 m-2" id="add-to-bookmark" role="button" data-mdb-toggle="tooltip" title="Add To Reading List">
+                                    <i class="far fa-bookmark fa-lg text-dark" ></i> 
+                                    <span class="badge rounded-pill badge-notification bg-danger" id="no-of-bookmarks">1</span>          
+                                                         </button>
+
+                                </div>
                                 <meta itemprop="width" content="1380" />
                                 <meta itemprop="height" content="640" />
                             </div>
@@ -137,30 +144,29 @@ Blog                        </span>
                             <hr>
                             <div class="row align-items-center mb-4">
                                 <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
-                                    <img src="/content/images/kanakkholwal.png" class="rounded shadow-1-strong me-2" height="35" alt="" loading="lazy" />
-                                    <span itemprop='datePublished'> Published <u class='timeago'  title='2022-03-22T14:21:00+05:30'></u> by</span>
+                                    <img src="/content/images/kanakkholwal.png" class="rounded-circle shadow-1-strong me-2" height="35" alt="Kanak Kholwal" draggable="false" loading="lazy" />
+                                    <span itemprop='datePublished'> Published <u class='timeago'  data-mdb-toggle="tooltip"  title='2022-03-22T14:21:00+05:30'></u> by</span>
                                     <a href="#author" class="text-dark" rel='author'>Kanak</a>
-                                    <span itemprop='dateModified'> Last Updated <u class='timeago'  title='2022-03-24T14:21:00+05:30'></u> by</span>
 
                                 </div>
 
                                 <div class="col-lg-6 text-center text-lg-end">
                                     <button type="button" class="btn btn-primary px-3 me-1  m-share" style="background-color: #7748bf;" role="button">
-                                    <i class="fas fa-share-alt"></i>  
-                                </button>
-
+                                        <i class="fas fa-share-alt"></i>  
+                                    </button>
 
                                     <a href="#comments-section" type="button" class="btn btn-primary px-3 me-1">
                                         <i class="fas fa-comments"></i>
                                     </a>
+
                                     <a href="#post-footer" type="button" class="btn btn-primary px-3 me-1" style="background-color: #0082ca">
                                         <i class="fas fa-arrow-down"></i>
                                     </a>
                                 </div>
                             </div>
                         </section>
-                        <!--Section: Post data-mdb-->
 
+                        <!--Section: Post data-mdb-->
                         <!--Section: Text-->
                         <section class="post-body" id="post-body" itemprop='description articleBody'>
                             <div class="toc-bg">
@@ -254,7 +260,7 @@ Blog                        </span>
                               </span>
                             <div class="row align-items-center">
                                 <div class="col-3">
-                                    <img src="/content/images/kanakkholwal.png" class="img-fluid shadow-1-strong rounded-circle" alt="Kanak Kholwal" itemprop="image" />
+                                    <img src="/content/images/kanakkholwal.png" draggable="false" class="img-fluid shadow-1-strong rounded-circle" alt="Kanak Kholwal" itemprop="image" />
                                 </div>
 
                                 <div class="col-9">
@@ -327,7 +333,7 @@ Blog                        </span>
                         <!--Section: Ad-->
                         <section class="text-center border-bottom pb-4 mb-4">
                             <div class="bg-image hover-overlay ripple shadow-3-strong rounded  mb-4 " data-mdb-ripple="true" data-mdb-ripple-color="light">
-                                <img src="/tools/free-internet-tools.svg" class="img-fluid" />
+                                <img src="/tools/free-internet-tools.svg" class="img-fluid" draggable="false" loading="lazy" />
                                 <a href="/tools/" target="_blank">
                                     <div class="mask"></div>
                                 </a>

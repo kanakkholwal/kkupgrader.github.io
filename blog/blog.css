@@ -1,3 +1,38 @@
+/* Hero */
+
+.hero {
+    position: relative;
+    margin-top: 65px;
+    background-color: #f0f2f5;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.hero::before {
+    height: 300px;
+    width: 300px;
+    content: "";
+    position: absolute;
+    top: -150px;
+    z-index: 2;
+    left: -150px;
+    border-radius: 50%;
+    background-color: #d1d6ffa1;
+}
+
+.hero::after {
+    height: 300px;
+    width: 300px;
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    z-index: 2;
+    right: -150px;
+    border-radius: 50%;
+    background-color: #d1d6ffa1;
+}
+
+
 /* Breadcrumbs */
 
 .breadcrumbs {
@@ -61,7 +96,34 @@
 
 .post-body {
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 0.5rem 1rem 0.75rem;
+}
+
+.post-body::before {
+    height: 300px;
+    width: 300px;
+    content: "";
+    position: absolute;
+    top: -150px;
+    z-index: -1;
+    left: -150px;
+    border-radius: 50%;
+    background-color: #efeff5;
+}
+
+.post-body::after {
+    height: 300px;
+    width: 300px;
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    z-index: -1;
+    right: -150px;
+    border-radius: 50%;
+    background-color: #d1d6ffa1;
 }
 
 .post-body ul>li:before {
