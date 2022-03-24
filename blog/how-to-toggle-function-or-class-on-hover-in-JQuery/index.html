@@ -52,7 +52,8 @@
 
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebSite">
+
     <header itemtype="http://schema.org/WPHeader" itemscope="itemscope">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">
             <div class="container-fluid">
@@ -127,9 +128,11 @@ Blog                        </span>
                         </span>
                         </div>
                         <section class="border-bottom mb-4" id="post-header">
-                            <div class="bg-image hover-overlay  shadow-3-strong   rounded mb-4">
+                            <div class="bg-image hover-overlay  shadow-3-strong   rounded mb-4" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 
-                                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" draggable="false" />
+                                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" draggable="false" itemprop="url" />
+                                <meta itemprop="width" content="1380" />
+                                <meta itemprop="height" content="640" />
                             </div>
                             <h1 class="h4 fw-bold my-2 title" itemprop='headline'></h1>
                             <hr>
@@ -240,9 +243,17 @@ Blog                        </span>
 
                         <!--Section: Author-->
                         <section class="border-bottom mb-4 pb-4" id="author" itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+                            <link itemprop="url" href="https://kkupgrader.eu.org/portfolio/" />
+                            <meta itemprop="name" content="Kanak Kholwal" />
+                            <meta itemprop="alternateName" content="K K UPGRADER" />
+                            <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                                <meta itemprop="name" content="Pixonoids"/>
+                                <meta itemprop="name" content="K K UPGRADER"/>
+
+                              </span>
                             <div class="row align-items-center">
                                 <div class="col-3">
-                                    <img src="/content/images/kanakkholwal.png" class="img-fluid shadow-1-strong rounded-circle" alt="Kanak Kholwal" />
+                                    <img src="/content/images/kanakkholwal.png" class="img-fluid shadow-1-strong rounded-circle" alt="Kanak Kholwal" itemprop="image" />
                                 </div>
 
                                 <div class="col-9">
@@ -251,37 +262,37 @@ Blog                        </span>
                                     </h5>
                                     <section class="mb-2">
                                         <!-- Twitter -->
-                                        <a href="http://twitter.com/kanakkholwal" target="_blank"><i
+                                        <a itemprop="sameAs" href="http://twitter.com/kanakkholwal" target="_blank"><i
                                             class="fab fa-twitter me-1" style="color: #55acee"></i>
                                     </a>
 
                                         <!-- Instagram -->
-                                        <a href="http://instagram.com/kanakkholwal" target="_blank">
+                                        <a itemprop="sameAs" href="http://instagram.com/kanakkholwal" target="_blank">
                                             <i class="fab fa-instagram me-1" style="color: #ac2bac"></i>
                                         </a>
                                         <!-- Linkedin -->
-                                        <a href="https://www.linkedin.com/in/kanak-kholwal/" target="_blank">
+                                        <a itemprop="sameAs" href="https://www.linkedin.com/in/kanak-kholwal/" target="_blank">
                                             <i class="fab fa-linkedin-in me-1" style="color: #0082ca"></i>
                                         </a>
                                         <!-- Pinterest -->
-                                        <a href="https://pinterest.com/kkupgrader" target="_blank">
+                                        <a itemprop="sameAs" href="https://pinterest.com/kkupgrader" target="_blank">
 
                                             <i class="fab fa-pinterest me-1" style="color: #c61118"></i>
                                         </a>
-                                        <a href="https://stackoverflow.com/users/16958387/kanak" target="_blank">
+                                        <a itemprop="sameAs" href="https://stackoverflow.com/users/16958387/kanak" target="_blank">
                                             <!-- Stack overflow -->
                                             <i class="fab fa-stack-overflow me-1" style="color: #ffac44"></i>
                                         </a>
                                         <!-- Github -->
-                                        <a href="https://codepen.io/kkupgrader" target="_blank">
+                                        <a itemprop="sameAs" href="https://codepen.io/kkupgrader" target="_blank">
                                             <i class="fab fa-codepen me-1" style="color: #333333"></i>
                                         </a>
                                         <!-- Codepen -->
-                                        <a href="https://github.com/KKUPGRADER" target="_blank">
+                                        <a itemprop="sameAs" href="https://github.com/KKUPGRADER" target="_blank">
                                             <i class="fab fa-github me-1" style="color: #333333"></i>
                                         </a>
                                         <!-- Youtube -->
-                                        <a href="https://www.youtube.com/c/KKUPGRADER" target="_blank">
+                                        <a itemprop="sameAs" href="https://www.youtube.com/c/KKUPGRADER" target="_blank">
                                             <i class="fab fa-youtube me-1" style="color: #ed302f"></i>
                                         </a>
 
