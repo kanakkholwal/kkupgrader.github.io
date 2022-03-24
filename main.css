@@ -417,6 +417,26 @@ li {
     display: none!important;
 }
 
+.endify {
+    position: absolute;
+    right: 2px
+}
+
+.startify {
+    position: absolute;
+    left: 2px
+}
+
+.topify {
+    position: absolute;
+    top: 2px
+}
+
+.bottomify {
+    position: absolute;
+    bottom: 2px
+}
+
 h4.divider-a:after,
 h4.divider-a:before {
     height: 2.5px;
