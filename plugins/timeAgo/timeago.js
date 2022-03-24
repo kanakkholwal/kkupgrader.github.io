@@ -64,4 +64,4 @@
     t.fn.timeago = function(t, e) { var a = t ? i[t] : i.init; if (!a) throw new Error("Unknown function name '" + t + "' for timeago"); return this.each((function() { a.call(this, e) })), this }, document.createElement("abbr"), document.createElement("time")
 }));
 /* Selector */
-//$(".timeago").timeago()
+$(".timeago").timeago()

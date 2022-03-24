@@ -7,23 +7,17 @@ var Widget = true;
 
 var tocify = true;
 
-var DateModified = "2022-03-24T14:00:00+05:30";
-var DatePublished = document.getElementById("DatePublished").getAttribute('title');
-
 
 // Constants for Dynamically Change Meta and Schema 
 const PageTitle = document.title;
 const PageUrl = document.URL;
-const PageImage = document.getElementById("img-alt").getAttribute('src');
-const PagePublished = DatePublished;
-const PageModified = DateModified;
+
 
 // Do change Schema and Meta
 $('.title').text(PageTitle);
 document.getElementById("img-alt").setAttribute("alt", PageTitle);
 document.getElementById("img-alt").setAttribute("title", PageTitle);
 
-document.getElementById("schema-head").textContent = `{"@context":"http://schema.org/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"${PageUrl}"},"author":{"@type":"Person","name":"Kanak Kholwal","url":"https://kkupgrader.eu.org/portfolio/"},"publisher":{"@type":"Organization","name":"K K UPGRADER","logo":{"@type":"ImageObject","url":"https://kkupgrader.eu.org/logo.svg"}},"headline":"PAGE TITLE","image":"${PageImage}","datePublished":"${DatePublished}","dateModified":"${DateModified}"}`;
 
 
 // Global Share 
