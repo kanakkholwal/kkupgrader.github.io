@@ -7,8 +7,8 @@ var Widget = true;
 
 var tocify = true;
 
-var DatePublished = document.getElementById("DatePublished").getAttribute('title');
 var DateModified = "2022-03-24T14:00:00+05:30";
+var DatePublished = document.getElementById("DatePublished").getAttribute('title');
 
 
 // Constants for Dynamically Change Meta and Schema 
