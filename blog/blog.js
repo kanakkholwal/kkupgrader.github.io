@@ -223,7 +223,7 @@ $(window).scroll(function() {
     // Get its bounding client rectangle
 
 
-// testing bookmark
+// Bookmark
 const AddToBookmarkBtn = document.getElementById("add-to-bookmark-btn");
 const AddToBookmarkIcon = document.getElementById("bookmark-icon");
 const BookmarkList = document.getElementById("bookmark-list");
@@ -239,6 +239,12 @@ AddToBookmarkBtn.addEventListener('click', function() {
     AddToBookmarkIcon.classList.toggle('far');
     AddToBookmarkIcon.classList.toggle('fas');
 });
+//output += "<div class='d-flex justify-content-between'><div class='d-flex flex-row align-items-center'>" +
+//   "<div><img src='imageUrl' class='img-fluid rounded-3' alt='' style='width: 120px;height: 80px;object-fit: cover;'></div>" +
+//  "<div class='ms-3'><h5>Title</h5><p class='small mb-0'>KeyWords</p></div>" +
+//  "</div>" +
+//  "<div class='d-flex me-2 align-items-center'><a href=''><i class='fas fa-trash-alt text-danger'></i></a></div>" +
+//  "</div>";
 
 //function AddToBookmark() {}
 
