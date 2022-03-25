@@ -27,7 +27,7 @@ $share.click(function(e) {
         log("No share API available!");
     } else {
         navigator.share({
-            url: document.URL,
+            url: document.baseURI,
             title: document.title,
             text: document.description
         })
@@ -182,34 +182,41 @@ function isIntoView(elem) {
 }
 // Add Comment 
 
-const LoadingComment = document.getElementById("loading-comment");
-const CommentArea = document.getElementById("comment-area");
+
 
 
 $(window).scroll(function() {
         if (isIntoView($('#comments-section'))) {
-            LoadingComment.classList.remove("hide");
 
-            setTimeout(AddComment, 2000);
+            setTimeout(AddComment, 4000);
 
 
             function AddComment() {
 
-                LoadingComment.remove();
-                CommentArea.classList.remove("hide");
+                $('#loading-comment').remove();
+                document.getElementById("comment-area").classList.remove("hide");
                 widget();
 
             }
         }
         if (isIntoView($('#post-footer'))) {
-            var reaction = document.createElement("script");
-            reaction.src = "https://platform-api.sharethis.com/js/sharethis.js#property=623d523563052f001979041d&product=inline-reaction-buttons";
 
-            reaction.onload = function() {
+            setTimeout(AddReaction, 2000);
 
-                $('.sharethis-inline-reaction-buttons').removeClass("hide");
-            };
-            document.body.appendChild(reaction);
+
+            function AddReaction() {
+
+
+                var reaction = document.createElement("script");
+                reaction.src = "https://platform-api.sharethis.com/js/sharethis.js#property=623d523563052f001979041d&product=inline-reaction-buttons";
+
+                reaction.onload = function() {
+                    $('#loading-reaction').remove();
+                    $('.sharethis-inline-reaction-buttons').removeClass("hide");
+                };
+                document.body.appendChild(reaction);
+
+            }
 
         }
     })
@@ -217,3 +224,25 @@ $(window).scroll(function() {
 
 
 // testing bookmark
+const AddToBookmarkBtn = document.getElementById("add-to-bookmark-btn");
+const AddToBookmarkIcon = document.getElementById("bookmark-icon");
+const BookmarkList = document.getElementById("bookmark-list");
+var Keywords = document.querySelector('meta[name="keywords"]').getAttribute('content');
+var Image = document.querySelector('meta[name="image"]').getAttribute('content');
+var ListId = PageTitle.replace(/ /g, "_")
+AddToBookmarkBtn.setAttribute("data-title", PageTitle);
+AddToBookmarkBtn.setAttribute("data-keywords", Keywords);
+AddToBookmarkBtn.setAttribute("data-image", Image);
+AddToBookmarkBtn.setAttribute("data-list-id", ListId);
+AddToBookmarkBtn.addEventListener('click', function() {
+    // $('#bookmark-icon').toggleClass('far fas');
+    AddToBookmarkIcon.classList.toggle('far');
+    AddToBookmarkIcon.classList.toggle('fas');
+});
+
+//function AddToBookmark() {}
+
+
+
+//function testBookmark() {}
+//testBookmark();

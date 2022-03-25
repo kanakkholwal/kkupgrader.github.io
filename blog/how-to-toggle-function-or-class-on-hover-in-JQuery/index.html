@@ -4,6 +4,13 @@
 <head>
     <title>Blog Page</title>
     <meta name="description" content="Description of Blog Page">
+    <meta name="keywords" content="Blog ,Tools,Blog ,Jquery" />
+
+    <meta name="image" content="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg">
+
+
+
+
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- Preload Cdns -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -131,8 +138,8 @@ Blog                        </span>
 
                                 <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" draggable="false" itemprop="url" />
                                 <div class="mask ">
-                                    <button type="button" class="btn btn-dark topify endify px-2 m-2" id="add-to-bookmark" role="button" data-mdb-toggle="tooltip" title="Add To Reading List">
-                                    <i class="far fa-bookmark fa-lg" ></i> 
+                                    <button type="button" class="btn btn-dark topify endify px-2 m-2" id="add-to-bookmark-btn" role="button" data-mdb-toggle="tooltip" title="Add To Reading List">
+                                    <i class="far fa-bookmark fa-lg" id="bookmark-icon"></i> 
                                                          </button>
 
                                 </div>
@@ -150,6 +157,9 @@ Blog                        </span>
                                 </div>
 
                                 <div class="col-lg-6 text-center text-lg-end">
+                                    <button type="button" class="btn btn-link px-3 me-1 " data-mdb-toggle="modal" data-mdb-target="#BookmarkModal" role="button">
+                                        <i class="fas fa-book-open"></i>          
+                                                              </button>
                                     <button type="button" class="btn btn-primary px-3 me-1  m-share" style="background-color: #7748bf;" role="button">
                                         <i class="fas fa-share-alt"></i>  
                                     </button>
@@ -226,7 +236,10 @@ Blog                        </span>
 
                         <!--Section: Share buttons-->
                         <section class="text-center border-top border-bottom py-4 mb-4" id="post-footer">
-                            <p><strong>Share with your friends:</strong></p>
+                            <p><strong>Your Reaction about this post:</strong></p>
+                            <section id="loading-reaction" class="d-flex justify-content-center p-4">
+                                <div class=" spinner-border text-primary" role="status "><span class="visually-hidden ">Loading...</span></div>
+                            </section>
                             <div class="sharethis-inline-reaction-buttons hide"></div>
 
                         </section>
@@ -301,7 +314,7 @@ Blog                        </span>
                         <!--Section: Comments-->
                         <section class=" mb-3" id="comments-section">
                             <h4 class="text-center divider divider-a mb-2"><strong>Comments</strong></h4>
-                            <section id="loading-comment" class="d-flex justify-content-center p-4  hide">
+                            <section id="loading-comment" class="d-flex justify-content-center p-4 ">
                                 <div class=" spinner-border text-primary" role="status "><span class="visually-hidden ">Loading...</span></div>
                             </section>
                             <div class="hide border-bottom" id="comment-area">
@@ -475,7 +488,40 @@ Blog                        </span>
             <a href="/ " title="K K UPGRADER "><span title="K K UPGRADER ">K K UPGRADER</span></a> - All Right Reserved
         </div>
     </footer>
+    <div class="modal fade" id="BookmarkModal" tabindex="-1" role="dialog" aria-labelledby="BookmarkModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BookmarkModalLabel">Reading Lists</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center " id="bookmark-list">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div>
+                                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid rounded-3" alt="" style="width: 120px;height: 80px;object-fit: cover;">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="title">Iphone 11 pro</h5>
+                                <p class="small mb-0">256GB, Navy Blue</p>
+                            </div>
+                        </div>
+                        <div class="d-flex me-2 align-items-center">
 
+                            <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="spinner-border text-primary m-auto" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/blog/blog.js "></script>
     <script src="/plugins/timeAgo/timeago.min.js "></script>
     <script src="/main.js " type="text/javascript "></script>
