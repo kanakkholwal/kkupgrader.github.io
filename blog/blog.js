@@ -2,7 +2,7 @@
 
 var comment = true;
 var review = false;
-var rating = false;
+var rating = true;
 var Widget = true;
 
 var tocify = true;
@@ -169,30 +169,51 @@ function CheckWhatEnabled() {
     }
 
 }
+
+
+function isIntoView(elem) {
+    var documentViewTop = $(window).scrollTop();
+    var documentViewBottom = documentViewTop + $(window).height();
+
+    var elementTop = $(elem).offset().top;
+    var elementBottom = elementTop + $(elem).height();
+
+    return ((elementBottom <= documentViewBottom) && (elementTop >= documentViewTop));
+}
 // Add Comment 
-const AddCommentBtn = document.getElementById("add-comment-btn");
+
 const LoadingComment = document.getElementById("loading-comment");
 const CommentArea = document.getElementById("comment-area");
 
-AddCommentBtn.addEventListener("click", function() {
-    // Some Function here 
-    LoadingComment.classList.remove("hide");
 
-    setTimeout(AddComment, 1000);
+$(window).scroll(function() {
+        if (isIntoView($('#comments-section'))) {
+            LoadingComment.classList.remove("hide");
 
-
-    function AddComment() {
-
-        LoadingComment.classList.add("hide");
-        CommentArea.classList.remove("hide");
-        document.getElementById("final-heading").innerHTML = "Comments";
-        widget();
-
-    }
-
-});
+            setTimeout(AddComment, 2000);
 
 
+            function AddComment() {
+
+                LoadingComment.remove();
+                CommentArea.classList.remove("hide");
+                widget();
+
+            }
+        }
+        if (isIntoView($('#post-footer'))) {
+            var reaction = document.createElement("script");
+            reaction.src = "https://platform-api.sharethis.com/js/sharethis.js#property=623d523563052f001979041d&product=inline-reaction-buttons";
+
+            reaction.onload = function() {
+
+                $('.sharethis-inline-reaction-buttons').removeClass("hide");
+            };
+            document.body.appendChild(reaction);
+
+        }
+    })
+    // Get its bounding client rectangle
 
 
 // testing bookmark
