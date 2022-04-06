@@ -11,49 +11,86 @@ body {
 }
 
 header {
-    width: 100%;
-    height: auto;
+    max-width: 1500px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 40px;
 }
 
 .header-img {
-    z-index: 0;
-    display: block;
-    margin-top: 0
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-img .mask {
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
 }
 
 .header_title {
-    z-index: 1;
-    margin: auto
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    border: 1px solid #ccc;
+    padding: 12px 24px;
+    text-align: center;
+    color: #F1F1F1
 }
 
-nav ul {
+.header_title h1 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.header_title p {
+    letter-spacing: 4px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.navbar {
+    position: absolute;
     z-index: 1;
+    left: 40%;
+    bottom: -15px;
+    background-color: #fffffff0;
+    width: auto;
+    border-radius: 5px;
+}
+
+.navbar a {
+    width: auto;
     display: inline-block;
-    width: auto;
+    cursor: pointer;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #262626
 }
 
-nav ul li {
-    padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
+.navbar a:hover {
+    background: #ccc;
+    border-radius: 5px;
 }
 
 main {
-    margin-top: 20px;
+    margin: 20px auto;
     background-color: #fbfbfb;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
     padding: 20px auto;
+    max-width: 980px;
 }
 
 main img {
@@ -61,6 +98,7 @@ main img {
     margin: auto;
     max-width: 100%;
     height: auto;
+    padding-bottom: 20px;
 }
 
 #contact {
