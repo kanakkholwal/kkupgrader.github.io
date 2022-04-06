@@ -51,7 +51,7 @@
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet" />
     <link href="/main.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/blog/blog.min.css" />
+    <link rel="stylesheet" href="/blog/blog.css" />
     <script src="/assets/js/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
 -->
@@ -138,9 +138,12 @@ Blog                        </span>
 
                                 <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" title="" id="img-alt" alt="" draggable="false" itemprop="url" />
                                 <div class="mask ">
-                                    <button type="button" class="btn btn-dark topify endify px-2 m-2" id="add-to-bookmark-btn" role="button" data-mdb-toggle="tooltip" title="Add To Reading List">
+                                    <button type="button" class="btn btn-dark topify endify px-2 m-2 add-to-bookmark-btn" id="add-to-bookmark-btn" role="button" data-mdb-toggle="tooltip" title="Add To Reading List">
                                     <i class="far fa-bookmark fa-lg" id="bookmark-icon"></i> 
                                                          </button>
+                                    <span class="badge bg-light endify bottomify m-2 text-dark"><a name='46546546'></a>  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#0A0A30" stroke-width="1.5" d="M19.195 11.31c.325.41.325.97 0 1.38-1.114 1.4-3.916 4.45-7.195 4.45-3.28 0-6.08-3.05-7.195-4.45a1.097 1.097 0 010-1.38C5.92 9.91 8.721 6.86 12 6.86c3.28 0 6.08 3.05 7.195 4.45z"/><circle cx="12" cy="12" r="1.972" stroke="#0A0A30" stroke-width="1.5"/><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M18.514 5.487L5.487 18.514"  stroke-dashoffset="100" stroke-dasharray="100"/></svg>
+                                         <span id='postviews' class="me-1"></span> Views</span>
+                                    <script src='https://cdn.firebase.com/v0/firebase.js' type='text/javascript'></script>
 
                                 </div>
                                 <meta itemprop="width" content="1380" />
@@ -158,7 +161,11 @@ Blog                        </span>
 
                                 <div class="col-lg-6 text-center text-lg-end">
                                     <button type="button" class="btn btn-link px-3 me-1 " data-mdb-toggle="modal" data-mdb-target="#BookmarkModal" role="button">
-                                        <i class="fas fa-book-open"></i>          
+                                        <i class="fas fa-book-open"></i>   
+                                        <span class=" badge rounded-pill bg-danger no-of-post">
+                                            99+
+                                            <span class="visually-hidden">No. of Posts In Reading List</span>
+                                          </span>       
                                                               </button>
                                     <button type="button" class="btn btn-primary px-3 me-1  m-share" style="background-color: #7748bf;" role="button">
                                         <i class="fas fa-share-alt"></i>  
@@ -198,19 +205,19 @@ Blog                        </span>
                             <h1>Major Heading 2</h1>
 
                             <p><strong>Optio sapiente molestias consectetur?</strong></p>
-                            <h2>Heading</h2>
+                            <h2>Heading 2</h2>
 
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto ex ab aut tempora officia libero praesentium, sint id magnam eius natus unde blanditiis. Autem adipisci totam sit consequuntur eligendi.
                             </p>
-                            <h2>Heading</h2>
+                            <h2>Heading 3</h2>
                             <h3>Sub Heading</h3>
 
                             <p class="note note-light">
                                 <strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio odit consequatur porro sequi ab distinctio modi. Rerum cum dolores sint, adipisci ad veritatis laborum eaque illum saepe mollitia ut
                                 voluptatum.
                             </p>
-                            <h3>Sub Heading</h3>
+                            <h3>Sub Heading 2</h3>
 
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, libero repellat molestiae aperiam laborum aliquid atque magni nostrum, inventore perspiciatis possimus quia incidunt maiores molestias eaque nam commodi! Magnam, labore.
@@ -476,8 +483,8 @@ Blog                        </span>
                                 <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid rounded-3" alt="" style="width: 120px;height: 80px;object-fit: cover;">
                             </div>
                             <div class="ms-3">
-                                <h5 class="title">Iphone 11 pro</h5>
-                                <p class="small mb-0">256GB, Navy Blue</p>
+                                <h5 class="title"></h5>
+                                <p class="small mb-0">Tools,Blog ,Jquery</p>
                             </div>
                         </div>
                         <div class="d-flex me-2 align-items-center">

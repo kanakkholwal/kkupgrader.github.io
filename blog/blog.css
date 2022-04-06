@@ -84,7 +84,7 @@
 }
 
 .breadcrumbs svg path {
-    fill: var(main-color)
+    fill: #666
 }
 
 .breadcrumbs svg.homesvg path {
@@ -148,7 +148,7 @@
     position: absolute;
     z-index: 9;
     top: 0;
-    left: -280px;
+    transform: translateX(-280px);
     border-right: #ddd solid 1px;
     background: #fff;
     transition: all 0.3s ease-in-out;
@@ -161,7 +161,7 @@
 }
 
 .toc-bg.show {
-    left: 0;
+    transform: translateX(0);
     -webkit-animation-name: slideInLeft;
     animation-name: slideInLeft;
     box-shadow: 0 5px 20px 0 rgb(0 0 0 / 10%);
@@ -215,9 +215,9 @@
     top: 105px;
     opacity: 1;
     border-radius: 0 20px 20px 0;
-    z-index: 999999999999;
-    margin-right: -23px;
-    margin-top: -3px;
+    z-index: 999;
+    /* margin-right: -23px;
+    margin-top: -3px; */
     margin-left: auto;
     border: 2px solid #265bff;
     border-left: none;

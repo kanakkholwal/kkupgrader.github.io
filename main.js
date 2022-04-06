@@ -87,8 +87,16 @@ else {
     }),
     document.body.appendChild(copy_btn);
 }
+////$(".Copy").on("click", copyToClipboard);
 
-
+//function copyToClipboard() {
+//var copyText = $(".CopyThis").val();
+//   navigator.clipboard.writeText(copyText).then(() => {
+// Alert the user that the action took place.
+// Nobody likes hidden stuff being done under the hood!
+//       alert("Copied to clipboard");
+//  });
+//}
 
 //var creditsyear = new Date().getFullYear();
 

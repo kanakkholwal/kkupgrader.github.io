@@ -188,7 +188,7 @@ function isIntoView(elem) {
 $(window).scroll(function() {
         if (isIntoView($('#comments-section'))) {
 
-            setTimeout(AddComment, 4000);
+            setTimeout(AddComment, 1800);
 
 
             function AddComment() {
@@ -201,7 +201,7 @@ $(window).scroll(function() {
         }
         if (isIntoView($('#post-footer'))) {
 
-            setTimeout(AddReaction, 2000);
+            setTimeout(AddReaction, 1000);
 
 
             function AddReaction() {
@@ -227,26 +227,68 @@ $(window).scroll(function() {
 const AddToBookmarkBtn = document.getElementById("add-to-bookmark-btn");
 const AddToBookmarkIcon = document.getElementById("bookmark-icon");
 const BookmarkList = document.getElementById("bookmark-list");
-var Keywords = document.querySelector('meta[name="keywords"]').getAttribute('content');
-var Image = document.querySelector('meta[name="image"]').getAttribute('content');
-var ListId = PageTitle.replace(/ /g, "_")
-AddToBookmarkBtn.setAttribute("data-title", PageTitle);
-AddToBookmarkBtn.setAttribute("data-keywords", Keywords);
-AddToBookmarkBtn.setAttribute("data-image", Image);
-AddToBookmarkBtn.setAttribute("data-list-id", ListId);
+
+function ifAlreadyInBookmark() {
+
+    if (AddToBookmarkIcon.classList.contains('far')) {
+        AddToBookmarkBtn.setAttribute("title", "Add To Reading List");
+        AddToBookmarkBtn.setAttribute("data-mdb-original-title", "Add To Reading List");
+    }
+    if (AddToBookmarkIcon.classList.contains('fas')) {
+        AddToBookmarkBtn.setAttribute("title", "Remove Reading List");
+        AddToBookmarkBtn.setAttribute("data-mdb-original-title", "Remove Reading List");
+
+    }
+}
 AddToBookmarkBtn.addEventListener('click', function() {
     // $('#bookmark-icon').toggleClass('far fas');
     AddToBookmarkIcon.classList.toggle('far');
     AddToBookmarkIcon.classList.toggle('fas');
+    ifAlreadyInBookmark();
 });
+var Keywords = document.querySelector('meta[name="keywords"]').getAttribute('content');
+var Image = document.querySelector('meta[name="image"]').getAttribute('content');
+var PageUrl = document.baseURI;
+var ListId = PageTitle.replace(/ /g, "_");
+AddToBookmarkBtn.setAttribute("data-title", PageTitle);
+AddToBookmarkBtn.setAttribute("data-keywords", Keywords);
+AddToBookmarkBtn.setAttribute("data-image", Image);
+AddToBookmarkBtn.setAttribute("data-link", PageUrl);
+AddToBookmarkBtn.setAttribute("data-id", ListId);
+
+
+$.each($('a[name]'), function(i, e) {
+    var elem = $(e).parent().find('#postviews');
+    var blogStats = new Firebase("https://view-counter-for-github-pages-default-rtdb.firebaseio.com/pages/id/" + $(e).attr('name'));
+    blogStats.once('value', function(snapshot) {
+        var data = snapshot.val();
+        var isnew = false;
+        if (data == null) {
+            data = {};
+            data.value = 0;
+            data.url = window.location.href;
+            data.id = $(e).attr('name');
+            isnew = true;
+        }
+        elem.text(data.value);
+        data.value++;
+        if (window.location.pathname != '/') {
+            if (isnew)
+                blogStats.set(data);
+            else
+                blogStats.child('value').set(data.value);
+        }
+    });
+});
+
 //output += "<div class='d-flex justify-content-between'><div class='d-flex flex-row align-items-center'>" +
 //   "<div><img src='imageUrl' class='img-fluid rounded-3' alt='' style='width: 120px;height: 80px;object-fit: cover;'></div>" +
 //  "<div class='ms-3'><h5>Title</h5><p class='small mb-0'>KeyWords</p></div>" +
 //  "</div>" +
-//  "<div class='d-flex me-2 align-items-center'><a href=''><i class='fas fa-trash-alt text-danger'></i></a></div>" +
+//  "<div class='d-flex me-2 align-items-center'><i class='fas fa-trash-alt text-danger btn-remove'></i></div>" +
 //  "</div>";
 
-//function AddToBookmark() {}
+
 
 
 
