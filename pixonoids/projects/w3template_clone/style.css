@@ -26,8 +26,10 @@ header {
 }
 
 .header-img img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    max-width: 1500px;
+    max-height: 600px
 }
 
 .header-img .mask {
@@ -94,9 +96,9 @@ main {
 }
 
 main img {
-    display: block;
     margin: auto;
-    max-width: 100%;
+    max-width: 980px;
+    width: 100%;
     height: auto;
     padding-bottom: 20px;
 }
@@ -154,4 +156,21 @@ main img {
 
 .footer_link a:hover {
     color: #29d142;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        left: 20%;
+    }
+    .header_title {
+        top: 10%;
+        left: 30%;
+    }
+    .header_title h1 {
+        font-size: 20px;
+    }
+    .header_title p {
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
 }
