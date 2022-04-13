@@ -1,0 +1,47 @@
+    body {
+        background: #323445;
+        background: -webkit-linear-gradient(to left, #323445, #030b02);
+        background: linear-gradient(to left, #323445, #030b02);
+        color: rgba(255, 255, 255, 1);
+        padding: 6rem;
+    }
+    
+    main {
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.042);
+        box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(30px);
+        width: 100%;
+        min-height: 600px;
+        max-width: 1200px;
+        border-radius: 5px;
+        margin: auto;
+        padding: 3rem
+    }
+    
+    .pixonoids {
+        position: absolute;
+        -webkit-animation: rotravel 25s infinite;
+        animation: rotravel 25s infinite;
+        transition-timing-function: linear;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+        -webkit-animation-duration: 17s;
+        animation-duration: 17s
+    }
+    
+    @keyframes rotravel {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0)
+        }
+        60% {
+            -webkit-transform: translateY(100%) rotate(600deg);
+            transform: translateY(100%) rotate(600deg)
+        }
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
