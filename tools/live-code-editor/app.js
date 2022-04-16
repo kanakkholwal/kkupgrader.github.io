@@ -1,27 +1,66 @@
-//function update() {
-//   $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() + "</style></head><body>" + $(htmlpanel).val() + "</body></html>");
+let js = document.getElementById('js'),
+    css = document.getElementById('css'),
+    html = document.getElementById('html'),
+    filename = document.getElementById('filename');
+let iframe = document.getElementById('output');
+let download = document.getElementById('download');
+var output = (iframe.contentWindow || iframe.contentDocument);
 
-// 				document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());
-//}
 
+function update() {
 
-//$("iframe").contents().find("html").html($("#htmlpanel").val());
+    if (filename.value == '') {
+        filename.value = "Live Video Editor by Kanak";
+    }
 
+    if (output.document) output = output.document;
+    output.head.innerHTML = `  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${filename.value}</title>
+       <style>
+         ${css.textContent} 
+       </style>`;
+    output.body.innerHTML = `
+      ${html.textContent} 
+      <script  type="text/javascript">
+        ${js.textContent} 
+      </script>
+    `;
+    iframe.contentWindow.eval(js.textContent);
+    Prism.highlightAll();
 
-var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html"), {
-    lineNumbers: true,
-    mode: 'htmlmixed',
-    //  theme: 'material',
-});
+}
+update();
 
-var cssEditor = CodeMirror.fromTextArea(document.getElementById("css"), {
-    lineNumbers: true,
-    mode: 'css',
-    // theme: 'material',
-});
+//  let OutputFileContent = '<!DOCTYPE html><html lang="en"><head>${output.head.innerHTML}</head><body>${output.body.innerHTML}</body></html>';
+//     let OutputFileContent2 = `
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+// <meta charset="UTF-8">
+// <meta http-equiv="X-UA-Compatible" content="IE=edge">
+// <meta name="viewport" content="width=device-width, initial-scale=1.0">
+// <title>${filename.value}</title>
+//    <style>
+//      ${css.textContent} 
+//    </style>
+//    </head>
+// <body>
+// ${html.textContent} 
+// <script  type="text/javascript">
+// ${js.textContent} 
+// </script>
+// </body>
+// </html>`;
+// function download_txt() {
+//     var textToSave = document.getElementById('txt').innerHTML;
+//     var hiddenElement = document.createElement('a');
 
-var jsEditor = CodeMirror.fromTextArea(document.getElementById('js'), {
-    lineNumbers: true,
-    mode: 'javascript',
-    //  theme: 'material',
-});
+//     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+//     hiddenElement.target = '_blank';
+//     hiddenElement.download = 'myFile.txt';
+//     hiddenElement.click();
+// }
+
+// document.getElementById('test').addEventListener('click', download_txt);

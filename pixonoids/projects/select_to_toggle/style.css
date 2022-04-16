@@ -1,0 +1,42 @@
+*,
+* ::after,
+* ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', sans - serif;
+}
+
+main {
+    margin: auto;
+    display: inline-block;
+    padding: 5rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+select {
+    outline: none;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    width: 10rem;
+    margin: auto;
+    background-color: rgba(116, 75, 231, 0.775);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 3rem;
+}
+
+.divs {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: #cfcfcf 2px solid;
+}
+
+
+/* div {
+    display: none
+} */
