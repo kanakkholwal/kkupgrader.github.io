@@ -45,7 +45,7 @@
     <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
     <link href='/main.css' rel='stylesheet' />
     <link rel="stylesheet" href="./style.css">
-
+    <link rel='stylesheet' href='/plugins/codemirror/lib/codemirror.css'>
     <script src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script> -->
 </head>
@@ -104,23 +104,68 @@
         <section class="col-md-6">
             <div class="d-flex">
 
-                <div><input type="text" class="form-control mb-4 " value="Documents" oninput="update()" id="filename" placeholder="File Name" />
+                <div><input type="text" class="form-control mb-4 " value="" oninput="update()" id="filename" placeholder="File Name" />
 
                 </div>
                 <div>
 
-                    <button class="btn btn-primary mx-2" id="download">Download</button>
+                    <a class="btn btn-primary mx-2" id="download" target="_blank" onclick="downloadFile()">Download</a>
+                </div>
+                <div>
+
+                    <a class="btn btn-primary mx-2" id="downloadBody" target="_blank" onclick="downloadBody()">
+                        <i class="fab fa-html5"></i> </a>
+                </div>
+                <div>
+
+                    <a class="btn btn-primary mx-2" id="downloadCss" target="_blank" onclick="downloadCss()">
+                        <i class="fab fa-css3-alt"></i>
+                    </a>
+                </div>
+                <div>
+
+                    <a class="btn btn-primary mx-2" id="downloadJs" target="_blank" onclick="downloadJs()">
+                        <i class="fab fa-js-square"></i> </a>
                 </div>
 
             </div>
-            <pre class="language-xml " id="html" spellcheck="false" contenteditable="true" oninput="update()">
-               <code> 
+
+
+
+
+    </div>
+
+
+    <div id="html-code">
+        <textarea><h1 id="h1">Heading 1</h1></textarea>
+    </div>
+    <div id="css-code">
+        <textarea>
+            h1{
+            font-size:21px;
+            font-size:1.6153rem;
+            font-weight:600;
+            margin-bottom:0.75em;
+            text-decoration:underline;
+            }
+            
+            </textarea>
+    </div>
+    <div id="js-code">
+        <textarea>
+            let h1 = document.getElementById('h1');
+            h1.innerText = 'Javascript is working';
+            </textarea>
+    </div>
+    <!-- 
+    <pre class="language-xml " id="html" spellcheck="false" contenteditable="true" oninput="update()">
+               <code class="language-xml card-body"  dir='ltr'> 
       
                 &lt;h1 id=&quot;h1&quot;&gt;Heading 1&lt;/h1&gt;
         
                 </code>
             </pre>
-            <pre class="language-css" id="css" spellcheck="false" contenteditable="true" oninput="update()">
+    <pre class="language-css" id="css" spellcheck="false" contenteditable="true" oninput="update()">
                <code> 
                 h1{ 
                    font-size:21px;
@@ -131,24 +176,55 @@
                 }
 
                 </code>
-            </pre>
-            <pre class=" language-js" id="js" spellcheck="false" contenteditable="true" oninput="update()">
-               <code>
-                   let h1 = document.getElementById('h1');
-                   h1.innerText = 'Javascript is working';
-                </code>
-            </pre>
+            </pre>-->
 
 
 
-        </section>
-        <section class="col-md-6"><iframe frameborder="0" id="output"></iframe></section>
+    </section>
+    <section class="col-md-6"><iframe frameborder="0" id="output"></iframe></section>
 
 
     </div>
+    <script src='/plugins/codemirror/lib/codemirror.js'></script>
+    <script src='/plugins/codemirror/mode/xml/xml.js'></script>
+    <script src='/plugins/codemirror/mode/css/css.js'></script>
+    <script src='/plugins/codemirror/mode/javascript/javascript.js'></script>
+    <script src='/plugins/codemirror/mode/htmlmixed/htmlmixed.js'></script>
     <script src="./app.js"></script>
+    <script>
+        let JsContent, CssContent, HtmlContent;
 
+        var htmlEditor = CodeMirror.fromTextArea(document.querySelector("#html-code textarea"), {
+            lineNumbers: true,
+            mode: 'htmlmixed',
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
 
+        }).on('change', htmlEditor => {
+            console.log(htmlEditor.getValue());
+        });
+        var CssEditor = CodeMirror.fromTextArea(document.querySelector("#css-code textarea"), {
+            lineNumbers: true,
+            mode: 'css',
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
+
+        }).on('change', CssEditor => {
+            console.log(CssEditor.getValue());
+        });
+        var JsEditor = CodeMirror.fromTextArea(document.querySelector("#js-code textarea"), {
+            lineNumbers: true,
+            mode: 'javascript',
+            extraKeys: {
+                "Ctrl-Space": "autocomplete"
+            }
+
+        }).on('change', JsEditor => {
+            console.log(JsEditor.getValue());
+        });
+    </script>
     <div class="mb-n3 pt-4 text-center text-white trans-bg">
         <div class="container-fluid">
             <section class="text-center">

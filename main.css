@@ -22,6 +22,17 @@ html {
     --text-clr: #262626;
     --body-font: 'Fredoka', sans-serif;
     /*  "Roboto", 'Sofia Pro', sans-serif; */
+    --skeleton-color: #ced4da;
+    --skeleton-animation-bg-1: #fff0;
+    --skeleton-animation-bg-2: #ffffff59;
+    --skeleton-animation-bg-3: #fff0;
+}
+
+html.dark {
+    --skeleton-color: #343638;
+    --skeleton-animation-bg-1: #24252659;
+    --skeleton-animation-bg-2: #24252600;
+    --skeleton-animation-bg-3: #24252659;
 }
 
 html {
@@ -185,6 +196,13 @@ nav {
     z-index: 0;
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
 .trans-bg {
     background: var(--trans-bg);
     z-index: 0;
@@ -264,6 +282,41 @@ li {
     width: 100%;
     background-color: rgb(230, 230, 230);
     border-radius: 5px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        transform: translate3d(-30%, 0, 0)
+    }
+    100% {
+        transform: translate3d(30%, 0, 0)
+    }
+}
+
+.skeleton-animated {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden
+}
+
+.skeleton-animated::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 500%;
+    margin-left: -250%;
+    background: linear-gradient(to right, var(--skeleton-animation-bg-1) 46%, var(--skeleton-animation-bg-2) 50%, var(--skeleton-animation-bg-3) 54%) 50% 50%;
+    animation: skeleton-loading 0.8s linear infinite;
+    content: " ";
+    pointer-events: none
+}
+
+.skeleton {
+    background-color: var(--skeleton-color);
 }
 
 .wave {

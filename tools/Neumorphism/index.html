@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neumorphism CSS Code Generator</title>
+
+    <link rel="icon" href="images/color-wheel.png" />
+    <link rel="stylesheet" href="css/style.min.css" />
+</head>
+
+<body>
+    <main>
+        <div class="github">
+            <p>Made with ❤️ by Pulkit Jasti: <a href="https://github.com/pulkit-jasti/neumorphism-css-code-generator" target="_blank">Github</a></p>
+        </div>
+        <div class="box-container">
+            <div id="box" class="UIsample">
+
+            </div>
+            <div id="light-top-left">
+                <img src="images/flashlight.png" alt="" />
+            </div>
+            <div id="light-top-right"></div>
+            <div id="light-bottom-left"></div>
+            <div id="light-bottom-right"></div>
+        </div>
+        <div class="settings-container">
+            <form action="">
+                <label for="size">Size</label>
+                <input class="slider" id="size" type="range" min="0.3" max="1" value="1" step="0.01" />
+                <label for="radius">Border Radius</label>
+                <input class="slider" id="radius" type="range" min="0" max="150" value="30" />
+                <label for="blur">Blur</label>
+                <input class="slider" id="blur" type="range" min="0" max="40" value="14" />
+                <label for="distance">Distance</label>
+                <input class="slider" id="distance" type="range" min="0" max="30" value="7" />
+            </form>
+            <textarea id="output" class="output" spellcheck="false"></textarea>
+            <button id="copy" class="copy">Copy</button>
+        </div>
+    </main>
+    <section class="mobile">
+        <div class="mobile-container">
+            <p>This website is not mobile compatible, please view on a bigger screen</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

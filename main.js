@@ -30,7 +30,7 @@ function loadCSS(e, t, n) {
     });
 }
 loadCSS(
-    "https://kkupgrader.eu.org/plugins/prism/prism.css"
+    "/plugins/prism/prism.css"
 );
 
 var prism_js = document.createElement("script");
@@ -66,7 +66,7 @@ function addCopyButtons(t) {
 }
 if (
     ((prism_js.src =
-            "https://kkupgrader.eu.org/plugins/prism/prism.js"),
+            "/plugins/prism/prism.js"),
         (prism_js.onload = function() {
             Prism.highlightAll();
 
@@ -100,7 +100,7 @@ else {
 
 //var creditsyear = new Date().getFullYear();
 
-// document.querySelector(".date").InnerHTML = creditsyear;
+// document.querySelector(".date").innerHTML = creditsyear;
 
 
 

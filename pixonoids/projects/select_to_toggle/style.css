@@ -36,7 +36,6 @@ select {
     border: #cfcfcf 2px solid;
 }
 
-
-/* div {
-    display: none
-} */
+.divs div {
+    display: none;
+}
