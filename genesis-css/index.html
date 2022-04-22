@@ -41,24 +41,27 @@
     <link href="/assets/fonts/Roboto.css" rel="stylesheet" />
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet" />
-    <link href="/main_v2.css" rel="stylesheet" />
+    <link href="./main.css" rel="stylesheet" />
     <meta name="google-site-verification" content="rVibt1gq3CQhtLXV1g8OlFugmOr9lipCo_fM0oh2KBU" />
     <meta name="purpleads-verification" content="38e41f0efd80d3a6a1dff2da" />
 
-    <script async="async" defer="defer" src="/assets/js/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script async="async" defer="defer" src="/assets/js/jquery/3.6.0/jquery.min.js"></script> -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="navbar navbar-expand-lg  fixed-top">
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="nav-btn sidenav-toggler"><i class="fas fa-bars"></i></div>
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/index_v2.html"><img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" /></a>
+                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/index_v2.html">
+                        <img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-light" />
+                        <img src="/logo_dark.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-dark" />
+                    </a>
                 </div>
                 <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
-                    <li class="nav-item me-3 me-lg-1">
+                    <li class="nav-item me-2">
                         <!-- <form class="input-group w-auto my-auto d-none d-lg-flex">
                             <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width: 25rem" />
                             <span class="input-group-text border-0 d-none d-lg-flex"><i
@@ -100,7 +103,7 @@
         <main class="w-100 hero" style="margin-top: 65px">
             <div class="container-fluid">
                 <!-- Section: Intro -->
-                <section class="m-auto pt-5">
+                <section class="m-auto py-5">
                     <div class="row h-100 mt-5 justify-content-center align-items-center text-center text-white" itemprop="mainEntity" itemscope="itemscope" itemtype="http://schema.org/WebSite">
                         <h3 class="text-white">
                             Get Awesome Web Tools , Tips and Tricks
@@ -114,32 +117,7 @@
                     </div>
                 </section>
             </div>
-            <div>
-                <svg class="waves wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                    </g>
-                </svg>
-            </div>
-            <div class="bubbles">
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-            </div>
+
         </main>
 
         <!-- Navbar -->
@@ -147,138 +125,92 @@
 
 
 
-    <div class="container-lg my-5">
+    <main class="container-lg my-5 d-flex justify-content-center align-items-center flex-column">
+        <div id="buttons" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+            <a href="" class="g-btn">Default</a>
+            <a href="" class="g-btn g-btn-primary">Primary</a>
+            <a href="" class="g-btn g-btn-secondary">Secondary</a>
+            <a href="" class="g-btn g-btn-info">Info</a>
+            <a href="" class="g-btn g-btn-warning">Warning</a>
+            <a href="" class="g-btn g-btn-danger">Danger</a>
+            <a href="" class="g-btn g-btn-success">Success</a>
+            <a href="" class="g-btn g-btn-dark">Dark</a>
+            <a href="" class="g-btn g-btn-light">Light</a>
 
-
-
-        <div class="row g-3">
-            <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="card text-center m-auto">
-                    <div class="card-body">
-                        <div class="bg-image mb-3 ripple rounded shadow-5" data-mdb-ripple-color="light">
-                            <img data-src="/tools/text-to-handwriting/text-to-handwriting-tool.svg" class="img-fluid rounded" alt="Text to Handwriting " />
-                            <a href="/tools/text-to-handwriting/">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <h5 class="card-title">Text To Handwriting Tool</h5>
-                        <p class="card-text ellipsis-2">
-                            This Tool converts text to an image that looks like handwriting
-                        </p>
-
-                        <div class="d-flex justify-content-center">
-                            <a role="button" href="/tools/text-to-handwriting/" class="btn btn-primary w-auto btn-rounded mx-2">Use This Tool
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="card text-center m-auto">
-                    <div class="card-body">
-                        <div class="bg-image mb-3 rounded ripple shadow-5" data-mdb-ripple-color="light">
-                            <img data-src="/tools/meta-tag-generator/meta-tag-generator.svg" class="img-fluid rounded" alt="Meta Tag Generator " />
-                            <a href="/tools/meta-tag-generator/">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <h5 class="card-title">Meta Tag Generator</h5>
-                        <p class="card-text ellipsis-2">
-                            Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.
-                        </p>
-
-                        <div class="d-flex justify-content-center">
-                            <a role="button" href="tools/meta-tag-generator/" class="btn btn-primary w-auto btn-rounded mx-2">Use This ToOL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="card text-center m-auto">
-                    <div class="card-body">
-                        <div class="bg-image mb-3 rounded ripple shadow-5" data-mdb-ripple-color="light">
-                            <img data-src="/tools/Svg-Wave-Generator/svg-wave-Generator.svg" class="img-fluid rounded" alt="SVG Wave Generator  Tool " />
-                            <a href="/tools/Svg-Wave-Generator/">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <h5 class="card-title">SVG Wave Generator Tool</h5>
-                        <p class="card-text ellipsis-2">
-                            Easily generate beautiful SVG shapes and apply them to your design
-                        </p>
-
-                        <div class="d-flex justify-content-center">
-                            <a role="button" href="tools/Svg-Wave-Generator/" class="btn btn-primary w-auto btn-rounded mx-2">Use This ToOL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="card text-center m-auto">
-                    <div class="card-body">
-                        <div class="bg-image mb-3 rounded ripple shadow-5" data-mdb-ripple-color="light">
-                            <img data-src="/tools/svg-to-css-generator/svg-to-css-Generator.svg" class="img-fluid rounded" alt="SVG to CSS Generator  Tool " />
-                            <a href="/tools/svg-to-css-generator/">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <h5 class="card-title">SVG to CSS Generator Tool</h5>
-                        <p class="card-text ellipsis-2">
-                            Paste or drag the contents of a valid SVG document source below and generate the data URI that should work cross-browser.
-                        </p>
-
-                        <div class="d-flex justify-content-center">
-                            <a role="button" href="tools/svg-to-css-generator/" class="btn btn-primary w-auto btn-rounded mx-2">Use This ToOL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="card text-center m-auto">
-                    <div class="card-body">
-                        <div class="bg-image mb-3 rounded ripple shadow-5" data-mdb-ripple-color="light">
-                            <img data-src="/tools/pro-meta-tag-generator/pro-meta-tag--Generator.svg" class="img-fluid rounded" alt="Meta Tag Generator Pro " />
-                            <a href="/tools/pro-meta-tag-generator/">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <h5 class="card-title">Meta Tag Generator Pro</h5>
-                        <p class="card-text ellipsis-2">
-                            Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.
-                        </p>
-
-                        <div class="d-flex justify-content-center">
-                            <a role="button" href="tools/pro-meta-tag-generator/" class="btn btn-primary w-auto btn-rounded mx-2">Use This ToOL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-                <div class="card text-center m-auto">
-                    <div class="card-body">
-                        <div class="bg-image mb-3 rounded ripple shadow-5" data-mdb-ripple-color="light">
-                            <img data-src="/tools/Js-Compress/js-compressor-tool.svg" class="img-fluid rounded" alt="Meta Tag Generator Pro " />
-                            <a href="/tools/Js-Compress/">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <h5 class="card-title">JS Compressor Tool </h5>
-                        <p class="card-text ellipsis-2">
-                            JSCompress Tool is an online JavaScript compressor that allows you to compress and minify all of your JS files by up to 80% of their original size. </p>
-
-                        <div class="d-flex justify-content-center">
-                            <a role="button" href="/tools/Js-Compress/" class="btn btn-primary w-auto btn-rounded mx-2">Use This ToOL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
+        <div id="collapses" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
+            <button class="g-btn" data-target-collapse="#this"> Collapse</button><br>
+            <div id="this" class="g-collapse text-center">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+
+            </div>
+
+        </div>
+        <div id="accordion" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
+            <div class="g-accordion">
+                <div class="g-accordion-toggle">
+                    <h4>Accordion title</h4>
+                </div>
+                <div class="g-accordion-body">
+                    <p>Accordion content</p>
+                </div>
+            </div>
+
+            <div class="g-accordion">
+                <div class="g-accordion-toggle">
+                    <h4>Accordion title</h4>
+                </div>
+                <div class="g-accordion-body">
+                    <p>Accordion content</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="modals" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+
+            <button class="g-btn g-btn-dark m-auto" data-target-modal="#g-modal">Modal</button>
+
+            <div class="g-modal-area">
+                <div class="g-modal" id="g-modal">
+                    <div class="g-modal-header">
+                        <div class="g-modal-title">Modal Title</div>
+                        <div class="icon-btn modal-close"> <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="g-modal-body">
+                        Modal Body
+                    </div>
+                    <div class="g-modal-footer">Modal Footer</div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div id="toasts" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+            <button class="g-btn" onclick="GenesisToast('', 'title ma be', 'bodyContent', 3000)">custom toast</button>
+            <div class="button-container">
+                <!-- only for demo -->
+                <p class="btn btn-toast dark" data-title="Simple toast 1" data-text="Simple toast with default duration of 3s" data-duration="0">Default duration</p>
+                <p class="btn btn-toast dark" data-title="Simple toast 2" data-text="Simple toast with custom duration of 5s - data-duration=5000" data-duration="5000">Custom duration</p>
+                <p class="btn btn-toast dark" data-title="Simple toast 3" data-text="Simple toast with no duration - data-duration=0" data-duration="0">No duration</p>
+            </div>
+            <div class="button-container">
+                <!-- only for demo -->
+                <p class="btn btn-toast blue" data-type="info" data-title="Simple system toast" data-text="Simple system toast - data-type=system" data-duration="0">System toast</p>
+                <p class="btn btn-toast green" data-type="success" data-title="Simple success toast" data-text="Simple success toast - data-type=success" data-duration="0">Success toast</p>
+                <p class="btn btn-toast orange" data-type="warning" data-title="Simple warning toast" data-text="Simple warning toast - data-type=warning" data-duration="0"> Warning toast</p>
+                <p class="btn btn-toast red" data-type="danger" data-title="Simple bug toast" data-text="Simple bug toast - data-type=bug" data-duration="0">Bug toast</p>
+            </div>
+            <div class="g-toast-container">
+
+
+            </div>
+
+        </div>
+
+        </div>
+    </main>
 
     <div class="mb-n3 pt-4 text-center text-white trans-bg">
         <div class="container-fluid">
@@ -361,8 +293,7 @@
                                         class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a>
                             </li>
                             <li class="mb-2">
-                                <a class="text-white" href="https://instagram.com/kanakkholwal"><i
-                                        class="fab fa-instagram me-1"></i> kanakkholwal</a>
+                                <a class="text-white" href="https://instagram.com/kanakkholwal"><i class="fab fa-instagram me-1"></i> kanakkholwal</a>
                             </li>
                         </ul>
                     </div>
@@ -381,59 +312,86 @@
             </div>
         </div>
         <div class="sidebar-body">
-            Some Text
-            <h6>Some Headings</h6>
+            <div class="sidenav-heading">Normal List</div>
             <ul class="list">
                 <li>
-                    <a href="mailto:kkupgrader.fs@gmail.com"><i
-                            class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a>
+                    <a href="#"><i
+                            class="fas fa-star me-1"></i>Link One</a>
                 </li>
                 <li>
-                    <a href="https://instagram.com/kanakkholwal"><i
-                            class="fab fa-instagram me-1"></i> kanakkholwal</a>
+                    <a href="#"></i>Link Two</a>
                 </li>
 
+                <li>
+                    <a href="#">Link Three</a>
+                </li>
+
+                <div class="sidenav-heading">Normal List</div>
+
                 <li class="sidenavify-collapse">
-                    <a><i
-                            class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a>
+                    <a>
+                        <i class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com
+                        <div class="nav-btn circle"><i class="fas fa-angle-up icon-status"></i></div>
+                    </a>
                     <ul class="collapse-list">
+
                         <li>
-                            <a href="mailto:kkupgrader.fs@gmail.com">under Collpase one</a>
+                            <a href="#">Some Link</a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/kanakkholwal">Under Collpase two</a>
+                            <a href="#">Some Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Some Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Some Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Some Link</a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidenavify-collapse">
-                    <a><i
-                            class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a>
+                    <a>
+                        <i class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com
+                        <div class="nav-btn circle"><i class="fas fa-angle-up icon-status"></i></div>
+                    </a>
                     <ul class="collapse-list">
+
                         <li>
-                            <a href="mailto:kkupgrader.fs@gmail.com">under Collpase one</a>
+                            <a href="#">Some Link</a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/kanakkholwal">Under Collpase two</a>
+                            <a href="#">Some Link</a>
                         </li>
                         <li>
-                            <a href="mailto:kkupgrader.fs@gmail.com">under Collpase one</a>
+                            <a href="#">Some Link</a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/kanakkholwal">Under Collpase two</a>
+                            <a href="#">Some Link</a>
                         </li>
                         <li>
-                            <a href="mailto:kkupgrader.fs@gmail.com">under Collpase one</a>
+                            <a href="#">Some Link</a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/kanakkholwal">Under Collpase two</a>
+                            <a href="#">Some Link</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="https://instagram.com/kanakkholwal"><i
-                            class="fab fa-instagram me-1"></i> kanakkholwal</a>
+                    <a href="#"><i class="fas fa-star me-1"></i>Link One</a>
                 </li>
+                <li>
+                    <a href="#"></i>Link Two</a>
+                </li>
+
+                <li>
+                    <a href="#">Some Link</a>
+                </li>
+
             </ul>
+            <div class="size" size="400px"></div>
         </div>
 
 
@@ -462,7 +420,7 @@
         </div>
     </footer>
 
-    <script src="/main_v2.js" type="text/javascript"></script>
+    <script src="./main.js" type="text/javascript"></script>
 
     <!-- Scripts -->
     <script async="async" defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js" type="text/javascript"></script>
