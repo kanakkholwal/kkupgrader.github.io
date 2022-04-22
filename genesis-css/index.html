@@ -52,10 +52,10 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg  fixed-top">
-            <div class="container-fluid">
+            <div class="container-fluid flex-nowrap">
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="nav-btn sidenav-toggler"><i class="fas fa-bars"></i></div>
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/index_v2.html">
+                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/genesis-css/">
                         <img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-light" />
                         <img src="/logo_dark.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-dark" />
                     </a>
@@ -139,7 +139,7 @@
 
         </div>
         <div id="collapses" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
-            <button class="g-btn" data-target-collapse="#this"> Collapse</button><br>
+            <button class="g-btn" data-g-collapse-target="#this"> Collapse</button><br>
             <div id="this" class="g-collapse text-center">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
 
@@ -191,16 +191,16 @@
             <button class="g-btn" onclick="GenesisToast('', 'title ma be', 'bodyContent', 3000)">custom toast</button>
             <div class="button-container">
                 <!-- only for demo -->
-                <p class="btn btn-toast dark" data-title="Simple toast 1" data-text="Simple toast with default duration of 3s" data-duration="0">Default duration</p>
-                <p class="btn btn-toast dark" data-title="Simple toast 2" data-text="Simple toast with custom duration of 5s - data-duration=5000" data-duration="5000">Custom duration</p>
-                <p class="btn btn-toast dark" data-title="Simple toast 3" data-text="Simple toast with no duration - data-duration=0" data-duration="0">No duration</p>
+                <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 1" data-g-toast-html="Simple toast <b>with</b> default duration of 3s" data-g-toast-duration="0">Default duration</p>
+                <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 2" data-g-toast-html="Simple toast with custom duration of 5s - data-g-toast-duration=5000" data-g-toast-duration="5000">Custom duration</p>
+                <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 3" data-g-toast-html="Simple toast with no duration - data-g-toast-duration=0" data-g-toast-duration="0">No duration</p>
             </div>
             <div class="button-container">
                 <!-- only for demo -->
-                <p class="btn btn-toast blue" data-type="info" data-title="Simple system toast" data-text="Simple system toast - data-type=system" data-duration="0">System toast</p>
-                <p class="btn btn-toast green" data-type="success" data-title="Simple success toast" data-text="Simple success toast - data-type=success" data-duration="0">Success toast</p>
-                <p class="btn btn-toast orange" data-type="warning" data-title="Simple warning toast" data-text="Simple warning toast - data-type=warning" data-duration="0"> Warning toast</p>
-                <p class="btn btn-toast red" data-type="danger" data-title="Simple bug toast" data-text="Simple bug toast - data-type=bug" data-duration="0">Bug toast</p>
+                <p class="btn g-toast-toggle blue" data-g-toast-type="info" data-g-toast-title="Simple system toast" data-g-toast-html="Simple system toast - data-g-toast-type=system" data-g-toast-duration="0">System toast</p>
+                <p class="btn g-toast-toggle green" data-g-toast-type="success" data-g-toast-title="Simple success toast" data-g-toast-html="Simple success toast - data-g-toast-type=success" data-g-toast-duration="0">Success toast</p>
+                <p class="btn g-toast-toggle orange" data-g-toast-type="warning" data-g-toast-title="Simple warning toast" data-g-toast-html="Simple warning toast - data-g-toast-type=warning" data-g-toast-duration="0"> Warning toast</p>
+                <p class="btn g-toast-toggle red" data-g-toast-type="danger" data-g-toast-title="Simple bug toast" data-g-toast-html="Simple bug toast - data-g-toast-type=bug" data-g-toast-duration="0">Bug toast</p>
             </div>
             <div class="g-toast-container">
 

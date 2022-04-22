@@ -57,17 +57,16 @@ if (draggable) {
 }
 // Component : Collapse
 
-const collapseBtns = document.querySelectorAll('[data-target-collapse]');
+const collapseBtns = document.querySelectorAll('[data-g-collapse-target]');
 collapseBtns.forEach(collapseBtn => {
-    let collapseId = collapseBtn.getAttribute('data-target-collapse');
+    let collapseId = collapseBtn.getAttribute('data-g-collapse-target');
     let collapseArea = document.querySelector(collapseId);
     collapseBtn.addEventListener('click', () => collapseArea.classList.toggle('show'));
 });
 
 
 
-// Component : Accordion
-
+// Component : Accordion - From Codepen.io ,gonna change it
 const accordions = document.querySelectorAll(".g-accordion");
 
 const openAccordion = (accordion) => {
@@ -207,9 +206,9 @@ function GenesisToast(type, title, body, duration) {
 
 document.addEventListener('click', function(e) {
     //check is the right element clicked
-    if (!e.target.matches('.btn-toast')) return;
+    if (!e.target.matches('.g-toast-toggle')) return;
     else {
         //create toast message with dataset attributes
-        GenesisToast(e.target.dataset.type, e.target.dataset.title, e.target.dataset.text, e.target.dataset.duration);
+        GenesisToast(e.target.dataset.gToastType, e.target.dataset.gToastTitle, e.target.dataset.gToastHtml, e.target.dataset.gToastDuration);
     }
 });
