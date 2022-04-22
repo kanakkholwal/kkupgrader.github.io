@@ -89,6 +89,10 @@ function GCollapse(collapse) {
     }
 
 }
+// Select all siblings
+const getSiblings = node => [...node.parentNode.children].filter(c => c.className !== node);
+
+// const siblingsToC = getSiblings(document.querySelector('.g-accordion-item.expanded'))
 
 // Genesis Component : Collapse
 
@@ -109,19 +113,20 @@ accordions.forEach(accordion => {
     accordionItems.forEach(accordionItem => {
         let accordionHeader = accordionItem.querySelector(".g-accordion-header");
         let accordionBody = accordionItem.querySelector(".g-accordion-body");
-        let accordionSiblings = accordionItem.parentElement.querySelectorAll(".g-accordion-item");
-        // accordionSiblings.forEach(accordionSibling => {
-        //     if (accordionSibling.classList.contains('expanded')) {
-        //         accordionSibling.classList.remove('expanded');
-        //         accordionSibling.querySelector('.g-accordion-header').classList.remove('expanded');
-        //         GCollapse(accordionSibling.querySelector('.g-accordion-body'));
-        //     }
-        // });
+
         accordionHeader.addEventListener("click", () => GCollapse(accordionBody));
         accordionHeader.addEventListener("click", function() {
             accordionHeader.classList.toggle('active');
             accordionItem.classList.toggle('expanded');
+            //     let accordionSiblings = getSiblings(accordion.querySelector('.g-accordion-item.expanded'));
+            //     accordionSiblings.forEach(accordionSibling => function() {
 
+            //         accordionSibling.classList.remove('expanded');
+            //         accordionSibling.querySelector('.g-accordion-header').classList.remove('active');
+            //         accordionSibling.querySelector('.g-accordion-body').classList.remove('active');
+
+            //     });
+            //    console.log(accordionSiblings);
         });
     });
 });
