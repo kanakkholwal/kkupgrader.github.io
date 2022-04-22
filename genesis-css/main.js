@@ -90,7 +90,7 @@ function GCollapse(collapse) {
 
 }
 
-// Component : Collapse
+// Genesis Component : Collapse
 
 const collapseBtns = document.querySelectorAll('[data-g-collapse-target]');
 collapseBtns.forEach(collapseBtn => {
@@ -101,32 +101,29 @@ collapseBtns.forEach(collapseBtn => {
 
 
 
-// Component : Accordion - From Codepen.io ,gonna change it
 
-//const accordions=document.querySelectorAll(".g-accordion"),openAccordion=accordion=>{const content=accordion.querySelector(".g-accordion-content");accordion.classList.add("g-accordion-active"),content.style.maxHeight=content.scrollHeight+"px"},closeAccordion=accordion=>{const content=accordion.querySelector(".g-accordion-body");accordion.classList.remove("g-accordion-active"),content.style.maxHeight=null};accordions.forEach(accordion=>{const intro=accordion.querySelector(".g-accordion-toggle"),content=accordion.querySelector(".g-accordion-body");intro.onclick=()=>{content.style.maxHeight?closeAccordion(accordion):(accordions.forEach(accordion=>closeAccordion(accordion)),openAccordion(accordion))}});
-
-// Genesis Accordion
+// Genesis Component : Accordion
 const accordions = document.querySelectorAll('.g-accordion');
 accordions.forEach(accordion => {
     let accordionItems = accordion.querySelectorAll(".g-accordion-item");
     accordionItems.forEach(accordionItem => {
         let accordionHeader = accordionItem.querySelector(".g-accordion-header");
         let accordionBody = accordionItem.querySelector(".g-accordion-body");
+        let accordionSiblings = accordionItem.parentElement.querySelectorAll(".g-accordion-item");
+        // accordionSiblings.forEach(accordionSibling => {
+        //     if (accordionSibling.classList.contains('expanded')) {
+        //         accordionSibling.classList.remove('expanded');
+        //         accordionSibling.querySelector('.g-accordion-header').classList.remove('expanded');
+        //         GCollapse(accordionSibling.querySelector('.g-accordion-body'));
+        //     }
+        // });
         accordionHeader.addEventListener("click", () => GCollapse(accordionBody));
         accordionHeader.addEventListener("click", function() {
-                accordionHeader.classList.toggle('active');
-                if (accordionHeader.classList.contains('active')) {
-                    accordionItems.forEach(accordionItem => {
-                        accordionItem.querySelectorAll('.g-accordion-body').classList.remove('active');
+            accordionHeader.classList.toggle('active');
+            accordionItem.classList.toggle('expanded');
 
-                    });
-
-                }
-            }
-
-        );
+        });
     });
-
 });
 
 // Modal

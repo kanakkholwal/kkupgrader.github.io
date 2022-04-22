@@ -1001,8 +1001,6 @@
     .g-accordion-item .g-accordion-header::after {
         display: inline-flex;
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z'/%3E%3C/svg%3E");
-        background-color: var(--nav-btn);
-        border: 1px solid var(--nav-btn);
         border-radius: 4px;
         cursor: pointer;
         height: 32px;
@@ -1014,7 +1012,7 @@
         touch-action: manipulation;
         user-select: none;
         padding-top: 3px;
-        color: var(--text-clr);
+        transition: transform 0.5s ease
     }
     
     .g-accordion-item .g-accordion-header.active {
@@ -1022,11 +1020,14 @@
     }
     
     .g-accordion-item .g-accordion-header.active::after {
-        transform: rotate(180deg)
+        transform: rotate(180deg);
+    }
+    
+    .g-accordion-item .g-accordion-body .g-accordion-body-content {
+        padding: 1rem;
     }
     
     .g-accordion-item .g-accordion-body {
-        padding: 1rem;
         font-size: 1.123rem;
         transition: height .5s ease;
         overflow: hidden;
