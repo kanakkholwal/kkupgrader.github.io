@@ -55,44 +55,78 @@ if (draggable) {
         UnDraggable.setAttribute('draggable', 'false');
     });
 }
+// Genesis Collapse
+function GCollapse(collapse) {
+    if (!collapse.classList.contains('active')) {
+        /** Show the collapse. */
+        collapse.classList.add('active')
+        collapse.style.height = "auto"
+
+        /** Get the computed height of the collapse. */
+        var height = collapse.clientHeight + "px"
+
+        /** Set the height of the content as 0px, */
+        /** so we can trigger the slide down animation. */
+        collapse.style.height = "0px"
+
+        /** Do this after the 0px has applied. */
+        /** It's like a delay or something. MAGIC! */
+        setTimeout(() => {
+            collapse.style.height = height
+        }, 0)
+
+        /** Slide up. */
+    } else {
+        /** Set the height as 0px to trigger the slide up animation. */
+        collapse.style.height = "0px"
+
+        /** Remove the `active` class when the animation ends. */
+        collapse.addEventListener('transitionend', () => {
+            collapse.classList.remove('active')
+        }, {
+            once: true
+        })
+    }
+
+}
+
 // Component : Collapse
 
 const collapseBtns = document.querySelectorAll('[data-g-collapse-target]');
 collapseBtns.forEach(collapseBtn => {
     let collapseId = collapseBtn.getAttribute('data-g-collapse-target');
     let collapseArea = document.querySelector(collapseId);
-    collapseBtn.addEventListener('click', () => collapseArea.classList.toggle('show'));
+    collapseBtn.addEventListener('click', () => GCollapse(collapseArea));
 });
 
 
 
 // Component : Accordion - From Codepen.io ,gonna change it
-const accordions = document.querySelectorAll(".g-accordion");
 
-const openAccordion = (accordion) => {
-    const content = accordion.querySelector(".g-accordion-content");
-    accordion.classList.add("g-accordion-active");
-    content.style.maxHeight = content.scrollHeight + "px";
-};
+//const accordions=document.querySelectorAll(".g-accordion"),openAccordion=accordion=>{const content=accordion.querySelector(".g-accordion-content");accordion.classList.add("g-accordion-active"),content.style.maxHeight=content.scrollHeight+"px"},closeAccordion=accordion=>{const content=accordion.querySelector(".g-accordion-body");accordion.classList.remove("g-accordion-active"),content.style.maxHeight=null};accordions.forEach(accordion=>{const intro=accordion.querySelector(".g-accordion-toggle"),content=accordion.querySelector(".g-accordion-body");intro.onclick=()=>{content.style.maxHeight?closeAccordion(accordion):(accordions.forEach(accordion=>closeAccordion(accordion)),openAccordion(accordion))}});
 
-const closeAccordion = (accordion) => {
-    const content = accordion.querySelector(".g-accordion-body");
-    accordion.classList.remove("g-accordion-active");
-    content.style.maxHeight = null;
-};
+// Genesis Accordion
+const accordions = document.querySelectorAll('.g-accordion');
+accordions.forEach(accordion => {
+    let accordionItems = accordion.querySelectorAll(".g-accordion-item");
+    accordionItems.forEach(accordionItem => {
+        let accordionHeader = accordionItem.querySelector(".g-accordion-header");
+        let accordionBody = accordionItem.querySelector(".g-accordion-body");
+        accordionHeader.addEventListener("click", () => GCollapse(accordionBody));
+        accordionHeader.addEventListener("click", function() {
+                accordionHeader.classList.toggle('active');
+                if (accordionHeader.classList.contains('active')) {
+                    accordionItems.forEach(accordionItem => {
+                        accordionItem.querySelectorAll('.g-accordion-body').classList.remove('active');
 
-accordions.forEach((accordion) => {
-    const intro = accordion.querySelector(".g-accordion-toggle");
-    const content = accordion.querySelector(".g-accordion-body");
+                    });
 
-    intro.onclick = () => {
-        if (content.style.maxHeight) {
-            closeAccordion(accordion);
-        } else {
-            accordions.forEach((accordion) => closeAccordion(accordion));
-            openAccordion(accordion);
-        }
-    };
+                }
+            }
+
+        );
+    });
+
 });
 
 // Modal
