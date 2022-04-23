@@ -56,7 +56,7 @@
             <div class="container-fluid flex-nowrap">
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="nav-btn sidenav-toggler"><i class="fas fa-bars"></i></div>
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/genesis-css/">
+                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/genesis-ui/">
                         <img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-light" />
                         <img src="/logo_dark.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-dark" />
                     </a>
@@ -166,6 +166,17 @@
 
                         </div>
                     </section>
+                    <div class="m-auto">
+                        <button class="btn btn-primary" data-g-collapse-target="#html-code">Show Code</button>
+
+                        <div class="g-collapse" id="html-code">
+                            <pre><code class="lang-js">
+                            let elem = document.getElementById("collapse-this");
+               
+                           GCollapse(elem);
+                        </code></pre>
+                        </div>
+                    </div>
             </section>
             <h2 class="mb-4">With JavaScript</h2>
             <p>You can also toggle Collapse with <code>Javascript</code> , all you have to do is add <code>.g-collapse</code> to that element and select that elemnt is <span class="fw-bold">DOM</span></p>
@@ -213,8 +224,8 @@
             </ul>
             <div class="sidenav-heading">Documentation</div>
             <ul class="list">
-                <li class="sidenavify-collapse">
-                    <a>
+                <li class="sidenavify-collapse ">
+                    <a class="ripple">
                         <i class="fas fa-cubes"></i>Components
                         <div class="nav-btn circle"><i class="fas fa-angle-up icon-status"></i></div>
                     </a>

@@ -18,6 +18,7 @@ sidenav_collapse.forEach(collapse => {
     collapse.addEventListener('click', () => collapse.classList.toggle(newLocal));
     collapse.addEventListener('click', () => collapse.querySelector('ul.collapse-list').classList.toggle("show"));
     collapse.addEventListener('click', () => collapse.querySelector('a:first-child .icon-status').classList.toggle("rotate"));
+    collapse.querySelector('a:first-child').removeAttribute("class");
 });
 
 const darkToggle = document.querySelector('.darkmode-toggler');
