@@ -762,6 +762,10 @@
             background: var(--sidenavify-color);
         }
         
+        .sidebar-body {
+            overflow-y: initial;
+        }
+        
         .sidebar-body ul {
             display: block;
             margin-left: 0.1rem;
@@ -818,6 +822,15 @@
         }
         
         .sidebar-body ul.list>li:not(.sidenavify-collapse):after {
+            content: '\f2f5';
+            font-family: 'Font Awesome 5 Pro';
+            margin: 0 0.5rem;
+            font-weight: 900;
+            position: absolute;
+            right: 0.5rem;
+        }
+        
+        .sidebar-body ul.list>li:not(.sidenavify-collapse).blank:after {
             content: '\f35d';
             font-family: 'Font Awesome 5 Pro';
             margin: 0 0.5rem;

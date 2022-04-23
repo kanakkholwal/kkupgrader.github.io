@@ -10,6 +10,7 @@ document.addEventListener('mouseup', function(e) {
         sidenav.classList.remove("show");
     }
 });
+
 // Collapse List and Rotate Icon
 let sidenav_collapse = document.querySelectorAll(".sidenavify-collapse");
 sidenav_collapse.forEach(collapse => {
