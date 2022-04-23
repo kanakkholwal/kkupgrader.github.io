@@ -1,32 +1,7 @@
-(function() {
-    var observer = new IntersectionObserver(onIntersect);
-    document.querySelectorAll("[data-src]").forEach((img) => {
-        observer.observe(img);
-    });
-
-    function onIntersect(entries) {
-        entries.forEach((entry) => {
-            if (entry.target.getAttribute("data-processed") || !entry.isIntersecting)
-                return true;
-            entry.target.setAttribute("src", entry.target.getAttribute("data-src"));
-            entry.target.setAttribute("data-processed", true);
-            entry.target.classList.remove("lazy");
-        });
-    }
-})();
+const PageTitle = document.title;
+document.getElementById('title').innerText = PageTitle;
 
 
-
-function loadCSS(e, t, n) {
-    "use strict";
-    var i = window.document.createElement("link");
-    var o = t || window.document.getElementsByTagName("script")[0];
-    i.rel = "stylesheet";
-    i.href = e;
-    i.media = "only x";
-    o.parentNode.insertBefore(i, o);
-    setTimeout(function() { i.media = n || "all" })
-}
 
 
 var prism_js = document.createElement("script");
@@ -64,8 +39,6 @@ if (
     ((prism_js.src =
             "/plugins/prism/prism.js"),
         (prism_js.onload = function() {
-            loadCSS("/plugins/prism/prism.css");
-
             Prism.highlightAll();
 
         }),
@@ -85,27 +58,3 @@ else {
     }),
     document.body.appendChild(copy_btn);
 }
-////$(".Copy").on("click", copyToClipboard);
-
-//function copyToClipboard() {
-//var copyText = $(".CopyThis").val();
-//   navigator.clipboard.writeText(copyText).then(() => {
-// Alert the user that the action took place.
-// Nobody likes hidden stuff being done under the hood!
-//       alert("Copied to clipboard");
-//  });
-//}
-
-//var creditsyear = new Date().getFullYear();
-
-// document.querySelector(".date").innerHTML = creditsyear;
-
-
-
-//var script = document.createElement("script");
-/////script.src = "";
-
-//script.onload = function () {
-///
-//};
-//document.body.appendChild(script);
