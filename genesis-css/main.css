@@ -79,6 +79,12 @@
         --g-border-clr: #242526
     }
     
+    *,
+     ::before,
+     ::after {
+        box-sizing: border-box;
+    }
+    
     body.dark .only-dark {
         display: unset
     }
@@ -1056,14 +1062,19 @@
         overflow-x: hidden;
         overflow-y: auto;
         outline: 0;
+        --webkit-transition: all 0.6s;
+        --moz-transition: all 0.6s;
+        transition: all 0.6s;
+        opacity: 0;
         display: none;
     }
     
     .g-modal-area.open {
         display: block;
-        /* --webkit-transition: all 0.6s;
-    --moz-transition: all 0.6s;
-    transition: all 0.6s; */
+        --webkit-transition: all 0.6s;
+        --moz-transition: all 0.6s;
+        transition: all 0.6s;
+        opacity: 1;
     }
     
     .g-modal-area.open .g-modal {
@@ -1309,4 +1320,153 @@
     
     .g-toast-container .g-toast.g-toast-info .g-toast-header {
         border-bottom-color: #81aff7;
+    }
+    /* Tooltip */
+    
+    [data-g-tooltip-title] {
+        position: relative;
+        cursor: pointer;
+        transition: .3s;
+    }
+    
+    .g-tooltip {
+        opacity: 0;
+        position: absolute;
+        padding: .5rem 1rem;
+        background-color: var(--first-color);
+        color: var(--first-color-light);
+        font-size: var(--normal-font-size);
+        white-space: nowrap;
+        font-weight: 700;
+        border-radius: .5rem;
+        pointer-events: none;
+        transition: .3s;
+        --first-color: #322FF2;
+        --first-color-light: #E3E2FD;
+        --body-color: #FAFAFF;
+        --normal-font-size: 1rem;
+    }
+    
+    .g-tooltip::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: var(--first-color);
+        border-radius: 3px;
+    }
+    
+    .g-tooltip-left {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    
+    .g-tooltip-left::after {
+        top: 50%;
+        transform: translate(50%, -50%) rotate(45deg);
+        right: 1px;
+    }
+    
+    [data-g-tooltip-title]:hover .g-tooltip-left {
+        opacity: 1;
+        left: -1rem;
+    }
+    /*========== Tooltip top ==========*/
+    
+    .g-tooltip-top {
+        top: -2.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .g-tooltip-top::after {
+        left: 50%;
+        transform: translate(-50%, 50%) rotate(45deg);
+        bottom: 1px;
+    }
+    
+    [data-g-tooltip-title]:hover .g-tooltip-top {
+        opacity: 1;
+        top: -3.25rem;
+    }
+    /*========== Tooltip bottom ==========*/
+    
+    .g-tooltip-bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+    }
+    
+    .g-tooltip-bottom::after {
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        top: 1px;
+    }
+    
+    [data-g-tooltip-title]:hover .g-tooltip-bottom {
+        opacity: 1;
+        bottom: -1rem;
+    }
+    /*========== Tooltip right  ==========*/
+    
+    .g-tooltip-right {
+        right: 0;
+        transform: translateX(100%);
+    }
+    
+    .g-tooltip-right::after {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        left: 1px;
+    }
+    
+    [data-g-tooltip-title]:hover .g-tooltip-right {
+        opacity: 1;
+        right: -1rem;
+    }
+    /* Genesis Tabs */
+    
+    .g-tab-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+    
+    .g-tab-bar .g-tab-toggle {
+        align-items: center;
+        border-bottom: 3px solid transparent;
+        color: #65676b;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        outline: 0 !important;
+        outline-style: none;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        touch-action: manipulation;
+        user-select: none;
+    }
+    
+    .g-tab-bar .g-tab-toggle.active {
+        border-bottom-color: var(--g-primary);
+        color: #000000;
+        font-weight: 500;
+    }
+    
+    .g-tabs-content {
+        width: 100%;
+    }
+    
+    .g-tabs-content>.g-tab-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 400ms ease-out;
+    }
+    
+    .g-tabs-content>.g-tab-content.show {
+        display: block;
+        opacity: 1;
+        transition: opacity 400ms ease-out;
     }

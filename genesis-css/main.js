@@ -62,25 +62,19 @@ function GCollapse(collapse) {
         collapse.classList.add('active')
         collapse.style.height = "auto"
 
-        /** Get the computed height of the collapse. */
         var height = collapse.clientHeight + "px"
 
-        /** Set the height of the content as 0px, */
-        /** so we can trigger the slide down animation. */
+
         collapse.style.height = "0px"
 
-        /** Do this after the 0px has applied. */
-        /** It's like a delay or something. MAGIC! */
+
         setTimeout(() => {
             collapse.style.height = height
         }, 0)
 
-        /** Slide up. */
     } else {
-        /** Set the height as 0px to trigger the slide up animation. */
         collapse.style.height = "0px"
 
-        /** Remove the `active` class when the animation ends. */
         collapse.addEventListener('transitionend', () => {
             collapse.classList.remove('active')
         }, {
@@ -247,4 +241,49 @@ document.addEventListener('click', function(e) {
         //create toast message with dataset attributes
         GenesisToast(e.target.dataset.gToastType, e.target.dataset.gToastTitle, e.target.dataset.gToastHtml, e.target.dataset.gToastDuration);
     }
+});
+
+
+// Genesis Component : Tooltip
+// const GenesisTooltips=document.querySelectorAll("[data-g-tooltip-title]");GenesisTooltips.forEach(GenesisTooltip=>{let GenesisTooltipElement=document.createElement("div");GenesisTooltipElement.classList.add("g-tooltip"),GenesisTooltip.addEventListener("onmouseenter",(function(){let GenesisTooltipPlacement=GenesisTooltip.getAttribute("data-g-tooltip-placement"),GenesisTooltipTitle=GenesisTooltip.getAttribute("data-g-tooltip-title");GenesisTooltipElement.classList.add(`g-tooltip-`),GenesisTooltipElement.innerHTML=GenesisTooltipTitle,GenesisTooltip.appendChild(GenesisTooltipElement)})),GenesisTooltip.addEventListener("onmouseleave",(function(){GenesisTooltip.removeChild(GenesisTooltipElement)}))});
+
+// Genesis Component : Tabs
+
+function checkTabs(Tab) {
+    let tabContent = Tab.getAttribute('data-g-tab');
+    if (Tab.classList.contains('active')) {
+
+        document.querySelector(tabContent).classList.remove('show');
+    } else {
+
+        document.querySelector(tabContent).classList.add('show');
+    }
+}
+const GenesisTabs = document.querySelectorAll('[data-g-tabs-target]');
+
+GenesisTabs.forEach(GenesisTab => function() {
+    let GTabToggles = GenesisTab.querySelectorAll('g-tab-toggle');
+    let GTabTargetId = GenesisTab.getAttribute('data-g-tabs-target');
+    let GTabContent = document.querySelector(GTabTargetId);
+    GTabToggles.forEach(GTabToggle => {
+        let GTabId = GTabToggle.getAttribute('data-g-tab');
+        //  checkTabs(GTabToggle);
+
+        function checkGTabs() {
+            if (GTabToggle.classList.contains('active')) {
+                GTabContent.querySelector(GTabId).addClass('show');
+            } else {
+                GTabContent.querySelector(GTabId).removeClass('show');
+            }
+        }
+
+        GTabToggle.addEventListener('click', function() {
+            GTabContent.querySelector(GTabId).addClass('show');
+            //    checkTabs(GTabToggle);
+
+
+            checkGTabs();
+        });
+
+    });
 });
