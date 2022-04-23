@@ -11,6 +11,7 @@ document.addEventListener('mouseup', function(e) {
     }
 });
 
+
 // Collapse List and Rotate Icon
 let sidenav_collapse = document.querySelectorAll(".sidenavify-collapse");
 sidenav_collapse.forEach(collapse => {
@@ -61,34 +62,30 @@ if (draggable) {
 function GCollapse(collapse) {
     if (!collapse.classList.contains('active')) {
         /** Show the collapse. */
-        collapse.classList.add('active')
-        collapse.style.height = "auto"
+        collapse.classList.add('active');
+        collapse.style.height = "auto";
 
-        var height = collapse.clientHeight + "px"
+        var height = collapse.clientHeight + "px";
 
 
-        collapse.style.height = "0px"
+        collapse.style.height = "0px";
 
 
         setTimeout(() => {
-            collapse.style.height = height
-        }, 0)
+            collapse.style.height = height;
+        }, 0);
 
     } else {
-        collapse.style.height = "0px"
+        collapse.style.height = "0px";
 
         collapse.addEventListener('transitionend', () => {
-            collapse.classList.remove('active')
+            collapse.classList.remove('active');
         }, {
             once: true
-        })
+        });
     }
 
 }
-// Select all siblings
-// const getSiblings = node => [...node.parentNode.children].filter(c => c.className !== node);
-
-// const siblingsToC = getSiblings(document.querySelector('.g-accordion-item.expanded'))
 
 // Genesis Component : Collapse
 
@@ -100,8 +97,6 @@ collapseBtns.forEach(collapseBtn => {
 });
 
 
-
-
 // Genesis Component : Accordion
 const accordions = document.querySelectorAll('.g-accordion');
 accordions.forEach(accordion => {
@@ -109,21 +104,20 @@ accordions.forEach(accordion => {
     accordionItems.forEach(accordionItem => {
         let accordionHeader = accordionItem.querySelector(".g-accordion-header");
         let accordionBody = accordionItem.querySelector(".g-accordion-body");
-        //   let accordionItemSiblings = accordionItem.parentElement.childNodes.filter(sibs => sibs !== accordionItem);
-
-        //    console.log(accordionItemSiblings);
-        // accordionItemSiblings.forEach(accordionItemSibling => {
-        //     accordionItemSibling.querySelector(".g-accordion-header").classList.remove('active');
-        //     accordionItemSibling.querySelector(".g-accordion-body").classList.remove('active');
-        //     accordionItemSibling.classList.remove('expanded');
-
-        // })
-
-        accordionHeader.addEventListener("click", () => GCollapse(accordionBody));
         accordionHeader.addEventListener("click", function() {
-            accordionHeader.classList.toggle('active');
-            accordionItem.classList.toggle('expanded');
+            let forSibs = accordionItem.parentElement.children;
+            for (let n = 0; n < forSibs.length; n++) {
 
+                if (forSibs[n].classList.contains('expanded')) {
+                    forSibs[n].querySelector('.g-accordion-header').classList.add('active');
+                    forSibs[n].classList.add('expanded');
+                    GCollapse(forSibs[n].querySelector('.g-accordion-body'));
+                } else {
+                    forSibs[n].querySelector('.g-accordion-header').classList.remove('active');
+                    forSibs[n].classList.remove('expanded');
+                    GCollapse(forSibs[n].querySelector('.g-accordion-body'));
+                }
+            }
         });
     });
 });
@@ -252,41 +246,36 @@ document.addEventListener('click', function(e) {
 
 // Genesis Component : Tabs
 
-function checkTabs(Tab) {
-    let tabContent = Tab.getAttribute('data-g-tab');
-    if (Tab.classList.contains('active')) {
-
-        document.querySelector(tabContent).classList.remove('show');
-    } else {
-
-        document.querySelector(tabContent).classList.add('show');
-    }
-}
-const GenesisTabs = document.querySelectorAll('[data-g-tabs-target]');
-
-GenesisTabs.forEach(GenesisTab => function() {
-    let GTabToggles = GenesisTab.querySelectorAll('g-tab-toggle');
-    let GTabTargetId = GenesisTab.getAttribute('data-g-tabs-target');
-    let GTabContent = document.querySelector(GTabTargetId);
-    GTabToggles.forEach(GTabToggle => {
-        let GTabId = GTabToggle.getAttribute('data-g-tab');
-        //  checkTabs(GTabToggle);
-
-        function checkGTabs() {
-            if (GTabToggle.classList.contains('active')) {
-                GTabContent.querySelector(GTabId).addClass('show');
-            } else {
-                GTabContent.querySelector(GTabId).removeClass('show');
+function GenesisTabs() {
+    var GBindAll = function() {
+        var GTabToggles = document.querySelectorAll('[data-g-tab]');
+        for (var i = 0; i < GTabToggles.length; i++) {
+            GTabToggles[i].addEventListener('click', GChange, false);
+            if (!GTabToggles[i].classList.contains('active')) {
+                GTabToggles[0].classList.add('active');
+                var firstId = GTabToggles[0].getAttribute('data-g-tab');
+                document.getElementById(firstId).classList.add('show');
             }
         }
+    }
 
-        GTabToggle.addEventListener('click', function() {
-            GTabContent.querySelector(GTabId).addClass('show');
-            //    checkTabs(GTabToggle);
+    var GClear = function() {
+        var GTabToggles = document.querySelectorAll('[data-g-tab]');
+        for (var i = 0; i < GTabToggles.length; i++) {
+            GTabToggles[i].classList.remove('active');
+            var id = GTabToggles[i].getAttribute('data-g-tab');
+            document.getElementById(id).classList.remove('show');
+        }
+    }
 
+    var GChange = function(e) {
+        GClear();
+        e.target.classList.add('active');
+        var id = e.currentTarget.getAttribute('data-g-tab');
+        document.getElementById(id).classList.add('show');
+    }
 
-            checkGTabs();
-        });
+    GBindAll();
+}
 
-    });
-});
+var connectTabs = new GenesisTabs();
