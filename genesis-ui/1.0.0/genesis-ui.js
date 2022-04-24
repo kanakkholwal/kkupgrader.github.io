@@ -229,6 +229,11 @@ function GenesisToast(type, title, body, duration) {
 
     });
 }
+
+
+
+
+
 document.addEventListener('click', function(e) {
     //check is the right element clicked
     if (!e.target.matches('.g-toast-toggle')) return;
@@ -245,23 +250,24 @@ document.addEventListener('click', function(e) {
 // Genesis Component : Tabs
 
 function GenesisTabs() {
-
+    var GBindAll = function() {
+        var GTabToggles = document.querySelectorAll('[data-g-tab]');
+        for (var i = 0; i < GTabToggles.length; i++) {
+            GTabToggles[i].addEventListener('click', GChange, false);
+            if (!GTabToggles[i].classList.contains('active')) {
+                GTabToggles[0].classList.add('active');
+                var firstId = GTabToggles[0].getAttribute('data-g-tab');
+                document.getElementById(firstId).classList.add('show');
+            }
+        }
+    }
 
     var GClear = function() {
-        var GTabAreas = document.querySelectorAll('[data-g-tab-target]');
-        for (var t = 0; t < GTabAreas.length; t++) {
-            var GTabToggles = GTabAreas[t].querySelectorAll('[data-g-tab]');
-            for (var i = 0; i < GTabToggles.length; i++) {
-                GTabToggles[i].classList.remove('active');
-            }
-
-            let targetId = GTabAreas[t].getAttribute('data-g-tab-target');
-            let targetArea = document.getElementById(targetId);
-            let targetAreaContent = targetArea.getElementsByClassName('g-tab-content');
-
-            for (let n = 0; n < targetAreaContent.length; n++) {
-                targetAreaContent[n].classList.remove('show');
-            }
+        var GTabToggles = document.querySelectorAll('[data-g-tab]');
+        for (var i = 0; i < GTabToggles.length; i++) {
+            GTabToggles[i].classList.remove('active');
+            var id = GTabToggles[i].getAttribute('data-g-tab');
+            document.getElementById(id).classList.remove('show');
         }
     }
 
@@ -271,20 +277,7 @@ function GenesisTabs() {
         var id = e.currentTarget.getAttribute('data-g-tab');
         document.getElementById(id).classList.add('show');
     }
-    var GBindAll = function() {
-        var GTabAreas = document.querySelectorAll('[data-g-tab-target]');
-        for (var t = 0; t < GTabAreas.length; t++) {
-            var GTabToggles = GTabAreas[t].querySelectorAll('[data-g-tab]');
-            for (var i = 0; i < GTabToggles.length; i++) {
-                GTabToggles[i].addEventListener('click', GChange, false);
-                if (!GTabToggles[i].classList.contains('active')) {
-                    GTabToggles[0].classList.add('active');
-                    var firstId = GTabToggles[0].getAttribute('data-g-tab');
-                    document.getElementById(firstId).classList.add('show');
-                }
-            }
-        }
-    }
+
     GBindAll();
 }
 

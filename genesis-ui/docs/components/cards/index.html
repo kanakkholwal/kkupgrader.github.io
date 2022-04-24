@@ -2,7 +2,7 @@
 <html data-theme='light'>
 
 <head>
-    <title>Collapse - Genesis Documentation</title>
+    <title>Cards - Genesis Documentation</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- Preload Cdns -->
     <link href='https://fonts.googleapis.com' rel='preconnect' />
@@ -101,7 +101,8 @@
                         <h3 class="text-white" id="title">
 
                         </h3>
-                        <p>Collapse is a vertical element used to show and hide content via class changes. Toggle the visibility of content across your project with a few classes and our JavaScript plugins.</p>
+                        <p>
+                            Card is a responsive content container with an extensible option for headers, footers, images, and a wide variety of content.</p>
                     </div>
                 </section>
             </div>
@@ -116,83 +117,226 @@
     <main class="container-lg my-5 px-2 px-md-5 " id="docs">
         <section id="section-introduction">
             <!-- Main title -->
-            <h2 class="h1 fw-bold">Collapse
+            <h2 class="h1 fw-bold">Cards
 
             </h2>
 
             <!-- Seo title -->
-            <h1 class="h6">Genesis&nbsp;Collapse&nbsp;component
+            <h1 class="h6">Genesis Card component
             </h1>
 
             <!-- Description -->
 
-            <p class="mt-4">Responsive collapse built with the latest Genesis UI. Collapse is a vertical element used to show and hide content via class changes.
+            <p class="my-4">Responsive cards built with the Genesis UI . Card is a responsive content container with an extensible option for headers, footers, images, and a wide variety of content.
             </p>
 
-            <p class="mb-4">
-                Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
-            </p>
+        </section>
+        <!--Section: Introduction-->
+
+        <hr class="my-5" />
+
+        <!--Section: Basic examples-->
+        <section id="section-basic-examples">
+            <!-- Section title -->
+            <h2 class="mb-4">Basic examples</h2>
+
+            <p></p>
+            <!--Subsection: Simple-->
+            <section id="subsection-simple">
+                <!--Subsection title-->
+                <h4 class="mt-5">Simple</h4>
+
+                <!--Description-->
+                <p>Use the following simple card component with a title and a description:</p>
+
+                <!--Section: Demo-->
+                <section class="pb-4">
+                    <div class="bg-white border rounded-5">
+
+                        <section class="p-4 d-flex justify-content-center w-100">
+                            <div class="g-card" style="max-width: 22rem;">
+                                <div class="g-card-body">
+                                    <h5 class="g-card-title">Card title</h5>
+                                    <p class="g-card-text">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <button type="button" class="g-btn g-btn-primary">Button</button>
+                                </div>
+                            </div>
+                        </section>
 
 
+                        <div class="border-top p-3 text-center">
+                            <button class="btn btn-link" data-g-collapse-target="#simple-code"><i class="fas fa-code me-md-2"></i>Show Code</button>
 
-            <h4 class="mt-4">How it works</h4>
 
-            <p>
-                The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the <code>height</code> from its current value
-                to <code>0</code>. Given how CSS handles animations, you cannot use <code>padding</code> on a <code>.collapse</code> element. Instead, use the class as an independent wrapping element.
-            </p>
-            <h2 class="mb-4">Example</h2>
+                        </div>
+                </section>
+                <div class="g-collapse" id="simple-code">
+                    <pre><code class="lang-html">
+                        &lt;div class=&quot;g-card&quot; style=&quot;max-width: 22rem;&quot;&gt;
+                        &lt;div class=&quot;g-card-body&quot;&gt;
+                            &lt;h5 class=&quot;g-card-title&quot;&gt;Card title&lt;/h5&gt;
+                            &lt;p class=&quot;g-card-text&quot;&gt;
+                                Some quick example text to build on the card title and make up the bulk of the card&#039;s content.
+                            &lt;/p&gt;
+                            &lt;button type=&quot;button&quot; class=&quot;g-btn g-btn-primary&quot;&gt;Button&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;                   </code></pre>
+                </div>
+            </section>
+        </section>
+        <section id="subsection-image">
+            <!--Subsection title-->
+            <h4 class="mt-5">Image</h4>
 
-            <p>Click the buttons below to show and hide another element via class changes:</p>
+            <!--Description-->
+            <p>Use the following example of a card element with an image for blog posts, user cards, and many more:</p>
 
-            <ul>
-                <li><code>.g-collapse</code> hides content</li>
-                <li>Transition is done by Javascript</li>
-                <li><code>.g-collapse.active</code> shows content</li>
-            </ul>
-
-            <p>
-                You can use a link or a button with the
-                <code>data-g-collapse-target</code> attribute and set attribute value to <code>id</code> of the collapse element . <br> e.g. <code>data-g-collapse-target="#collapseId"</code>
-            </p>
             <!--Section: Demo-->
             <section class="pb-4">
-                <div class=" border rounded-5">
+                <div class="bg-white border rounded-5">
 
-                    <section class="p-4 text-center w-100">
-                        <button href="#this" class="g-btn" data-g-collapse-target="#this"> Collapse</button><br>
-                        <div id="this" class="g-collapse text-center">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-
+                    <section class="p-4 d-flex justify-content-center  w-100">
+                        <div class="g-card" style="max-width: 22rem;">
+                            <img src="/genesis-ui/content/images/184.webp" class="g-card-img-top" alt="Fissure in Sandstone" />
+                            <div class="g-card-body">
+                                <h5 class="g-card-title">Card title</h5>
+                                <p class="g-card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                                </p>
+                                <a href="#!" class="g-btn">Button</a>
+                            </div>
                         </div>
                     </section>
                     <div class="border-top p-3 text-center">
-                        <button class="btn btn-link" data-g-collapse-target="#html-code"><i class="fas fa-code me-md-2"></i>Show Code</button>
+                        <button class="btn btn-link" data-g-collapse-target="#imgT-code"><i class="fas fa-code me-md-2"></i>Show Code</button>
 
 
                     </div>
             </section>
-            <div class="g-collapse" id="html-code">
+            <div class="g-collapse" id="imgT-code">
                 <pre><code class="lang-html">
-                    &lt;button class=&quot;g-btn&quot; data-g-collapse-target=&quot;#this&quot;&gt; Collapse&lt;/button&gt;
-                        &lt;div id=&quot;this&quot; class=&quot;g-collapse &quot;&gt;
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                        &lt;/div&gt;                        </code></pre>
+                    &lt;div class=&#34;g-card&#34;&gt;
+                    &lt;img src=&#34;https://kkupgrader.eu.org/genesis-ui/content/images/184.webp&#34; class=&#34;g-card-img-top&#34; alt=&#34;Fissure in Sandstone&#34;/&gt;
+                    &lt;div class=&#34;g-card-body&#34;&gt;
+                      &lt;h5 class=&#34;g-card-title&#34;&gt;Card title&lt;/h5&gt;
+                      &lt;p class=&#34;g-card-text&#34;&gt;Some quick example text to build on the card title and make up the bulk of the card&#39;s content.&lt;/p&gt;
+                      &lt;a href=&#34;#!&#34; class=&#34;g-btn &#34;&gt;Button&lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;                  </code></pre>
             </div>
-            <h2 class="mb-4">With JavaScript</h2>
-            <p>You can also toggle Collapse with <code>Javascript</code> , all you have to do is add <code>.g-collapse</code> to that element and select that elemnt is <span class="fw-bold">DOM</span></p>
-            <div class="border rounded-5 p-3 my-2 text-center">
-                <button class="btn btn-link" data-g-collapse-target="#js-code"><i class="fas fa-code me-md-2"></i>Show Code</button>
+        </section>
+        <section id="subsection-basic-examples-header-and-footer">
+            <!--Subsection title-->
+            <h4 class="mt-5">Header and footer</h4>
+
+            <!--Description-->
+            <p>Add optional header and footer sections to the card.</p>
+
+            <!--Section: Demo-->
+            <section class="pb-4">
+                <div class="bg-white border rounded-5">
+
+                    <section class="p-4 d-flex justify-content-center text-center w-100">
+                        <div class="g-card text-center" style="max-width: 22rem;">
+                            <div class="g-card-header">Featured</div>
+                            <div class="g-card-body">
+                                <h5 class="g-card-title">Special title treatment</h5>
+                                <p class="g-card-text">
+                                    With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="g-btn g-btn-primary">Button</a>
+                            </div>
+                            <div class="g-card-footer text-muted">2 days ago</div>
+                        </div>
+                    </section>
+                    <div class="border-top p-3 text-center">
+                        <button class="btn btn-link" data-g-collapse-target="#ht-code"><i class="fas fa-code me-md-2"></i>Show Code</button>
+
+
+                    </div>
+            </section>
+            <div class="g-collapse" id="ht-code">
+                <pre><code class="lang-html">
+                    &lt;div class=&#34;g-card text-center&#34;&gt;
+                    &lt;div class=&#34;g-card-header&#34;&gt;Featured&lt;/div&gt;
+                    &lt;div class=&#34;g-card-body&#34;&gt;
+                      &lt;h5 class=&#34;g-card-title&#34;&gt;Special title treatment&lt;/h5&gt;
+                      &lt;p class=&#34;g-card-text&#34;&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
+                      &lt;a href=&#34;#&#34; class=&#34;g-btn g-btn-primary&#34;&gt;Button&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&#34;g-card-footer text-muted&#34;&gt;2 days ago&lt;/div&gt;
+                  &lt;/div&gt;
+                </code></pre>
+            </div>
+
 
 
             </div>
-            <div class="g-collapse" id="js-code"> <pre><code class="lang-js">
-             let elem = document.getElementById("collapse-this");
+        </section>
 
-            GCollapse(elem);
-         </code></pre>
+
+        </section>
+        <section id="subsection-titles-text-and-links">
+            <!--Subsection title-->
+            <h4 class="mt-5">Titles, text, and links</h4>
+
+            <!--Description-->
+            <p>
+                Card titles are used by adding <code>.card-title</code> to a <code>&lt;h*&gt;</code> tag. In the same way, links are added and placed next to each other by adding
+                <code>.card-link</code> to an <code>&lt;a&gt;</code> tag.
+            </p>
+
+            <p>
+                Subtitles are used by adding a <code>.card-subtitle</code> to a <code>&lt;h*&gt;</code> tag. If the <code>.card-title</code> and the <code>.card-subtitle</code> items are placed in a
+                <code>.card-body</code> item, the card title and subtitle are aligned nicely.
+            </p>
+
+            <!--Section: Demo-->
+            <section class="pb-4">
+                <div class="bg-white border rounded-5">
+
+                    <section class="p-4 d-flex justify-content-center w-100">
+                        <div class="g-card" style="width: 18rem;">
+                            <div class="g-card-body">
+                                <h5 class="g-card-title">Card title</h5>
+                                <h6 class="g-card-subtitle">Card subtitle</h6>
+                                <p class="g-card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                                </p>
+                                <a href="#" class="g-card-link">Card link</a>
+                                <a href="#" class="g-card-link">Another link</a>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="border-top p-3 text-center">
+                        <button class="btn btn-link" data-g-collapse-target="#imgLink-code"><i class="fas fa-code me-md-2"></i>Show Code</button>
+
+
+                    </div>
+            </section>
+            <div class="g-collapse" id="imgLink-code">
+                <pre><code class="lang-html">
+            
+                    &lt;div class=&#34;g-card&#34; style=&#34;width: 18rem;&#34;&gt;
+                    &lt;div class=&#34;g-card-body&#34;&gt;
+                      &lt;h5 class=&#34;g-card-title&#34;&gt;Card title&lt;/h5&gt;
+                      &lt;h6 class=&#34;g-card-subtitle&#34;&gt;Card subtitle&lt;/h6&gt;
+                      &lt;p class=&#34;g-card-text&#34;&gt;Some quick example text to build on the card title and make up the bulk of the card&#39;s content.&lt;/p&gt;
+                      &lt;a href=&#34;#&#34; class=&#34;g-card-link&#34;&gt;Card link&lt;/a&gt;
+                      &lt;a href=&#34;#&#34; class=&#34;g-card-link&#34;&gt;Another link&lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </code></pre>
+            </div>
+
+
 
             </div>
+        </section>
+
+
         </section>
     </main>
 
@@ -242,7 +386,7 @@
                             <a href="/genesis-ui/docs/components/collapse/"> Collapse</a>
                         </li>
                         <li>
-                            <a href="#">Some Link</a>
+                            <a href="/genesis-ui/docs/components/cards/">Cards</a>
                         </li>
                         <li>
                             <a href="#">Some Link</a>
@@ -305,7 +449,7 @@
                             <a href="/genesis-css/docs/components/collapse/"><i class="fas fa-cubes"></i> Collapse</a>
                         </li>
                         <li>
-                            <a href="#">Some Link</a>
+                            <a href="/genesis-ui/docs/components/cards/">Cards</a>
                         </li>
                         <li>
                             <a href="#">Some Link</a>

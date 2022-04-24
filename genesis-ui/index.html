@@ -234,13 +234,13 @@
 
         </div>
         <div id="tabs" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <ul class="g-tab-bar">
+            <ul class="g-tab-bar" data-g-tab-target="tab">
                 <li class="g-tab-toggle" data-g-tab="tab1">Tab 1</li>
                 <li class="g-tab-toggle" data-g-tab="tab2">Tab 2</li>
                 <li class="g-tab-toggle" data-g-tab="tab3">Tab 3</li>
             </ul>
 
-            <div class="g-tabs-content">
+            <div class="g-tabs-content" id="tab">
                 <div class="g-tab-content " id="tab1">
                     Tab content 1
                 </div>
@@ -251,9 +251,45 @@
                     Tab content 3
                 </div>
             </div>
+            <ul class="g-tabbed-bar" data-g-tab-target="tabbed">
+                <li class="g-tab-toggle" data-g-tab="tabbed1">Tab 1</li>
+                <li class="g-tab-toggle" data-g-tab="tabbed2">Tab 2</li>
+                <li class="g-tab-toggle" data-g-tab="tabbed3">Tab 3</li>
+                <span class="glider"></span>
+
+            </ul>
+
+            <div class="g-tabs-content" id="tabbed">
+                <div class="g-tab-content " id="tabbed1">
+                    Tab content 1
+                </div>
+                <div class="g-tab-content" id="tabbed2">
+                    Tab content 2
+                </div>
+                <div class="g-tab-content" id="tabbed3">
+                    Tab content 3
+                </div>
+            </div>
         </div>
         <div id="forms" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
             <input type="text" class="g-form-input">
+        </div>
+        <div id="tabs" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+            <div class="g-card">
+                <div class="g-card-header">Featured</div>
+
+                <div class="g-card-body">
+                    <h5 class="g-card-title">Card title</h5>
+                    <h6 class="g-card-subtitle">Card subtitle</h6>
+
+                    <p class="g-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" class="g-btn g-btn-primary">Button</button>
+                </div>
+                <div class="g-card-footer "> <a href="#" class="g-card-link">Card link</a>
+                    <a href="#" class="g-card-link">Another link</a></div>
+
+
+            </div>
         </div>
     </main>
 
