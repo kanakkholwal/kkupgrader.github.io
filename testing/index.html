@@ -81,37 +81,14 @@
     </header>
     <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
         <main class="col-10">
-            <a name='46546546'></a> <i class='fa fa-eye'></i> <span id='postviews'></span> Views
+            <input type="text" id="myInput" class="form-control" placeholder="Search for names.." title="Type in a name">
+
+            <ul class="note" id="myData"></ul>
 
 
         </main>
-        <script src='https://cdn.firebase.com/v0/firebase.js' type='text/javascript'></script>
-        <script>
-            $.each($('a[name]'), function(i, e) {
-                var elem = $(e).parent().find('#postviews');
-                var blogStats = new Firebase("https://view-counter-for-github-pages-default-rtdb.firebaseio.com/pages/id/" + $(e).attr('name'));
-                blogStats.once('value', function(snapshot) {
-                    var data = snapshot.val();
-                    var isnew = false;
-                    if (data == null) {
-                        data = {};
-                        data.value = 0;
-                        data.url = window.location.href;
-                        data.id = $(e).attr('name');
-                        isnew = true;
-                    }
-                    elem.text(data.value);
-                    data.value++;
-                    if (window.location.pathname != '/') {
-                        if (isnew)
-                            blogStats.set(data);
-                        else
-                            blogStats.child('value').set(data.value);
-                    }
-                });
-            });
-        </script>
-        <script src="testing.js"></script>
+
+        <script src="./testing.js"></script>
 
     </div>
 
@@ -190,7 +167,6 @@
                     title="K K UPGRADER">K K UPGRADER</span></a> - All Right Reserved</div>
     </footer>
 
-    <script src='https://cdn.firebase.com/v0/firebase.js' type='text/javascript'></script>>
 
 
     <script src="/main.js" type='text/javascript'></script>
