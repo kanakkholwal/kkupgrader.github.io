@@ -129,7 +129,7 @@ accordions.forEach((accordion) => {
                         () => {
                             ownBody.classList.remove("active");
                         }, {
-                            once: true,
+                            once: false,
                         }
                     );
                 }
