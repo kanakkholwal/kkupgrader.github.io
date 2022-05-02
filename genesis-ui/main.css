@@ -1228,19 +1228,17 @@
             overflow-x: hidden;
             overflow-y: auto;
             outline: 0;
-            --webkit-transition: all 0.6s;
-            --moz-transition: all 0.6s;
-            transition: all 0.6s;
+            transition: transform 250ms ease;
             opacity: 0;
             display: none;
+            transform: scale(0);
         }
         
         .g-modal-area.open {
             display: block;
-            --webkit-transition: all 0.6s;
-            --moz-transition: all 0.6s;
-            transition: all 0.6s;
+            transition: transform 250ms ease;
             opacity: 1;
+            transform: scale(1);
         }
         
         .g-modal-area.open .g-modal {

@@ -109,14 +109,14 @@ accordions.forEach((accordion) => {
     let accordionItems = accordion.querySelectorAll(".g-accordion-item");
     accordionItems.forEach((accordionItem) => {
         let accordionHeader = accordionItem.querySelector(".g-accordion-header");
-        let accordionBody = accordionItem.querySelector(".g-accordion-body");
+        //    let accordionBody = accordionItem.querySelector(".g-accordion-body");
 
         accordionHeader.addEventListener("click", function() {
             this.classList.toggle("active");
             GCollapse(this.parentNode.querySelector(".g-accordion-body"));
+            this.parentNode.classList.toggle("expanded");
 
 
-            this.parentElement.classList.toggle("expanded");
             for (let sibling of this.parentNode.parentNode.children) {
                 if (sibling !== this.parentNode) {
                     sibling.classList.remove("expanded");
@@ -124,15 +124,26 @@ accordions.forEach((accordion) => {
                     var ownBody = sibling.querySelector('.g-accordion-body');
                     ownBody.style.height = "0px";
 
+                    // if (ownBody.style.height === "0px") {
+                    //     ownBody.classList.remove("active");
+                    // }
+
+                    // ownBody.ontransitionend = () => {
+
+                    //     if (ownBody.style.height === "0px") {
+                    //         ownBody.classList.remove("active");
+                    //     }
+                    // };
+                    //  if (ownBody.classList.contains(active)) {
                     ownBody.addEventListener(
                         "transitionend",
                         () => {
                             ownBody.classList.remove("active");
-                        }, {
-                            once: false,
                         }
                     );
+                    //  }
                 }
+
             }
 
         });
@@ -270,68 +281,71 @@ document.addEventListener("click", function(e) {
 
 // Genesis Component : Tooltip
 const GenesisTooltips = document.querySelectorAll("[data-g-tooltip-title]");
-GenesisTooltips.forEach((GenesisTooltip) => {
-    let GenesisTooltipElement = document.createElement("div");
-    GenesisTooltipElement.classList.add("g-tooltip"),
-        GenesisTooltip.addEventListener("onmouseenter", function() {
-            let GenesisTooltipPlacement = GenesisTooltip.getAttribute(
-                    "data-g-tooltip-placement"
-                ),
-                GenesisTooltipTitle = GenesisTooltip.getAttribute(
-                    "data-g-tooltip-title"
-                );
-            GenesisTooltipElement.classList.add(`g-tooltip-`),
-                (GenesisTooltipElement.innerHTML = GenesisTooltipTitle),
-                GenesisTooltip.appendChild(GenesisTooltipElement);
-        }),
-        GenesisTooltip.addEventListener("onmouseleave", function() {
-            GenesisTooltip.removeChild(GenesisTooltipElement);
-        });
-});
+// GenesisTooltips.forEach(GenesisTooltip => {
+//     let GenesisTooltipElement = document.createElement("div");
+//     GenesisTooltipElement.classList.add("g-tooltip");
+//     let GenesisTooltipPlacement = GenesisTooltip.getAttribute(
+//         "data-g-tooltip-placement"
+//     );
+//     let GenesisTooltipTitle = GenesisTooltip.getAttribute(
+//         "data-g-tooltip-title"
+//     );
+//     GenesisTooltipElement.classList.add(`g-tooltip-${GenesisTooltipPlacement}`);
+//     GenesisTooltipElement.appendChild(GenesisTooltipTitle);
+//     //  GenesisTooltipElement.innerHTML = GenesisTooltipTitle;
+//     GenesisTooltip.addEventListener("onmouseenter", function() {
 
+//             GenesisTooltip.appendChild(GenesisTooltipElement);
+//         }),
+//         GenesisTooltip.addEventListener("onmouseleave", function() {
+//             setTimeout(function() { GenesisTooltip.removeChild(GenesisTooltipElement); }, 1500);
+//         });
+// });
+for (var i = 0; i < GenesisTooltips.length; i++) {
+    let GToolTipElem = GenesisTooltips[i].createElement("span");
+    GToolTipElem.classList.add('g-tooltip');
+    let GToolTipPlacement = GenesisTooltips[i].getAttribute('data-g-tooltip-placement');
+    let GToolTipTitle = GenesisTooltips[i].getAttribute("data-g-tooltip-title");
+    GToolTipElem.classList.add(`g-tooltip-${GToolTipPlacement}`);
+    GToolTipElem.innerHTML = GToolTipTitle;
+    GenesisTooltips[i].addEventListener('click', function() {
+
+        GenesisTooltips[i].appendChild(GToolTipElem);
+    });
+}
 // Genesis Component : Tabs
 
-function GenesisTabs() {
-    var GClear = function() {
-        var GTabAreas = document.querySelectorAll("[data-g-tab-target]");
-        for (var t = 0; t < GTabAreas.length; t++) {
-            var GTabToggles = GTabAreas[t].querySelectorAll("[data-g-tab]");
-            for (var i = 0; i < GTabToggles.length; i++) {
-                GTabToggles[i].classList.remove("active");
-            }
+function initGTabs() {
 
-            let targetId = GTabAreas[t].getAttribute("data-g-tab-target");
-            let targetArea = document.getElementById(targetId);
-            let targetAreaContent =
-                targetArea.getElementsByClassName("g-tab-content");
+    let GTabToggleAreas = document.querySelectorAll("[data-g-tab-target]");
+    GTabToggleAreas.forEach(GTabToggleArea => {
+        var TargetArea = document.querySelector(GTabToggleArea.getAttribute('data-g-tab-target'));
+        var GToggles = GTabToggleArea.querySelectorAll("[data-g-tab]");
+        GToggles.forEach(GToggle => {
 
-            for (let n = 0; n < targetAreaContent.length; n++) {
-                targetAreaContent[n].classList.remove("show");
-            }
-        }
-    };
-
-    var GChange = function(e) {
-        GClear();
-        e.target.classList.add("active");
-        var id = e.currentTarget.getAttribute("data-g-tab");
-        document.getElementById(id).classList.add("show");
-    };
-    var GBindAll = function() {
-        var GTabAreas = document.querySelectorAll("[data-g-tab-target]");
-        for (var t = 0; t < GTabAreas.length; t++) {
-            var GTabToggles = GTabAreas[t].querySelectorAll("[data-g-tab]");
-            for (var i = 0; i < GTabToggles.length; i++) {
-                GTabToggles[i].addEventListener("click", GChange, false);
-                if (!GTabToggles[i].classList.contains("active")) {
-                    GTabToggles[0].classList.add("active");
-                    var firstId = GTabToggles[0].getAttribute("data-g-tab");
-                    document.getElementById(firstId).classList.add("show");
+            GToggle.addEventListener("click", function() {
+                for (var sibling in GToggles) {
+                    if (sibling !== this.parentNode.childNodes) {
+                        sibling.classList.remove("active");
+                    }
                 }
-            }
-        }
-    };
-    GBindAll();
-}
+                var TargetAreaTabs = TargetArea.querySelectorAll('.g-tab-content');
 
-var connectTabs = new GenesisTabs();
+                TargetAreaTabs.forEach(TargetAreaTab => {
+                    TargetAreaTab.classList.remove("show");
+                });
+
+                this.classList.add("active");
+                var ShowId = this.getAttribute("data-g-tab");
+                TargetArea.querySelector("#" + ShowId).classList.add("show");
+
+            });
+
+
+        })
+
+    })
+
+
+}
+var GTabs = new initGTabs();
