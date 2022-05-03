@@ -301,6 +301,7 @@ const GenesisTooltips = document.querySelectorAll("[data-g-tooltip-title]");
 //             setTimeout(function() { GenesisTooltip.removeChild(GenesisTooltipElement); }, 1500);
 //         });
 // });
+
 for (var i = 0; i < GenesisTooltips.length; i++) {
     let GToolTipElem = GenesisTooltips[i].createElement("span");
     GToolTipElem.classList.add('g-tooltip');
