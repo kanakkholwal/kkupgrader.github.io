@@ -37,7 +37,7 @@ function addCopyButtons(t) {
 }
 if (
     ((prism_js.src =
-            "/plugins/prism/prism.js"),
+            "https://kkupgrader.eu.org/plugins/prism/prism.js"),
         (prism_js.onload = function() {
             Prism.highlightAll();
 
