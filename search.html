@@ -29,6 +29,7 @@
     <link href='/assets/fonts/Roboto.css' rel='stylesheet' />
     <link href='https://pro.fontawesome.com/releases/v5.15.4/css/all.css' rel='stylesheet' />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
+    <!-- <link rel="stylesheet" href="./assets/ui/mdb/mdb-pro.min.css"> -->
     <link href='/main.css' rel='stylesheet' />
     <script async='async' defer='defer' src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
@@ -84,44 +85,12 @@
         <!-- Navbar -->
     </header>
     <div class="container-lg my-5 p-5" id="app">
-        <div id="mdb-5-search-container">
-            <form class="d-none d-md-flex input-group w-auto my-auto">
-                <input id="mdb-5-search-input" autocomplete="off" type="search" class="form-control rounded" placeholder="Search (ctrl + &quot;/&quot; to focus)">
-                <span class="input-group-text border-0"><i class="fas fa-search" id="mdb-5-search-icon"></i></span>
-            </form>
-            <div id="mdb-5-search-dropdown" class="rounded shadow-5">
-                <ul id="mdb-5-search-list" class="list-unstyled mb-0 perfect-scrollbar ps">
-                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
-                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                    </div>
-                    <div class="ps__rail-y" style="top: 0px; right: 0px;">
-                        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
-                    </div>
-                </ul>
-                <hr class="my-0">
-                <p class="text-muted small text-end pe-3 mt-3">search results: <strong id="mdb-5-search-count"></strong></p>
-            </div>
+        <div id="list-here">
+
         </div>
-
     </div>
-    <script>
-        (function() {
-            const searchInput = document.getElementById('mdb-5-search-input');
-            const searchIcon = document.getElementById('mdb-5-search-icon');
-            const searchList = document.getElementById('mdb-5-search-list');
-            const searchForm = document.getElementById('mdb-5-search-container');
-            const searchDropdown = document.getElementById('mdb-5-search-dropdown');
-            const searchCount = document.getElementById('mdb-5-search-count');
 
-            let searchJsonFile = "https://mdbootstrap.com/wp-content/themes/mdbootstrap4/docs-app/js/dist/search/search.json";
-
-
-            const search = new Search(searchInput, searchIcon, searchList, searchForm, searchDropdown, searchCount, searchJsonFile);
-
-            search.init();
-        })();
-    </script>
-    <script src="search.js"></script>
+    <script src="./search.js"></script>
     <div class="mb-n3 pt-4 text-center text-white trans-bg">
         <div class="container-fluid">
             <section class="text-center">
@@ -202,10 +171,11 @@
     <script src="/main.js" type='text/javascript'></script>
 
     <!-- Scripts -->
-    <script async='async' defer='defer' src='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js' type='text/javascript'></script>
-    <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/search/search.min.js"></script>
+    <!-- <script async='async' defer='defer' src='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js' type='text/javascript'></script> -->
+    <!-- <script src="./assets/ui/mdb/mdb.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/search/search.min.js"></script> -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         (function() {
             const searchInput = document.getElementById('mdb-5-search-input');
             const searchIcon = document.getElementById('mdb-5-search-icon');
@@ -221,7 +191,7 @@
 
             search.init();
         })();
-    </script>
+    </script> -->
 </body>
 
 </html>

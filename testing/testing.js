@@ -1,52 +1,102 @@
-const items = document.querySelector("#myData");
-const searchUser = document.querySelector('#myInput');
-let users = []
+document.addEventListener('DOMContentLoaded', function() {
 
-const fetchImages = () => {
-    fetch("./testing.json")
-        .then(res => {
-            res.json()
-                .then(res => {
-                    users = res;
-                    showUsers(users)
-                })
-                .catch(err => console.log(err));
-        })
-        .catch(err => console.log(err));
-};
+    const ToolsList = document.getElementById('tool-list');
 
-const showUsers = (arr) => {
-    let output = "";
+    function CreateToolsSections(SectionName, SectionDescription) {
+        var section = document.createElement('div');
+        section.id = SectionName.replaceAll(" ", "_");
 
-    arr.forEach(({ firstName, lastName }) => (output += `
-<tr class="hide">
-  <td class="py-2 pl-5 border-b border-gray-200 bg-white">
-  <div class="flex items-center">
-    
-    <div class="ml-3">
-      <h1 class="capitalize font-semibold text-base text-gray-900 whitespace-no-wrap">
-      ${firstName}
-      </h1>
-    </div>
-  </div>
-  </td>
-  <td class="py-2 text-center border-b border-gray-200 bg-white text-sm">
-    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-700 rounded" 
-      href=https://github.com/${lastName}>See profile
-    </a>
-  </td>
-</tr>
-`));
-    items.innerHTML = output;
-}
-document.addEventListener("DOMContentLoaded", fetchImages);
+        var SectionTitle = document.createElement('div');
+        SectionTitle.classList.add('section-title');
+        var SectionHeading = document.createElement('h2');
+        SectionHeading.title = SectionName;
+        SectionHeading.innerText = SectionName;
+        SectionTitle.appendChild(SectionHeading);
 
-searchUser.addEventListener('input', e => {
-    const element = e.target.value.toLowerCase()
-    const newUser = users
-        .filter(user => user.login
-            .toLowerCase()
-            .includes(element))
+        var Description = document.createElement('div');
+        Description.classList.add('section-description');
+        var DescriptionPara = document.createElement('p');
+        DescriptionPara.innerHTML = SectionDescription;
+        Description.appendChild(DescriptionPara);
+        var Content = document.createElement('div');
+        Content.className = "row g-3";
+        Content.id = section.id + "_content";
 
-    showUsers(newUser)
-})
+        section.appendChild(SectionTitle);
+        section.appendChild(Description);
+        section.appendChild(Content);
+        ToolsList.appendChild(section);
+    }
+
+    function createToolCell(Container, Name, imageSrc, Directory, Description) {
+        var parentContainer = document.getElementById(Container);
+
+        var cell = document.createElement('div');
+        cell.className = 'col-sm-6 col-md-5 col-lg-4';
+
+        var cellCard = document.createElement('div');
+        cellCard.className = 'card m-auto';
+
+        var CardBody = document.createElement('div');
+        CardBody.className = 'card-body text-center';
+
+        var CardImage = document.createElement('img');
+        CardImage.src = imageSrc;
+        CardImage.className = 'img-fluid rounded';
+
+        var CardTitle = document.createElement('h4');
+        CardTitle.innerText = Name;
+
+        var CardDescription = document.createElement('p');
+        CardDescription.innerHTML = Description;
+
+        var ctaBtn = document.createElement('a');
+        ctaBtn.href = Directory;
+        ctaBtn.innerText = "Use This Tool";
+        ctaBtn.target = "_blank";
+        ctaBtn.className = 'btn btn-primary btn-rounded';
+
+        CardBody.appendChild(CardImage);
+        CardBody.appendChild(CardTitle);
+        CardBody.appendChild(CardDescription);
+        CardBody.appendChild(ctaBtn);
+        cellCard.appendChild(CardBody);
+        cell.appendChild(cellCard);
+
+        parentContainer.appendChild(cell);
+
+
+
+
+    }
+
+    (function() {
+        var http = new XMLHttpRequest();
+        http.open("GET", "testing.json", true);
+        http.send();
+        http.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    // console.log(this.responseText);
+                    var SearchJson = JSON.parse(this.responseText);
+                    // console.log(SearchJson);
+                    for (var i = 0; i < SearchJson.length; ++i) {
+
+                        CreateToolsSections(SearchJson[i].ToolType, SearchJson[i].ToolDescription);
+
+                        for (var j = 0; j < SearchJson[i].ToolsCells.length; ++j) {
+                            var parentSection = SearchJson[i].ToolType.replaceAll(" ", "_") + "_content";
+                            console.log(SearchJson[i].ToolsCells);
+                            createToolCell(parentSection, SearchJson[i].ToolsCells[j].Name, SearchJson[i].ToolsCells[j].imageSrc, SearchJson[i].ToolsCells[j].Directory, SearchJson[i].ToolsCells[j].description);
+                        }
+
+                    }
+
+                }
+            }
+        };
+    })();
+});
+
+
+// fromAPi();

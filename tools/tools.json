@@ -1,7 +1,6 @@
 [{
-        "ToolType": "Web Tools",
-        "ToolDescription": "SEction description",
-        "ToolsCells": [{
+        "Tool Type": " Web Tools",
+        "Tools Cells": [{
             "Name": "Meta Tag Generator",
             "Directory": "/tools/meta-tag-generator/",
             "imageSrc": "/tools/meta-tag-generator/meta-tag-generator.svg",
@@ -16,10 +15,8 @@
     },
 
     {
-        "ToolType": "Coding Tools",
-        "ToolDescription": "SEction description",
-
-        "ToolsCells": [{
+        "Tool Type": " Coding Tools",
+        "Tools Cells": [{
             "Name": "Css Minifier & Prettifier Tool",
             "Directory": "/tools/css-minifier-&-prettifier-tool/",
             "imageSrc": "/tools/css-minifier-&-prettifier-tool/css-minifier-&-prettifier-tool.svg",
