@@ -1,4 +1,7 @@
 {
     "files.autoSave": "onFocusChange",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "cSpell.words": [
+        "Btns"
+    ]
 }

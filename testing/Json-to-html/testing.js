@@ -96,31 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
     })();
-
-    // Fetch Method 
-
-    // fetch('testing.json')
-    //     .then(result => result.json())
-    //     .then((output) => {
-    //         // console.log('Output: ', output);
-    //         // var SearchJson = JSON.parse(this.responseText);
-    //         var SearchJson = output;
-    //         // console.log(SearchJson);
-    //         for (var i = 0; i < SearchJson.length; ++i) {
-
-    //             CreateToolsSections(SearchJson[i].ToolType, SearchJson[i].ToolDescription);
-
-    //             for (var j = 0; j < SearchJson[i].ToolsCells.length; ++j) {
-    //                 var parentSection = SearchJson[i].ToolType.replaceAll(" ", "_") + "_content";
-    //                 console.log(SearchJson[i].ToolsCells);
-    //                 createToolCell(parentSection, SearchJson[i].ToolsCells[j].Name, SearchJson[i].ToolsCells[j].imageSrc, SearchJson[i].ToolsCells[j].Directory, SearchJson[i].ToolsCells[j].description);
-    //             }
-
-    //         }
-
-
-    //     }).catch(err => console.error(err));
-
 });
 
 

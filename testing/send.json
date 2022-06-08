@@ -1,0 +1,15 @@
+[{
+    "ToolType": dummy.querySelector("h2").textContent,
+    "ToolDescription": dummy.querySelector(".section-description p").textContent,
+    "ToolsCells": [{
+        "Name": dummy.querySelector("h4").textContent,
+        "Directory": dummy.querySelector("a").getAttribute("href"),
+        "imageSrc": dummy.querySelector("img").getAttribute("src"),
+        "description": dummy.querySelector(".card-body p").textContent
+    }, {
+        "Name": "JS Compressor Tool ",
+        "Directory": "/tools/Js-Compress/",
+        "imageSrc": "/tools/Js-Compress/js-compressor-tool.svg",
+        "description": "JSCompress Tool is an online JavaScript compressor that allows you to compress and minify all of your JS files by up to 80% of their original size."
+    }]
+}]

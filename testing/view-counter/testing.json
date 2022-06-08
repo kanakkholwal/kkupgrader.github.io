@@ -1,0 +1,36 @@
+[{
+        "ToolType": "Web Tools",
+        "ToolDescription": "SEction description",
+        "ToolsCells": [{
+            "Name": "Meta Tag Generator",
+            "Directory": "/tools/meta-tag-generator/",
+            "imageSrc": "/tools/meta-tag-generator/meta-tag-generator.svg",
+            "description": " Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide."
+        }, {
+            "Name": "iFrame Embed Code Generator",
+            "Directory": "/tools/iframe-generator/",
+            "imageSrc": "/tools/iframe-generator/iframe-generator-tool.svg",
+            "description": " With the help of this tool, you can generate your iframe codes easily with just a click of a button. You don’t need to write the HTML code just copy the code and use it."
+
+        }]
+    },
+
+    {
+        "ToolType": "Coding Tools",
+        "ToolDescription": "SEction description",
+
+        "ToolsCells": [{
+            "Name": "Css Minifier & Prettifier Tool",
+            "Directory": "/tools/css-minifier-&-prettifier-tool/",
+            "imageSrc": "/tools/css-minifier-&-prettifier-tool/css-minifier-&-prettifier-tool.svg",
+            "description": "Online CSS Minifier takes any form of css code and make it minified, compressed by removing white spaces, newlines, indentation and comments and here You can also Beautify Css to make it easy to read and edit. It reduces file size and optimizes css for your website."
+        }, {
+            "Name": "JS Compressor Tool ",
+            "Directory": "/tools/Js-Compress/",
+            "imageSrc": "/tools/Js-Compress/js-compressor-tool.svg",
+            "description": "JSCompress Tool is an online JavaScript compressor that allows you to compress and minify all of your JS files by up to 80% of their original size."
+        }]
+    }
+
+
+]
