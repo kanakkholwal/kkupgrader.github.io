@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const ToolsList = document.getElementById('tool-list');
+    const ToolsList = document.getElementById('navbar-search-dropdown');
 
     function CreateToolsSections(SectionName, SectionDescription) {
         var section = document.createElement('div');
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     (function() {
         var http = new XMLHttpRequest();
-        http.open("GET", "testing.json", true);
+        http.open("GET", "./../testing/testing.json", true);
         http.send();
         http.onreadystatechange = function() {
             if (this.readyState == 4) {
