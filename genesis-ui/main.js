@@ -138,11 +138,11 @@ collapseBtns.forEach((collapseBtn) => {
 // Genesis Component : Accordion
 const accordions = document.querySelectorAll(".g-accordion");
 accordions.forEach((accordion) => {
-  let multiple = accordion.getAttribute("accordion-multiple");
-  let accordionItems = accordion.querySelectorAll(".g-accordion-item");
+  var multiple = accordion.getAttribute("accordion-multiple");
+  var accordionItems = accordion.querySelectorAll(".g-accordion-item");
   accordionItems.forEach((accordionItem) => {
-    let accordionHeader = accordionItem.querySelector(".g-accordion-header");
-    let accordionBody = accordionItem.querySelector(".g-accordion-body");
+    var accordionHeader = accordionItem.querySelector(".g-accordion-header");
+    var accordionBody = accordionItem.querySelector(".g-accordion-body");
 
     accordionHeader.addEventListener("click", function (e) {
       if (multiple === "false") {
@@ -153,17 +153,21 @@ accordions.forEach((accordion) => {
           sibling
             .querySelector(".g-accordion-header")
             .classList.remove("active");
- 
-            sibling.querySelector(".g-accordion-body").style.height = "0px";
-            sibling.querySelector(".g-accordion-body").addEventListener(
-              "transitionend",
-              () => {
-                sibling.querySelector(".g-accordion-body").classList.remove("active");
-              },
-              {
-                once: false,
-              }
-            );  
+          sibling.querySelector(".g-accordion-body").style.height = "0px";
+          sibling.querySelector(".g-accordion-body").addEventListener(
+            "transitionend",
+            () => {
+              sibling
+                .querySelector(".g-accordion-body")
+                .classList.remove("active");
+              sibling
+                .querySelector(".g-accordion-body")
+                .removeAttribute("style");
+            },
+            {
+              once: true,
+            }
+          );
 
           // SlideUp(sibling.querySelector(".g-accordion-body"), "active");
         });
@@ -173,38 +177,39 @@ accordions.forEach((accordion) => {
         e.target.classList.toggle("active");
         var currentBody =
           e.target.parentElement.querySelector(".g-accordion-body");
-
-        if (currentBody.classList.contains("active")) {
-          currentBody.style.height = "0px";
-          currentBody.addEventListener(
+        function slideUp(el) {
+          el.style.height = "0px";
+          el.addEventListener(
             "transitionend",
             () => {
-              currentBody.classList.remove("active");
-              currentBody.removeAttribute("style");
+              el.classList.remove("active");
+              el.removeAttribute("style");
             },
-            {
-              once: true,
-            }
-          ); // console.log(" class removed");
-        } else {
-          currentBody.classList.add("active");
-          currentBody.style.height = "auto";
-
-          var height = currentBody.clientHeight + "px";
-
-          currentBody.style.height = "0px";
+            { once: true }
+          );
+        }
+        function slideDown(el) {
+          el.classList.add("active");
+          el.style.height = "auto";
+          var height = el.clientHeight + "px";
+          el.style.height = "0px";
 
           setTimeout(() => {
-            currentBody.style.height = height;
-            currentBody.style.display = "block";
-          }, 100);
-          
-          // console.log(" class added");
+            el.style.height = height;
+          }, 0);
         }
+        // e.target.parentElement.querySelector(".g-accordion-body").classList.contains("active") ? slideUp(e.target.parentElement.querySelector(".g-accordion-body")) : slideDown(e.target.parentElement.querySelector(".g-accordion-body"));
+        // if (currentBody.classList.contains("active")) {
+        //   slideUp(currentBody);
+        // } else {
+        //   slideDown(currentBody);
+        // }
+
         //  WHY IS THIS NOT WORKING 😭😭😭😭
-        // GCollapse(currentBody);
+        GCollapse(currentBody);
 
         // console.log("Single Accordion Working");
+        //
       } else {
         accordionItem.classList.toggle("expanded");
         accordionHeader.classList.toggle("active");
@@ -227,12 +232,11 @@ ModalToggles.forEach((ModalToggle) => {
   ModalToggle.addEventListener("click", () => {
     ModalArea.classList.add("open");
     ModalId.classList.add("show");
-
   });
   ModalClose.addEventListener("click", () => {
     setTimeout(() => {
       ModalArea.classList.remove("open");
-    },600);
+    }, 600);
     ModalId.classList.remove("show");
   });
 
@@ -240,9 +244,9 @@ ModalToggles.forEach((ModalToggle) => {
     if (!ModalId.contains(e.target)) {
       setTimeout(() => {
         ModalArea.classList.remove("open");
-      },600);
-            ModalId.classList.remove("show");
-        }
+      }, 600);
+      ModalId.classList.remove("show");
+    }
   });
 });
 
@@ -353,41 +357,28 @@ document.addEventListener("click", function (e) {
 });
 
 // Genesis Component : Tooltip
-// const GenesisTooltips = document.querySelectorAll("[data-g-tooltip-title]");
-// GenesisTooltips.forEach(GenesisTooltip => {
-//     let GenesisTooltipElement = document.createElement("div");
-//     GenesisTooltipElement.classList.add("g-tooltip");
-//     let GenesisTooltipPlacement = GenesisTooltip.getAttribute(
-//         "data-g-tooltip-placement"
-//     );
-//     let GenesisTooltipTitle = GenesisTooltip.getAttribute(
-//         "data-g-tooltip-title"
-//     );
-//     GenesisTooltipElement.classList.add(`g-tooltip-${GenesisTooltipPlacement}`);
-//     GenesisTooltipElement.appendChild(GenesisTooltipTitle);
-//     //  GenesisTooltipElement.innerHTML = GenesisTooltipTitle;
-//     GenesisTooltip.addEventListener("onmouseenter", function() {
+const GenesisTooltips = document.querySelectorAll("[data-g-tooltip-title]");
+GenesisTooltips.forEach((GenesisTooltip) => {
+  let HTML = GenesisTooltip.innerHTML;
+  GenesisTooltip.addEventListener("mouseenter", function (e) {
+    var GenesisTooltipElement = document.createElement("span");
+    GenesisTooltipElement.classList.add("g-tooltip");
+    var GenesisTooltipPlacement = e.target.getAttribute(
+      "data-g-tooltip-placement"
+    );
+    var GenesisTooltipTitle = e.target.getAttribute("data-g-tooltip-title");
+    GenesisTooltipElement.classList.add(`g-tooltip-${GenesisTooltipPlacement}`);
+    GenesisTooltipElement.innerHTML += GenesisTooltipTitle;
 
-//             GenesisTooltip.appendChild(GenesisTooltipElement);
-//         }),
-//         GenesisTooltip.addEventListener("onmouseleave", function() {
-//             setTimeout(function() { GenesisTooltip.removeChild(GenesisTooltipElement); }, 1500);
-//         });
-// });
+    e.target.appendChild(GenesisTooltipElement);
+    console.log("tooltip added");
+  });
+  GenesisTooltip.addEventListener("mouseleave", function () {
+    GenesisTooltip.innerHTML = HTML;
+    console.log("tooltip removed");
+  });
+});
 
-// for (var i = 0; i < GenesisTooltips.length; i++) {
-//   let GToolTipElem = GenesisTooltips[i].createElement("span");
-//   GToolTipElem.classList.add("g-tooltip");
-//   let GToolTipPlacement = GenesisTooltips[i].getAttribute(
-//     "data-g-tooltip-placement"
-//   );
-//   let GToolTipTitle = GenesisTooltips[i].getAttribute("data-g-tooltip-title");
-//   GToolTipElem.classList.add(`g-tooltip-${GToolTipPlacement}`);
-//   GToolTipElem.innerHTML = GToolTipTitle;
-//   GenesisTooltips[i].addEventListener("click", function () {
-//     GenesisTooltips[i].appendChild(GToolTipElem);
-//   });
-// }
 // Genesis Component : Tabs
 
 function initGTabs() {
@@ -397,24 +388,64 @@ function initGTabs() {
       GTabToggleArea.getAttribute("data-g-tab-target")
     );
     var GToggles = GTabToggleArea.querySelectorAll("[data-g-tab]");
+
     GToggles.forEach((GToggle) => {
-      GToggle.addEventListener("click", function () {
-        for (var sibling in GToggles) {
-          if (sibling !== this.parentNode.childNodes) {
-            sibling.classList.remove("active");
-          }
-        }
-        var TargetAreaTabs = TargetArea.querySelectorAll(".g-tab-content");
+      GToggle.addEventListener("click", function (e) {
+        e.target.classList.add("active");
+        document
+          .getElementById(e.target.getAttribute("data-g-tab"))
+          .classList.add("show");
 
-        TargetAreaTabs.forEach((TargetAreaTab) => {
-          TargetAreaTab.classList.remove("show");
+        getSiblings(e.target).forEach((sibling) => {
+          sibling.classList.remove("active");
+          document
+            .getElementById(sibling.getAttribute("data-g-tab"))
+            .classList.remove("show");
         });
-
-        this.classList.add("active");
-        var ShowId = this.getAttribute("data-g-tab");
-        TargetArea.querySelector("#" + ShowId).classList.add("show");
       });
     });
   });
 }
 var GTabs = new initGTabs();
+
+// Sliced Menu List
+const SlicedMenuLists = document.querySelectorAll(".g-sliced-menu");
+SlicedMenuLists.forEach((SlicedMenuList) => {
+  var OuterMenu = SlicedMenuList.querySelector(".g-sliced-outer-menu-list");
+  var InnerMenu = SlicedMenuList.querySelector(".g-sliced-inner-menu-list");
+
+  // Toggle Menu
+  OuterMenu.querySelectorAll("[data-g-sliced-toggle]").forEach((OuterMenuItem) => {
+    OuterMenuItem.addEventListener("click", (e) => {
+      OuterMenu.classList.add("hide");
+      InnerMenu.classList.add("show");
+      getSiblings(InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle"))).forEach((sibling) => {
+        sibling.classList.remove("show");
+      })
+      InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle")).classList.add("show");
+        var exitText = e.target.textContent;
+        console.log(exitText);
+        var ExitNode = document.createElement("li");
+        
+        ExitNode.classList.add("g-sliced-menu-item")
+        ExitNode.innerText = ExitNode;
+        // InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle")).insertBefore(
+        //   ExitNode,
+        //   InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle").children[0])
+        // );
+
+    });
+  });
+  InnerMenu.querySelectorAll(".g-sliced-menu-item:first-child").forEach(
+    (innerMenuExit) => {
+      innerMenuExit.addEventListener("click", () => {
+        OuterMenu.classList.remove("hide");
+        InnerMenu.classList.remove("show");
+      });
+    }
+  );
+
+
+});
+
+

@@ -1,33 +1,30 @@
-function GenesisTabs() {
-    var GBindAll = function() {
-        var GTabToggles = document.querySelectorAll('[data-g-tab]');
-        for (var i = 0; i < GTabToggles.length; i++) {
-            GTabToggles[i].addEventListener('click', GChange, false);
-            if (!GTabToggles[i].classList.contains('active')) {
-                GTabToggles[0].classList.add('active');
-                var firstId = GTabToggles[0].getAttribute('data-g-tab');
-                document.getElementById(firstId).classList.add('show');
-            }
-        }
-    }
+function initGTabs() {
 
-    var GClear = function() {
-        var GTabToggles = document.querySelectorAll('[data-g-tab]');
-        for (var i = 0; i < GTabToggles.length; i++) {
-            GTabToggles[i].classList.remove('active');
-            var id = GTabToggles[i].getAttribute('data-g-tab');
-            document.getElementById(id).classList.remove('show');
-        }
-    }
-
-    var GChange = function(e) {
-        GClear();
-        e.target.classList.add('active');
-        var id = e.currentTarget.getAttribute('data-g-tab');
-        document.getElementById(id).classList.add('show');
-    }
-
-    GBindAll();
-}
-
-var connectTabs = new GenesisTabs();
+    let GTabToggleAreas = document.querySelectorAll("[data-g-tab-target]");
+    GTabToggleAreas.forEach((GTabToggleArea) => {
+      var TargetArea = document.querySelector(
+        GTabToggleArea.getAttribute("data-g-tab-target")
+      );
+      var GToggles = GTabToggleArea.querySelectorAll("[data-g-tab]");
+      
+      GToggles.forEach((GToggle) => {
+      // if (!GToggle.classList.contains("active")){
+      //   GToggles[0].classList.add("active");
+      //   document.getElementById(GToggles[0].getAttribute("data-g-tab")).classList.add("show");
+      // }
+   
+        GToggle.addEventListener("click", function (e) {
+          e.target.classList.add("active");
+          document.getElementById(e.target.getAttribute("data-g-tab")).classList.add("show");
+  
+        getSiblings(e.target).forEach((sibling) => {
+           sibling.classList.remove("active");
+           document.getElementById(sibling.getAttribute("data-g-tab")).classList.remove("show");
+         });
+  
+        });
+      });
+    });
+  }
+  var GTabs = new initGTabs();
+  
