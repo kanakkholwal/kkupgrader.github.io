@@ -149,34 +149,50 @@ accordions.forEach((accordion) => {
         // Close Sibling Accordions
         var siblingsOfTargetAccordion = getSiblings(e.target.parentElement);
         siblingsOfTargetAccordion.forEach((sibling) => {
-          sibling.classList.remove("expanded");
-          sibling
-            .querySelector(".g-accordion-header")
-            .classList.remove("active");
-          sibling.querySelector(".g-accordion-body").style.height = "0px";
-          sibling.querySelector(".g-accordion-body").addEventListener(
-            "transitionend",
-            () => {
-              sibling
-                .querySelector(".g-accordion-body")
-                .classList.remove("active");
-              sibling
-                .querySelector(".g-accordion-body")
-                .removeAttribute("style");
-            },
-            {
-              once: true,
-            }
-          );
+          if (sibling.classList.contains("expanded")) {
+            sibling.classList.remove("expanded");
+            sibling
+              .querySelector(".g-accordion-header")
+              .classList.remove("active");
+            sibling.querySelector(".g-accordion-body").style.height = "0px";
+            sibling.querySelector(".g-accordion-body").addEventListener(
+              "transitionend",
+              () => {
+                sibling
+                  .querySelector(".g-accordion-body")
+                  .classList.remove("active");
+                sibling
+                  .querySelector(".g-accordion-body")
+                  .removeAttribute("style");
+              },
+              {
+                once: true,
+              }
+            );
+          }
 
           // SlideUp(sibling.querySelector(".g-accordion-body"), "active");
         });
 
         // Toggle Target Accordion
+
+
+
+
+
+
+
+
+
+
+
+
+        
         e.target.parentElement.classList.toggle("expanded");
         e.target.classList.toggle("active");
         var currentBody =
           e.target.parentElement.querySelector(".g-accordion-body");
+
         function slideUp(el) {
           el.style.height = "0px";
           el.addEventListener(
@@ -184,8 +200,9 @@ accordions.forEach((accordion) => {
             () => {
               el.classList.remove("active");
               el.removeAttribute("style");
+              console.log("class removed : Body Closed");
             },
-            { once: true }
+            { once: false }
           );
         }
         function slideDown(el) {
@@ -196,17 +213,18 @@ accordions.forEach((accordion) => {
 
           setTimeout(() => {
             el.style.height = height;
+            console.log("class added : Body opened");
           }, 0);
         }
-        // e.target.parentElement.querySelector(".g-accordion-body").classList.contains("active") ? slideUp(e.target.parentElement.querySelector(".g-accordion-body")) : slideDown(e.target.parentElement.querySelector(".g-accordion-body"));
-        // if (currentBody.classList.contains("active")) {
-        //   slideUp(currentBody);
-        // } else {
-        //   slideDown(currentBody);
-        // }
+
+        if (currentBody.classList.contains("active")) {
+          slideUp(currentBody);
+        } else {
+          slideDown(currentBody);
+        }
 
         //  WHY IS THIS NOT WORKING 😭😭😭😭
-        GCollapse(currentBody);
+        // GCollapse(currentBody);
 
         // console.log("Single Accordion Working");
         //
@@ -462,30 +480,29 @@ dropDownToggles.forEach((dropDownToggle) => {
   };
   // For Hover Out and Focus Out
   const GDropdownNotActive = (e) => {
-
     setTimeout(() => {
-
       var DropDownTarget = e.target.getAttribute("g-dropdown-target");
       e.target.classList.remove("is-active");
       document.getElementById(DropDownTarget).classList.remove("is-dropped");
       // inToggle = true;
       // console.log("GDropdownNotActive = true");
-    },225);
- 
+    }, 225);
   };
   const GDropOutFocus = (inputDropDownTarget) => {
     var DropDownTarget = inputDropDownTarget.getAttribute("g-dropdown-target");
     let outer = false;
 
     document.addEventListener("mouseup", function (e) {
-      if (!inputDropDownTarget.parentElement.querySelector(".g-dropdown-menu").contains(e.target)) {
+      if (
+        !inputDropDownTarget.parentElement
+          .querySelector(".g-dropdown-menu")
+          .contains(e.target)
+      ) {
       }
     });
-    if(inputDropDownTarget.value === "" || outer) {
-
+    if (inputDropDownTarget.value === "" || outer) {
       inputDropDownTarget.classList.remove("is-active");
       document.getElementById(DropDownTarget).classList.remove("is-dropped");
-
     }
   };
   // For Click events
@@ -493,15 +510,16 @@ dropDownToggles.forEach((dropDownToggle) => {
     var DropDownTarget = e.target.getAttribute("g-dropdown-target");
     e.target.classList.toggle("is-active");
     document.getElementById(DropDownTarget).classList.toggle("is-dropped");
-  }
+  };
 
-  if (dropDownToggle.getAttribute("g-dropdown-type") == "focus" && dropDownToggle.tagName.toLowerCase() === "input") {
-   
+  if (
+    dropDownToggle.getAttribute("g-dropdown-type") == "focus" &&
+    dropDownToggle.tagName.toLowerCase() === "input"
+  ) {
     dropDownToggle.addEventListener("focus", GDropdownActive);
     dropDownToggle.addEventListener("focusout", GDropdownNotActive);
-  
-    // GDropOutFocus(dropDownToggle);
 
+    // GDropOutFocus(dropDownToggle);
   } else if (dropDownToggle.getAttribute("g-dropdown-type") == "hover") {
     dropDownToggle.addEventListener("mouseenter", GDropdownActive);
     dropDownToggle.addEventListener("mouseleave", GDropdownNotActive);
@@ -509,20 +527,134 @@ dropDownToggles.forEach((dropDownToggle) => {
     dropDownToggle.addEventListener("click", GDropdownToggle);
   }
 });
+// clipboard
+const copyToClipboard = (id) => {
+  var r = document.createRange();
+  r.selectNode(document.getElementById(id));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(r);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+};
+
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+const copyIOS = (id) => {
+  const text = document.getElementById(id).innerHTML;
+
+  if (!navigator.clipboard) {
+    const textarea = document.createElement("textarea");
+
+    textarea.value = text;
+    textarea.style.fontSize = "20px";
+    document.body.appendChild(textarea);
+
+    const range = document.createRange();
+    range.selectNodeContents(textarea);
+
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    textarea.setSelectionRange(0, 999999);
+
+    document.execCommand("copy");
+
+    document.body.removeChild(textarea);
+  }
+
+  navigator.clipboard.writeText(text);
+};
+
+const copyTextById = (id) => {
+  if (isIOS) {
+    return copyIOS(id);
+  }
+  copyToClipboard(id);
+  console.log("Content Copied from Non-form elements");
+};
+
+window.copyTextById = copyTextById;
+const GClipboard = document.querySelectorAll("[data-g-clipboard-target]");
+GClipboard.forEach((clipboardToggle) => {
+  clipboardToggle.addEventListener("click", (e) => {
+    var target = e.target.getAttribute("data-g-clipboard-target");
+    var targetElement = document.getElementById(target);
+    if (
+      targetElement.tagName.toLowerCase() === "input" ||
+      targetElement.tagName.toLowerCase() === "textarea"
+    ) {
+      targetElement.select();
+      try {
+        var successful = document.execCommand("copy");
+        var msg = successful ? "successfully" : "unsuccessfully";
+        console.log("Content Copied " + msg);
+      } catch (err) {
+        console.log("Oops, unable to copy");
+      }
+    } else {
+      copyTextById(target);
+    }
+  });
+});
+// auto Resize TExtarea 
+
+document.querySelectorAll('textarea').forEach( (element) => {
+
+  element.style.boxSizing = 'border-box';
+  var offset = element.offsetHeight - element.clientHeight;
+  element.addEventListener('input', function (event) {
+    event.target.style.maxHeight = 'auto';
+    event.target.style.height = event.target.scrollHeight + offset + 'px';
+  });
+  // element.removeAttribute('data-autoresize');
+});
+// document.querySelector("[data-kkfs-clipboard]").click(function () {
+//   var copy_id = document
+//     .querySelector("[data-kkfs-clipboard]")
+//     .attr("data-kkfs-clipboard");
+//   var target_id = document.querySelector("#" + copy_id);
+
+//   target_id.each(function () {
+//     var $this = document.querySelector(this);
+//     if ($this.is("input")) {
+//       $this.focus();
+//       $this.select();
+//       try {
+//         var successful = document.execCommand("copy");
+//         var msg = successful ? "successful" : "unsuccessful";
+//         console.log("Copying text command was " + msg);
+//       } catch (err) {
+//         console.log("Oops, unable to copy");
+//       }
+//     } else if ($this.is("select")) {
+//       alert("Function can't be done");
+//     } else if ($this.is("textarea")) {
+//       $this.focus();
+//       $this.select();
+//       try {
+//         var successful = document.execCommand("copy");
+//         var msg = successful ? "successful" : "unsuccessful";
+//         console.log("Copying text command was " + msg);
+//       } catch (err) {
+//         console.log("Oops, unable to copy");
+//       }
+//     } else {
+//       alert("working for div like elements");
+//     }
+//   });
+// });
 
 // document.getElementById("navbar-search").addEventListener("keyup", filterSearch);
-function filterSearch(){
-   var value,name,profile,i;
-   value = document.getElementById('value').value.toUpperCase();
-profile = document.getElementsByClassName('col-sm-6');
-  for(i=0;profile.length;i++){
-    name = profile[i].getElementsByTagName('h4');
-    if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
-      profile[i].style.display ="flex";
-    }else{
+function filterSearch() {
+  var value, name, profile, i;
+  value = document.getElementById("value").value.toUpperCase();
+  profile = document.getElementsByClassName("col-sm-6");
+  for (i = 0; profile.length; i++) {
+    name = profile[i].getElementsByTagName("h4");
+    if (name[0].innerHTML.toUpperCase().indexOf(value) > -1) {
+      profile[i].style.display = "flex";
+    } else {
       profile[i].style.display = "none";
     }
-  }  
+  }
 }
-
-

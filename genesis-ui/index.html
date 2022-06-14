@@ -61,50 +61,53 @@
             </div>
             <div class="g-nav-center">
                 <div class="g-dropdown">
-                <input type="search" name="Navbar Search" placeholder="Search in Docs... " id="navbar-search"
-                    class="g-form-input g-dropdown-toggle" g-dropdown-type="focus" g-dropdown-target="navbar-search-dropdown" style="width:400px" />
-              
+                    <input type="search" name="Navbar Search" placeholder="Search in Docs... " id="navbar-search"
+                        class="g-form-input g-dropdown-toggle" g-dropdown-type="focus"
+                        g-dropdown-target="navbar-search-dropdown" style="width:400px" autofocus />
 
-                <div class="g-dropdown-menu " id="navbar-search-dropdown">
-                    DropDown Menu
-                    dsfjgjsd
-                    dfskjhjhfd
-                    fsdjsdgf
-                </div>
+
+                    <div class="g-dropdown-menu " id="navbar-search-dropdown">
+                        DropDown Menu
+                        DropDown Menu
+                        DropDown Menu
+
+                    </div>
                 </div>
                 <script src="./../testing/testing.js"></script>
             </div>
             <div class="g-nav-right">
 
-                    <li class="nav-item me-2">
-                        <div class="nav-btn search-toggler" data-mdb-toggle="modal" data-mdb-target="#searchify"><i
-                                class="fas fa-search"></i></div>
-                    </li>
-                    <li class="nav-item me-2">
-                        <div class="nav-btn darkmode-toggler"><i class="far fa-moon"></i></div>
-                    </li>
+                <li class="nav-item me-2">
+                <li class="nav-btn search-toggler">
+                    <!-- data-mdb-toggle="modal" data-mdb-target="#searchify" -->
+                    <i class="fas fa-search"></i>
+                </li>
+                </li>
+                <li class="nav-item me-2">
+                    <div class="nav-btn darkmode-toggler"><i class="far fa-moon"></i></div>
+                </li>
 
-                    <li class="nav-item dropdown me-3 me-lg-1">
-                        <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="more-info" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            <div class="nav-btn"><i class="fas fa-ellipsis-v"></i>
-                                <!-- <img src="/content/images/person.svg"> -->
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="more-info">
-                            <li>
-                                <a class="dropdown-item" aria-current="page" href="https://kkupgrader.blogspot.com/"
-                         target="_blank">Blogger Blog</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" aria-current="page" href="/tools/">Tools</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" aria-current="page" href="/portfolio/">PortFolio</a>
-                            </li>
-                        </ul>
-                    </li>
-                
+                <li class="nav-item dropdown me-3 me-lg-1">
+                    <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="more-info" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        <div class="nav-btn"><i class="fas fa-ellipsis-v"></i>
+                            <!-- <img src="/content/images/person.svg"> -->
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="more-info">
+                        <li>
+                            <a class="dropdown-item" aria-current="page" href="https://kkupgrader.blogspot.com/"
+                                target="_blank">Blogger Blog</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" aria-current="page" href="/tools/">Tools</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" aria-current="page" href="/portfolio/">PortFolio</a>
+                        </li>
+                    </ul>
+                </li>
+
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg  fixed-top d-none">
@@ -400,7 +403,9 @@
             </div>
         </div>
         <div id="forms" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <input type="text" class="g-form-input">
+            <input type="text" class="g-form-input" value="this is input"/>
+            <textarea name="demo Textarea"  class="g-form-input" cols="30" rows="10">TThis is Textarea</textarea>
+            <input type="range" class="g-form-range"  min="1" max="100" value="50">
         </div>
         <div id="cards" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
             <div class="g-card">
@@ -420,6 +425,18 @@
 
 
             </div>
+        </div>
+        <div id="clipboard" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+
+
+
+
+            <div id="clipdiv">Text To copy from div </div>
+            <input type="text" class="g-form-input" id="clip" value="Text from input">
+            <textarea name="" id="cliptext" cols="30"  class="g-form-input"  rows="10">dfsfgfffffff</textarea> <button class="g-btn"
+                data-g-clipboard-target="clip">Copy from Input </button>
+            <button class="g-btn" data-g-clipboard-target="cliptext">Copy from textarea </button>
+            <button class="g-btn" data-g-clipboard-target="clipdiv">Copy from Div </button>
         </div>
     </main>
 

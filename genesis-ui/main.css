@@ -1797,6 +1797,26 @@
         }
 
         /* Sliced Menu */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         .g-sliced-menu {
             display: flex;
             flex-direction: row;
@@ -2164,6 +2184,59 @@ transform: translateY(-2px);
             opacity: 1
         }
 
+        .g-form-range {
+            position: relative;
+            width: 100%;
+            height: 1.5rem;
+            padding: 0;
+            background-color: #0000;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            vertical-align: middle;
+        }
+        
+        .g-form-range[type=range]::-webkit-slider-runnable-track {
+            background: #e0e0e0;
+            height: 0.25rem;
+        }
+        .g-form-range[type=range]::-webkit-slider-thumb{
+            position: relative;
+            transform:translate(0%,-40%);
+            cursor: pointer;   
+        }
+        .g-form-range[type=range]::-webkit-slider-thumb::before {
+            content: attr(value);
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: -35px;
+            margin-left: -15px;
+            text-align: center;
+            transform: scale(0);
+            transform-origin: bottom;
+            transition: transform .2s ease-in-out;
+            display: block;
+            border-radius: 50% 50% 50% 0;
+
+        }
+
+        .g-form-range[type=range]::-webkit-slider-thumb::after {
+            position: absolute;
+            display: block;
+            border-radius: 50% 50% 50% 0;
+            content: "";
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            transform: rotate(-45deg);
+            background: #1266f1;
+            z-index: -1;
+        }
+        .g-form-range[type=range]::-webkit-slider-thumb:is(:hover, :focus, :active)::before{
+            transform: scale(1);
+        }
         [readonly] {
             background-color: #e9ecef;
             opacity: 1;
@@ -2294,17 +2367,19 @@ transform: translateY(-2px);
             border-radius: 0.25rem;
             width: 100%;
             min-width: 160px;
+            max-height: 30rem;
             padding: 0.5rem;
             box-shadow: var(--default-shadow);
             z-index: 1;
-            overflow: scroll;
+            overflow-y: auto;
+            /* overflow-x: hidden; */
         }
 
 
         .g-dropdown-menu.is-dropped {
             display: flex;
             flex-direction: column;
-            justify-content:center;
+            justify-content: center;
 
-            text-align:left;
+            text-align: left;
         }
