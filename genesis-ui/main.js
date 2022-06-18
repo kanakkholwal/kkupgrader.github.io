@@ -176,18 +176,6 @@ accordions.forEach((accordion) => {
 
         // Toggle Target Accordion
 
-
-
-
-
-
-
-
-
-
-
-
-        
         e.target.parentElement.classList.toggle("expanded");
         e.target.classList.toggle("active");
         var currentBody =
@@ -427,46 +415,54 @@ function initGTabs() {
 var GTabs = new initGTabs();
 
 // Sliced Menu List
+const AddExitToggle = (elem,target) => {
+  var parentDiv = target;
+  var firstLi = parentDiv.firstChild;
+
+  
+  
+  var Text = elem.textContent;
+  var newNode = document.createElement("li");
+  newNode.className = "g-sliced-menu-item exit";
+  newNode.innerText = Text;
+
+  parentDiv.insertBefore(newNode, firstLi);
+  // console.log(parentDiv);
+
+}
 const SlicedMenuLists = document.querySelectorAll(".g-sliced-menu");
 SlicedMenuLists.forEach((SlicedMenuList) => {
   var OuterMenu = SlicedMenuList.querySelector(".g-sliced-outer-menu-list");
   var InnerMenu = SlicedMenuList.querySelector(".g-sliced-inner-menu-list");
+  OuterMenu.style.width = OuterMenu.clientWidth + "px";
+  InnerMenu.style.width = InnerMenu.clientWidth + "px";
 
-  // Toggle Menu
-  OuterMenu.querySelectorAll("[data-g-sliced-toggle]").forEach(
-    (OuterMenuItem) => {
-      OuterMenuItem.addEventListener("click", (e) => {
-        OuterMenu.classList.add("hide");
-        InnerMenu.classList.add("show");
-        getSiblings(
-          InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle"))
-        ).forEach((sibling) => {
-          sibling.classList.remove("show");
-        });
-        InnerMenu.querySelector(
-          e.target.getAttribute("data-g-sliced-toggle")
-        ).classList.add("show");
-        var exitText = e.target.textContent;
-        console.log(exitText);
-        var ExitNode = document.createElement("li");
+  OuterMenu.querySelectorAll("[data-g-sliced-toggle]").forEach((toggle) => {
+    
+    var ToggleTargetsId = toggle.getAttribute("data-g-sliced-toggle");
+    var targetElement = document.getElementById(ToggleTargetsId);
+    AddExitToggle(toggle, targetElement);
 
-        ExitNode.classList.add("g-sliced-menu-item");
-        ExitNode.innerText = ExitNode;
-        // InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle")).insertBefore(
-        //   ExitNode,
-        //   InnerMenu.querySelector(e.target.getAttribute("data-g-sliced-toggle").children[0])
-        // );
+    toggle.addEventListener("click",(e) => {
+// target menu get 
+      var target = document.getElementById(e.target.getAttribute("data-g-sliced-toggle"));
+      targetParent = target.parentElement;
+      
+      target.classList.add("show");
+      getSiblings(target).forEach((s) => {
+        s.classList.remove("show");
       });
-    }
-  );
-  InnerMenu.querySelectorAll(".g-sliced-menu-item:first-child").forEach(
-    (innerMenuExit) => {
-      innerMenuExit.addEventListener("click", () => {
-        OuterMenu.classList.remove("hide");
-        InnerMenu.classList.remove("show");
-      });
-    }
-  );
+      
+
+      var parent = e.target.parentElement;
+
+
+
+     });
+
+
+
+  });
 });
 
 // DropDown Menu
@@ -596,15 +592,14 @@ GClipboard.forEach((clipboardToggle) => {
     }
   });
 });
-// auto Resize TExtarea 
+// auto Resize TExtarea
 
-document.querySelectorAll('textarea').forEach( (element) => {
-
-  element.style.boxSizing = 'border-box';
+document.querySelectorAll("textarea").forEach((element) => {
+  element.style.boxSizing = "border-box";
   var offset = element.offsetHeight - element.clientHeight;
-  element.addEventListener('input', function (event) {
-    event.target.style.maxHeight = 'auto';
-    event.target.style.height = event.target.scrollHeight + offset + 'px';
+  element.addEventListener("input", function (event) {
+    event.target.style.maxHeight = "auto";
+    event.target.style.height = event.target.scrollHeight + offset + "px";
   });
   // element.removeAttribute('data-autoresize');
 });

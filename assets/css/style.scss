@@ -1,0 +1,196 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin inline-flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin left {
+    margin-left: 0.25rem;
+    margin-right: auto;
+    justify-content: flex-start;
+
+}
+
+@mixin center {
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+@mixin right {
+    margin-right: 0.25rem;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+@mixin PrimaryTextColor {
+    background: linear-gradient(to right, #007FFF, #0059B2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+}
+
+$xs:0;
+$sm:576px;
+$md:768px;
+$lg:992px;
+$xl:1200px;
+$xxl:1400px;
+$font:"Roboto",
+sans-serif;
+$primary:#1c81c5;
+$textColor:#132F4C;
+$LightTextColor:#132F4C;
+$shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
+0 2px 8px 0 rgba(0, 0, 0, 0.12);
+$grey: #9e9e9e;
+
+:root {
+    /* colors */
+    --g-primary: #1c81c5;
+    --g-primary-hvr: #1664b1;
+    --g-danger: #fe3e63;
+    --g-danger-hvr: #ec3053;
+    --g-warning: #feb707;
+    --g-warning-hvr: #fdc83a;
+    --g-success: #02b605;
+    --g-success-hvr: #2bd72d;
+    --g-secondary: #8463d8;
+    --g-secondary-hvr: #5e4fbe;
+    --g-info: #0fbcf9;
+    --g-info-hvr: #35bfe6;
+    --g-dark: #262626;
+    --g-dark-hvr: rgb(23, 17, 17);
+    --g-light: #fbfbfb;
+    --g-light-hvr: #ececec;
+    --g-modal-bg: #fff;
+    --g-modal-header: #fff;
+    --g-border-clr: #e0e0e0;
+    --g-sidenavify-color: #4B5563;
+    --g-sidenav-bg: #fbfbfb;
+
+}
+
+*,
+*::before,
+*::after {
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+
+    &:is(:hover, :focus, :active) {
+        text-decoration: none;
+    }
+}
+
+body {
+    color: $textColor;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-family: $font;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+// Genesis Ripple
+@import "./ripple";
+//  Genesis Buttons
+@import "./buttons";
+//  Genesis Navbar
+@import "./navbar";
+//  Genesis DropDown
+@import "./dropdown";
+// Genesis Sidenav
+@import "./sidenav";
+// Genesis Collapse 
+@import "./collapse";
+
+.g-backdrop {
+    position: fixed;
+    inset: 0px;
+    background-color: #00000080;
+    -webkit-tap-highlight-color: #0000;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+    display: none;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &.show{
+        display: block;
+    }
+}
+
+
+header {
+
+    width: 100%;
+}
+
+.icon-btn {
+    background-color: var(--nav-btn);
+    border: 1px solid var(--nav-btn);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    min-height: 32px;
+    min-width: 32px;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    user-select: none;
+    color: var(--text-clr)
+}
+
+.icon-btn.circle {
+    border-radius: 50%
+}
+
+
+.g-hero {
+    position: relative;
+    width: 100%;
+    // background:#1c81c566;
+    // color: $light;
+    @include flex;
+    @include center;
+    padding: 100px;
+    // border: 1px solid #ccc;
+}
+
+main {
+    width: 100%;
+    @include flex;
+    @include center;
+    flex-direction: column;
+    padding: 1.8rem 0.75rem;
+    border-top: 1px solid #ccc;
+
+    section {
+        flex: 1 1 auto;
+        max-width: $lg;
+        @include flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #cdd2d74f;
+
+        &.column {
+            flex-direction: column;
+        }
+    }
+}

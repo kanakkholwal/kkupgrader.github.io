@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    
+    <main>
+        <h1>
+            Simple JS Calculator
+
+        </h1>
+        <div class="calculator">
+            <div class="input_area">
+                <input class="output" id="input" name="input" type="text" value="" placeholder="Enter Some Expression">
+                <label for="input">some error</label>
+            </div>
+
+            <div class="final-commands">
+                <div class="darkMode">
+                    <input type="checkbox" name="darkMode" id="darkMode" >
+                    <label for="darkMode"></label>
+                </div>
+                <button id="del"><i class="fas fa-backspace"></i></button>
+                <button id="ac"><i class="fas fa-trash"></i></button>
+                <button id="result"><i class="fas fa-equals"></i></button>
+            </div>
+            <div class="btns">
+                <div class="numbers">
+                    <button data-text="1"></button>
+                    <button data-text="2"></button>
+                    <button data-text="3"></button>
+                    <button data-text="4"></button>
+                    <button data-text="5"></button>
+                    <button data-text="6"></button>
+                    <button data-text="7"></button>
+                    <button data-text="8"></button>
+                    <button data-text="9"></button>
+                    <button data-text="0"></button>
+                    <button data-text="."></button>
+                    <button data-text="00"></button>
+                </div>
+                <div class="commands">
+                    <button data-command="*"><i class="fas fa-times"></i></button>
+                    <button data-command="/"><i class="fas fa-divide"></i></button>
+                    <button data-command="+"><i class="fas fa-plus"></i></button>
+                    <button data-command="-"><i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

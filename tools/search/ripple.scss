@@ -1,0 +1,29 @@
+$light:#fbfbfb;
+
+.g-ripple,
+.g-btn {
+    position: relative;
+    overflow: hidden;
+
+    .g-ripple-surface {
+        position: absolute;
+        background: $light;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: ripples 0.6s linear infinite;
+        
+    }
+    @keyframes ripples {
+        0% {
+          width: 0px;
+          height: 0px;
+          opacity: 0.5;
+        }
+        100% {
+          width: 500px;
+          height: 500px;
+          opacity: 0;
+        }
+      }
+}

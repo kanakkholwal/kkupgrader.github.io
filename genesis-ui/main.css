@@ -1840,72 +1840,9 @@
             padding: 0.5rem;
             list-style: none;
             width: 100%;
-            -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-            -webkit-animation-name: slideInLeft;
-            animation-name: slideInLeft
         }
 
-        @-webkit-keyframes slideInLeft {
-            0% {
-                -webkit-transform: translate3d(-100%, 0, 0);
-                transform: translate3d(-100%, 0, 0);
-                visibility: visible
-            }
 
-            to {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-        }
-
-        @keyframes slideInLeft {
-            0% {
-                -webkit-transform: translate3d(-100%, 0, 0);
-                transform: translate3d(-100%, 0, 0);
-                visibility: visible
-            }
-
-            to {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-        }
-
-        .g-sliced-outer-menu-list.hide {
-
-
-            -webkit-animation-name: slideOutLeft;
-            animation-name: slideOutLeft
-        }
-
-        @-webkit-keyframes slideOutLeft {
-            0% {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-
-            to {
-                visibility: hidden;
-                -webkit-transform: translate3d(-100%, 0, 0);
-                transform: translate3d(-100%, 0, 0)
-            }
-        }
-
-        @keyframes slideOutLeft {
-            0% {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-
-            to {
-                visibility: hidden;
-                -webkit-transform: translate3d(-100%, 0, 0);
-                transform: translate3d(-100%, 0, 0)
-            }
-        }
 
         .g-sliced-inner-menu-list {
             display: inline-flex;
@@ -1915,71 +1852,10 @@
             padding: 0.5rem;
             list-style: none;
             width: 100%;
-            -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-            -webkit-animation-name: slideOutRight;
-            animation-name: slideOutRight
+        
         }
 
-        @-webkit-keyframes slideOutRight {
-            0% {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-
-            to {
-                visibility: hidden;
-                -webkit-transform: translate3d(100%, 0, 0);
-                transform: translate3d(100%, 0, 0)
-            }
-        }
-
-        @keyframes slideOutRight {
-            0% {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-
-            to {
-                visibility: hidden;
-                -webkit-transform: translate3d(100%, 0, 0);
-                transform: translate3d(100%, 0, 0)
-            }
-        }
-
-        .g-sliced-inner-menu-list.show {
-            -webkit-animation-name: slideInRight;
-            animation-name: slideInRight
-        }
-
-        @-webkit-keyframes slideInRight {
-            0% {
-                -webkit-transform: translate3d(100%, 0, 0);
-                transform: translate3d(100%, 0, 0);
-                visibility: visible
-            }
-
-            to {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-        }
-
-        @keyframes slideInRight {
-            0% {
-                -webkit-transform: translate3d(100%, 0, 0);
-                transform: translate3d(100%, 0, 0);
-                visibility: visible
-            }
-
-            to {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0)
-            }
-        }
-
+ 
         .g-sliced-menu-item {
             position: relative;
             display: flex;
