@@ -86,6 +86,9 @@ a {
         text-decoration: none;
     }
 }
+img{
+    pointer-events: none;
+}
 html{
     scroll-behavior:smooth;
 }
