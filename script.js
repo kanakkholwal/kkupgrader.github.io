@@ -24,11 +24,9 @@ navToggle.addEventListener("click", function () {
 window.addEventListener("scroll", function () {
   navbar.classList.toggle("scrolled", window.scrollY > 100);
 });
-
+// Section Highlight
 const sections = document.querySelectorAll("main > section[id]");
-
 window.addEventListener("scroll", navHighlighter);
-
 function navHighlighter() {
   let scrollY = window.pageYOffset;
 
@@ -48,3 +46,7 @@ function navHighlighter() {
     }
   });
 }
+
+var currentYear = new Date().getFullYear();
+// console.log(currentYear);
+document.getElementById("currentYear").innerText = currentYear;

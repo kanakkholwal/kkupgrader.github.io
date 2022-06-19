@@ -5,7 +5,7 @@
   --white: $white;
   --dark: $dark;
   --black: $black;
-  --random:18px;
+  --random:43px;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -109,6 +109,10 @@ a:is(:hover, :focus, :active) {
   text-decoration: none;
 }
 
+img {
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -198,6 +202,7 @@ header {
   background: #001829;
   width: 100%;
   padding: 1rem;
+  background-position-x: center;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg id='visual' viewBox='0 0 960 540' width='960' preserveAspectRatio='xMidYMax slice' height='540' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'%3e%3crect x='0' y='0' width='960' height='540' fill='%23001829'%3e%3c/rect%3e%3cg fill='%230F4C75'%3e%3ccircle r='145' cx='680' cy='110'%3e%3c/circle%3e%3ccircle r='97' cx='360' cy='31'%3e%3c/circle%3e%3c/g%3e%3c/svg%3e");
 }
 
@@ -682,6 +687,47 @@ main section .sectionContent .showCase .item img {
 main section .sectionContent .showCase .item:hover {
   -webkit-transform: translateY(-0.5rem);
           transform: translateY(-0.5rem);
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-top: thin solid #1B262C;
+  margin-top: 1rem;
+}
+
+footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+}
+
+footer .social .icon {
+  color: #0F4C75;
+  -webkit-transition: all 750ms ease-in-out;
+  transition: all 750ms ease-in-out;
+}
+
+footer .social .icon:hover {
+  color: #fbfbfb;
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
 }
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {

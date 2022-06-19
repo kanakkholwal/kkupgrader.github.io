@@ -596,7 +596,28 @@ main {
 
     }
 }
-
+footer{
+    width: 100%;
+    height: auto;
+    padding:0.75rem;
+    @include flex;
+    justify-content: space-around;
+    border-top:thin solid $dark;
+    margin-top:1rem;
+    .social{
+        @include inline-flex;
+        justify-content: space-around;
+        column-gap: 0.5rem;
+        .icon{
+            color:$primary;
+            transition:all 750ms ease-in-out;
+            &:hover{
+                color:$white;
+                transform:rotateY(360deg);
+            }
+        }
+    }
+}
 
 @import "./layout";
 @import "./buttons";
