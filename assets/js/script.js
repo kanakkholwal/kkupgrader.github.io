@@ -98,14 +98,16 @@ dropDownToggles.forEach((dropDownToggle) => {
     var DropDownTarget = e.target.getAttribute("g-dropdown-target");
     e.target.classList.toggle("active");
     document.getElementById(DropDownTarget).classList.toggle("is-dropped");
+    // var outClick = document.getElementById(DropDownTarget).parentNode.childNodes;
+    // console.log(outClick);
     // document.addEventListener("mouseup", function (event) {
-      // if (!document.getElementById(DropDownTarget).contains(event.target)) {
-      //   event.target.classList.remove("active");
-      //   document.getElementById(DropDownTarget).classList.remove("is-dropped");
-      //   }
-      //   else{
-      //     return false;
-      //   }
+    //   if (!outClick.contains(event.target)) {
+    //     e.target.classList.remove("active");
+    //     document.getElementById(DropDownTarget).classList.remove("is-dropped");
+    //     }
+    //     else{
+    //       return false;
+    //     }
     // });
   };
   dropDownToggle.addEventListener("click", GDropdownToggle);

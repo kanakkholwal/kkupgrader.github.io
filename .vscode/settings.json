@@ -2,6 +2,7 @@
     "files.autoSave": "onFocusChange",
     "editor.formatOnSave": false,
     "cSpell.words": [
-        "Btns"
+        "Btns",
+        "Minifier"
     ]
 }
