@@ -54,14 +54,14 @@ body {
   background-color: #fff;
 }
 
-.g-ripple,
+.ripple,
 .g-btn {
   position: relative;
   overflow: hidden;
 }
 
-.g-ripple .g-ripple-surface,
-.g-btn .g-ripple-surface {
+.ripple .ripple-surface,
+.g-btn .ripple-surface {
   position: absolute;
   background: #fff;
   -webkit-transform: translate(-50%, -50%);
