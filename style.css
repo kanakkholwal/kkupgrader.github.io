@@ -5,7 +5,7 @@
   --white: $white;
   --dark: $dark;
   --black: $black;
-  --random:66px;
+  --random:80px;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -111,6 +111,10 @@ a:is(:hover, :focus, :active) {
 
 img {
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -677,6 +681,7 @@ main section .sectionContent .showCase .item {
   aspect-ratio: 16/9;
   -webkit-transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin: 0.25rem auto;
 }
 
 main section .sectionContent .showCase .item img {
@@ -705,6 +710,18 @@ footer {
   margin-top: 1rem;
 }
 
+footer .copyright {
+  -webkit-box-flex: 0.8;
+      -ms-flex: 0.8 0.6 auto;
+          flex: 0.8 0.6 auto;
+}
+
+@media (max-width: 768px) {
+  footer .copyright {
+    font-size: 0.9em;
+  }
+}
+
 footer .social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -716,18 +733,64 @@ footer .social {
       justify-content: space-around;
   -webkit-column-gap: 0.5rem;
           column-gap: 0.5rem;
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5 0.4 auto;
+          flex: 0.5 0.4 auto;
 }
 
 footer .social .icon {
   color: #0F4C75;
   -webkit-transition: all 750ms ease-in-out;
   transition: all 750ms ease-in-out;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
 footer .social .icon:hover {
   color: #fbfbfb;
   -webkit-transform: rotateY(360deg);
           transform: rotateY(360deg);
+}
+
+.ripple-effect {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.ripple-effect .ripple {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  -ms-touch-action: none;
+      touch-action: none;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px);
+  width: calc(var(--d) * 1px);
+  height: calc(var(--d) * 1px);
+  background: var(--ripple-background, rgba(255, 255, 255, 0.5));
+  -webkit-transform: translate(-50%, -50%) scale(var(--s, 1));
+          transform: translate(-50%, -50%) scale(var(--s, 1));
+  opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+  -webkit-transition: calc(var(--t, 0) * var(--ripple-duration, 1000ms)) var(--ripple-easing, cubic-bezier(0, 0, 0.15, 1));
+  transition: calc(var(--t, 0) * var(--ripple-duration, 1000ms)) var(--ripple-easing, cubic-bezier(0, 0, 0.15, 1));
 }
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
