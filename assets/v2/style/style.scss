@@ -700,8 +700,11 @@ footer {
     width: 100%;
     @include flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 
     form {
+        flex: 1 1 auto;
+
         margin: 2rem auto;
         width: 100%;
         max-width: $md;
@@ -712,11 +715,13 @@ footer {
 
     .ContactInfo {
         @include flex;
-        flex: 1 1 50%;
+        flex: 1 1 auto;
 
     }
 }
+
 @import "forms";
+
 .rubber-effect {
     animation-duration: 1s;
     animation-fill-mode: both;

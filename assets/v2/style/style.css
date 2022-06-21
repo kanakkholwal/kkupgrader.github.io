@@ -787,6 +787,8 @@ footer .social .icon:hover {
   margin: 2rem auto;
   width: 100%;
   max-width: 768px;
+  flex: 1 1 auto;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1053,7 +1055,16 @@ footer .social .icon:hover {
   background-color: #dddbdd;
 }
 
+.lazyShimmer:before {
+  content: " ";
+  display: block;
+  height: calc(100% + 10px);
+  width: 100%;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+}
 .lazyShimmer::after {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -1065,7 +1076,6 @@ footer .social .icon:hover {
   background-image: linear-gradient(90deg, #EEEEEE 0%, #EEEEEE 40%, #DDDDDD 50%, #DDDDDD 55%, #EEEEEE 60%, #EEEEEE 100%);
   -webkit-animation: shimmer 1s infinite;
   animation: shimmer 1s infinite;
-  content: "";
 }
 
 @-webkit-keyframes shimmer {
@@ -1082,14 +1092,6 @@ footer .social .icon:hover {
   }
 }
 
-.lazyShimmer:before {
-  content: " ";
-  display: block;
-  height: calc(100% + 10px);
-  width: 100%;
-  background-color: #e6e6e6;
-  border-radius: 5px;
-}
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   width: 100%;
