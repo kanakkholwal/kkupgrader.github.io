@@ -105,9 +105,9 @@ function inViewport(element) {
 })();
 // AutoResize TextAreaElement
 document.querySelectorAll(".form-textarea").forEach((textarea) => {
-  textarea.oninput = () => {
-    this.style.height = "auto";
-    this.style.height = this.scrollHeight + "px";
+  textarea.oninput = (e) => {
+    e.target.style.height = "auto";
+    e.target.style.height = e.target.scrollHeight + "px";
   };
 });
 let navbar = document.querySelector(".navbar"),
@@ -168,7 +168,7 @@ const SecureToken = "91411fe2-e88e-4fdd-943e-43f99f1b36fd";
 const SendTo = "kkupgrader.fs@gmail.com";
 const ContactForm = document.getElementById("contactForm"),
   email = ContactForm.querySelector("#email"),
-  Subject = ContactForm.querySelector("#subject"),
+  subject = ContactForm.querySelector("#subject"),
   Body = ContactForm.querySelector("#body");
 
 const SendContactForm = () => {};
@@ -218,7 +218,7 @@ ContactForm.onsubmit = (e) => {
     SecureToken: SecureToken,
     To: SendTo,
     From: email.value,
-    Subject: Subject.innerHTML,
+    Subject: subject.innerHTML,
     Body: Body.innerHTML,
   }).then((message) => alert(message));
 };
