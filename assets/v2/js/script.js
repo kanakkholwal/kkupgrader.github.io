@@ -164,7 +164,7 @@ var currentYear = new Date().getFullYear();
 document.getElementById("currentYear").innerText = currentYear;
 
 // Contact Form
-const SecureToken = "0e770f32-181f-4526-8dd2-3a570568eb2c";
+const SecureToken = "b003398c-d7ad-4f67-989e-c7caea114546";
 const SendTo = "kkupgrader.fs@gmail.com";
 const ContactForm = document.getElementById("contactForm"),
   email = ContactForm.querySelector("#email"),
