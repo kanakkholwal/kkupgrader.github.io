@@ -52,6 +52,7 @@
   font-weight: 600;
   -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  caret-color: #0F4C75;
 }
 
 .form-input::-webkit-input-placeholder {
@@ -97,6 +98,8 @@
 .form-label {
   margin-bottom: 0.25rem;
   padding-left: 0.25rem;
+  color: white;
+  opacity: 0.8;
 }
 
 .form-textarea {
@@ -116,6 +119,7 @@
   transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
   overflow: hidden;
   resize: none;
+  caret-color: #0F4C75;
 }
 
 .form-textarea::-webkit-input-placeholder {
