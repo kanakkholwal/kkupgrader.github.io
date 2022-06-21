@@ -1,0 +1,109 @@
+$primary:#0F4C75;
+$secondary:#3282B8;
+$light:#BBE1FA;
+$dark:#1B262C;
+$dark2:#001829;
+$dark3:#212930;
+$danger: #fe3e63;
+$danger-hvr: #ec3053;
+$warning: #feb707;
+$warning-hvr: #fdc83a;
+$success: #02b605;
+$success-hvr: #2bd72d;
+$textColor:#132F4C;
+$LightTextColor:#132F4C;
+$white:#fbfbfb;
+$black:#262626;
+$transparent:#ffffff0d;
+$bodyText:#ffffffbf;
+$shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
+0 2px 8px 0 rgba(0, 0, 0, 0.12);
+$shadow2: 0 20px 30px rgba(0, 0, 0, 0.1);
+$grey: #9e9e9e;
+
+.form-element {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0.25rem auto;
+    width: calc(100% - 2rem);
+    .form-label {
+        order: 1;
+
+    }
+    .form-input {
+        order: 2;
+        width: calc(100% - 2rem);
+
+    }
+    .form-textarea {
+        order: 2;
+        width: calc(100% - 2rem);
+
+    }
+}
+
+.form-input {
+    order: 2;
+    border-radius: 0.25rem;
+    padding: 0.75rem 0.65rem 0.5rem;
+    border: 2px solid $dark3;
+    border-radius: 0.25rem;
+    background: $transparent;
+    box-shadow: $shadow;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    opacity: 0.95;
+    color: #247e8de6;
+    font-weight: 600;
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &::placeholder {
+        opacity: 0.75;
+        color: #8fafb58e;
+    }
+
+    &:focus {
+        border-color: $primary;
+
+        &::placeholder {
+            opacity: 1;
+        }
+    }
+}
+
+.form-label {
+    margin-bottom: 0.25rem;
+    padding-left: 0.25rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.form-textarea {
+    border: 2px solid $dark3;
+    border-radius: 0.25rem;
+    background: $transparent;
+    box-shadow: $shadow;
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0.5rem;
+    color: #247e8de6;
+    font-weight: 600;
+    width: 100%;
+    height: auto;
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    resize: none;
+
+    &::placeholder {
+        opacity: 0.75;
+        color: #8fafb58e;
+    }
+
+    &:focus {
+        border-color: $primary;
+
+        &::placeholder {
+            opacity: 1;
+        }
+    }
+}

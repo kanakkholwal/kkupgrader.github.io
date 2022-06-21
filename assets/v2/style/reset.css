@@ -27,16 +27,14 @@ a:not([class]) {
   position: relative;
   opacity: 0.8;
   cursor: pointer;
-  color: #BBE1FA;
-  position: relative;
-  opacity: 0.8;
-  cursor: pointer;
+  color: #45E1E1;
+  color: #45E1E1;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
 a:not([class]):hover, a:not([class]).active {
-  color: #fbfbfb;
+  color: #45E1E1;
   opacity: 1;
 }
 
@@ -49,37 +47,7 @@ a:not([class]):after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fbfbfb;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s ease-in-out;
-  transition: -webkit-transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-}
-
-a:not([class]):hover:after, a:not([class]).active:after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-}
-
-a:not([class]):hover, a:not([class]).active {
-  color: #fbfbfb;
-  opacity: 1;
-}
-
-a:not([class]):after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #fbfbfb;
+  background-color: #45E1E1;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
@@ -119,6 +87,7 @@ h5,
 h6 {
   font-family: var(--heading-font);
   font-weight: 700;
+  color: #fbfbfb;
 }
 
 h1 {

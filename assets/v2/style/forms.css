@@ -1,0 +1,160 @@
+.form-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.25rem auto;
+  width: calc(100% - 2rem);
+}
+
+.form-element .form-label {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.form-element .form-input {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: calc(100% - 2rem);
+}
+
+.form-element .form-textarea {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: calc(100% - 2rem);
+}
+
+.form-input {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  border-radius: 0.25rem;
+  padding: 0.75rem 0.65rem 0.5rem;
+  border: 2px solid #212930;
+  border-radius: 0.25rem;
+  background: #ffffff0d;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  width: 100%;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0.95;
+  color: #247e8de6;
+  font-weight: 600;
+  -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.form-input::-webkit-input-placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-input:-ms-input-placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-input::-ms-input-placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-input::placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-input:focus {
+  border-color: #0F4C75;
+}
+
+.form-input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.form-input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.form-input:focus::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.form-input:focus::placeholder {
+  opacity: 1;
+}
+
+.form-label {
+  margin-bottom: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.form-textarea {
+  border: 2px solid #212930;
+  border-radius: 0.25rem;
+  background: #ffffff0d;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 0.75rem 0.5rem;
+  color: #247e8de6;
+  font-weight: 600;
+  width: 100%;
+  height: auto;
+  -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  resize: none;
+}
+
+.form-textarea::-webkit-input-placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-textarea:-ms-input-placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-textarea::-ms-input-placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-textarea::placeholder {
+  opacity: 0.75;
+  color: #8fafb58e;
+}
+
+.form-textarea:focus {
+  border-color: #0F4C75;
+}
+
+.form-textarea:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.form-textarea:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.form-textarea:focus::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.form-textarea:focus::placeholder {
+  opacity: 1;
+}
+/*# sourceMappingURL=forms.css.map */
