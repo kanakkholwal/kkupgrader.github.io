@@ -11,8 +11,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 *::before,
 *::after {
   outline: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -22,47 +21,34 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 a {
   text-decoration: none;
 }
-
 a:not([class]) {
   position: relative;
   opacity: 0.8;
   cursor: pointer;
   color: #45E1E1;
   color: #45E1E1;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
 a:not([class]):hover, a:not([class]).active {
   color: #45E1E1;
   opacity: 1;
 }
-
 a:not([class]):after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   height: 2px;
   bottom: 0;
   left: 0;
   background-color: #45E1E1;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s ease-in-out;
-  transition: -webkit-transform 0.25s ease-in-out;
+  transform-origin: bottom right;
   transition: transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 }
-
 a:not([class]):hover:after, a:not([class]).active:after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
-
 a:is(:hover, :focus, :active) {
   text-decoration: none;
 }
@@ -107,34 +93,32 @@ h4 {
 }
 
 h5 {
-  font-size: .83em;
+  font-size: 0.83em;
 }
 
 h6 {
-  font-size: .67em;
+  font-size: 0.67em;
 }
 
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
-  background-color: #f2f2f2;
+  background-color: rgb(242, 242, 242);
   cursor: pointer !important;
 }
 
 ::-webkit-scrollbar:hover {
-  background-color: #f2f2f2;
+  background-color: rgb(242, 242, 242);
 }
 
 ::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
-  -webkit-box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.15);
-          box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.15);
   border-radius: 24px;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  -webkit-box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.3);
   border-radius: 24px;
 }
 
@@ -148,5 +132,4 @@ h6 {
   background: #39C0ED;
   color: #fff;
   text-shadow: none;
-}
-/*# sourceMappingURL=reset.css.map */
+}/*# sourceMappingURL=reset.css.map */

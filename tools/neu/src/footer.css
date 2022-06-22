@@ -1,14 +1,9 @@
 footer {
   padding: 0 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
 }
-
 @media only screen and (max-width: 918px) {
   footer {
     padding: 0 20px;
@@ -16,12 +11,8 @@ footer {
 }
 
 .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .link {
@@ -35,13 +26,11 @@ footer {
   padding-top: 15px;
   text-align: right;
 }
-
 @media only screen and (max-width: 680px) {
   .link {
     display: none;
   }
 }
-
 .link b {
   background: var(--textColor);
   color: var(--textColorOpposite);
@@ -50,20 +39,14 @@ footer {
 }
 
 .social {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 @media only screen and (max-width: 680px) {
   .social {
     display: none;
   }
 }
-
 .social .instagram {
   padding: 10px;
   display: block;
@@ -72,30 +55,22 @@ footer {
   color: #001f3f;
   background-color: #f8f8ff;
 }
-
 .social .instagram svg {
   display: block;
   color: #001f3f;
 }
-
 .social .bmc-button img {
   height: 27px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: none;
   vertical-align: middle;
 }
-
 .social .bmc-button {
   height: 44px;
   line-height: 44px;
   text-decoration: none;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: #001f3f;
   background-color: #f8f8ff;
   border-radius: 10px;
@@ -104,16 +79,13 @@ footer {
   font-size: 16px;
   letter-spacing: 0.6px;
   margin: 0 auto;
-  -webkit-transition: 0.1s opacity linear;
   transition: 0.1s opacity linear;
 }
-
 .social .bmc-button span {
   font-size: inherit;
   margin-left: 10px;
   white-space: nowrap;
 }
-
 .social .bmc-button:hover,
 .social .bmc-button:active,
 .social .bmc-button:focus {
@@ -127,7 +99,6 @@ footer {
   font-weight: lighter;
   color: var(--textColor);
 }
-
 @media only screen and (max-width: 800px) {
   .open {
     display: none;
@@ -146,12 +117,10 @@ footer {
 .links body {
   margin: 0;
 }
-
 .links a {
   text-decoration: none;
   outline: 0;
 }
-
 .links .widget {
   display: inline-block;
   overflow: hidden;
@@ -160,7 +129,6 @@ footer {
   line-height: 0;
   white-space: nowrap;
 }
-
 .links .btn,
 .links .social-count {
   position: relative;
@@ -181,20 +149,16 @@ footer {
   background-size: 110% 110%;
   border: 1px solid;
 }
-
 .links .btn {
   border-radius: 0.25em;
 }
-
 .links .btn:not(:last-child) {
   border-radius: 0.25em 0 0 0.25em;
 }
-
 .links .social-count {
   border-left: 0;
   border-radius: 0 0.25em 0.25em 0;
 }
-
 .links .widget-lg .btn,
 .links .widget-lg .social-count {
   height: auto;
@@ -202,36 +166,29 @@ footer {
   font-size: 12px;
   line-height: 20px;
 }
-
 @media only screen and (max-width: 680px) {
   .links .widget-lg .btn,
-  .links .widget-lg .social-count {
+.links .widget-lg .social-count {
     padding: 2px 5px;
   }
 }
-
 .links .octicon {
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
 }
-
 .links .btn {
   color: #24292e;
   background-color: #eff3f6;
   border-color: #c5c9cc;
   border-color: rgba(27, 31, 35, 0.2);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3clinearGradient id='o' x2='0' y2='1'%3e%3cstop stop-color='%23fafbfc'/%3e%3cstop offset='90%25' stop-color='%23eff3f6'/%3e%3c/linearGradient%3e%3crect width='100%25' height='100%25' fill='url(%23o)'/%3e%3c/svg%3e");
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafbfc), color-stop(90%, #eff3f6));
   background-image: linear-gradient(180deg, #fafbfc, #eff3f6 90%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#FFFAFBFC', endColorstr='#FFEEF2F5');
+  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr="#FFFAFBFC", endColorstr="#FFEEF2F5");
 }
-
 .links :root .btn {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
-
 .links .btn:focus,
 .links .btn:hover {
   background-color: #e6ebf1;
@@ -239,41 +196,31 @@ footer {
   border-color: #9fa4a9;
   border-color: rgba(27, 31, 35, 0.35);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3clinearGradient id='o' x2='0' y2='1'%3e%3cstop stop-color='%23f0f3f6'/%3e%3cstop offset='90%25' stop-color='%23e6ebf1'/%3e%3c/linearGradient%3e%3crect width='100%25' height='100%25' fill='url(%23o)'/%3e%3c/svg%3e");
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f3f6), color-stop(90%, #e6ebf1));
   background-image: linear-gradient(180deg, #f0f3f6, #e6ebf1 90%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#FFF0F3F6', endColorstr='#FFE5EAF0');
+  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr="#FFF0F3F6", endColorstr="#FFE5EAF0");
 }
-
 .links :root .btn:focus,
 .links :root .btn:hover {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
-
 .links .btn:active {
   background-color: #e9ecef;
   border-color: #a1a4a8;
   border-color: rgba(27, 31, 35, 0.35);
-  -webkit-box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
-          box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+  box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
   background-image: none;
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
-
 .links .social-count {
   color: #24292e;
   background-color: #fff;
   border-color: #d1d2d3;
   border-color: rgba(27, 31, 35, 0.2);
 }
-
 .links .social-count:focus,
 .links .social-count:hover {
   color: #0366d6;
 }
-
 .links .octicon-heart {
   color: #ea4aaa;
-}
-/*# sourceMappingURL=footer.css.map */
+}/*# sourceMappingURL=footer.css.map */

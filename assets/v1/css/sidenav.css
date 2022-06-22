@@ -1,7 +1,6 @@
 .g-sidenav-toggler {
   padding: 8px;
   cursor: pointer;
-  -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   height: 34px;
   min-width: 34px;
@@ -11,15 +10,9 @@
   color: #1c81c5;
   text-decoration: none;
   margin-right: 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidenav {
@@ -31,7 +24,6 @@
   max-width: auto;
   background-color: var(--g-sidenav-bg);
   color: var(--text-clr);
-  -webkit-transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -40,40 +32,26 @@
   will-change: transform, opacity;
   overflow-x: hidden;
   overflow-anchor: none;
-  -ms-touch-action: auto;
-      touch-action: auto;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  touch-action: auto;
+  transform: translateX(-100%);
 }
-
 .sidenav.show {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  transform: translateX(0%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 }
-
 .sidenav .sidenav-header {
   padding: 0.75rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid #cdd2d74f;
+  border-bottom: 1px solid rgba(205, 210, 215, 0.3098039216);
 }
-
 .sidenav .sidenav-header .sidenav-title {
   font-weight: 650;
   font-size: 1.3rem;
   text-transform: capitalize;
 }
-
 .sidenav .sidenav-close {
   display: inline-block;
   background-color: var(--nav-btn);
@@ -85,217 +63,154 @@
   min-height: 32px;
   min-width: 32px;
   outline: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-
 .sidenav .sidebar-body {
   padding: 0 0.25rem 0.5rem 0.75rem;
   text-align: left;
   overflow: auto;
   overflow-y: initial;
 }
-
 .sidenav .sidebar-body .sidenav-heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   vertical-align: middle;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 8px;
-          column-gap: 8px;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   margin: 4px 0.25rem;
   font-weight: 500;
   font-size: 1.1rem;
 }
-
 .sidenav .sidebar-body .sidenav-heading::after {
   content: "";
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   height: 1px;
   background: #eee;
 }
-
 .sidenav .sidebar-body ul {
   display: block;
   margin-left: 0.1rem;
   padding-left: 0;
 }
-
 .sidenav .sidebar-body ul > li:last-child {
   margin-bottom: 20px;
 }
-
 .sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse) {
   margin-bottom: 0.25rem;
-  font-size: .78rem;
+  font-size: 0.78rem;
   padding-left: 3rem;
   cursor: pointer;
-  font-size: .89rem;
-  padding: 0.1rem 0.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  border-radius: 50px;
-  background: #1266f10d;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  padding: 0.5rem;
-  font-weight: 500;
-}
-
-.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):hover {
-  background-color: #08aae714;
-}
-
-.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse) a {
-  color: #3F51B5;
-}
-
-.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):hover a {
-  color: #3F51B5;
-}
-
-.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):before {
-  content: '\f061';
-  font-family: 'Font Awesome 5 Pro';
-  margin: 0 0.5rem;
-  font-weight: 900;
-}
-
-.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):after {
-  content: '\f2f5';
-  font-family: 'Font Awesome 5 Pro';
-  margin: 0 0.5rem;
-  font-weight: 900;
-  position: absolute;
-  right: 0.5rem;
-}
-
-.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse).blank:after {
-  content: '\f35d';
-  font-family: 'Font Awesome 5 Pro';
-  margin: 0 0.5rem;
-  font-weight: 900;
-  position: absolute;
-  right: 0.5rem;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse::before {
-  font-family: 'Font Awesome 5 Pro', 'Font Awesome 5 Brands';
-  margin: 0 12px 0 0;
-  font-weight: 900;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse > a:first-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding: 0.5rem;
-  font-weight: 500;
-  cursor: pointer;
-  background: #1266f10d;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  border-radius: 50px;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse.active > a:first-child {
-  background: #08aae714;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse a:first-child .icon-status {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  --webkit-transform: rotate(0);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse a:first-child .icon-status.rotate {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  --webkit-transform: rotate(180deg);
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse i,
-.sidenav .sidebar-body li.sidenavify-collapse svg {
-  margin: 0 0.5rem;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse div.nav-btn {
-  margin-left: 0.25rem;
-  right: 0.75rem;
-  position: absolute;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list {
-  overflow-y: hidden;
-  max-height: 0;
-  -webkit-transition: 0.3s max-height;
-  transition: 0.3s max-height;
-  padding: 0 0 0.25rem 0.75rem;
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list.show {
-  max-height: 1500px;
-  /* max-height animations should always take 0.5s */
-  -webkit-transition: 2s max-height, border-left;
-  transition: 2s max-height, border-left;
-  /* border-left: #ddd solid 1px; */
-}
-
-.sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   font-size: 0.89rem;
   padding: 0.1rem 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  -webkit-transition: all 0.3s linear 0s;
+  border-radius: 50px;
+  background: rgba(18, 102, 241, 0.0509803922);
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):hover {
+  background-color: rgba(8, 170, 231, 0.0784313725);
+}
+.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse) a {
+  color: #3F51B5;
+}
+.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):hover a {
+  color: #3F51B5;
+}
+.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):before {
+  content: "\f061";
+  font-family: "Font Awesome 5 Pro";
+  margin: 0 0.5rem;
+  font-weight: 900;
+}
+.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse):after {
+  content: "\f2f5";
+  font-family: "Font Awesome 5 Pro";
+  margin: 0 0.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0.5rem;
+}
+.sidenav .sidebar-body ul.list > li:not(.sidenavify-collapse).blank:after {
+  content: "\f35d";
+  font-family: "Font Awesome 5 Pro";
+  margin: 0 0.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0.5rem;
+}
+.sidenav .sidebar-body li.sidenavify-collapse::before {
+  font-family: "Font Awesome 5 Pro", "Font Awesome 5 Brands";
+  margin: 0 12px 0 0;
+  font-weight: 900;
+}
+.sidenav .sidebar-body li.sidenavify-collapse > a:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(18, 102, 241, 0.0509803922);
+  transition: all 0.5s ease;
+  border-radius: 50px;
+}
+.sidenav .sidebar-body li.sidenavify-collapse.active > a:first-child {
+  background: rgba(8, 170, 231, 0.0784313725);
+}
+.sidenav .sidebar-body li.sidenavify-collapse a:first-child .icon-status {
+  transform: rotate(0);
+  --webkit-transform: rotate(0);
+  transition: all 0.3s ease;
+}
+.sidenav .sidebar-body li.sidenavify-collapse a:first-child .icon-status.rotate {
+  transform: rotate(180deg);
+  --webkit-transform: rotate(180deg);
+}
+.sidenav .sidebar-body li.sidenavify-collapse i, .sidenav .sidebar-body li.sidenavify-collapse svg {
+  margin: 0 0.5rem;
+}
+.sidenav .sidebar-body li.sidenavify-collapse div.nav-btn {
+  margin-left: 0.25rem;
+  right: 0.75rem;
+  position: absolute;
+}
+.sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: 0.3s max-height;
+  padding: 0 0 0.25rem 0.75rem;
+}
+.sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list.show {
+  max-height: 1500px;
+  /* max-height animations should always take 0.5s */
+  transition: 2s max-height, border-left;
+  /* border-left: #ddd solid 1px; */
+}
+.sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: flex-start;
+  font-size: 0.89rem;
+  padding: 0.1rem 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   transition: all 0.3s linear 0s;
   margin-bottom: 0.25rem;
   cursor: pointer;
@@ -303,34 +218,26 @@
   overflow: hidden;
   white-space: nowrap;
   border-radius: 0 50px 50px 0;
-  -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   font-weight: 500;
 }
-
 .sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li:before {
-  content: '\f105';
-  font-family: 'Font Awesome 5 Pro';
+  content: "\f105";
+  font-family: "Font Awesome 5 Pro";
   margin: 0 0.5rem;
   font-weight: 900;
 }
-
 .sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li:hover {
-  background-color: #1266f10d;
+  background-color: rgba(18, 102, 241, 0.0509803922);
 }
-
 .sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li:first-child {
   margin-top: 4px;
 }
-
 .sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li a {
   color: var(--sidenavify-color);
 }
-
 .sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li a i,
 .sidenav .sidebar-body li.sidenavify-collapse ul.collapse-list li a svg {
   margin-left: 0;
-}
-/*# sourceMappingURL=sidenav.css.map */
+}/*# sourceMappingURL=sidenav.css.map */

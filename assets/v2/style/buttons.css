@@ -1,13 +1,10 @@
 .btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   color: #fff;
   background: #212930;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  -webkit-box-shadow: 0 2px 5px 0 #00000033, 0 2px 10px 0 #0000001a;
-          box-shadow: 0 2px 5px 0 #00000033, 0 2px 10px 0 #0000001a;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.1019607843);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -17,99 +14,74 @@
       -ms-user-select: none;
           user-select: none;
   border: 0;
-  padding: .625rem 1.5rem .5rem;
+  padding: 0.625rem 1.5rem 0.5rem;
   margin: 0.25rem;
   border-radius: 0.25rem;
-  -webkit-transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: .9;
+  opacity: 0.9;
 }
-
 .btn:hover, .btn.active {
   opacity: 1;
 }
-
 .btn.btn-primary {
   background: #0F4C75;
 }
-
 .btn.btn-success {
   background: #02b605;
 }
-
 .btn.btn-danger {
   background: #fe3e63;
 }
-
 .btn.btn-warning {
   background: #feb707;
 }
-
 .btn.btn-dark {
   background: #1B262C;
 }
-
 .btn.btn-black {
   background: #03243b;
 }
-
 .btn.btn-light {
   background: #BBE1FA;
   color: #1B262C;
 }
-
 .btn.btn-link {
   position: relative;
   opacity: 0.8;
   cursor: pointer;
   background: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 .btn.btn-link:hover, .btn.btn-link.active {
   color: #fbfbfb;
   opacity: 1;
 }
-
 .btn.btn-link:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   height: 2px;
   bottom: 0;
   left: 0;
   background-color: #fbfbfb;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s ease-in-out;
-  transition: -webkit-transform 0.25s ease-in-out;
+  transform-origin: bottom right;
   transition: transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 }
-
 .btn.btn-link:hover:after, .btn.btn-link.active:after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
-
 .btn.btn-sm {
   padding: 0.375rem 1rem 0.3125rem;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1.5;
 }
-
 .btn.btn-block {
   width: 100%;
 }
-
 .btn.btn-lg {
   padding: 0.75rem 1.6875rem 0.6875rem;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.6;
-}
-/*# sourceMappingURL=buttons.css.map */
+}/*# sourceMappingURL=buttons.css.map */

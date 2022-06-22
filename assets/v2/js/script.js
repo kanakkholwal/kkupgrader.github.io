@@ -181,6 +181,9 @@ ContactForm.onsubmit = (e) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
-    .then(() => console.log("Form successfully submitted"))
+    .then(() => {
+      console.log("Form successfully submitted");
+      alert("Form successfully submitted");
+     } )
     .catch((error) => alert(error));
 };

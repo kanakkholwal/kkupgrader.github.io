@@ -122,6 +122,8 @@ $lg:992px;
 $xl:1200px;
 $xxl:1400px;
 $font:'Euclid Circular A';
+$secondaryFont:'Satoshi variable',
+sans-serif;
 $primary:#0F4C75;
 $secondary:#3282B8;
 $light:#BBE1FA;
@@ -251,7 +253,7 @@ header {
                     -moz-transform: rotate(0deg);
                     -o-transform: rotate(0deg);
                     transform: rotate(0deg);
-                    
+
                     transition: .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 
@@ -600,7 +602,7 @@ footer {
     margin-top: 1rem;
 
     .copyright {
-        flex: 0.8 0.6 auto;
+        flex: 0.8 0.5 auto;
 
         @media (max-width: $md) {
             font-size: 0.9em;
@@ -612,12 +614,16 @@ footer {
         @include inline-flex;
         justify-content: space-around;
         column-gap: 0.5rem;
-        flex: 0.5 0.4 auto;
+        flex: 0.5 0.3 auto;
+        flex-wrap: wrap;
+        // @media (max-width: $md) {
+        //     flex: 0.5 0.4 auto;
 
+        // }
 
         .icon {
             color: $primary;
-            transition: all 750ms ease-in-out;
+            transition: all 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: $shadow;
 
             &:hover {
@@ -704,10 +710,10 @@ footer {
     @include flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    flex-direction: row;
 
     form {
-        flex: 1 1 auto;
-
+        flex: 1 1 20rem;
         margin: 2rem auto;
         width: 100%;
         max-width: $md;
@@ -717,10 +723,31 @@ footer {
     }
 
     .ContactInfo {
-        @include flex;
-        flex: 1 1 auto;
+        @include inline-flex;
+        flex: 1 1 24rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content:flex-start;
+        h2 {
+            padding-bottom: 5px;
+            color: #fff;
+            font-size: 64px;
+            line-height: 72px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            span{
+                @include PrimaryTextColor;
+            }
+        }
+        p{
+            max-width: 29.625rem;
 
-    }
+            margin-top: 24px;
+            
+        }
+     
+        }
+    
 }
 
 @import "forms";

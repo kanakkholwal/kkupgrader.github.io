@@ -1,4 +1,4 @@
-input[type="range"] {
+input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
   height: 0;
@@ -6,18 +6,15 @@ input[type="range"] {
   background-color: transparent;
   position: relative;
 }
-
 @media only screen and (max-width: 410px) {
-  input[type="range"] {
+  input[type=range] {
     position: unset;
   }
 }
-
-input[type="range"]:focus {
+input[type=range]:focus {
   outline: none;
 }
-
-input[type="range"]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -25,21 +22,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: var(--textColor);
   border-radius: 3px;
 }
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-box-shadow: 1px 1px 1px #30302f, 0px 0px 1px #30302f;
-          box-shadow: 1px 1px 1px #30302f, 0px 0px 1px #30302f;
-  border: 1px solid #000000;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: var(--textColor);
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -5px;
-}
-
-input[type="range"]::-moz-range-thumb {
+input[type=range]::-webkit-slider-thumb {
   box-shadow: 1px 1px 1px #30302f, 0px 0px 1px #30302f;
   border: 1px solid #000000;
   height: 16px;
@@ -50,31 +33,37 @@ input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   margin-top: -5px;
 }
-
-input[type="range"]:hover::after, input[type="range"]:active::after, input[type="range"]:focus::after, input[type="range"]:focus-within::after {
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #30302f, 0px 0px 1px #30302f;
+  border: 1px solid #000000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--textColor);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+input[type=range]:hover::after, input[type=range]:active::after, input[type=range]:focus::after, input[type=range]:focus-within::after {
   content: attr(value) "px";
   position: absolute;
   left: 105%;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   color: var(--textColorOpposite);
   border-radius: 3px;
   padding: 10px;
   background: var(--textColor);
 }
-
 @media only screen and (max-width: 410px) {
-  input[type="range"]:hover::after, input[type="range"]:active::after, input[type="range"]:focus::after, input[type="range"]:focus-within::after {
+  input[type=range]:hover::after, input[type=range]:active::after, input[type=range]:focus::after, input[type=range]:focus-within::after {
     right: 15px;
     top: 15px;
     left: unset;
-    -webkit-transform: unset;
-            transform: unset;
+    transform: unset;
   }
 }
-
-input[type="range"]:hover::before, input[type="range"]:active::before, input[type="range"]:focus::before, input[type="range"]:focus-within::before {
+input[type=range]:hover::before, input[type=range]:active::before, input[type=range]:focus::before, input[type=range]:focus-within::before {
   width: 0;
   height: 0;
   border-right: 15px solid var(--textColor);
@@ -84,26 +73,21 @@ input[type="range"]:hover::before, input[type="range"]:active::before, input[typ
   content: " ";
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 103%;
 }
-
 @media only screen and (max-width: 410px) {
-  input[type="range"]:hover::before, input[type="range"]:active::before, input[type="range"]:focus::before, input[type="range"]:focus-within::before {
+  input[type=range]:hover::before, input[type=range]:active::before, input[type=range]:focus::before, input[type=range]:focus-within::before {
     display: none;
   }
 }
-
-input[type="range"][name="colorDifference"]:hover::after, input[type="range"][name="colorDifference"]:active::after, input[type="range"][name="colorDifference"]:focus::after {
+input[type=range][name=colorDifference]:hover::after, input[type=range][name=colorDifference]:active::after, input[type=range][name=colorDifference]:focus::after {
   content: attr(value);
 }
-
-input[type="range"]:focus::-ms-fill-lower, input[type="range"]:focus::-ms-fill-upper, input[type="range"]:focus::-webkit-slider-runnable-track {
+input[type=range]:focus::-ms-fill-lower, input[type=range]:focus::-ms-fill-upper, input[type=range]:focus::-webkit-slider-runnable-track {
   background: var(--textColor);
 }
-
-input[type="range"]::-moz-range-track {
+input[type=range]::-moz-range-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -111,8 +95,7 @@ input[type="range"]::-moz-range-track {
   background: var(--textColor);
   border-radius: 1.3px;
 }
-
-input[type="range"]::-moz-range-thumb, input[type="range"]::-ms-thumb {
+input[type=range]::-moz-range-thumb, input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px #30302f, 0px 0px 1px #30302f;
   border: 1px solid #000000;
   height: 16px;
@@ -121,8 +104,7 @@ input[type="range"]::-moz-range-thumb, input[type="range"]::-ms-thumb {
   background: var(--textColor);
   cursor: pointer;
 }
-
-input[type="range"]::-ms-track {
+input[type=range]::-ms-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -132,14 +114,13 @@ input[type="range"]::-ms-track {
   border-width: 16px 0;
   color: transparent;
 }
-
-input[type="range"]::-ms-fill-lower, input[type="range"]::-ms-fill-upper {
+input[type=range]::-ms-fill-lower, input[type=range]::-ms-fill-upper {
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
-input[type="text"] {
+input[type=text] {
   border: 3px solid var(--textColor);
   color: #001f3f;
   padding: 0px 5px;
@@ -150,7 +131,7 @@ input[type="text"] {
   display: inline-block;
 }
 
-input[type="color"] {
+input[type=color] {
   -webkit-appearance: none;
   border: none;
   cursor: pointer;
@@ -159,12 +140,10 @@ input[type="color"] {
   padding: 0;
   border: 3px solid var(--textColor);
 }
-
-input[type="color"]::-webkit-color-swatch-wrapper {
+input[type=color]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
-
-input[type="color"]::-webkit-color-swatch {
+input[type=color]::-webkit-color-swatch {
   border: none;
 }
 
@@ -190,7 +169,6 @@ input[type="color"]::-webkit-color-swatch {
   left: 0;
   /* Fade in tooltip */
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
@@ -234,15 +212,13 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .checkbox input:checked + span:before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 10px;
   border-radius: 1px;
   width: 10px;
   background: var(--textColor);
-}
-/*# sourceMappingURL=inputs.css.map */
+}/*# sourceMappingURL=inputs.css.map */

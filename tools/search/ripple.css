@@ -3,19 +3,16 @@
   position: relative;
   overflow: hidden;
 }
-
 .g-ripple .g-ripple-surface,
 .g-btn .g-ripple-surface {
   position: absolute;
   background: #fbfbfb;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
   -webkit-animation: ripples 0.6s linear infinite;
           animation: ripples 0.6s linear infinite;
 }
-
 @-webkit-keyframes ripples {
   0% {
     width: 0px;
@@ -28,7 +25,6 @@
     opacity: 0;
   }
 }
-
 @keyframes ripples {
   0% {
     width: 0px;
@@ -40,5 +36,4 @@
     height: 500px;
     opacity: 0;
   }
-}
-/*# sourceMappingURL=ripple.css.map */
+}/*# sourceMappingURL=ripple.css.map */
