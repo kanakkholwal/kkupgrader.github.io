@@ -174,8 +174,8 @@ const ContactForm = document.getElementById("contactForm"),
 const SendContactForm = () => {};
 ContactForm.onsubmit = (e) => {
   e.preventDefault();
-  let myForm = document.getElementById(ContactForm);
-  let formData = new FormData(myForm);
+  // let myForm = document.getElementById(ContactForm);
+  let formData = new FormData(ContactForm);
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
