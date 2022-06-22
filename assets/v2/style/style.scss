@@ -39,7 +39,12 @@
     -webkit-text-fill-color: #0000;
 }
 
-
+@mixin active {
+    &:hover {
+        background: #032b3a;
+        color: #31c9c9;
+    }
+}
 
 @function randomNum($min, $max) {
     $rand: random();
@@ -131,7 +136,7 @@ $success: #02b605;
 $success-hvr: #2bd72d;
 $textColor:#132F4C;
 $LightTextColor:#132F4C;
-
+$hoverBg:#2a2e32;
 $white:#fbfbfb;
 $black:#262626;
 $transparent:#ffffff0d;
