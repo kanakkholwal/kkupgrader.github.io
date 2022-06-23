@@ -1,6 +1,6 @@
+// Ripple Effect
 document.querySelectorAll(".ripple-effect").forEach((el) => {
   el.addEventListener("click", (e) => {
-    // el.classList.add('ripple');
     var RippleElement = document.createElement("div");
     RippleElement.className = "ripple";
     e.target.appendChild(RippleElement);
@@ -18,11 +18,12 @@ document.querySelectorAll(".ripple-effect").forEach((el) => {
   });
 });
 
-// PreBuilt Functions for Accordion
+// PreBuilt Functions 
 const getSiblings = (TargetNode) =>
   [...TargetNode.parentNode.children].filter(
     (siblings) => siblings !== TargetNode
-  ); // Gives Object Output
+  );
+// Gives Object Output
 // Check if element is visible
 function getElementViewportInfo(el) {
   let result = {};
@@ -74,7 +75,6 @@ function getElementViewportInfo(el) {
 function inViewport(element) {
   if (!element) return false;
   if (1 !== element.nodeType) return false;
-
   var html = document.documentElement;
   var rect = element.getBoundingClientRect();
 
@@ -86,13 +86,12 @@ function inViewport(element) {
     rect.top <= html.clientHeight
   );
 }
-
+// LazyLoad
 (function () {
   var observer = new IntersectionObserver(onIntersect);
   document.querySelectorAll("[data-src]").forEach((img) => {
     observer.observe(img);
   });
-
   function onIntersect(entries) {
     entries.forEach((entry) => {
       if (entry.target.getAttribute("data-processed") || !entry.isIntersecting)
@@ -110,17 +109,10 @@ document.querySelectorAll(".form-textarea").forEach((textarea) => {
     e.target.style.height = e.target.scrollHeight + "px";
   };
 });
+// NavMenu Toggle
 let navbar = document.querySelector(".navbar"),
   navToggle = document.querySelector(".nav-toggler");
 menu = document.querySelector("#menu");
-
-// document.querySelector(".nav-toggler").onclick = () => {
-//     document.querySelector(".nav-toggler").classList.toggle("active");
-//     var targetId = document
-//     .querySelector(".nav-toggler")
-//     .getAttribute("data-nav-toggle");
-//     document.getElementById(targetId).classList.toggle("open");
-// };
 document.addEventListener("mouseup", function (e) {
   if (!navToggle.contains(e.target) && !menu.contains(e.target)) {
     navToggle.classList.remove("active");
@@ -160,21 +152,12 @@ const navHighlighter = () => {
 window.addEventListener("scroll", navHighlighter);
 
 var currentYear = new Date().getFullYear();
-// console.log(currentYear);
 document.getElementById("currentYear").innerText = currentYear;
 
 // Contact Form
-const SecureToken = "91411fe2-e88e-4fdd-943e-43f99f1b36fd";
-const SendTo = "kkupgrader.fs@gmail.com";
-const ContactForm = document.getElementById("contactForm"),
-  email = ContactForm.querySelector("#email"),
-  subject = ContactForm.querySelector("#subject"),
-  Body = ContactForm.querySelector("#body");
-
-const SendContactForm = () => {};
+const ContactForm = document.getElementById("contactForm");
 ContactForm.onsubmit = (e) => {
   e.preventDefault();
-  // let myForm = document.getElementById(ContactForm);
   let formData = new FormData(ContactForm);
   fetch("/", {
     method: "POST",

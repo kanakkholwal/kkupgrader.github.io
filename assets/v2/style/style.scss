@@ -34,7 +34,7 @@
 }
 
 @mixin PrimaryTextColor {
-    background: linear-gradient(to right, #007FFF, #0059B2);
+    background: linear-gradient(to right, #3282B8, #0059B2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #0000;
 }
@@ -727,7 +727,8 @@ footer {
         flex: 1 1 24rem;
         flex-direction: column;
         align-items: flex-start;
-        justify-content:flex-start;
+        justify-content: flex-start;
+
         h2 {
             padding-bottom: 5px;
             color: #fff;
@@ -735,19 +736,42 @@ footer {
             line-height: 72px;
             font-weight: 700;
             letter-spacing: -2px;
-            span{
+
+            span {
                 @include PrimaryTextColor;
             }
         }
-        p{
+
+        p {
             max-width: 29.625rem;
 
             margin-top: 24px;
-            
+
         }
-     
+
+        .ContactSocial {
+            margin-top: 2rem;
+            @include flex;
+            justify-content: space-around;
+            width: 100%;
+
+            a {
+                color: $light;
+                padding:0.5rem;
+                border-radius:50%;
+                @include flex;
+                transition: all 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                &:hover {
+                    background: #032b3a;
+                    color: #31c9c9;
+                    transform: scale(1.25) rotate(360deg) ;
+                    box-shadow: $shadow;
+                }
+            }
+
         }
-    
+    }
+
 }
 
 @import "forms";

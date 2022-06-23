@@ -7,7 +7,7 @@
   --black: $black;
   --text-light: #8a8f98;
   --text-lighter: #757783;
-  --random:28px;
+  --random:70px;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -599,13 +599,34 @@ footer .social .icon:hover {
   letter-spacing: -2px;
 }
 .ContactsSection .ContactInfo h2 span {
-  background: linear-gradient(to right, #007FFF, #0059B2);
+  background: linear-gradient(to right, #3282B8, #0059B2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
 }
 .ContactsSection .ContactInfo p {
   max-width: 29.625rem;
   margin-top: 24px;
+}
+.ContactsSection .ContactInfo .ContactSocial {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.ContactsSection .ContactInfo .ContactSocial a {
+  color: #BBE1FA;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  transition: all 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.ContactsSection .ContactInfo .ContactSocial a:hover {
+  background: #032b3a;
+  color: #31c9c9;
+  transform: scale(1.25) rotate(360deg);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
 .form-element {
@@ -721,7 +742,7 @@ footer .social .icon:hover {
 .form-submit {
   display: inline-flex;
   color: #fff;
-  background: #212930;
+  background: rgba(255, 255, 255, 0.0509803922);
   font-weight: 700;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
