@@ -19,6 +19,8 @@
   border-radius: 0.25rem;
   transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   opacity: 0.9;
+  font-family: "Satoshi variable", sans-serif;
+  font-weight: 400;
 }
 .btn:hover, .btn.active {
   opacity: 1;
@@ -27,10 +29,10 @@
   background: #0F4C75;
 }
 .btn.btn-success {
-  background: #02b605;
+  background: #01bd62;
 }
 .btn.btn-danger {
-  background: #fe3e63;
+  background: #d70c25;
 }
 .btn.btn-warning {
   background: #feb707;

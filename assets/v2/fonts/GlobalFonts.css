@@ -1081,4 +1081,15 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Satoshi Variable';
+    src: local('Satoshi Variable Bold'), local('SatoshiVariable-Bold'),
+        url('./font-files/SatoshiVariable-Bold.woff2') format('woff2'),
+        url('./font-files/SatoshiVariable-Bold.woff') format('woff'),
+        url('./font-files/SatoshiVariable-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 
