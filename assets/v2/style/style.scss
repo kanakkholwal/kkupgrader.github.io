@@ -710,7 +710,7 @@ footer {
     @include flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row-reverse;
 
     form {
         flex: 1 1 20rem;
@@ -865,7 +865,7 @@ footer {
     }
 }
 
-@import "./layout";
 @import "./buttons";
+@import "./layout";
 // Animations
 // @import "./animation";
