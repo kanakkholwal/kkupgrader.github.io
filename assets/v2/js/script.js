@@ -18,7 +18,7 @@ document.querySelectorAll(".ripple-effect").forEach((el) => {
   });
 });
 
-// PreBuilt Functions 
+// PreBuilt Functions
 const getSiblings = (TargetNode) =>
   [...TargetNode.parentNode.children].filter(
     (siblings) => siblings !== TargetNode
@@ -125,12 +125,16 @@ navToggle.addEventListener("click", function () {
 });
 
 // OnScroll Navbar Fixed
-window.addEventListener("scroll", function () {
-  navbar.classList.toggle("scrolled", window.scrollY > 100);
-});
+var NavScroll = true;
+if (NavScroll) {
+  window.addEventListener("scroll", function () {
+    navbar.classList.toggle("scrolled", window.scrollY > 100);
+  });
+}
 // Section Highlight
-const sections = document.querySelectorAll("main > section[id]");
-const navHighlighter = () => {
+
+const Sections = document.querySelectorAll("main > section[id]");
+const navHighlighter = (sections) => {
   let scrollY = window.pageYOffset;
 
   sections.forEach((current) => {
@@ -156,17 +160,19 @@ document.getElementById("currentYear").innerText = currentYear;
 
 // Contact Form
 const ContactForm = document.getElementById("contactForm");
-ContactForm.onsubmit = (e) => {
-  e.preventDefault();
-  let formData = new FormData(ContactForm);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => {
-      console.log("Form successfully submitted");
-      alert("Form successfully submitted");
-     } )
-    .catch((error) => alert(error));
-};
+if (!ContactForm === null && !ContactForm === undefined) {
+  ContactForm.onsubmit = (e) => {
+    e.preventDefault();
+    let formData = new FormData(ContactForm);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        console.log("Form successfully submitted");
+        alert("Form successfully submitted");
+      })
+      .catch((error) => alert(error));
+  };
+}

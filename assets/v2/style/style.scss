@@ -46,11 +46,10 @@
     }
 }
 
-@function randomNum($min, $max) {
-    $rand: random();
-    $randomNum: $min + floor($rand * (($max - $min) + 1));
-
-    @return $randomNum;
+@mixin darkGradient {
+    background: #525252;
+    background: linear-gradient(to bottom, rgba(82, 82, 82, 1),
+            rgba(52, 52, 52, 1));
 }
 
 @mixin btn {
@@ -690,7 +689,7 @@ footer {
             font-size: 1rem;
             border-radius: 7px;
             padding: 0.5rem;
-        
+
             text-decoration: none;
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -755,14 +754,15 @@ footer {
 
             a {
                 color: $light;
-                padding:0.5rem;
-                border-radius:50%;
+                padding: 0.5rem;
+                border-radius: 50%;
                 @include flex;
                 transition: all 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
                 &:hover {
                     background: #032b3a;
                     color: #31c9c9;
-                    transform: scale(1.25) rotate(360deg) ;
+                    transform: scale(1.25) rotate(360deg);
                     box-shadow: $shadow;
                 }
             }
@@ -861,6 +861,14 @@ footer {
         background-color: rgb(230, 230, 230);
         border-radius: 5px;
     }
+}
+
+.ToolApp {
+
+    max-width: $md;
+    margin-left: auto;
+    margin-right: auto;
+    border-top:thin solid $dark;
 }
 
 @import "./buttons";

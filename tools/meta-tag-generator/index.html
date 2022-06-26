@@ -1,339 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Meta Tag Generator Tool</title>
-
-    <meta content='width=device-width, initial-scale=1' name='viewport'>
-    <!-- Preload Cdns -->
-    <link href='https://fonts.googleapis.com' rel='preconnect' />
-    <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect' />
-    <link href='//cdn.jsdelivr.net' rel='preconnect' />
-    <link href='//raw.githack.com' rel='dns-prefetch' />
-    <link href='//ajax.googleapis.com' rel='dns-prefetch' />
-    <link href='//cdn.jsdelivr.net' rel='dns-prefetch' />
-    <link href='//cdnjs.cloudflare.com' rel='preload' />
-    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' />
-    <link href='//kkupgrader.eu.org/' rel='dns-prefetch' />
-
-    <!-- Preload Cdns -->
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <!-- Chrome, Firefox OS and Opera -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Windows Phone -->
-    <meta content='' name='msapplication-navbutton-color' />
-    <link href='/favicon.ico' rel='icon' type='image/x-icon' />
-    <link href='https://kkupgrader.eu.org/' rel='canonical' />
-    <link href='/assets/fonts/Roboto.css' rel='stylesheet' />
-    <link href='https://pro.fontawesome.com/releases/v5.15.4/css/all.css' rel='stylesheet' />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
-    <link href='/main.css' rel='stylesheet' />
-    <link href='/assets/css/sidenav.css' rel='stylesheet' />
-    <script async='async' defer='defer' src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K K UPGRADER</title>
+    <link rel="stylesheet" href="/assets/v2/style/style.css">
+    <link rel="stylesheet" href="/assets/v2/fonts/GlobalFonts.css">
 </head>
 
 <body>
-
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container-fluid ">
-                <div class="d-flex">
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top:2px"></a>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="/" title="K K UPGRADER" class="logo"><img src="/logo.svg" alt="Logo" loading="lazy" /></a>
+            </div>
+            <div class="nav-content">
+
+                <div class="nav-toggler" data-nav-toggle="menu">
+                    <span></span><span></span><span></span>
                 </div>
-                <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
-                    <li class="nav-item me-3 me-lg-1">
-                        <form class="input-group w-auto my-auto d-none d-lg-flex">
-                            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
-                  class="fas fa-search"></i></span>
-                        </form>
-                    </li>
-                </ul>
-                <ul class="float-end navbar-nav d-flex flex-row align-items-center">
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="https://kkupgrader.blogspot.com/">Blog</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/portfolio/">PortFolio</a></li>
-
-
+                <ul class="nav-list" id="menu">
+                    <li class="nav-item"><a href="/portfolio/" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="/tools/" class="nav-link">Tools</a></li>
+                    <li class="nav-item"><a href="https://kkupgrader.blogspot.com" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="/pixonoids" class="nav-link">Projects</a></li>
                 </ul>
             </div>
         </nav>
+        <section class="hero-container">
 
-        <main class='w-100' style='margin-top:65px;background-color: #F0F2F5;'>
-            <div class='container-fluid  '>
-                <div class="p-4 px-5 text-center">
-
-                    <h1 class="h4 fw-bold mb-3 mt-4">Meta Tag Generator Tool
-
-                    </h1>
-                    <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.</p>
-                    <div class="mt-3">
-                        <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
-                class="fas fa-tools ms-2"></i></a>
-                        <a class="btn btn-success me-1 mb-4" href="#!" role="button">Design docs<i
-                class="fas fa-file-alt ms-2"></i></a>
-                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i class="fas fa-download ms-2"></i></a>
-                    </div>
-
-
-                </div>
+            <div class="hero-content">
+                <h1 class="hero-heading">
+                    K K UPGRADER
+                </h1>
+                <h5 class="hero-paragraph">
+                    Bloging, Internet Tools and Coding Tips.
+                </h5>
             </div>
 
-        </main>
-
-        <!-- Navbar -->
+        </section>
     </header>
 
 
 
-
-
-
-
-    <div class="container-lg my-5" id="app">
+    <main class="ToolApp" id="app" role="main">
         <form class="card w-100" method="post" name="primitive">
 
-            <div class="container">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col-10 col-sm-6">
+                        <div class="form-element">
+                            <label class="form-label" for="input1">Title:</label>
+
+                            <input type="text" class="form-input" name="input1" placeholder="Title" aria-label="Title"
+                                aria-describedby="title" />
+                        </div>
+                    </div>
+                    <div class="col-10 col-sm-6">
+                        <div class="form-element">
+                            <label class="form-label" for="input2">Author:</label>
+
+                            <input type="text" class="form-input" name="input2" placeholder="Author" aria-label="Author"
+                                aria-describedby="author" />
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-6">
+                        <div class="form-element">
+                            <label class="form-label" for="description">Description:</label>
+
+                            <input type="text" class="form-input  form-lg" name="input4" placeholder="Description"
+                                aria-label="Description" aria-describedby="description" />
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-6">
+
+                        <div class="form-element">
+                            <label class="form-label" for="keywords">Keywords:</label>
+
+                            <input type="text" class="form-input" name="input5" placeholder="Keywords"
+                                aria-label="Keywords" aria-describedby="keywords" />
+                        </div>
+                    </div>
+
+                </div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="input-group flex-nowrap mb-4">
-                            <span class="input-group-text" id="title">Title:</span>
-
-                            <input type="text" class="form-control" name="input1" placeholder="Title" aria-label="Title" aria-describedby="title" />
-                        </div>
-                    </div>
-                    <div class="col-6">
-
-                        <div class="input-group flex-nowrap mb-4">
-                            <span class="input-group-text" id="author">Author:</span>
-
-                            <input type="text" class="form-control" name="input2" placeholder="Author" aria-label="Author" aria-describedby="author" />
+                        <div class="form-element">
+                            <label for="inpu15" class="form-label">Select Distribution..</label>
+                            <select class="form-select" name="input14" required="">
+                                <option disabled="" selected="">Select Distribution..</option>
+                                <option value="Global">Global</option>
+                                <option value="Local">Local</option>
+                                <option value="IU">Intern Use</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="col-6">
-
-                        <div class="input-group flex-nowrap mb-4">
-                            <span class="input-group-text input-group-lg" id="description">Description:</span>
-
-                            <input type="text" class="form-control  form-control-lg" name="input4" placeholder="Description" aria-label="Description" aria-describedby="description" />
+                        <div class="form-element">
+                            <label for="inpu15" class="form-label">Select Robots..</label>
+                            <select class="form-select" name="input15" required="">
+                                <option selected="" disabled="">Select Robots..</option>
+                                <option value="All">All</option>
+                                <option value="None">None</option>
+                                <option value="No Index">No Index</option>
+                                <option value="Follow">Follow</option>
+                                <option value="No Follow">No Follow</option>
+                            </select>
                         </div>
                     </div>
-
-                    <div class="col-6">
-
-                        <div class="input-group flex-nowrap mb-4">
-                            <span class="input-group-text" id="keywords">Keywords:</span>
-
-                            <input type="text" class="form-control" name="input5" placeholder="Keywords" aria-label="Keywords" aria-describedby="keywords" />
-                        </div>
-                    </div>
-
+                   
                 </div>
-                <div class="row text- g-4">
-                    <div class="col-6">
-
-                        <select class="form-control form-select" name="input14" required="">
-            <option disabled="" selected="">Select Distribution..</option>
-            <option value="Global">Global</option>
-            <option value="Local">Local</option>
-            <option value="IU">Intern Use</option>
-          </select>
-                    </div>
-
-                    <div class="col-6">
-
-                        <select class="form-control  form-select" name="input15" required="">
-            <option selected="" disabled="">Select Robots..</option>
-            <option value="All">All</option>
-            <option value="None">None</option>
-            <option value="No Index">No Index</option>
-            <option value="Follow">Follow</option>
-            <option value="No Follow">No Follow</option>
-          </select>
-                    </div>
-                </div>
-
-                <br />
 
                 <div class="m-4 row g-3 justify-content-center">
                     <div class="col-6 col-sm-4">
-                        <button class="btn btn-outline-success" onclick="create(this.form)" type="button" value="Create META tags">
-              Generate
-            </button>
+                        <button class="btn btn-success" onclick="create(this.form)" type="button"
+                            value="Create META tags">
+                            Generate
+                        </button>
                     </div>
                     <div class="col-6 col-sm-4">
-                        <button class="btn btn-outline-danger" type="reset" value="Clear All">
-              Reset <i class="fas fa-trash"></i>
-            </button>
+                        <button class="btn btn-danger" type="reset" value="Clear All">
+                            Reset <i class="fas fa-trash"></i>
+                        </button>
                     </div>
                     <div class="col-sm-4 col-6">
-                        <button type="button" class="btn btn-success" id="copyit">
-              Copy <i class="far fa-clone"></i>
-            </button>
+                        <button type="button" class="btn btn-primary" id="copyit">
+                            Copy <i class="far fa-clone"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-            <br />
 
             <p class="note container note-info">
-                <strong>Instructions:</strong> Simply copy the following lines of code and insert them between the <b class="mark">&lt;head&gt;</b> and
+                <strong>Instructions:</strong> Simply copy the following lines of code and insert them between the <b
+                    class="mark">&lt;head&gt;</b> and
                 <b class="mark">&lt;/head&gt; </b>tags in your HTML Document.
             </p>
-            <br />
-            <div class="input-group ">
-                <textarea class="form-control w-auto shadow-4-strong" id="output" name="story" rows="6" style="max-height: 400px; min-height: 300px; "></textarea>
+
+            <div class="form-element">
+                <textarea class="form-textarea" id="output" name="story" cols="80" rows="8"></textarea>
             </div>
 
-            <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-            <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script crossorigin="anonymous"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+            <script crossorigin="anonymous"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         </form>
-    </div>
+    </main>
 
 
 
-    <div class="mb-n3 pt- text-center text-white trans-bg">
-        <!-- Grid container -->
-        <div class="container-fluid">
-            <!-- Section: Social media -->
-            <section class="text-center">
-                <div id="subscribe">
-                    <div class="wrapper">
-                        <h3 class="text-white h2">Follow Us on Social Media</h3>
-                        <p class="mb-3">
-                            Subscribe to get updated when new templates arrive!
-                        </p>
-                        <div class="subscribe-box"></div>
-                        <div class="d-flex justify-content-center pt-3">
-                            <a class="me-4 text-white" href="https://t.me/kkupgrader" target="_blank"><i
-                  class="fab fa-telegram-plane fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://Facebook.com/FsBlogger" role="button" target="_blank"><i
-                  class="fab fa-facebook-f fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://Pinterest.com/kkupgrader" role="button" target="_blank"><i
-                  class="fab fa-pinterest fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://codepen.io/kkupgrader" target="_blank"><i
-                  class="fab fa-codepen fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://instagram.com/kk.upgrader" role="button" target="_blank"><i
-                  class="fab fa-instagram fa-lg"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="row mt-4 pb-4">
-                <div class="col-sm-3 mb-4 mb-md-0 section" id="logo">
-                    <div class="widget Image" data-version="2" id="Image1">
-                        <h5 class="text-uppercase text-white text-center mb-4">
-                            K K UPGRADER
-                        </h5>
-                        <p class="mb-2 text-center text-white">
-                            Find a perfect template with SEO Optimized and improve your blog right now.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 1">
-                    <div class="widget LinkList" data-version="2" id="LinkList001">
-                        <h5 class="text-uppercase text-white mb-4">Popular Themes</h5>
-                        <hr />
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white" href="https://www.fs-themes.eu.org/2020/12/bootslinks-bootstrap-safelink-blogger.html">
-                                    <i class="fas fa-arrow-right pe-3"></i>BootsLinks
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://www.fs-themes.eu.org/2021/09/genesis-links-safelink-with-password.html">
-                                    <i class="fas fa-arrow-right pe-3"></i>Genesis Links
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://www.fs-themes.eu.org/2020/12/ideal-links-blogger-template.html">
-                                    <i class="fas fa-arrow-right pe-3"></i>Ideal Links
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 2">
-                    <div class="widget LinkList" data-version="2" id="LinkList002">
-                        <h5 class="text-uppercase text-white mb-4">Useful Links</h5>
-                        <hr />
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white" href="https://">
-                                    <i class="fas fa-arrow-right pe-3"></i>Become an Affiliate
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://">
-                                    <i class="fas fa-arrow-right pe-3"></i>Documentation
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://">
-                                    <i class="fas fa-arrow-right pe-3"></i>Help
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://">
-                                    <i class="fas fa-arrow-right pe-3"></i>Shipping Rates
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 3">
-                    <div class="widget LinkList" data-version="2" id="LinkList003">
-                        <h5 class="text-uppercase text-white mb-4">Contact</h5>
-                        <hr />
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white" href="mailto:kkupgrader.fs@gmail.com">
-                                    <i class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://instagram.com/kanakkholwal">
-                                    <i class="fab fa-instagram me-1"></i> kanakkholwal
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+
+    <footer>
+        <div class="copyright">Copyright <a href="/" title="K K UPGRADER">K K UPGRADER</a> &copy; <span
+                id="currentYear"></span></div>
+        <div class="social">
+            <a href="https://www.instagram.com/kanakkholwal/" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg></a>
+            <a href="https://github.com/kkupgrader" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-github">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg></a>
+            <a href="https://codepen.io/kkupgrader/" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-codepen">
+                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                    <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                    <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                    <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                </svg></a>
+            <a href="https://www.linkedin.com/in/kanak-kholwal/" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-linkedin">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg> </a>
         </div>
-    </div>
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center text-white bg-dark p-3">
-            Copyright &#169;
-            <script type="text/javascript">
-                document.write(new Date().getFullYear());
-            </script>
-            <a href="/" title="K K UPGRADER"><span title="K K UPGRADER">K K UPGRADER</span></a> - All Right Reserved
-        </div>
-        <!-- Copyright -->
     </footer>
 
+    <script src="/assets/v2/js/script.js"></script>
+
     <script async='async' defer='defer' src='/tools/meta-tag-generator/primitive.js' type='text/javascript'></script>
-    <!-- Scripts -->
-    <!-- Scripts -->
-    <script async="async" defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js" type="text/javascript"></script>
+
 </body>
 
 </html>

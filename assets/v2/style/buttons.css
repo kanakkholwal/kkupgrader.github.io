@@ -1,7 +1,7 @@
 .btn {
   display: inline-flex;
   color: #fff;
-  background: #212930;
+  background: #0F4C75;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.1019607843);
@@ -26,7 +26,13 @@
   opacity: 1;
 }
 .btn.btn-primary {
-  background: #0F4C75;
+  background: #1d5eff;
+  opacity: 0.9;
+}
+.btn.btn-primary:hover, .btn.btn-primary.active {
+  opacity: 1;
+  background: #1d5eff;
+  color: white;
 }
 .btn.btn-success {
   background: #01bd62;
