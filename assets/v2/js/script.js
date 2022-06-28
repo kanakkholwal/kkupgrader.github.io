@@ -128,15 +128,15 @@ navToggle.addEventListener("click", function () {
 var NavScroll = true;
 if (NavScroll) {
   window.addEventListener("scroll", function () {
-    navbar.classList.toggle("scrolled", window.scrollY > 100);
+    navbar.classList.toggle("scrolled", window.scrollY > 10);
   });
 }
 // Section Highlight
-
+var IsSectionHighlightNeeded = false;
+if(IsSectionHighlightNeeded){
 const Sections = document.querySelectorAll("main > section[id]");
 const navHighlighter = (sections) => {
   let scrollY = window.pageYOffset;
-
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
@@ -154,7 +154,7 @@ const navHighlighter = (sections) => {
   });
 };
 window.addEventListener("scroll", navHighlighter);
-
+}
 var currentYear = new Date().getFullYear();
 document.getElementById("currentYear").innerText = currentYear;
 

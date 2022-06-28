@@ -1,5 +1,5 @@
 [{
-        "Tool Type": " Web Tools",
+        "Tool Type": "Web Tools",
         "Tools Cells": [{
             "Name": "Meta Tag Generator",
             "Directory": "/tools/meta-tag-generator/",

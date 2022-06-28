@@ -148,6 +148,7 @@ $shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 $shadow2: 0 20px 30px rgba(0, 0, 0, 0.1);
 $grey: #9e9e9e;
+$transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 :root {
     --primary: $primary;
@@ -669,38 +670,7 @@ footer {
     }
 }
 
-.footer-section {
-    width: 100%;
-    padding: 1rem;
 
-    .footer-links {
-        @include flex;
-        justify-content: center;
-        gap: 0.75rem;
-        max-width: $lg;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        flex-wrap: wrap;
-        opacity: 0.8;
-
-        .footer-link {
-
-            font-size: 1rem;
-            border-radius: 7px;
-            padding: 0.5rem;
-
-            text-decoration: none;
-            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-            &:hover {
-                transform: translateY(-10%);
-                opacity: 1;
-            }
-        }
-    }
-
-}
 
 .ContactsSection {
     width: 100%;
@@ -708,6 +678,7 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    padding: 1rem;
 
     form {
         flex: 1 1 20rem;
@@ -770,6 +741,102 @@ footer {
         }
     }
 
+}
+
+.footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-direction: row;
+    max-width: $lg;
+    width: 100%;
+    margin: 2rem auto 0.5rem;
+    transition: all 0.8s ease-in-out;
+    border-top: thin solid $dark3;
+    padding: 2rem;
+
+    @media (max-width: $md) {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1 1 30%;
+        // flex: 1 1 20%;
+width:100%;
+        .title {
+            font-size: 1.5rem;
+        }
+
+        .heading {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        ul {
+            border-top: thin solid $dark3;
+            padding-top: 0.25rem;
+
+            &.footer-links {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0.75rem;
+
+                width: 100%;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                li {
+
+                    &:not(:empty) {
+                        margin-bottom: 0.5rem;
+                        font-size: 1rem;
+
+                        border-left: 1px solid $primary;
+                        transition: all .5s $transition;
+
+                        &:hover {
+                            border-left-width: 2px;
+                            padding-left: 0.25rem;
+                            .footer-link {
+                            @include PrimaryTextColor;}
+                        }
+
+                        &:first-child {
+                            margin-top: 0.75rem
+                        }
+                    }
+
+                    .footer-link {
+                        &:not(:empty) {
+
+                            font-size: 1rem;
+                            border-radius: 0.5rem;
+                            padding: 0.25rem 0.5rem;
+                            color: $secondary;
+                            text-decoration: none;
+                            transition: all 0.1s ease;
+                            font-weight: 500;
+                            font-size: inherit;
+
+                            background: -webkit-linear-gradient($grey, $secondary, $primary);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
 }
 
 @import "forms";
@@ -868,10 +935,25 @@ footer {
     max-width: $md;
     margin-left: auto;
     margin-right: auto;
-    border-top:thin solid $dark;
+    border-top: thin solid $dark;
+
+    .control-buttons {
+        @include flex;
+        justify-content: space-around;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin: 1rem auto;
+
+        .btn {
+            flex: 1 1 100px;
+            text-align: center;
+
+        }
+    }
 }
 
 @import "./buttons";
 @import "./layout";
+@import "./topography";
 // Animations
 // @import "./animation";
