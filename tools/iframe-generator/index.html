@@ -1,307 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>iFrame Embed Code Generator</title>
-
-    <meta content='width=device-width, initial-scale=1' name='viewport'>
-    <!-- Preload Cdns -->
-    <link href='https://fonts.googleapis.com' rel='preconnect' />
-    <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect' />
-    <link href='//cdn.jsdelivr.net' rel='preconnect' />
-    <link href='//raw.githack.com' rel='dns-prefetch' />
-    <link href='//ajax.googleapis.com' rel='dns-prefetch' />
-    <link href='//cdn.jsdelivr.net' rel='dns-prefetch' />
-    <link href='//cdnjs.cloudflare.com' rel='preload' />
-    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' />
-    <link href='//kkupgrader.eu.org/' rel='dns-prefetch' />
-
-    <!-- Preload Cdns -->
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <!-- Chrome, Firefox OS and Opera -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/meta/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/meta/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/meta/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/meta/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/meta/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/meta/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/meta/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/meta/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/meta/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/meta/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/meta/applems-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Windows Phone -->
-    <meta content='' name='msapplication-navbutton-color' />
-    <link href='/meta/favicon.ico' rel='icon' type='image/x-icon' />
-    <link href='https://kkupgrader.eu.org/' rel='canonical' />
-    <link href='/assets/fonts/Roboto.css' rel='stylesheet' />
-    <link href='https://pro.fontawesome.com/releases/v5.15.4/css/all.css' rel='stylesheet' />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
-    <link href='/main.css' rel='stylesheet' />
-    <link rel="stylesheet" href="style.css">
-    <script src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K K UPGRADER</title>
+    <link rel="stylesheet" href="/assets/v2/style/style.css">
+    <link rel="stylesheet" href="/assets/v2/fonts/GlobalFonts.css">
+    <link rel="stylesheet" href="/assets/v2/addons/code-highlighter/prism/prism.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container-fluid ">
-                <div class="d-flex">
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top:2px"></a>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="/" title="K K UPGRADER" class="logo"><img src="/logo.svg" alt="Logo" loading="lazy" /></a>
+            </div>
+            <div class="nav-content">
+
+                <div class="nav-toggler" data-nav-toggle="menu">
+                    <span></span><span></span><span></span>
                 </div>
-                <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
-                    <li class="nav-item me-3 me-lg-1">
-                        <form class="input-group w-auto my-auto d-none d-lg-flex">
-                            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
-                      class="fas fa-search"></i></span>
-                        </form>
-                    </li>
-                </ul>
-                <ul class="float-end navbar-nav d-flex flex-row align-items-center">
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="https://kkupgrader.blogspot.com/">Blog</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/portfolio/">PortFolio</a></li>
-
-
+                <ul class="nav-list" id="menu">
+                    <li class="nav-item"><a href="/portfolio/" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="/tools/" class="nav-link">Tools</a></li>
+                    <li class="nav-item"><a href="https://kkupgrader.blogspot.com" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="/pixonoids" class="nav-link">Projects</a></li>
                 </ul>
             </div>
         </nav>
+        <section class="hero-container">
 
-        <main class='w-100' style='margin-top:65px;background-color: #F0F2F5;'>
-            <div class='container-fluid  '>
-                <div class="p-4 px-5 text-center">
-
-                    <h1 class="h4 fw-bold mb-3 mt-4">iFrame Embed Code Generator Tool
-
-                    </h1>
-                    <p>With the help of this tool, you can generate your iframe codes easily with just a click of a button. You don’t need to write the HTML code just copy the code and use it.</p>
-                    <div class="mt-3">
-                        <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
-                    class="fas fa-tools ms-2"></i></a>
-                        <a class="btn btn-success me-1 mb-4" href="#!" role="button">Design docs<i
-                    class="fas fa-file-alt ms-2"></i></a>
-                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i class="fas fa-download ms-2"></i></a>
-                    </div>
-
-
-                </div>
+            <div class="hero-content">
+                <h1 class="hero-heading">
+                    K K UPGRADER
+                </h1>
+                <h5 class="hero-paragraph">
+                    Bloging, Internet Tools and Coding Tips.
+                </h5>
             </div>
 
-        </main>
-
-        <!-- Navbar -->
+        </section>
     </header>
-    <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
-        <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
-        <main class="col-md-8">
-            <div class="card-body p-2 shadow-3">
-                <div class="form-outline mb-5">
-                    <input class="form-control" id="name" type="text" value="Something" />
-                    <label class="form-label" for="name">Name of Iframe </label>
-                    <div class="form-helper">E.g. Iframe</div>
+    <main class="ToolApp" id="app" role="main">
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <input class="form-input" id="width" type="text" value="600" />
+
+                    <label class="form-label" for="width">Width</label>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-outline mb-4">
-                            <input class="form-control" id="width" type="text" value="600" />
-
-                            <label class="form-label" for="width">Width</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline mb-4">
-                            <input class="form-control" id="height" type="text" value="400" />
-                            <label class="form-label" for="height">Height</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-4 form-outline">
-                            <select class="form-select" id="sizetype">
-                                <option value="px" selected>px</option>
-                                <option value="%">%</option>
-                            </select>
-                            <div class="form-helper">Size Type</div>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <input class="form-input" id="height" type="text" value="400" />
+                    <label class="form-label" for="height">Height</label>
                 </div>
-
-                <div class="row mb-4">
-                    <span class="divider divider-a mb-4">Special Iframe Attributes</span>
-                    <div class="col">
-
-                        <div class=" form-outline">
-                            <select class="form-select col" id="scroll">
-                            <option selected="" value="no">no</option>
-                            <option value="yes">yes</option>
-                        </select>
-                            <div class="form-helper">Scrolling</div>
-
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline mb-4">
-                            <input class="form-control active border" id="margin_width" type="text" value="0" />
-                            <label class="form-label" for="margin_width">Margin Width</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline mb-4">
-                            <input class="form-control active border" id="margin_height" type="text" value="0" />
-                            <label class="form-label" for="margin_height">Margin Height</label>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <select class="form-select" id="sizetype">
+                        <option value="px" selected>px</option>
+                        <option value="%">%</option>
+                    </select>
+                    <label class="form-lable">Size Type</label>
                 </div>
+            </div>
+            <div class="col-12">
+                <span class="divider divider-a mb-4">Special Iframe Attributes</span>
 
-                <div class="row mb-4">
-                    <span class="divider divider-a">Border</span>
-                    <div class="col">
-                        <div class="form-outline">
-                            <input class="form-control" id="borcolor" type="color" value="#666" />
-                            <div class="form-helper">Border Color</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-4 form-outline">
-                            <select class="form-select" id="border">
-                                <option value="1" selected>Yes</option>
-                                <option value="0">No</option>
-                            </select>
-                            <div class="form-helper">Border</div>
-                        </div>
+                <br>
+                <br>
+                <label class="form-range-label" for="borsize">
+                    <input type="range" class="form-range" value="5" min="0" max="25" step="0.5" id="borsize" />
+                </label>
 
-                    </div>
-                    <div class="col">
-                        <div class="mb-4 form-outline">
-                            <select class="form-select" id="bortype">
-                            <option value="none" selected>none</option>
-                            <option value="hidden">hidden</option>
-                            <option value="solid">solid</option>
-                            <option value="dotted">dotted</option>
-                            <option value="dashed">dashed</option>
-                        </select>
-                            <div class="form-helper">Border Type</div>
-                        </div>
-                    </div>
+                <br>
+                <br>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class=" form-element">
+                    <select class="form-select col" id="scroll">
+                        <option selected="" value="no">no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                    <div class="form-helper">Scrolling</div>
 
-                    <label for="borsize" class="form-label"><strong>Border Size</strong></label>
-                    <div class="range">
-                        <input type="range" class="form-range" value="5" min="0" max="25" step="0.5" id="borsize" />
-                    </div>
-
-                    <input class="form-control" id="url" placeholder="https://" value="https://kkupgrader.blogspot.com/" type="url" />
-
-
-                    <div class="d-flex p-3 justify-content-evenly">
-                        <button class="btn fas btn-primary" id="previewBtn">Preview</button>
-
-                    </div>
                 </div>
-
-                <pre class="grey lighten-3 mb-0 line-numbers  language-html" title="Output " width="100%" height="300">
-                <code class="language-html" id="output">              
-                </code></pre>
-
-
-                <div class="my-3 m-auto text-center" id="prev"></div>
-
-
-                <script src="./app.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify.js"></script>
-        </main>
-
-        <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
-
-        </div>
-
-        <div class="mb-n3 pt-4 text-center text-white trans-bg">
-            <div class="container-fluid">
-                <section class="text-center">
-                    <div id="subscribe">
-                        <div class="wrapper">
-                            <h3 class="text-white h2">Follow Us on Social Media</h3>
-                            <p class="mb-3">Subscribe to get updated when new templates arrive!</p>
-                            <div class="subscribe-box"></div>
-                            <div class="d-flex justify-content-center pt-3"><a class="me-4 text-white" href="https://t.me/kkupgrader" target="_blank"><i
-                                    class="fab fa-telegram-plane fa-lg"></i></a> <a class="text-white me-4" href="https://gitub.com/kkupgrader" role="button" target="_blank"><i
-                                    class="fab fa-github fa-lg"></i></a> <a class="text-white me-4" href="https://Pinterest.com/kkupgrader" role="button" target="_blank"><i
-                                    class="fab fa-pinterest fa-lg"></i></a> <a class="text-white me-4" href="https://codepen.io/kkupgrader" target="_blank"><i
-                                    class="fab fa-codepen fa-lg"></i></a> <a class="text-white me-4" href="https://instagram.com/kk.upgrader" role="button" target="_blank"><i
-                                    class="fab fa-instagram fa-lg"></i></a></div>
-                        </div>
-                    </div>
-                </section>
-                <section class="row mt-4 pb-4">
-                    <div class="col-sm-3 mb-4 mb-md-0 section" id="logo">
-                        <div class="widget Image" data-version="2" id="Image1">
-                            <h5 class="text-uppercase text-white text-center mb-4">K K UPGRADER</h5>
-                            <p class="mb-2 text-center text-white">Learning with passion</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 1">
-                        <div>
-                            <h5 class="text-uppercase text-white mb-4">Other Sites</h5>
-                            <hr>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><a class="text-white" href="https://kkupgrader.blogspot.com/"><i
-                                        class="fas fa-arrow-right pe-3"></i>K K UPGRADER Blog</a></li>
-                                <li class="mb-2"><a class="text-white" href="https://www.fs-themes.eu.org/"><i
-                                        class="fas fa-arrow-right pe-3"></i>Fs Themes</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 2">
-                        <div>
-                            <h5 class="text-uppercase text-white mb-4">Useful Links</h5>
-                            <hr>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><a class="text-white" href="/advertise/"><i
-                                        class="fas fa-arrow-right pe-3"></i>Advertise</a></li>
-                                <li class="mb-2"><a class="text-white" href="/contact-us/"><i
-                                        class="fas fa-arrow-right pe-3"></i>Contact
-                                    Us</a></li>
-                                <li class="mb-2"><a class="text-white" href="/privacy-policy/"><i
-                                        class="fas fa-arrow-right pe-3"></i>Privacy
-                                    Policy</a></li>
-                                <li class="mb-2"><a class="text-white" href="https://"><i
-                                        class="fas fa-arrow-right pe-3"></i>Cookies
-                                    Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 3">
-                        <div>
-                            <h5 class="text-uppercase text-white mb-4">Contact</h5>
-                            <hr>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><a class="text-white" href="mailto:kkupgrader.fs@gmail.com"><i
-                                        class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a></li>
-                                <li class="mb-2"><a class="text-white" href="https://instagram.com/kanakkholwal"><i
-                                        class="fab fa-instagram me-1"></i> kanakkholwal</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <input class="form-input active border" id="margin_width" type="text" value="0" />
+                    <label class="form-label" for="margin_width">Margin Width</label>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <input class="form-input active border" id="margin_height" type="text" value="0" />
+                    <label class="form-label" for="margin_height">Margin Height</label>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <select class="form-select" id="border">
+                        <option value="1" selected>Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    <div class="form-helper">Border</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <label for="borcolor" class="form-color-label">
+                        <input type="color" value="#1DB8CE" id="borcolor" class="form-color">
+                    </label>
+                    <!-- <input class="form-input" id="borcolor" type="color" value="#666" /> -->
+                    <div class="form-helper">Border Color</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+                <div class="form-element">
+                    <select class="form-select" id="bortype">
+                        <option value="none" selected>none</option>
+                        <option value="hidden">hidden</option>
+                        <option value="solid">solid</option>
+                        <option value="dotted">dotted</option>
+                        <option value="dashed">dashed</option>
+                    </select>
+                    <div class="form-helper">Border Type</div>
+                </div>
             </div>
         </div>
-        <footer class="bg-light text-center text-lg-start">
-            <div class="text-center text-white bg-dark p-3">Copyright &#169; <a href="/" title="K K UPGRADER"><span
-                    title="K K UPGRADER">K K UPGRADER</span></a> - All Right Reserved</div>
-        </footer>
+        <div class="form-element mb-5">
+            <input class="form-input" id="name" type="text" value="Something" />
+            <label class="form-label" for="name">Name of Iframe </label>
+            <div class="form-helper">E.g. Iframe</div>
+        </div>
 
 
+        <pre  data-language="HTML" class="language-html line-numbers">
+            <code class="language-html" id="output">
+           
+                </code>
+            </pre>
 
-        <script src="/main.js" type='text/javascript'></script>
 
-        <!-- Scripts -->
-        <script async='async' defer='defer' src='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js' type='text/javascript'></script>
+        <div class="my-3 m-auto text-center" id="prev"></div>
+
+
+        <!-- <script src="./app.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify.js"></script>
+    </main>
+
+    </main>
+
+    <div class="footer">
+        <!-- <div class="footer-section">
+            <h1 class="title">K K UPGRADER</h1>
+<p>There is a large range of internet tools from image and web tools to advance coding tools.</p>
+        </div> -->
+        <div class="footer-section">
+            <h2 class="heading">Popular Tools</h2>
+            <ul class="footer-links">
+                <li><a href="./../Image-to-webp-convertor/" class="footer-link">Image to Webp Converter </a></li>
+                <li><a href="./../Js-Compress/" class="footer-link">JS Compressor</a></li>
+                <li><a href="" class="footer-link"></a></li>
+                <li><a href="" class="footer-link"></a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2 class="heading">Similar Tools</h2>
+            <ul class="footer-links">
+                <li><a href="./../pro-meta-tag-generator/" class="footer-link">Pro Meta Tag Generator</a></li>
+                <li><a href="./../iframe-generator/" class="footer-link">Iframe Generator</a></li>
+                <li><a href="" class="footer-link"></a></li>
+                <li><a href="" class="footer-link"></a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2 class="heading">New Tools <span class="badge bg-primary animate__ripple">new</span> </h2>
+            <ul class="footer-links">
+                <li><a href="./../Glassmorphism-Generator/" class="footer-link">Glassmorphism Generator</a></li>
+                <li><a href="./../Neumorphic-Generator/" class="footer-link">Neumorphism Generator</a></li>
+                <li><a href="" class="footer-link"></a></li>
+                <li><a href="" class="footer-link"></a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">Copyright <a href="/" title="K K UPGRADER">K K UPGRADER</a> &copy; <span
+                id="currentYear"></span></div>
+        <div class="social">
+            <a href="https://www.instagram.com/kanakkholwal/" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg></a>
+            <a href="https://github.com/kkupgrader" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-github">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg></a>
+            <a href="https://codepen.io/kkupgrader/" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-codepen">
+                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                    <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                    <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                    <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                </svg></a>
+            <a href="https://www.linkedin.com/in/kanak-kholwal/" target="_blank" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-linkedin">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg> </a>
+        </div>
+    </footer>
+    <script src="/assets/v2/addons/code-highlighter/prism/prism.js"></script>
+    <script src="/assets/v2/js/script.js"></script>
+
+
 </body>
 
 </html>

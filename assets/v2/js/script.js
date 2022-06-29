@@ -133,27 +133,27 @@ if (NavScroll) {
 }
 // Section Highlight
 var IsSectionHighlightNeeded = false;
-if(IsSectionHighlightNeeded){
-const Sections = document.querySelectorAll("main > section[id]");
-const navHighlighter = (sections) => {
-  let scrollY = window.pageYOffset;
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    let sectionId = current.getAttribute("id");
+if (IsSectionHighlightNeeded) {
+  const Sections = document.querySelectorAll("main > section[id]");
+  const navHighlighter = (sections) => {
+    let scrollY = window.pageYOffset;
+    sections.forEach((current) => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 50;
+      let sectionId = current.getAttribute("id");
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector("a[href*=" + sectionId + "].nav-link")
-        .parentElement.classList.add("active");
-    } else {
-      document
-        .querySelector("a[href*=" + sectionId + "].nav-link")
-        .parentElement.classList.remove("active");
-    }
-  });
-};
-window.addEventListener("scroll", navHighlighter);
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document
+          .querySelector("a[href*=" + sectionId + "].nav-link")
+          .parentElement.classList.add("active");
+      } else {
+        document
+          .querySelector("a[href*=" + sectionId + "].nav-link")
+          .parentElement.classList.remove("active");
+      }
+    });
+  };
+  window.addEventListener("scroll", navHighlighter);
 }
 var currentYear = new Date().getFullYear();
 document.getElementById("currentYear").innerText = currentYear;
@@ -176,3 +176,136 @@ if (!ContactForm === null && !ContactForm === undefined) {
       .catch((error) => alert(error));
   };
 }
+
+document
+  .querySelectorAll("input[type=color].form-color")
+  .forEach(function (picker) {
+    var targetLabel = document.querySelector('label[for="' + picker.id + '"]'),
+      codeArea = document.createElement("span");
+
+    codeArea.innerHTML = picker.value;
+    targetLabel.appendChild(codeArea);
+
+    picker.addEventListener("input", function () {
+      codeArea.innerHTML = picker.value;
+      targetLabel.appendChild(codeArea);
+    });
+  });
+
+document
+  .querySelectorAll("input[type=range].form-range")
+  .forEach(function (range) {
+    var targetLabel = document.querySelector(
+        'label[for="' + range.id + '"].form-range-label'
+      ),
+      RangeValue = document.createElement("span");
+    RangeValue.innerHTML = range.value;
+    targetLabel.appendChild(RangeValue);
+    function updateValue() {
+      RangeValue.innerHTML = range.value;
+      targetLabel.appendChild(RangeValue);
+    }
+    range.addEventListener("input", updateValue);
+  });
+
+document.querySelectorAll("select.form-select").forEach((select) => {
+  // Assign Id to select
+  var SelectId = "";
+  // if (select.id != null || select.id === undefined || select.id === "") {
+  var randomId = "form-select_" + Math.random().toString(16).slice(2);
+  SelectId = randomId;
+  // } else {
+  //   SelectId = select.id;
+  // }
+  select.id = randomId;
+  // Create Parent Wrapper
+  let wrapper = `<div class="select-wrapper" id="${SelectId}_wrapper"></div>`;
+  select.insertAdjacentHTML("beforebegin", wrapper);
+  var Wrapper = document.getElementById(`${SelectId}_wrapper`);
+
+  Wrapper.appendChild(select);
+  select.className = "select-initialized";
+// Create a Input Toggle button
+  var input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("class", "select-placeholder");
+  input.setAttribute("id", `input-dropdown_${SelectId.split("_")[1]}`);
+  input.setAttribute("role", "listbox");
+  input.setAttribute("aria-popup", "false");
+  input.setAttribute("aria-expanded", "false");
+  input.setAttribute("readonly", "true");
+  input.setAttribute("value", select.options[select.selectedIndex].value);
+
+  Wrapper.insertAdjacentHTML("beforeend", input.outerHTML);
+// Create DropDown
+  var DropDown = document.createElement("div"),
+    DropDownLIst = document.createElement("ul");
+  DropDown.classList.add("select-dropdown");
+  DropDown.id = `select-dropdown_${SelectId}`;
+
+  DropDown.appendChild(DropDownLIst);
+  Wrapper.appendChild(DropDown);
+
+  for (var i = 0; i < select.options.length; i++) {
+    var DropItem = document.createElement("li");
+    DropItem.className = "select-drop-item";
+    DropItem.innerText = select.options[i].innerText;
+    DropItem.ariaSelected = "false";
+
+    DropItem.setAttribute("value", select.options[i].value);
+    if (
+      select.options[i].value === select.options[select.selectedIndex].value
+    ) {
+      DropItem.ariaSelected = "true";
+      DropItem.className += " active";
+    }
+    DropDownLIst.appendChild(DropItem);
+  }
+// Inside DropDown
+  DropDownLIst.querySelectorAll(".select-drop-item").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.target.classList.add("active");
+      e.target.ariaSelected = "true";
+
+      getSiblings(e.target).forEach((i) => {
+        i.classList.remove("active");
+        i.ariaSelected = "false";
+      });
+
+      var correspondingSelectId =
+        "form-select_" + item.parentElement.parentElement.id.split("_")[1];
+        var correspondingSelect = document.getElementById(correspondingSelectId);
+        var correspondingInputId =
+        "input-dropdown_" + item.parentElement.parentElement.id.split("_")[1];
+      var correspondingInput = document.getElementById(correspondingInputId);
+      console.log(correspondingInputId);
+        for (var j = 0; j < correspondingSelect.options.length; j++) {
+        if (
+          correspondingSelect.options[j].getAttribute("selected") !==
+          undefined ||
+          correspondingSelect.options[j].getAttribute("selected") !== null
+          ) {
+            correspondingSelect.options[j].removeAttribute("selected");
+          }
+        if (
+          correspondingSelect.options[j].value ===
+          e.target.getAttribute("value")
+          ) {
+          correspondingSelect.options[j].toggleAttribute("selected");
+          correspondingInput.setAttribute("value" ,e.target.getAttribute("value"));
+        }
+      }
+
+    
+    });
+  });
+
+
+  // Toggle DropDown 
+  input.onclick = (e) =>{
+e.target.classList.add("active");
+var targetDropdown = document.getElementById(`select-dropdown_${e.target.id.split("_")[1]}`);
+
+  }
+
+});
