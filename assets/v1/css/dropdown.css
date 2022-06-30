@@ -6,8 +6,7 @@
 .g-dropdown-toggle .g-dropdown-menu {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   background-color: #fbfbfb;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   min-width: 8rem;
   height: auto;
   width: 100%;

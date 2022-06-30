@@ -55,10 +55,7 @@ a:is(:hover, :focus, :active) {
 
 img {
   pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 html {
@@ -122,14 +119,8 @@ h6 {
   border-radius: 24px;
 }
 
-::-moz-selection {
-  background: #39C0ED;
-  color: #fff;
-  text-shadow: none;
-}
-
 ::selection {
-  background: #39C0ED;
+  background: #3282B8;
   color: #fff;
   text-shadow: none;
 }/*# sourceMappingURL=reset.css.map */

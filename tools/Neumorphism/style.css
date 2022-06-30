@@ -115,17 +115,12 @@ main .settings-container {
   justify-content: space-between;
 }
 main .settings-container form {
-  height: -webkit-min-content;
-  height: -moz-min-content;
   height: min-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   display: grid;
   grid-template-columns: auto 280px;
   row-gap: 20px;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
 }
 main .settings-container form label {
   font-size: 1.2rem;
@@ -138,6 +133,7 @@ main .settings-container form .slider {
   background: #e6e7ee;
   outline: none;
   opacity: 0.7;
+  -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   border: none;
   border-radius: 20px;

@@ -44,92 +44,83 @@
         </section>
     </header>
     <main class="ToolApp" id="app" role="main">
-        <div class="row align-items-center">
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <input class="form-input" id="width" type="text" value="600" />
-
-                    <label class="form-label" for="width">Width</label>
-                </div>
+        <div class="flex justify-content-between align-items-center flex-wrap">
+            <style>
+                .form-element{
+                    flex: 1 1 30%;
+                }
+            </style>
+            <div class="form-element">
+                <input class="form-input" id="width" name="width" type="text" value="600"  placeholder="Width of the Iframe"/>
+                <label class="form-label" for="width">Width</label>
             </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <input class="form-input" id="height" type="text" value="400" />
-                    <label class="form-label" for="height">Height</label>
-                </div>
+            <div class="form-element">
+                <input class="form-input" id="height" name="height" type="text" value="600"  placeholder="Height of the Iframe"/>
+                <label class="form-label" for="height">Height</label>
             </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <select class="form-select" id="sizetype">
-                        <option value="px" selected>px</option>
-                        <option value="%">%</option>
-                    </select>
-                    <label class="form-lable">Size Type</label>
-                </div>
+            <div class="form-element">
+                <select class="form-select" id="sizetype">
+                    <option value="px" selected>px</option>
+                    <option value="%">%</option>
+                </select>
+                <label class="form-label">Size Type</label>
             </div>
-            <div class="col-12">
-                <span class="divider divider-a mb-4">Special Iframe Attributes</span>
-
-                <br>
-                <br>
-                <label class="form-range-label" for="borsize">
-                    <input type="range" class="form-range" value="5" min="0" max="25" step="0.5" id="borsize" />
+            <div class="form-element">
+                <select class="form-select col" id="scroll">
+                    <option selected="" value="no">no</option>
+                    <option value="yes">yes</option>
+                </select>
+                <label class="form-label">Scrolling</label>
+            </div>
+            <div class="form-element">
+                <input class="form-input active border" id="margin_height" type="text" value="0" />
+                <label class="form-label" for="margin_height">Margin Height</label>
+            </div>
+       
+            <div class="form-element">
+                <select class="form-select" id="border">
+                    <option value="1" selected>Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <label class="form-label">Border</label>
+            </div>
+   
+            <div class="form-element">
+                <label for="borcolor" class="form-color-label">
+                    <input type="color" value="#1DB8CE" id="borcolor" class="form-color">
                 </label>
+                <!-- <input class="form-input" id="borcolor" type="color" value="#666" /> -->
+                <label class="form-label">Border Color</label>
+            </div>
+   
+            <div class="form-element">
+                <select class="form-select" id="bortype">
+                    <option value="none" selected>none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                </select>
+                <label class="form-label">Border Type</label>
+            </div>
+            <div class="form-element">
+                <input class="form-input active border" id="margin_width" type="text" value="0" />
+                <label class="form-label" for="margin_width">Margin Width</label>
+            </div>
 
-                <br>
-                <br>
-            </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class=" form-element">
-                    <select class="form-select col" id="scroll">
-                        <option selected="" value="no">no</option>
-                        <option value="yes">yes</option>
-                    </select>
-                    <div class="form-helper">Scrolling</div>
 
-                </div>
-            </div>
+        <div class="form-element">
+            <label class="form-range-label" for="borsize">
+                <input type="range" class="form-range" value="5" min="0" max="25" step="0.5" id="borsize" />
+            </label>
+            <label class="form-label" >Border Size</label>
+
+        </div>
+           </div>     <div class="row align-items-center">
+          
+       
             <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <input class="form-input active border" id="margin_width" type="text" value="0" />
-                    <label class="form-label" for="margin_width">Margin Width</label>
-                </div>
-            </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <input class="form-input active border" id="margin_height" type="text" value="0" />
-                    <label class="form-label" for="margin_height">Margin Height</label>
-                </div>
-            </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <select class="form-select" id="border">
-                        <option value="1" selected>Yes</option>
-                        <option value="0">No</option>
-                    </select>
-                    <div class="form-helper">Border</div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <label for="borcolor" class="form-color-label">
-                        <input type="color" value="#1DB8CE" id="borcolor" class="form-color">
-                    </label>
-                    <!-- <input class="form-input" id="borcolor" type="color" value="#666" /> -->
-                    <div class="form-helper">Border Color</div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-4 col-md-3">
-                <div class="form-element">
-                    <select class="form-select" id="bortype">
-                        <option value="none" selected>none</option>
-                        <option value="hidden">hidden</option>
-                        <option value="solid">solid</option>
-                        <option value="dotted">dotted</option>
-                        <option value="dashed">dashed</option>
-                    </select>
-                    <div class="form-helper">Border Type</div>
-                </div>
+             
             </div>
         </div>
         <div class="form-element mb-5">
@@ -137,10 +128,12 @@
             <label class="form-label" for="name">Name of Iframe </label>
             <div class="form-helper">E.g. Iframe</div>
         </div>
+<div class="form-element">
 
-
-        <pre  data-language="HTML" class="language-html line-numbers">
-            <code class="language-html" id="output">
+    <input type="checkbox" name="" class="form-checkbox" id="">
+</div>
+        <pre  data-language="HTML" class="">
+            <code class="language-html  line-numbers" id="output">
            
                 </code>
             </pre>
@@ -150,11 +143,10 @@
 
 
         <!-- <script src="./app.js"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify.js"></script>
+     
     </main>
 
-    </main>
+   
 
     <div class="footer">
         <!-- <div class="footer-section">
@@ -229,7 +221,10 @@
                 </svg> </a>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify.js"></script>
     <script src="/assets/v2/addons/code-highlighter/prism/prism.js"></script>
+    <script src="./app.js"></script>
     <script src="/assets/v2/js/script.js"></script>
 
 

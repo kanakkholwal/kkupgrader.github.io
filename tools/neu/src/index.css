@@ -611,8 +611,7 @@ footer {
   font-size: 15px;
   font-weight: normal;
   display: block;
-  -webkit-text-decoration-color: var(--textColorOpposite);
-          text-decoration-color: var(--textColorOpposite);
+  text-decoration-color: var(--textColorOpposite);
   color: var(--textColor);
   border-radius: 10px;
   padding-top: 15px;
@@ -775,6 +774,7 @@ footer {
   border-color: #c5c9cc;
   border-color: rgba(27, 31, 35, 0.2);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3clinearGradient id='o' x2='0' y2='1'%3e%3cstop stop-color='%23fafbfc'/%3e%3cstop offset='90%25' stop-color='%23eff3f6'/%3e%3c/linearGradient%3e%3crect width='100%25' height='100%25' fill='url(%23o)'/%3e%3c/svg%3e");
+  background-image: -moz-linear-gradient(top, #fafbfc, #eff3f6 90%);
   background-image: linear-gradient(180deg, #fafbfc, #eff3f6 90%);
   filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr="#FFFAFBFC", endColorstr="#FFEEF2F5");
 }
@@ -788,6 +788,7 @@ footer {
   border-color: #9fa4a9;
   border-color: rgba(27, 31, 35, 0.35);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3clinearGradient id='o' x2='0' y2='1'%3e%3cstop stop-color='%23f0f3f6'/%3e%3cstop offset='90%25' stop-color='%23e6ebf1'/%3e%3c/linearGradient%3e%3crect width='100%25' height='100%25' fill='url(%23o)'/%3e%3c/svg%3e");
+  background-image: -moz-linear-gradient(top, #f0f3f6, #e6ebf1 90%);
   background-image: linear-gradient(180deg, #f0f3f6, #e6ebf1 90%);
   filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr="#FFF0F3F6", endColorstr="#FFE5EAF0");
 }

@@ -10,20 +10,7 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
-  -webkit-animation: ripples 0.6s linear infinite;
-          animation: ripples 0.6s linear infinite;
-}
-@-webkit-keyframes ripples {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
-  }
+  animation: ripples 0.6s linear infinite;
 }
 @keyframes ripples {
   0% {

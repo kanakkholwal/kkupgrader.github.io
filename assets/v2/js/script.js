@@ -211,21 +211,27 @@ document
 document.querySelectorAll("select.form-select").forEach((select) => {
   // Assign Id to select
   var SelectId = "";
-  // if (select.id != null || select.id === undefined || select.id === "") {
+  if (select.id != null || select.id === undefined || select.id === "") {
   var randomId = "form-select_" + Math.random().toString(16).slice(2);
   SelectId = randomId;
-  // } else {
-  //   SelectId = select.id;
-  // }
+  } else {
+    SelectId = select.id;
+  }
   select.id = randomId;
+
   // Create Parent Wrapper
-  let wrapper = `<div class="select-wrapper" id="${SelectId}_wrapper"></div>`;
+  let wrapper = `<div class="select-wrapper" id="form-select-wrapper_${
+    SelectId.split("_")[1]
+  }"></div>`;
   select.insertAdjacentHTML("beforebegin", wrapper);
-  var Wrapper = document.getElementById(`${SelectId}_wrapper`);
+  var Wrapper = document.getElementById(
+    `form-select-wrapper_${SelectId.split("_")[1]}`
+  );
 
   Wrapper.appendChild(select);
+  Wrapper.style.minWidth = select.clientWidth + "px";
   select.className = "select-initialized";
-// Create a Input Toggle button
+  // Create a Input Toggle button
   var input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("class", "select-placeholder");
@@ -237,11 +243,18 @@ document.querySelectorAll("select.form-select").forEach((select) => {
   input.setAttribute("value", select.options[select.selectedIndex].value);
 
   Wrapper.insertAdjacentHTML("beforeend", input.outerHTML);
-// Create DropDown
+  Wrapper.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <path
+      d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z" />
+</svg>`);
+  // Add Icon to input element
+ 
+
+  // Create DropDown
   var DropDown = document.createElement("div"),
     DropDownLIst = document.createElement("ul");
   DropDown.classList.add("select-dropdown");
-  DropDown.id = `select-dropdown_${SelectId}`;
+  DropDown.id = `select-dropdown_${SelectId.split("_")[1]}`;
 
   DropDown.appendChild(DropDownLIst);
   Wrapper.appendChild(DropDown);
@@ -261,7 +274,26 @@ document.querySelectorAll("select.form-select").forEach((select) => {
     }
     DropDownLIst.appendChild(DropItem);
   }
-// Inside DropDown
+
+  // Toggle DropDown
+  document.querySelectorAll(".select-placeholder").forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      e.target.classList.add("active");
+      e.target.setAttribute("aria-popup", "true");
+      e.target.setAttribute("aria-expanded", "true");
+      var TargetDropDownId = "select-dropdown_" + e.target.id.split("_")[1];
+      var TargetDropDown = document.getElementById(TargetDropDownId);
+      TargetDropDown.classList.add("show");
+    });
+    document.addEventListener("mouseup" , function (e){
+      toggle.classList.remove("active");
+      toggle.setAttribute("aria-popup", "false");
+      toggle.setAttribute("aria-expanded", "false");
+      document.getElementById("select-dropdown_" + toggle.id.split("_")[1]).classList.remove("show");
+    })
+  });
+
+  // Inside DropDown
   DropDownLIst.querySelectorAll(".select-drop-item").forEach((item) => {
     item.addEventListener("click", (e) => {
       e.target.classList.add("active");
@@ -274,38 +306,30 @@ document.querySelectorAll("select.form-select").forEach((select) => {
 
       var correspondingSelectId =
         "form-select_" + item.parentElement.parentElement.id.split("_")[1];
-        var correspondingSelect = document.getElementById(correspondingSelectId);
-        var correspondingInputId =
+      var correspondingSelect = document.getElementById(correspondingSelectId);
+      var correspondingInputId =
         "input-dropdown_" + item.parentElement.parentElement.id.split("_")[1];
       var correspondingInput = document.getElementById(correspondingInputId);
-      console.log(correspondingInputId);
-        for (var j = 0; j < correspondingSelect.options.length; j++) {
+
+      for (var j = 0; j < correspondingSelect.options.length; j++) {
         if (
           correspondingSelect.options[j].getAttribute("selected") !==
-          undefined ||
+            undefined ||
           correspondingSelect.options[j].getAttribute("selected") !== null
-          ) {
-            correspondingSelect.options[j].removeAttribute("selected");
-          }
+        ) {
+          correspondingSelect.options[j].removeAttribute("selected");
+        }
         if (
           correspondingSelect.options[j].value ===
           e.target.getAttribute("value")
-          ) {
+        ) {
           correspondingSelect.options[j].toggleAttribute("selected");
-          correspondingInput.setAttribute("value" ,e.target.getAttribute("value"));
+          correspondingInput.setAttribute(
+            "value",
+            e.target.getAttribute("value")
+          );
         }
       }
-
-    
     });
   });
-
-
-  // Toggle DropDown 
-  input.onclick = (e) =>{
-e.target.classList.add("active");
-var targetDropdown = document.getElementById(`select-dropdown_${e.target.id.split("_")[1]}`);
-
-  }
-
 });
