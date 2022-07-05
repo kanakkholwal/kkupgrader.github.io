@@ -1,0 +1,11 @@
+:root {
+  --primary: $primary;
+  --secondary: $secondary;
+  --light: $light;
+  --white: $white;
+  --dark: $dark;
+  --black: $black;
+  --text-light: #8a8f98;
+  --text-lighter: #757783;
+  --random:randomNum(15, 99)px;
+}/*# sourceMappingURL=variables.css.map */

@@ -1,4 +1,4 @@
-        html[data--gui-theme='light'],
+        html[data-gui-theme='light'],
         body {
             --trans-bg: linear-gradient(to right, #00c3ff, #126d9a);
             --default-color: #00c3ff;

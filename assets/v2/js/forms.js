@@ -28,12 +28,14 @@ document
     }
     range.addEventListener("input", updateValue);
   });
+
+  
   document.querySelectorAll("select.form-select").forEach((select) => {
     // Assign Id to select
     var SelectId = "";
     if (select.id != null || select.id === undefined || select.id === "") {
-    var randomId = "form-select_" + Math.random().toString(16).slice(2);
-    SelectId = randomId;
+      var randomId = "form-select_" + Math.random().toString(16).slice(2);
+      SelectId = randomId;
     } else {
       SelectId = select.id;
     }
@@ -63,20 +65,22 @@ document
     input.setAttribute("value", select.options[select.selectedIndex].value);
   
     Wrapper.insertAdjacentHTML("beforeend", input.outerHTML);
-    Wrapper.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+    Wrapper.insertAdjacentHTML(
+      "beforeend",
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
     <path
         d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z" />
-  </svg>`);
+  </svg>`
+    );
     // Add Icon to input element
-   
   
     // Create DropDown
     var DropDown = document.createElement("div"),
-      DropDownLIst = document.createElement("ul");
+      DropDownList = document.createElement("ul");
     DropDown.classList.add("select-dropdown");
     DropDown.id = `select-dropdown_${SelectId.split("_")[1]}`;
   
-    DropDown.appendChild(DropDownLIst);
+    DropDown.appendChild(DropDownList);
     Wrapper.appendChild(DropDown);
   
     for (var i = 0; i < select.options.length; i++) {
@@ -92,7 +96,7 @@ document
         DropItem.ariaSelected = "true";
         DropItem.className += " active";
       }
-      DropDownLIst.appendChild(DropItem);
+      DropDownList.appendChild(DropItem);
     }
   
     // Toggle DropDown
@@ -105,16 +109,18 @@ document
         var TargetDropDown = document.getElementById(TargetDropDownId);
         TargetDropDown.classList.add("show");
       });
-      document.addEventListener("mouseup" , function (e){
+      document.addEventListener("mouseup", function (e) {
         toggle.classList.remove("active");
         toggle.setAttribute("aria-popup", "false");
         toggle.setAttribute("aria-expanded", "false");
-        document.getElementById("select-dropdown_" + toggle.id.split("_")[1]).classList.remove("show");
-      })
+        document
+          .getElementById("select-dropdown_" + toggle.id.split("_")[1])
+          .classList.remove("show");
+      });
     });
   
     // Inside DropDown
-    DropDownLIst.querySelectorAll(".select-drop-item").forEach((item) => {
+    DropDownList.querySelectorAll(".select-drop-item").forEach((item) => {
       item.addEventListener("click", (e) => {
         e.target.classList.add("active");
         e.target.ariaSelected = "true";
@@ -125,10 +131,11 @@ document
         });
   
         var correspondingSelectId =
-          "form-select_" + item.parentElement.parentElement.id.split("_")[1];
+          "form-select_" + e.target.parentElement.parentElement.id.split("_")[1];
         var correspondingSelect = document.getElementById(correspondingSelectId);
         var correspondingInputId =
-          "input-dropdown_" + item.parentElement.parentElement.id.split("_")[1];
+          "input-dropdown_" +
+          e.target.parentElement.parentElement.id.split("_")[1];
         var correspondingInput = document.getElementById(correspondingInputId);
   
         for (var j = 0; j < correspondingSelect.options.length; j++) {
@@ -152,5 +159,7 @@ document
         }
       });
     });
+  
+    
   });
   

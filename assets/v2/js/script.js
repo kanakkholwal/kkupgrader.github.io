@@ -212,8 +212,8 @@ document.querySelectorAll("select.form-select").forEach((select) => {
   // Assign Id to select
   var SelectId = "";
   if (select.id != null || select.id === undefined || select.id === "") {
-  var randomId = "form-select_" + Math.random().toString(16).slice(2);
-  SelectId = randomId;
+    var randomId = "form-select_" + Math.random().toString(16).slice(2);
+    SelectId = randomId;
   } else {
     SelectId = select.id;
   }
@@ -243,20 +243,22 @@ document.querySelectorAll("select.form-select").forEach((select) => {
   input.setAttribute("value", select.options[select.selectedIndex].value);
 
   Wrapper.insertAdjacentHTML("beforeend", input.outerHTML);
-  Wrapper.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  Wrapper.insertAdjacentHTML(
+    "beforeend",
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
   <path
       d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z" />
-</svg>`);
+</svg>`
+  );
   // Add Icon to input element
- 
 
   // Create DropDown
   var DropDown = document.createElement("div"),
-    DropDownLIst = document.createElement("ul");
+    DropDownList = document.createElement("ul");
   DropDown.classList.add("select-dropdown");
   DropDown.id = `select-dropdown_${SelectId.split("_")[1]}`;
 
-  DropDown.appendChild(DropDownLIst);
+  DropDown.appendChild(DropDownList);
   Wrapper.appendChild(DropDown);
 
   for (var i = 0; i < select.options.length; i++) {
@@ -272,7 +274,7 @@ document.querySelectorAll("select.form-select").forEach((select) => {
       DropItem.ariaSelected = "true";
       DropItem.className += " active";
     }
-    DropDownLIst.appendChild(DropItem);
+    DropDownList.appendChild(DropItem);
   }
 
   // Toggle DropDown
@@ -285,16 +287,18 @@ document.querySelectorAll("select.form-select").forEach((select) => {
       var TargetDropDown = document.getElementById(TargetDropDownId);
       TargetDropDown.classList.add("show");
     });
-    document.addEventListener("mouseup" , function (e){
+    document.addEventListener("mouseup", function (e) {
       toggle.classList.remove("active");
       toggle.setAttribute("aria-popup", "false");
       toggle.setAttribute("aria-expanded", "false");
-      document.getElementById("select-dropdown_" + toggle.id.split("_")[1]).classList.remove("show");
-    })
+      document
+        .getElementById("select-dropdown_" + toggle.id.split("_")[1])
+        .classList.remove("show");
+    });
   });
 
   // Inside DropDown
-  DropDownLIst.querySelectorAll(".select-drop-item").forEach((item) => {
+  DropDownList.querySelectorAll(".select-drop-item").forEach((item) => {
     item.addEventListener("click", (e) => {
       e.target.classList.add("active");
       e.target.ariaSelected = "true";
@@ -305,10 +309,11 @@ document.querySelectorAll("select.form-select").forEach((select) => {
       });
 
       var correspondingSelectId =
-        "form-select_" + item.parentElement.parentElement.id.split("_")[1];
+        "form-select_" + e.target.parentElement.parentElement.id.split("_")[1];
       var correspondingSelect = document.getElementById(correspondingSelectId);
       var correspondingInputId =
-        "input-dropdown_" + item.parentElement.parentElement.id.split("_")[1];
+        "input-dropdown_" +
+        e.target.parentElement.parentElement.id.split("_")[1];
       var correspondingInput = document.getElementById(correspondingInputId);
 
       for (var j = 0; j < correspondingSelect.options.length; j++) {
@@ -333,3 +338,118 @@ document.querySelectorAll("select.form-select").forEach((select) => {
     });
   });
 });
+
+// toasts
+const toastContainer = document.querySelector(".g-toast-container");
+if (toastContainer == undefined || toastContainer == null) {
+    document.addEventListener("DOMContentLoaded", function () {
+    var toastContainerContent = '<div class="g-toast-container"></div>';
+    document.querySelector("body").innerHTML += toastContainerContent;
+  });
+  }
+
+function Toast(title, body, type, duration) {
+  // Create Toast Element
+  let ToastElement = document.createElement("div");
+  ToastElement.classList.add("toast");
+  // Add Class For Toast Type
+  if (type !== undefined && type !== null) {
+    ToastElement.classList.add(`toast-${type}`);
+  } else {
+    ToastElement.classList.add(`toast-default`);
+  }
+  // Adding Header
+  var ToastHeader = document.createElement("div");
+  ToastHeader.classList.add("toast-header");
+  // Adding Title
+  var ToastTitle = document.createElement("div");
+  ToastTitle.classList.add("toast-title");
+  // Adding Close Button
+  var ToastClose = document.createElement("div");
+  ToastClose.classList.add("toast-close");
+  ToastClose.classList.add("icon-btn");
+  ToastClose.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>';
+  //  ToastHeader.innerHTML += ToastClose;
+  // Adding Body
+  var ToastBody = document.createElement("div");
+  ToastBody.classList.add("toast-body");
+  ToastBody.innerHTML += body;
+  // Setting Icon types
+  var iconType = "";
+  switch (iconType) {
+    case "info":
+      iconType = `<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg></span>`;
+      break;
+    case "success":
+      iconType = `<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z"/></svg></span>`;
+      break;
+    case "warning":
+      iconType = `<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"/></svg></span>`;
+      break;
+    case "danger":
+      iconType = `<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M15.936 2.5L21.5 8.067v7.87L15.936 21.5h-7.87L2.5 15.936v-7.87L8.066 2.5h7.87zm-.829 2H8.894L4.501 8.895v6.213l4.393 4.394h6.213l4.394-4.394V8.894l-4.394-4.393zM11 15h2v2h-2v-2zm0-8h2v6h-2V7z"/></svg></span>`;
+      break;
+    default:
+      iconType = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`;
+      break;
+  }
+
+  // append icon to title element with title text
+  ToastTitle.innerHTML += iconType + title + ToastClose;
+  ToastHeader.appendChild(ToastTitle);
+  // GToastHeader.appendChild(GToastClose);
+  // Merging Toast HTML
+  ToastElement.appendChild(ToastHeader);
+  ToastElement.appendChild(ToastBody);
+  //append toast message to it
+
+  toastContainer.appendChild(ToastElement);
+  // wait just a bit to add active class to the message to trigger animation
+  setTimeout(function () {
+    ToastElement.classList.add("active");
+  }, 1);
+
+  // Setting Up Durations
+  if (duration > 0) {
+    // it it's bigger then 0 add it
+    setTimeout(function () {
+      ToastElement.classList.remove("active");
+      setTimeout(function () {
+        ToastElement.remove();
+      }, 350);
+    }, duration);
+  } else if (duration == null) {
+    //  it there isn't any add default one (3000ms)
+    setTimeout(function () {
+      setTimeout(function () {
+        ToastElement.classList.remove("active");
+        ToastElement.remove();
+      }, 350);
+    }, 3000);
+  }
+
+  // Closing And Removing Toast
+  // let CloseToastElements = document.querySelectorAll(".toast-close");
+  // CloseToastElements.forEach((CloseToastElement) => {
+  //   let ownToast = CloseToastElement.parentElement.parentElement;
+  //   CloseToastElement.addEventListener("click", () =>
+  //     ownToast.classList.remove("active")
+  //   );
+  //   CloseToastElement.addEventListener("click", () => ownToast.remove());
+  // });
+}
+// document.addEventListener("click", function (e) {
+  //check is the right element clicked
+  // if (!e.target.matches(".toast-toggle")) return;
+  // else {
+  //   //create toast message with dataset attributes
+  //   GenesisToast(
+  //     e.target.dataset.gToastType,
+  //     e.target.dataset.gToastTitle,
+  //     e.target.dataset.gToastHtml,
+  //     e.target.dataset.gToastDuration
+  //   );
+  // }
+// });
+Toast("title", "body", "info", "200");
