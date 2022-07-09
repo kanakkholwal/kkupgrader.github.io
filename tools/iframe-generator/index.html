@@ -46,27 +46,29 @@
     <main class="ToolApp" id="app" role="main">
         <div class="flex justify-content-between align-items-center flex-wrap">
             <style>
-                .form-element{
+                .form-element {
                     flex: 1 1 30%;
                 }
             </style>
             <div class="form-element">
-                <input class="form-input" id="width" name="width" type="text" value="600"  placeholder="Width of the Iframe"/>
+                <input class="form-input" id="width" name="width" type="text" value="600"
+                    placeholder="Width of the Iframe" />
                 <label class="form-label" for="width">Width</label>
             </div>
             <div class="form-element">
-                <input class="form-input" id="height" name="height" type="text" value="600"  placeholder="Height of the Iframe"/>
+                <input class="form-input" id="height" name="height" type="text" value="600"
+                    placeholder="Height of the Iframe" />
                 <label class="form-label" for="height">Height</label>
             </div>
             <div class="form-element">
-                <select class="form-select" id="sizetype">
+                <select class="form-select" id="sizetype" name="sizetype">
                     <option value="px" selected>px</option>
                     <option value="%">%</option>
                 </select>
                 <label class="form-label">Size Type</label>
             </div>
             <div class="form-element">
-                <select class="form-select col" id="scroll">
+                <select class="form-select col" id="scroll" name="scroll">
                     <option selected="" value="no">no</option>
                     <option value="yes">yes</option>
                 </select>
@@ -76,7 +78,7 @@
                 <input class="form-input active border" id="margin_height" type="text" value="0" />
                 <label class="form-label" for="margin_height">Margin Height</label>
             </div>
-       
+
             <div class="form-element">
                 <select class="form-select" id="border">
                     <option value="1" selected>Yes</option>
@@ -84,7 +86,7 @@
                 </select>
                 <label class="form-label">Border</label>
             </div>
-   
+
             <div class="form-element">
                 <label for="borcolor" class="form-color-label">
                     <input type="color" value="#1DB8CE" id="borcolor" class="form-color">
@@ -92,9 +94,9 @@
                 <!-- <input class="form-input" id="borcolor" type="color" value="#666" /> -->
                 <label class="form-label">Border Color</label>
             </div>
-   
+
             <div class="form-element">
-                <select class="form-select" id="bortype">
+                <select class="form-select" id="bortype" name="bortype">
                     <option value="none" selected>none</option>
                     <option value="hidden">hidden</option>
                     <option value="solid">solid</option>
@@ -109,18 +111,19 @@
             </div>
 
 
-        <div class="form-element">
-            <label class="form-range-label" for="borsize">
-                <input type="range" class="form-range" value="5" min="0" max="25" step="0.5" id="borsize" />
-            </label>
-            <label class="form-label" >Border Size</label>
+            <div class="form-element">
+                <label class="form-range-label" for="borsize">
+                    <input type="range" class="form-range" value="5" min="0" max="25" step="0.5" id="borsize" />
+                </label>
+                <label class="form-label">Border Size</label>
 
+            </div>
         </div>
-           </div>     <div class="row align-items-center">
-          
-       
+        <div class="row align-items-center">
+
+
             <div class="col-12 col-sm-4 col-md-3">
-             
+
             </div>
         </div>
         <div class="form-element mb-5">
@@ -128,11 +131,14 @@
             <label class="form-label" for="name">Name of Iframe </label>
             <div class="form-helper">E.g. Iframe</div>
         </div>
-<div class="form-element">
 
-    <input type="checkbox" name="" class="form-checkbox" id="">
-</div>
-        <pre  data-language="HTML" class="">
+        <div class="form-element mb-5">
+            <input class="form-input" id="url" type="url" value="Something" />
+            <label class="form-label" for="url">URL of Iframe </label>
+            <div class="form-helper">E.g. : https://kkupgrader.eu.org/</div>
+        </div>
+
+        <pre data-language="HTML" class="">
             <code class="language-html  line-numbers" id="output">
            
                 </code>
@@ -142,11 +148,10 @@
         <div class="my-3 m-auto text-center" id="prev"></div>
 
 
-        <!-- <script src="./app.js"></script> -->
-     
+
     </main>
 
-   
+
 
     <div class="footer">
         <!-- <div class="footer-section">

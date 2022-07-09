@@ -191,7 +191,7 @@ document
       targetLabel.appendChild(codeArea);
     });
   });
-
+// Range
 document
   .querySelectorAll("input[type=range].form-range")
   .forEach(function (range) {
@@ -340,13 +340,6 @@ document.querySelectorAll("select.form-select").forEach((select) => {
 });
 
 // toasts
-const toastContainer = document.querySelector(".g-toast-container");
-if (toastContainer == undefined || toastContainer == null) {
-    document.addEventListener("DOMContentLoaded", function () {
-    var toastContainerContent = '<div class="g-toast-container"></div>';
-    document.querySelector("body").innerHTML += toastContainerContent;
-  });
-  }
 
 function Toast(title, body, type, duration) {
   // Create Toast Element
@@ -364,10 +357,11 @@ function Toast(title, body, type, duration) {
   // Adding Title
   var ToastTitle = document.createElement("div");
   ToastTitle.classList.add("toast-title");
+  ToastHeader.appendChild(ToastTitle);
   // Adding Close Button
   var ToastClose = document.createElement("div");
-  ToastClose.classList.add("toast-close");
-  ToastClose.classList.add("icon-btn");
+  ToastClose.className = "toast-close";
+
   ToastClose.innerHTML =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>';
   //  ToastHeader.innerHTML += ToastClose;
@@ -396,25 +390,38 @@ function Toast(title, body, type, duration) {
   }
 
   // append icon to title element with title text
-  ToastTitle.innerHTML += iconType + title + ToastClose;
-  ToastHeader.appendChild(ToastTitle);
+  ToastTitle.insertAdjacentHTML("beforebegin" , iconType);
+  ToastTitle.innerHTML += title;
+  ToastHeader.appendChild(ToastClose);
   // GToastHeader.appendChild(GToastClose);
   // Merging Toast HTML
   ToastElement.appendChild(ToastHeader);
   ToastElement.appendChild(ToastBody);
   //append toast message to it
 
+  var toastContainer = document.querySelector(".toast-container");
+  if (toastContainer == undefined || toastContainer == null) {
+    var container = document.createElement("div");
+    container.className = "toast-container";
+    container.id = "toast-container";
+    document.body.appendChild(container);
+    var toastContainer = document.getElementById("toast-container");
+  }
   toastContainer.appendChild(ToastElement);
   // wait just a bit to add active class to the message to trigger animation
   setTimeout(function () {
-    ToastElement.classList.add("active");
+    ToastElement.classList.add("show");
+    console.log("toastContainer is added");
+
   }, 1);
 
   // Setting Up Durations
   if (duration > 0) {
     // it it's bigger then 0 add it
     setTimeout(function () {
-      ToastElement.classList.remove("active");
+      ToastElement.classList.remove("show");
+      ToastElement.classList.add("hide");
+      
       setTimeout(function () {
         ToastElement.remove();
       }, 350);
@@ -423,33 +430,46 @@ function Toast(title, body, type, duration) {
     //  it there isn't any add default one (3000ms)
     setTimeout(function () {
       setTimeout(function () {
-        ToastElement.classList.remove("active");
+        ToastElement.classList.remove("show");
+        ToastElement.classList.add("hide");
+        setTimeout(function () {
         ToastElement.remove();
+        }, 3000);
       }, 350);
     }, 3000);
   }
 
   // Closing And Removing Toast
-  // let CloseToastElements = document.querySelectorAll(".toast-close");
-  // CloseToastElements.forEach((CloseToastElement) => {
-  //   let ownToast = CloseToastElement.parentElement.parentElement;
-  //   CloseToastElement.addEventListener("click", () =>
-  //     ownToast.classList.remove("active")
-  //   );
-  //   CloseToastElement.addEventListener("click", () => ownToast.remove());
-  // });
+  let CloseToastElements = document.querySelectorAll(".toast-close");
+  CloseToastElements.forEach((CloseToastElement) => {
+    let ownToast = CloseToastElement.parentElement.parentElement;
+    CloseToastElement.addEventListener("click", () =>
+    {
+
+      ownToast.classList.remove("show");
+      ownToast.classList.add("hide");
+
+       setTimeout(function () {
+        ToastElement.remove();
+        }, 3000);
+    }
+    );
+  });
 }
-// document.addEventListener("click", function (e) {
-  //check is the right element clicked
-  // if (!e.target.matches(".toast-toggle")) return;
-  // else {
-  //   //create toast message with dataset attributes
-  //   GenesisToast(
-  //     e.target.dataset.gToastType,
-  //     e.target.dataset.gToastTitle,
-  //     e.target.dataset.gToastHtml,
-  //     e.target.dataset.gToastDuration
-  //   );
-  // }
-// });
-Toast("title", "body", "info", "200");
+document.addEventListener("click", function (e) {
+// check is the right element clicked
+if (!e.target.matches(".toast-toggle")) return;
+else {
+  //create toast message with dataset attributes
+  Toast(
+    e.target.dataset.ToastType,
+    e.target.dataset.ToastTitle,
+    e.target.dataset.ToastHtml,
+    e.target.dataset.ToastDuration
+  );
+}
+});
+// setInterval(function() {
+  
+  // Toast("title", "body", "info", "0");
+// },1000);

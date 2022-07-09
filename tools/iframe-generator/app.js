@@ -12,7 +12,7 @@ var nam = document.getElementById("name"),
     sizetype = document.getElementById("sizetype"),
     scroll = document.getElementById("scroll");
 const code = document.getElementById("output");
-const previewBtn = document.getElementById("previewBtn");
+// const previewBtn = document.getElementById("previewBtn");
 const preview = document.getElementById("prev");
 
 function output() {
@@ -38,27 +38,33 @@ function ExecuteCommand() {
     Prism.highlightAll();
 
 }
-$("select").change(function() {
-    ExecuteCommand();
+document.querySelectorAll("select").forEach(function(select) {
+    select.addEventListener("change", function() {
+        ExecuteCommand();
+    });
+    
 });
-$('input').bind('input', function() {
-    ExecuteCommand();
+document.querySelectorAll("input").forEach(function(input) {
+    input.addEventListener("input", function() {
+        ExecuteCommand();
+    });
+    
+})
 
-});
 window.onload = function() {
     ExecuteCommand();
 
 }
 
 
-previewBtn.addEventListener('click', function() {
+// previewBtn.addEventListener('click', function() {
 
-    preview.innerHTML = code.innerText + '<button class="close-button btn-close p-2 active bg-light shadow-4-strong" id="closeBtn"></button>';
+//     preview.innerHTML = code.innerText + '<button class="close-button btn-close p-2 active bg-light shadow-4-strong" id="closeBtn"></button>';
 
 
-    document.getElementById("closeBtn").addEventListener('click', function() {
+//     document.getElementById("closeBtn").addEventListener('click', function() {
 
-        preview.innerHTML = "";
+//         preview.innerHTML = "";
 
-    });
-});
+//     });
+// });
