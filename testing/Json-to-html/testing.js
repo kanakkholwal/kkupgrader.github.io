@@ -75,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         http.open("GET", "testing.json", true);
         http.send();
         http.onreadystatechange = function() {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
+            if (this.readyState == 4 && this.status == 200) {
                     // console.log(this.responseText);
                     var SearchJson = JSON.parse(this.responseText);
                     // console.log(SearchJson);
@@ -92,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     }
 
-                }
+                
             }
         };
     })();

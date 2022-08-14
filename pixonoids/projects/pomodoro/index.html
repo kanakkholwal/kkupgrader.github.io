@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro App</title>
+    <link rel="stylesheet" href="/assets/v2/fonts/GlobalFonts.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        Pomodoro App
+    </header>
+    <main>
+        <nav>
+            <ul class="tabs" id="switch-type">
+                <li class="tab active" id="pomodoro" data-time-limit="1500">pomodoro</li>
+                <li class="tab" id="short" data-time-limit="300">short break </li>
+                <li class="tab" id="long" data-time-limit="900">long break </li>
+            </ul>
+        </nav>
+        <section class="app">
+            <div class="timer">
+                <svg class="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g class="timer__circle">
+                        <circle class="timer__path-elapsed" id="indicator" cx="50" cy="50" r="45"></circle>
+                        <path id="timer_path" stroke-dasharray="283" class="timer__path" d="
+                        M 50, 50
+                        m -45, 0
+                        a 45,45 0 1,0 90,0
+                        a 45,45 0 1,0 -90,0
+                      "></path>
+                    </g>
+                </svg>
+                <div class="timer-content">
+
+                    <span id="timer_label" class="timer__label">18:50</span>
+
+                    <button id="timer_pause" class="timer__btn">Start</button>
+                </div>
+            </div>
+
+        </section>
+        <div class="setting-icon">
+            <svg id="setting-btn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-settings">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+            </svg>
+        </div>
+        <div class="modal-area" id="modal-area">
+            <div class="modal" id="settings">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <div class="close" id="close-modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-x">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="types">
+                        <h3>TIME (MINUTES)</h3>
+
+                        <div class="form-element">
+                            <label for="pomodoro" class="form-label">pomodoro</label>
+                            <input type="number" name="pomodoro" class="form-input" placeholder="25" value="25" id="pomodoroInput"/>
+                        </div>
+                        <div class="form-element">
+                            <label for="short" class="form-label">short</label>
+                            <input type="number" name="short" class="form-input" placeholder="5" value="5" id="shortInput" />
+                        </div>
+                        <div class="form-element">
+                            <label for="long" class="form-label">long</label>
+                            <input type="number" name="long" class="form-input" placeholder="15" value="15" id="longInput"/>
+                        </div>
+                    </div>
+                    <div class="fonts">
+                        <h3>Font</h3>
+                        <ul class="font-types">
+                            <li data-font="Fredoka" class="active" style="font-family:'Fredoka', sans-serif">Aa</li>
+                            <li data-font="Sofia Pro" style="font-family:'Sofia Pro', sans-serif">Aa</li>
+                            <li data-font="Satoshi Variable" style="font-family:'Satoshi Variable', sans-serif">Aa</li>
+                        </ul>
+                    </div>
+                    <div class="themes">
+                        <h3>Theme</h3>
+                        <ul class="theme-types">
+                            <li data-theme="#fb6f70" class="active"></li>
+                            <li data-theme="#6ff3fa"></li>
+                            <li data-theme="#d981f8"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="apply-btn">Apply</button>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

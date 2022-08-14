@@ -5,11 +5,11 @@ var nam = document.getElementById("name"),
     borsize = document.getElementById("borsize"),
     border = document.getElementById("border"),
     borsize = document.getElementById("borsize"),
-    bortype = document.getElementById("bortype"),
+    bortype = document.getElementsByName("bortype"),
     borcolor = document.getElementById("borcolor"),
     margin_height = document.getElementById("margin_height"),
     margin_width = document.getElementById("margin_width"),
-    sizetype = document.getElementById("sizetype"),
+    sizetype = document.getElementsByName("sizetype"),
     scroll = document.getElementById("scroll");
 const code = document.getElementById("output");
 // const previewBtn = document.getElementById("previewBtn");
@@ -34,6 +34,7 @@ function output() {
 };
 
 function ExecuteCommand() {
+    code.innerHTML = "";
     code.innerText = output();
     Prism.highlightAll();
 

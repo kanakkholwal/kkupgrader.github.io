@@ -55,4 +55,5 @@ function addPaperFromFile(file) {
   pageEl.style.backgroundImage = `url(${tmppath})`;
 }
 
+
 export { isMobile, addFontFromFile, createPDF, formatText, addPaperFromFile };
