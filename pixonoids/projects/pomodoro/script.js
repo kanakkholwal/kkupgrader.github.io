@@ -177,7 +177,6 @@ function UpdateType() {
   timerPause.innerText = btnState.start;
   timePassed = 0;
   timeLeft = TIME_LIMIT;
-  stopTimer();
 }
 
 timerPause.addEventListener("click", function () {
@@ -218,9 +217,18 @@ const UpdateLength = () => {
   (currentLength.pomodoro = pomodoroInput.value * 60),
     (currentLength.short = shortInput.value * 60),
     (currentLength.long = longInput.value * 60);
-  timerLabel.innerHTML = formatTime(currentLength[tabs.filter(element => element.classList.contains('active'))[0].id]);
+  timerLabel.innerHTML = formatTime(
+    currentLength[
+      tabs.filter((element) => element.classList.contains("active"))[0].id
+    ]
+  );
+  TIME_LIMIT =
+    currentLength[
+      tabs.filter((element) => element.classList.contains("active"))[0].id
+    ];
 
   ResetTimer();
+
   console.log(currentLength);
 };
 
