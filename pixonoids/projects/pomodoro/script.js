@@ -120,7 +120,7 @@ const startTimer = () => {
     setCircleDasharray();
 
     if (timeLeft <= 0) {
-      stopTimer();
+      ResetTimer();
     } else if (timeLeft > 0 && timeLeft <= 10) {
       indicator.style.stroke = "#df0f00";
     } else if (timeLeft > 10 && timeLeft <= 30) {
@@ -153,12 +153,13 @@ const PlayTimer = () => {
 
     setCircleDasharray();
 
+
     if (timeLeft <= 0) {
-      stopTimer();
-    } else if (timeLeft > 0 || timeLeft <= 10) {
-      // setRemainingPathColor(timeLeft);
-    } else if (timeLeft > 10 || timeLeft <= 30) {
-      // setRemainingPathColor(timeLeft);
+      ResetTimer();
+    } else if (timeLeft > 0 && timeLeft <= 10) {
+      indicator.style.stroke = "#df0f00";
+    } else if (timeLeft > 10 && timeLeft <= 30) {
+      indicator.style.stroke = "#FFEB3B";
     }
   }, 1000);
 };
