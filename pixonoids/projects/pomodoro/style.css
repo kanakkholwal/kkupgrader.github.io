@@ -328,7 +328,7 @@ main {
   box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
   border-radius: 20px;
   color: #666;
-  background-color: #fbfbfb42;
+  background-color: #fbfbfbb1;
   backdrop-filter: blur(10px);
 
 }
@@ -371,7 +371,7 @@ main {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  border-bottom: 1px solid #ad9ab04d;
+  border-bottom: 1px solid #ad9ab0bd;
   font-weight: 500;
   font-size: 1.3rem;
   text-transform: capitalize;
@@ -393,7 +393,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
-  border-top: 1px solid #dddddd26;
+  border-top: 1px solid #ad9ab0bd;
   font-weight: 500;
   font-size: 1.3rem;
   text-transform: capitalize;
@@ -426,7 +426,7 @@ main {
   width: 100%;
   margin: 0.5rem auto;
   padding: 1rem;
-  border-bottom: 1px solid #dddddd26;
+  border-bottom: 1px solid #ad9ab0bd;
 }
 
 .types h3 {
@@ -489,7 +489,7 @@ main {
   width: 100%;
   padding-right: 0.75rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #dddddd26;
+  border-bottom: 1px solid #ad9ab0bd;
 }
 
 .font-types>li {

@@ -35,7 +35,11 @@ document.getElementById("modal-area").addEventListener("mouseup", function (e) {
 document.getElementById("close-modal").addEventListener("click", function () {
   CloseModal();
 });
-applyBtn.addEventListener("click", CloseModal);
+applyBtn.addEventListener("click", () => {
+  UpdateLength();
+  CloseModal();
+
+});
 const getSiblings = (TargetNode) =>
   [...TargetNode.parentNode.children].filter(
     (siblings) => siblings !== TargetNode
@@ -237,11 +241,11 @@ const UpdateLength = () => {
 };
 
 // Change timer length
-document.querySelectorAll(".form-input").forEach((input) => {
-  input.addEventListener("change", UpdateLength);
-  input.addEventListener("input", UpdateLength);
-  input.addEventListener("keyup", UpdateLength);
-});
+// document.querySelectorAll(".form-input").forEach((input) => {
+//   input.addEventListener("change", UpdateLength);
+//   input.addEventListener("input", UpdateLength);
+//   input.addEventListener("keyup", UpdateLength);
+// });
 // Change Font
 document.querySelectorAll("[data-font]").forEach((font) => {
   font.addEventListener("click", (e) => {
