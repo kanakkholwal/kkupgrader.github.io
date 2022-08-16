@@ -126,6 +126,9 @@ const startTimer = () => {
     } else if (timeLeft > 10 && timeLeft <= 30) {
       indicator.style.stroke = "#FFEB3B";
     }
+    else {
+      indicator.removeAttribute("stroke");
+    }
   }, 1000);
 };
 const PauseTimer = () => {
