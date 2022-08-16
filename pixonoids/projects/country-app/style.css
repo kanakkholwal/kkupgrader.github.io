@@ -115,7 +115,6 @@ main {
     border-radius: inherit;
     background-color: inherit;
     color: var(--color)
-
 }
 
 .search-bar input:focus {
@@ -148,6 +147,7 @@ main {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    min-width: 12rem;
 }
 
 .filter-bar input {
@@ -272,7 +272,6 @@ main {
     background-color: var(--bg);
     animation: fadeInUp 1s ease;
 
-
 }
 
 .card-body {
@@ -287,4 +286,32 @@ main {
 
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
+}
+
+@media (max-width: 820px) {
+    .search {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .search-bar {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    .filter-bar {
+        width: 30%;
+        margin-inline-start: 2rem;
+        margin-inline-end: auto;
+    }
+
+    #result {
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .card {
+        max-width: 100%;
+    }
 }
