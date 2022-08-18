@@ -33,7 +33,7 @@ const GetResponse = async (Token, quantity) => {
 
       var fetchedData = data;
       var requiredData = fetchedData.slice(0, quantity);
-      console.log(requiredData);
+      // console.log(requiredData);
       result.innerHTML = requiredData
         .map(
           (country) =>
@@ -56,9 +56,9 @@ const GetResponse = async (Token, quantity) => {
         let currentCountryArray = requiredData.filter(
           (currentCountry) => currentCountry.cca3 === currentCountryCard[0].id
         )[0];
-        console.log(currentCountryArray);
+        // console.log(currentCountryArray);
         console.log(Object.values(currentCountryArray.borders));
-        console.log(currentCountryArray);
+        // console.log(currentCountryArray);
         loader();
         handle.classList.add("active");
 
@@ -96,28 +96,22 @@ const GetResponse = async (Token, quantity) => {
 
                <div class="border-details">
             Border Countries : ${
-              fetchedData
-                .filter((match) => {
-                  if (match.borders) {
-                    for (
-                      var i = 0;
-                      i < Object.values(currentCountryArray.borders).length - 1;
-                      i++
-                    ) {
-                      return (
-                        match.cca3 ===
-                        Object.values(currentCountryArray.borders)[i]
-                      );
-                    }
+              // console.log(Object.values(currentCountryArray.borders));
+              fetchedData.filter((match) => {
+                let matched = {};
+                Object.values(currentCountryArray.borders).forEach((border) => {
+              
+                  if(match.cca3 === border)
+                  {
+                    Object.assign(matched,match)
+                    console.log(matched);
                   }
-                })
-                .map((matched) => {
-                  `${matched.name.common}`;
-                  console.log(matched);
-
-                  
-                })
-              // .map((matched) => `<span>${matched.name.common}</span>`).join('')
+                });
+              }).map((matched) => {
+                console.log(matched);
+                `${matched.name.common}`;
+              })
+            
             }
                </div>
             </div>
@@ -125,7 +119,16 @@ const GetResponse = async (Token, quantity) => {
         `;
         }, 200);
       };
-
+  // fetchedData
+              //   .filter((match) => {
+              //     if (match.borders)           
+              //         return match.cca3 == Object.values(currentCountryArray.borders);
+              //   })
+              //   .map((matched) => {
+              //     `${matched}`;
+              //     console.log(matched);
+              //   })
+              // .map((matched) => `<span>${matched.name.common}</span>`).join('')
       countries.forEach((card) => {
         card.addEventListener("click", (e) => {
           if (card.contains(e.target)) {
