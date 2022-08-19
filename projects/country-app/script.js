@@ -20,29 +20,34 @@ Object.filter = (obj, predicate) =>
 // Object to Array
 const ObjectToArray = (obj) =>
   Object.keys(obj).map((key) => [Number(key), obj[key]]);
+
 const childOfChildOfObject = (obj) => Object.values(Object.values(obj))[0];
+
 function borderCountries(borders, data) {
-  let BorderedCountries = {};
+  if (borders === null || borders === undefined) {
+    return "No Border Countries.";
+  }
+  else {
+F
+    let BorderedCountries = {};
 
-  Object.values(borders).forEach((each) => {
-    Object.assign(
-      BorderedCountries,
-      Object.filter(data, (country) => country.cca3 === each)
-    );
-  });
-  // console.log(Object.values(BorderedCountries).capital);
-  BorderedCountries = ObjectToArray(BorderedCountries);
-  console.log(typeof BorderedCountries);
-  console.log(BorderedCountries);
+    Object.values(borders).forEach((each) => {
+      Object.assign(
+        BorderedCountries,
+        Object.filter(data, (country) => country.cca3 === each)
+      );
+    });
+    BorderedCountries = ObjectToArray(BorderedCountries);
+    console.log(typeof BorderedCountries);
+    console.log(BorderedCountries);
 
-  // BorderedCountries = ObjectToArray(BorderedCountries);
-  // console.log(BorderedCountries.map((Country) => `${Count ry}`));
 
-  return BorderedCountries.map((array) => {
-    array.shift();
-    console.log(childOfChildOfObject(array).name.common);
-    return childOfChildOfObject(array).name.common;
-  });
+    return BorderedCountries.map((array) => {
+      array.shift();
+      console.log(childOfChildOfObject(array).name.common);
+      return childOfChildOfObject(array).name.common;
+    });
+  }
 }
 const defaultLength = 20;
 filter.parentElement.addEventListener("click", function () {
@@ -90,7 +95,7 @@ const GetResponse = async (Token, quantity) => {
           (currentCountry) => currentCountry.cca3 === currentCountryCard[0].id
         )[0];
         // console.log(currentCountryArray);
-        console.log(Object.values(currentCountryArray.borders));
+        // console.log(Object.values(currentCountryArray.borders));
         // console.log(currentCountryArray);
         loader();
         handle.classList.add("active");
@@ -103,36 +108,25 @@ const GetResponse = async (Token, quantity) => {
             </div>
             <div class="country-details">  
                <h3> ${currentCountryArray.name.common}</h3>
-               <p><span><strong>Native Name :</strong>${
-                 Object.values(currentCountryArray.name.nativeName)[0].common
-               }</span><span><strong>Top Level Domain :</strong>${
-            currentCountryArray.tld
-          }</span>  </p>
-               <p><span><strong>Population :</strong>${
-                 currentCountryArray.population
-               }</span><span><strong>Currencies :</strong>${
-            Object.values(currentCountryArray.currencies)[0].name
-          }</span>  </p>
-               <p><span><strong>Region :</strong>${
-                 currentCountryArray.region
-               }</span><span><strong>Languages :</strong>${Object.values(
-            currentCountryArray.languages
-          )
-            .map((language) => `${language}`)
-            .join(",")}</span>  </p>
-               <p><span><strong>Sub Region :</strong>${
-                 currentCountryArray.subregion
-               } </span>  </p>
-               <p><span><strong> Capital :</strong>${
-                 currentCountryArray.capital
-               }</span>  </p>
+               <p><span><strong>Native Name :</strong>${Object.values(currentCountryArray.name.nativeName)[0].common
+            }</span><span><strong>Top Level Domain :</strong>${currentCountryArray.tld
+            }</span>  </p>
+               <p><span><strong>Population :</strong>${currentCountryArray.population
+            }</span><span><strong>Currencies :</strong>${Object.values(currentCountryArray.currencies)[0].name
+            }</span>  </p>
+               <p><span><strong>Region :</strong>${currentCountryArray.region
+            }</span><span><strong>Languages :</strong>${Object.values(
+              currentCountryArray.languages
+            )
+              .map((language) => `${language}`)
+              .join(",")}</span>  </p>
+               <p><span><strong>Sub Region :</strong>${currentCountryArray.subregion
+            } </span>  </p>
+               <p><span><strong> Capital :</strong>${currentCountryArray.capital
+            }</span>  </p>
 
                <div class="border-details">
-            <strong>Border Countries </strong> : ${
-              borderCountries(currentCountryArray.borders, fetchedData)
-              // .map((Country) => {`${Country.capital}`})
-              // .map((matchingCountry) => {`${matchingCountry}`})
-            }
+            <strong>Border Countries </strong> : ${borderCountries(currentCountryArray.borders, fetchedData)}
               </div>
               </div>
               </div>
