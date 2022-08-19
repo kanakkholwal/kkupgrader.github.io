@@ -238,12 +238,22 @@ opacity: 1;
     /* display: none; */
     transition: all 200ms ease-in-out;
 }
+.filter-bar svg {
+    transform: rotate(0deg);
+    transition: all 250ms ease;
+
+}
 
 #filter.active~.regions {
     /* display: block; */
     transform: scaleY(1);
     opacity: 1;
     visibility: visible;
+}
+#filter.active~ svg {
+    /* display: block; */
+    transform: rotate(180deg);
+  
 }
 
 .regions li {

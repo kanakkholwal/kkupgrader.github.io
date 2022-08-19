@@ -238,12 +238,22 @@ opacity: 1;
     /* display: none; */
     transition: all 200ms ease-in-out;
 }
+.filter-bar svg {
+    transform: rotate(0deg);
+    transition: all 250ms ease;
+
+}
 
 #filter.active~.regions {
     /* display: block; */
     transform: scaleY(1);
     opacity: 1;
     visibility: visible;
+}
+#filter.active~ svg {
+    /* display: block; */
+    transform: rotate(180deg);
+  
 }
 
 .regions li {
@@ -360,8 +370,10 @@ opacity: 1;
 }
 .country-image{
     width:100%;
-    max-width:500px;
+    max-width:450px;
     min-width:300px;
+    flex:1 1 auto;
+
 }
 .country-flag{
     width: 100%;
@@ -370,7 +382,7 @@ opacity: 1;
     border-radius:4px;
 }
 .country-details{
-    padding: 2rem;
+    padding: 1rem;
     flex:1 1 auto;
     display: flex;
     justify-content:flex-start;
@@ -402,6 +414,7 @@ opacity: 1;
     padding: 0.5rem 0.75rem;
     border-radius: 0.35rem;
     margin-inline:0.25rem;
+    margin-block:0.5rem;
     cursor: pointer;
     border:0;
     color: var(--color);
