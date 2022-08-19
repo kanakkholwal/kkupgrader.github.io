@@ -222,7 +222,7 @@ function StartApp() {
         array.shift();
         // console.log(childOfChildOfObject(array).name.common);
         return `<span id="${childOfChildOfObject(array).cca3}">${childOfChildOfObject(array).name.common}</span>`;
-      });
+      }).join('');
     }
   }
   const SetCurrentCountry = (cardId) => {
@@ -288,7 +288,7 @@ function StartApp() {
          <div class="border-details">
             
               <strong>Border Countries </strong> :
-               ${borderCountries(currentCountry.borders, response).join("")} 
+               ${borderCountries(currentCountry.borders, response)} 
          </div>
   
         </div>
