@@ -38,13 +38,28 @@ document.getElementById("close-modal").addEventListener("click", function () {
 applyBtn.addEventListener("click", () => {
   UpdateLength();
   CloseModal();
-
 });
 const getSiblings = (TargetNode) =>
   [...TargetNode.parentNode.children].filter(
     (siblings) => siblings !== TargetNode
   );
-
+let notificationPermission = false;
+const grantPermission = () => {
+  Notification.requestPermission().then((permission) => {
+    if (permission === "granted") {
+      notificationPermission = true;
+    } else if (permission === "default") {
+      grantPermission();
+    } else {
+      if (window.confirm("Do you want to use Notification Alert Feature?")) {
+        grantPermission();
+      } else {
+        alert("Use normal alert");
+      }
+    }
+  });
+};
+grantPermission();
 // Variables Set up
 const FULL_DASH_ARRAY = 283; // Svg Full
 const btnState = {
@@ -125,12 +140,36 @@ const startTimer = () => {
 
     if (timeLeft <= 0) {
       ResetTimer();
+      if (notificationPermission) {
+        var notify = new Notification("Pomodoro App", {
+          body: "Time Completed !!",
+          icon: "favicon.png",
+        });
+        window.navigator.vibrate(800);
+
+        notify.onclick = function () {
+          window.parent.focus();
+          notify.close();
+        };
+      }
+    } else if (timeLeft == 10) {
+      if (notificationPermission) {
+        var notify = new Notification("Pomodoro App", {
+          body: `10 Seconds Remaining`,
+          icon: "favicon.png",
+        });
+        window.navigator.vibrate([200, 100, 200]);
+
+        notify.onclick = function () {
+          window.parent.focus();
+          notify.close();
+        };
+      }
     } else if (timeLeft > 0 && timeLeft <= 10) {
       indicator.style.stroke = "#df0f00";
     } else if (timeLeft > 10 && timeLeft <= 30) {
       indicator.style.stroke = "#FFEB3B";
-    }
-    else {
+    } else {
       indicator.removeAttribute("stroke");
     }
   }, 1000);
@@ -160,9 +199,33 @@ const PlayTimer = () => {
 
     setCircleDasharray();
 
-
     if (timeLeft <= 0) {
       ResetTimer();
+      if (notificationPermission) {
+        var notify = new Notification("Pomodoro App", {
+          body: "Time Completed !!",
+          icon: "favicon.png",
+        });
+        window.navigator.vibrate(800);
+
+        notify.onclick = function () {
+          window.parent.focus();
+          notify.close();
+        };
+      }
+    } else if (timeLeft == 10) {
+      if (notificationPermission) {
+        var notify = new Notification("Pomodoro App", {
+          body: `10 Seconds Remaining`,
+          icon: "favicon.png",
+        });
+        window.navigator.vibrate([200, 100, 200]);
+
+        notify.onclick = function () {
+          window.parent.focus();
+          notify.close();
+        };
+      }
     } else if (timeLeft > 0 && timeLeft <= 10) {
       indicator.style.stroke = "#df0f00";
     } else if (timeLeft > 10 && timeLeft <= 30) {
