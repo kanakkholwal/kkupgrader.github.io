@@ -360,7 +360,7 @@ opacity: 1;
 }
 .country-image{
     width:100%;
-    max-width:728px;
+    max-width:600px;
     min-width:300px;
 }
 .country-flag{
