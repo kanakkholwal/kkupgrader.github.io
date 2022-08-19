@@ -221,7 +221,7 @@ function StartApp() {
       return BorderedCountries.map((array) => {
         array.shift();
         // console.log(childOfChildOfObject(array).name.common);
-        return childOfChildOfObject(array).name.common;
+        return `<span id="${childOfChildOfObject(array).cca3}">${childOfChildOfObject(array).name.common}</span>`;
       });
     }
   }
@@ -286,16 +286,29 @@ function StartApp() {
             </span>
          </p>
          <div class="border-details">
-            <span>
+            
               <strong>Border Countries </strong> :
-               ${borderCountries(currentCountry.borders, response)
-      } 
-         </span> 
+               ${borderCountries(currentCountry.borders, response).join("")} 
          </div>
   
         </div>
       </div>
     `;
+    document.querySelectorAll(".border-details>span").forEach((gotoCountry) => {
+      gotoCountry.addEventListener("click", (e) => {
+        if (gotoCountry.contains(e.target)) {
+          getSiblings(gotoCountry).forEach((sibling) => {
+            sibling.classList.remove("open");
+          });
+          // console.log(card);
+          gotoCountry.classList.add("open");
+          setTimeout(() => {
+            SetCurrentCountry(gotoCountry.id);
+          }, 100);
+        }
+
+      });
+    })
   }
   // Back To Home Button
   back.addEventListener("click", () => {
