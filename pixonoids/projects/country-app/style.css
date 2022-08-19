@@ -19,7 +19,9 @@
     list-style: none;
     text-decoration: none;
 }
-
+.hide,.hidden {
+    display:none;
+}
 body {
     background-color: var(--body-bg);
     color: var(--color);
@@ -56,6 +58,7 @@ nav {
 .nav-title {
     font-weight: 500;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
 .dark-mode {
@@ -92,15 +95,42 @@ main {
 .back {
     transform: rotateX(-90deg) scale(0)
 }
+
 .back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: var(--bg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    border:0;
+    color: var(--color);
+    font-weight:600;
+    letter-spacing: 0.1em;
+    opacity: 0.75;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .25), 0 3px 14px 9px rgba(0, 0, 0, 0.08) !important;
+
+}
+
+.back-button svg {
+    opacity: 0.5;
+    margin-left: 0.25rem;
+    margin-right: 0.5rem;
+    transition: all 250ms ease-in-out;
+}
+/* .back-button {
     background:var(--bg);
+    color: var(--color);
     border-radius: 0.25rem;
     padding: 0.5rem 0.75rem;
     cursor: pointer;
     border: 0;
-    color: var(--color)
+} */
+.back-button:is(:hover,:active){
+opacity: 1;
 }
-.back-button svg {margin-inline-end: 0.5rem;}
 #handles.active>.search {
     transform: rotateX(90deg) scale(0)
 }
@@ -119,6 +149,8 @@ main {
     border-radius: 0.35rem;
     width: 100%;
     max-width: 25rem;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .25), 0 3px 14px 9px rgba(0, 0, 0, 0.08) !important;
+
 }
 
 .search-bar svg {
@@ -170,6 +202,8 @@ main {
     justify-content: space-between;
     cursor: pointer;
     min-width: 12rem;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .25), 0 3px 14px 9px rgba(0, 0, 0, 0.08) !important;
+
 }
 
 .filter-bar input {
@@ -297,6 +331,8 @@ main {
     background-color: var(--bg);
     animation: fadeInUp 1s ease;
     cursor: pointer;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .25), 0 3px 14px 9px rgba(0, 0, 0, 0.08) !important;
+
 
 }
 

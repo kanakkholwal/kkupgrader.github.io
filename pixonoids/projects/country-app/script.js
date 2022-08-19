@@ -28,7 +28,7 @@ function borderCountries(borders, data) {
     return "No Border Countries.";
   }
   else {
-
+F
     let BorderedCountries = {};
 
     Object.values(borders).forEach((each) => {
