@@ -235,7 +235,7 @@ function StartApp() {
     result.innerHTML =
       ` <div class="country-info">
        <div class="country-image">
-          <img src=${currentCountry.flags.svg} class="country-flag"  alt=${country.name.common}/>
+          <img src=${currentCountry.flags.svg} class="country-flag"  alt=${currentCountry.name.common}/>
        </div>
        <div class="country-details">  
           <h3> 
