@@ -1,3 +1,4 @@
+"use strict";
 const filter = document.getElementById("filter");
 const regionList = Array.from(document.querySelectorAll("#region-list>li"));
 const result = document.getElementById("result");
@@ -10,7 +11,39 @@ const getSiblings = (TargetNode) =>
   [...TargetNode.parentNode.children].filter(
     (siblings) => siblings !== TargetNode
   );
+// Object Filter
+// predicate is a function returns boolean value
+Object.filter = (obj, predicate) =>
+  Object.keys(obj)
+    .filter((key) => predicate(obj[key]))
+    .reduce((res, key) => ((res[key] = obj[key]), res), {});
+// Object to Array
+const ObjectToArray = (obj) =>
+  Object.keys(obj).map((key) => [Number(key), obj[key]]);
+const childOfChildOfObject = (obj) => Object.values(Object.values(obj))[0];
+function borderCountries(borders, data) {
+  let BorderedCountries = {};
 
+  Object.values(borders).forEach((each) => {
+    Object.assign(
+      BorderedCountries,
+      Object.filter(data, (country) => country.cca3 === each)
+    );
+  });
+  // console.log(Object.values(BorderedCountries).capital);
+  BorderedCountries = ObjectToArray(BorderedCountries);
+  console.log(typeof BorderedCountries);
+  console.log(BorderedCountries);
+
+  // BorderedCountries = ObjectToArray(BorderedCountries);
+  // console.log(BorderedCountries.map((Country) => `${Count ry}`));
+
+  return BorderedCountries.map((array) => {
+    array.shift();
+    console.log(childOfChildOfObject(array).name.common);
+    return childOfChildOfObject(array).name.common;
+  });
+}
 const defaultLength = 20;
 filter.parentElement.addEventListener("click", function () {
   filter.classList.toggle("active");
@@ -29,10 +62,10 @@ const GetResponse = async (Token, quantity) => {
   await fetch(restApi + Token)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
+      console.log(data);
 
-      var fetchedData = data;
-      var requiredData = fetchedData.slice(0, quantity);
+      let fetchedData = data;
+      let requiredData = fetchedData.slice(0, quantity);
       // console.log(requiredData);
       result.innerHTML = requiredData
         .map(
@@ -95,40 +128,34 @@ const GetResponse = async (Token, quantity) => {
                }</span>  </p>
 
                <div class="border-details">
-            Border Countries : ${
-              // console.log(Object.values(currentCountryArray.borders));
-              fetchedData.filter((match) => {
-                let matched = {};
-                Object.values(currentCountryArray.borders).forEach((border) => {
-              
-                  if(match.cca3 === border)
-                  {
-                    Object.assign(matched,match)
-                    console.log(matched);
-                  }
-                });
-              }).map((matched) => {
-                console.log(matched);
-                `${matched.name.common}`;
-              })
-            
+            <strong>Border Countries </strong> : ${
+              borderCountries(currentCountryArray.borders, fetchedData)
+              // .map((Country) => {`${Country.capital}`})
+              // .map((matchingCountry) => {`${matchingCountry}`})
             }
-               </div>
-            </div>
-        </div>
-        `;
+              </div>
+              </div>
+              </div>
+              `;
         }, 200);
       };
-  // fetchedData
-              //   .filter((match) => {
-              //     if (match.borders)           
-              //         return match.cca3 == Object.values(currentCountryArray.borders);
-              //   })
-              //   .map((matched) => {
-              //     `${matched}`;
-              //     console.log(matched);
-              //   })
-              // .map((matched) => `<span>${matched.name.common}</span>`).join('')
+      // fetchedData
+      // (Object.values(currentCountryArray.borders).forEach((each) => {
+      //   Object.assign(
+      //     BorderedCountries,
+      //     Object.filter(fetchedData, (country) => country.cca3 === each)
+      //   );
+      // }),
+      // // `${typeof Object.values(BorderedCountries)}`
+      // console.log(Object.values(BorderedCountries).capital))
+
+      // // return BorderedCountries.map((borderCountry) => console.log(borderCountry));
+      // // })()
+      //   .filter((match) => {
+      //     if (match.borders)
+      //         return match.cca3 == Object.values(currentCountryArray.borders);
+      //   })
+      // .map((matched) => `<span>${matched.name.common}</span>`).join('')
       countries.forEach((card) => {
         card.addEventListener("click", (e) => {
           if (card.contains(e.target)) {
@@ -149,6 +176,7 @@ const SwitchRegion = (region) => {
   filter.value = regionList.find((r) =>
     r.classList.contains("active")
   ).innerHTML;
+  filter.classList.remove("active");
   GetResponse("region/" + region, defaultLength);
 };
 
