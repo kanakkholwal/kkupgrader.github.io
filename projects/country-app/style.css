@@ -367,6 +367,8 @@ opacity: 1;
     flex-direction: row;
     flex-wrap: wrap;
     width:100%;
+    animation: fadeInUp 1s ease;
+
 }
 .country-image{
     width:100%;
