@@ -21,8 +21,10 @@ comparisonSections.forEach((section) => {
         section.querySelector('.before-image').height = section.querySelector('.after-image').height;
 
         // setTimeout(() => {
-        section.querySelector('.before-image').height = section.querySelector('.after-image').clientHeight;
+        // section.querySelector('.before-image').height = section.querySelector('.after-image').clientHeight  ;
         section.querySelector('.image-container').style.height = section.querySelector('.after-image').clientHeight + 'px';
+        section.querySelector('.after-image').style.height = "100%";
+
         // }, 0);
     });
 

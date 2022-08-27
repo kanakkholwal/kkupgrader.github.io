@@ -209,9 +209,9 @@ main {
 }
 
 .image-container>.after-image {
-    /* position: absolute;
+    position: absolute;
     inset: 0;
- z-index: 1; */
+ z-index: 1;
     height: 100%;
 
 }
