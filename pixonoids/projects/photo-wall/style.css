@@ -212,7 +212,7 @@ main {
     /* position: absolute;
     inset: 0;
  z-index: 1; */
-    height: inherit;
+    height: 100%;
 
 }
 
@@ -305,7 +305,11 @@ main {
 }
 
 .comparison-section:fullscreen .controls-container>.exitFullscreen {
-    visibility: visible
+    visibility: visible;
+}
+
+.comparison-section:fullscreen .hidden {
+    display: unset
 }
 
 
