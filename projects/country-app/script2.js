@@ -85,7 +85,7 @@ function StartApp() {
       .map(
         (country) =>
           `<div class="card" id=${country.cca3}>
-          <img src=${country.flags.svg} class="flags" />
+          <img src=${country.flags.svg} class="flags" alt="${country.name.common}" />
           <div class="card-body">
              <h3 class="name">${country.name.common}</h3>
              <p> Population: ${country.population} </p>
@@ -128,8 +128,8 @@ function StartApp() {
         .map(
           (country) =>
             `<div class="card" id=${country.cca3}>
-      <img src=${country.flags.svg} class="flags" />
-    <div class="card-body">
+            <img src=${country.flags.svg} class="flags" alt="${country.name.common}" />
+            <div class="card-body">
        <h3 class="name">${country.name.common}</h3>
        <p> Population: ${country.population} </p>
        <p> Region: ${country.region} </p>
@@ -144,8 +144,8 @@ function StartApp() {
         .map(
           (country) =>
             `<div class="card" id=${country.cca3}>
-        <img src=${country.flags.svg} class="flags" />
-        <div class="card-body">
+            <img src=${country.flags.svg} class="flags" alt="${country.name.common}" />
+            <div class="card-body">
         <h3 class="name">${country.name.common}</h3>
                  <p> Population: ${country.population} </p>
                  <p> Region: ${country.region} </p>
@@ -182,8 +182,8 @@ function StartApp() {
           .map(
             (country) =>
               `<div class="card" id=${country.cca3}>
-        <img src=${country.flags.svg} class="flags" />
-        <div class="card-body">
+              <img src=${country.flags.svg} class="flags" alt="${country.name.common}" />
+              <div class="card-body">
         <h3 class="name">${country.name.common}</h3>
                  <p> Population: ${country.population} </p>
                  <p> Region: ${country.region} </p>
@@ -235,7 +235,7 @@ function StartApp() {
     result.innerHTML =
       ` <div class="country-info">
        <div class="country-image">
-          <img src=${currentCountry.flags.svg} class="country-flag" />
+          <img src=${currentCountry.flags.svg} class="country-flag" alt="${currentCountry.name.common}" />
        </div>
        <div class="country-details">  
           <h3> 
