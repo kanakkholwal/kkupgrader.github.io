@@ -23,7 +23,7 @@ const ObjectToArray = (obj) =>
 
 const childOfChildOfObject = (obj) => Object.values(Object.values(obj))[0];
 const defaultLength = 20;
-filter.parentElement.addEventListener("click", function () {
+filter.parentNode.addEventListener("click", function () {
   filter.classList.toggle("active");
 });
 back.addEventListener("click", function () {
