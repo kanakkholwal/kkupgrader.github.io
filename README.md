@@ -1,6 +1,7 @@
 # 💫 About Me:
 🔭 I’m currently working on my College website <br>👯  looking to collaborate on Open Source Projects<br>🤝  looking for help with TypeScript<br>🌱  currently learning Node JS<br>💬 Ask me about Frontend<br>
-[![](https://visitcount.itsvg.in/api?id=kkupgrader&icon=1&color=1)](https://visitcount.itsvg.in)
+<br>
+[![](https://visitcount.itsvg.in/api?id=kkupgrader&label=Profile%20Views&color=0&icon=1&pretty=true)](https://visitcount.itsvg.in)
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=kkupgrader&theme=react&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=kkupgrader&theme=react&hide_border=false)<br/>
