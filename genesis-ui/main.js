@@ -423,7 +423,7 @@ function GenesisSnackBar(SnackBarBody, SnackBarDuration, actionButton = "") {
 
 // setInterval(()=>{
 
-  GenesisSnackBar("Pdhle BC", 60000, "OK");
+  GenesisSnackBar("Pdhai krlo Buddy", 60000, "OK");
  
 // },1000)
 
