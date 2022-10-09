@@ -1,0 +1,142 @@
+$xs:0;
+$sm:576px;
+$md:768px;
+$lg:992px;
+$xl:1200px;
+$xxl:1400px;
+$sidenavBreakPoint:1024px;
+// $primary:#18c1f6;
+// $primaryBg:#149eca33;
+
+$primary:#85ceff;
+$primaryBg:#0d3b4e;
+$secondary:#a4acff;
+$secondaryBg:#6b75db33;
+$danger: #ff9776;
+$dangerBg: #cc646433;
+$success: #86efac;
+$successBg: rgba(22, 101, 52, 0.2);
+$info:#18c1f6;
+$infoBg:#149eca33;
+$warning: #fde047;
+$warningBg: rgba(250, 204, 21, 0.20);
+$dark:#89b5f3;
+$darkBg:#11182733;
+$light:#2b394d;
+$lightBg:#bbe1fa;
+
+$dark2:#001829;
+$dark3:#212930;
+$danger-hvr: #d70c25;
+$warning-hvr: #fdc83a;
+$success-hvr: #01bd62dd;
+$info-hvr: #0052cf;
+
+$link:#18c1f6;
+
+$main:#149eca;
+$muted:#ebecf0;
+$hoverBg:#343a46;
+$activeBg:#283541;
+
+
+$textColor:#132F4C;
+$LightTextColor:#132F4C;
+$hoverBg:#2a2e32;
+$white:#fbfbfb;
+$black:#262626;
+$transparent:#ffffff0d;
+$bodyText:#ffffffbf;
+$shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
+0 2px 8px 0 rgba(0, 0, 0, 0.12);
+$shadow2: 0 20px 30px rgba(0, 0, 0, 0.1);
+$grey: #9e9e9e;
+$transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$transitionCubic:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$borderColor:#374151;
+$SidenavBg:#23272f;
+$sidenavWidth:17.5rem;
+$HeaderBg:#1f242e;
+
+$buttonFontFamily:"Roboto",
+sans-serif;
+$bodyBg:#23272f;
+$bodyText:#f6f7f9;;
+
+@mixin noAction {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+@mixin Block {
+    outline: none;
+    display: block;
+    border: 0;
+    text-decoration: none;
+
+    &:is(:hover, :focus, :active) {
+        outline: none;
+
+    }
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin inline-flex {
+    display: flex;
+}
+
+@mixin left {
+    margin-left: 0.25rem;
+    margin-right: auto;
+}
+
+@mixin center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin right {
+    margin-right: 0.25rem;
+    margin-left: auto;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin overFlowY {
+    
+        overflow-y: auto;
+   
+        &::-webkit-scrollbar-track {
+            background-color: none;
+            background-clip: content-box;
+
+        }
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent 
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+
+            background-color: #969faf;
+
+        }
+    }
+
+}
+
+
+$MarginPadding1 :0.25rem;
+$MarginPadding2 :0.5rem;
+$MarginPadding3 :0.75rem;
+$MarginPadding4 :1rem;
+$MarginPadding5 :1.25rem;
+$MarginPadding6 :1.5rem;

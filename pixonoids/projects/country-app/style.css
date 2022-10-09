@@ -83,7 +83,21 @@ main {
     margin-inline: auto;
     z-index: 1;
 }
+.mic{
+    margin-left: 1rem;
+    margin-right: auto;
+    background-color: var(--bg);
+    max-height: 48px;
+    width: 42px;
+    padding: 0.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .25), 0 3px 14px 9px rgba(0, 0, 0, 0.08);
 
+}
+.mic:is(:hover,:active,:focus){
+    box-shadow: none;
+}
 .search {
     width: 100%;
     display: flex;

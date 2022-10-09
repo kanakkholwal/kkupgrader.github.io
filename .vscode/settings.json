@@ -3,6 +3,7 @@
     "editor.formatOnSave": false,
     "cSpell.words": [
         "Btns",
+        "crossorigin",
         "Minifier"
     ],
     "svg.preview.background": "transparent"

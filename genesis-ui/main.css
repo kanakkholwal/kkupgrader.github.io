@@ -1,67 +1,4 @@
-        html[data-gui-theme='light'],
         body {
-            --trans-bg: linear-gradient(to right, #00c3ff, #126d9a);
-            --default-color: #00c3ff;
-            --main-color: #00c3ff;
-            --g-nav-bg: #ffffff;
-            --nav-clr: #262626;
-            --link-clr: #6351ce;
-            --link-hvr: #126d9a;
-            --primary: #2396c3;
-            --secondary: #B23CFD;
-            --success: #00B74A;
-            --danger: #fe3e63;
-            --warning: #FFA900;
-            --info: #39C0ED;
-            --dark: #262626;
-            --yellow-d: #f19f00;
-            --yellow-l: #f3ae25;
-            --border-clr: #eee;
-            --body-bg: #fff;
-            --title-clr: #666666;
-            --title-color: var(--title-clr);
-            --text-clr: #262626;
-            --body-font: 'Fredoka', sans-serif;
-            /*  "Roboto", 'Sofia Pro', sans-serif; */
-            --skeleton-color: #ced4da;
-            --skeleton-animation-bg-1: #fff0;
-            --skeleton-animation-bg-2: #ffffff59;
-            --skeleton-animation-bg-3: #fff0;
-            --good-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
-            /* colors */
-            --sidenavify-color: #4B5563;
-            --g-sidenav-bg: #fbfbfb;
-            --g-sidenav-shadow: #e4e4e4;
-            --nav-btn: #eceef3;
-            --text-clr: #4f4f4f;
-            --g-header-bg: #eceef3;
-            --g-footer-bg: #f3f3f3;
-            --body-bg: #fff;
-            --default-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
-            --card-bg-clr: #fbfbfb;
-            --g-primary: #1c81c5;
-            --g-primary-hvr: #1664b1;
-            --g-danger: #fe3e63;
-            --g-danger-hvr: #ec3053;
-            --g-warning: #feb707;
-            --g-warning-hvr: #fdc83a;
-            --g-success: #02b605;
-            --g-success-hvr: #2bd72d;
-            --g-secondary: #8463d8;
-            --g-secondary-hvr: #5e4fbe;
-            --g-info: #0fbcf9;
-            --g-info-hvr: #35bfe6;
-            --g-dark: #262626;
-            --g-dark-hvr: rgb(23, 17, 17);
-            --g-light: #fbfbfb;
-            --g-light-hvr: #ececec;
-            --g-modal-bg: #fff;
-            --g-modal-header: #fff;
-            --g-border-clr: #e0e0e0
-        }
-
-        html[data-gui-theme='dark'],
-        body.dark {
             --skeleton-color: #343638;
             --skeleton-animation-bg-1: #24252659;
             --skeleton-animation-bg-2: #24252600;
@@ -663,76 +600,26 @@
             max-width: auto;
             background-color: var(--g-sidenav-bg);
             color: var(--text-clr);
-            transition: transform, opacity 0.25s ease 0s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-            -webkit-animation-duration: 0.25s;
-            animation-duration: 0.25s;
+            transition: all 0.25s ease;
+
             will-change: transform, opacity;
             overflow-x: hidden;
             overflow-anchor: none;
             touch-action: auto;
-            transform: translateX(-17.5rem)
         }
 
         .sidenav:not(.show) {
-            -webkit-animation-name: sidenav-close;
-            animation-name: sidenav-close;
+            opacity: 0;
+            transform: translateX(-17.5rem);
         }
 
         .sidenav.show {
-            -webkit-animation-name: sidenav-open;
-            animation-name: sidenav-open;
-            box-shadow: 4px -7px 12px 1px var(--g-sidenav-shadow);
+            opacity: 1;
+            transform: translateX(0);
+            box-shadow: 8px -16px 20px 6px var(--g-sidenav-shadow);
         }
 
-        @keyframes sidenav-open {
-            0% {
-                opacity: 0;
-                transform: translateX(-17.5rem);
-            }
 
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @-webkit-keyframes sidenav-open {
-            0% {
-                opacity: 0;
-                transform: translateX(-17.5rem);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes sidenav-close {
-            0% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(-17.5rem);
-            }
-        }
-
-        @-webkit-keyframes sidenav-close {
-            0% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(-17.5rem);
-            }
-        }
 
         .sidenav-header {
             padding: 0.75rem 1rem;
@@ -1414,7 +1301,8 @@
             max-width: 25rem;
             display: flex;
             flex-direction: column;
-            align-content: flex-end;        }
+            align-content: flex-end;
+        }
 
         .snackBar-container>.snackBar {
             width: 100%;
@@ -1431,21 +1319,21 @@
             font-weight: 500;
             transition: all .5s cubic-bezier(0.175, 0.885, 0.22, 1.775);
             background: #58afdf1a;
-            color:#149ccac9;
+            color: #149ccac9;
             backdrop-filter: blur(0.3rem);
             box-shadow:
                 1.7px 3.1px 9.9px -47px rgba(0, 0, 0, 0.07),
                 11.9px 21.3px 27.3px -47px rgba(0, 0, 0, 0.057),
                 15.4px 27.7px 65.7px -47px rgba(0, 0, 0, 0.046),
                 15px 27px 218px -47px rgba(0, 0, 0, 0.04);
-            transform:  translateY(1rem);
+            transform: translateY(1rem);
             opacity: 0;
             visibility: hidden;
 
         }
 
         .snackBar-container>.snackBar.show {
-            transform:  translateY(0);
+            transform: translateY(0);
             opacity: 1;
             visibility: visible;
         }
@@ -2188,24 +2076,29 @@ transform: translateY(-2px);
 
         /* Navbar   */
         .g-navbar {
+            box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
+            padding-top: 0.5625rem;
+            width: 100%;
             position: relative;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
-            padding: 0.65rem 0.5rem;
-            margin-right: auto;
-            margin-left: auto;
-            box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
-            --z-index-nav: 99;
-            z-index: var(--z-index-nav);
+
+            padding-inline: 0.75rem;
+            padding-block: 0.5rem;
+            background: #ffffff0d;
+            color: #BBE1FA;
+            backdrop-filter: blur(30px);
+            border: 1px solid #c1b3b30f;
         }
 
-        .g-navbar.g-fixed-top {
+        .g-fixed-top {
             position: fixed;
-            top: 0;
+            right: 0;
             left: 0;
+            z-index: 999;
+            top: 0;
         }
 
         .g-navbar>.g-nav-left {

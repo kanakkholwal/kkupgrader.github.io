@@ -1,0 +1,23 @@
+@use "./style/variables";
+
+:root {
+    --text-light: #8a8f98;
+    --text-lighter: #757783;
+    --bodyBg:#23272f;
+}
+
+@import "./style/reset", "./style/buttons", "./style/flex", "./style/forms", "./style/layout","./style/position", "./style/toast", "./style/topography", "./style/ripple";
+
+@import "./style/components/navbar";
+@import "./style/components/footer";
+@import "./style/components/header";
+
+body {
+    background-color: variables.$bodyBg;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: normal;
+    color: variables.$bodyText;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}

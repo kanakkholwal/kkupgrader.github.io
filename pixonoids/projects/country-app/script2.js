@@ -6,6 +6,7 @@ let regionList = Array.from(document.querySelectorAll("#region-list>li"));
 const result = document.getElementById("result");
 const handle = document.getElementById("handles");
 const search = document.getElementById("search");
+const mic = document.querySelector(".mic");
 const back = document.getElementById("back");
 const darkToggle = document.getElementById("dark-mode");
 const restApi = "https://restcountries.com/v3.1/";
@@ -45,7 +46,34 @@ darkToggle.addEventListener("click", function () {
         : "1"
     );
 });
+function startConverting () {
 
+  if('webkitSpeechRecognition' in window) {
+    var speechRecognizer = new webkitSpeechRecognition();
+    speechRecognizer.continuous = true;
+    speechRecognizer.interimResults = true;
+    speechRecognizer.lang = 'en-US';
+    speechRecognizer.start();
+console.log("speech started");
+
+    speechRecognizer.onresult = function(event) {
+      console.log(event.results);
+      for(var i = event.resultIndex; i < event.results.length; i++){
+        var transcript = event.results[i][0].transcript;
+        transcript.replace("\n", "<br>");
+     
+      }
+      console.log(transcript);
+    };
+    speechRecognizer.onerror = function (event) {
+      console.log('Some Error occurred while recognizing speech');
+
+    };
+  }else {
+    console.log('Your browser is not supported. Please download Google chrome or Update your Google chrome!!');
+  }	
+  }
+  mic.addEventListener("click",startConverting);
 let response = JSON.parse(window.localStorage.getItem("response"));
 let dataFetched = false;
 

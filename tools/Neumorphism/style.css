@@ -169,10 +169,8 @@ main .settings-container .output {
   outline: none;
   border-radius: 20px;
   box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 main .settings-container .output::-webkit-scrollbar {
   display: none;
@@ -227,7 +225,6 @@ main .settings-container .copy:active {
   main {
     display: none;
   }
-
   .mobile {
     display: unset;
   }

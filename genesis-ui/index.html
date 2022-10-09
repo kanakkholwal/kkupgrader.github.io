@@ -4,661 +4,597 @@
 <head>
     <title>Genesis UI</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <!-- Preload Cdns -->
-    <link href='https://fonts.googleapis.com' rel='preconnect' />
-    <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect' />
-    <link href='//cdn.jsdelivr.net' rel='preconnect' />
-    <link href='//raw.githack.com' rel='dns-prefetch' />
-    <link href='//ajax.googleapis.com' rel='dns-prefetch' />
-    <link href='//cdn.jsdelivr.net' rel='dns-prefetch' />
-    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' />
-    <link href='//kkupgrader.eu.org/' rel='dns-prefetch' />
 
-    <!-- Preload Cdns -->
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <!-- Chrome, Firefox OS and Opera -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Windows Phone -->
-    <meta content='' name='msapplication-navbutton-color' />
-    <link href='/favicon.ico' rel='icon' type='image/x-icon' />
     <link href="./content/fonts/default.min.css" rel="stylesheet" />
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet" />
-    <link href="./main.css" rel="stylesheet" />
-    <meta name="google-site-verification" content="rVibt1gq3CQhtLXV1g8OlFugmOr9lipCo_fM0oh2KBU" />
-    <meta name="purpleads-verification" content="38e41f0efd80d3a6a1dff2da" />
+    <!-- <link href="main.css" rel="stylesheet" /> -->
+    <!-- <link href="./style/style.css" rel="stylesheet" /> -->
+    <link href="genesis-ui.css" rel="stylesheet" />
 
-    <!-- <script async="async" defer="defer" src="/assets/js/jquery/3.6.0/jquery.min.js"></script> -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
-    <header>
-        <nav class="g-navbar g-fixed-top">
-            <div class="g-nav-left">
-                <button class="g-sidenav-toggler"></button>
-                <a href="./" class="g-nav-brand">
-                    <!-- <img src="/logo.svg" height="30" alt="K K UPGRADER" loading="lazy"> -->
+    <div class="G_Body">
+
+        <div class="G_Sidenav" id="sidenav">
+            <a class="SidenavHeader" href="./">
+                <span class="Gradient">
                     Genesis UI
-                </a>
-            </div>
-            <div class="g-nav-center">
-                <div class="g-dropdown">
-                    <input type="search" name="Navbar Search" placeholder="Search in Docs... " id="navbar-search"
-                        class="g-form-input g-dropdown-toggle" g-dropdown-type="focus"
-                        g-dropdown-target="navbar-search-dropdown" style="width:400px" autofocus />
 
-
-                    <div class="g-dropdown-menu " id="navbar-search-dropdown">
-                        DropDown Menu
-                        DropDown Menu
-                        DropDown Menu
-
-                    </div>
-                </div>
-                <script src="./../testing/testing.js"></script>
-            </div>
-            <div class="g-nav-right">
-
-                <li class="nav-item me-2">
-                <li class="nav-btn search-toggler">
-                    <!-- data-mdb-toggle="modal" data-mdb-target="#searchify" -->
-                    <i class="fas fa-search"></i>
-                </li>
-                </li>
-                <li class="nav-item me-2">
-                    <div class="nav-btn darkmode-toggler"><i class="far fa-moon"></i></div>
-                </li>
-
-                <li class="nav-item dropdown me-3 me-lg-1">
-                    <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="more-info" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                        <div class="nav-btn"><i class="fas fa-ellipsis-v"></i>
-                            <!-- <img src="/content/images/person.svg"> -->
-                        </div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="more-info">
-                        <li>
-                            <a class="dropdown-item" aria-current="page" href="https://kkupgrader.blogspot.com/"
-                                target="_blank">Blogger Blog</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" aria-current="page" href="/tools/">Tools</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" aria-current="page" href="/portfolio/">PortFolio</a>
-                        </li>
-                    </ul>
-                </li>
-
-            </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg  fixed-top d-none">
-            <div class="container-fluid flex-nowrap">
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="nav-btn sidenav-toggler"><i class="fas fa-bars"></i></div>
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/genesis-ui/">
-                        <img src="./genesis-ui.svg" height="50" alt="K K UPGRADER" loading="lazy"
-                            style="margin-top: -5px" />
-                        <!-- <img src="./content/images/logo_dark.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top: -5px" class="only-dark" /> -->
-                    </a>
-                </div>
-                <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
-                    <li class="nav-item me-2">
-                        <!-- <form class="input-group w-auto my-auto d-none d-lg-flex">
-                            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width: 25rem" />
-                            <span class="input-group-text border-0 d-none d-lg-flex"><i
-                                    class="fas fa-search"></i></span>
-                        </form> -->
-                    </li>
-                </ul>
-                <ul class="float-end navbar-nav d-flex flex-row align-items-center">
-
-                    <li class="nav-item me-2">
-                        <div class="nav-btn search-toggler" data-mdb-toggle="modal" data-mdb-target="#searchify"><i
-                                class="fas fa-search"></i></div>
-                    </li>
-                    <li class="nav-item me-2">
-                        <div class="nav-btn darkmode-toggler"><i class="far fa-moon"></i></div>
-                    </li>
-
-                    <li class="nav-item dropdown me-3 me-lg-1">
-                        <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="more-info" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            <div class="nav-btn"><i class="fas fa-ellipsis-v"></i>
-                                <!-- <img src="/content/images/person.svg"> -->
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="more-info">
-                            <li>
-                                <a class="dropdown-item" aria-current="page" href="https://kkupgrader.blogspot.com/"
-                                    target="_blank">Blogger Blog</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" aria-current="page" href="/tools/">Tools</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" aria-current="page" href="/portfolio/">PortFolio</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <main class="w-100 hero" style="margin-top: 65px">
-            <div class="container-fluid">
-                <!-- Section: Intro -->
-                <section class="m-auto py-5">
-                    <div class="row h-100 mt-5 justify-content-center align-items-center text-center text-white"
-                        itemprop="mainEntity" itemscope="itemscope" itemtype="http://schema.org/WebSite">
-                        <h3 class="text-white" id="title">
-
-                        </h3>
-                        <p>Some are Right Below Here.</p>
-                    </div>
-                </section>
-            </div>
-
-        </main>
-
-        <!-- Navbar -->
-    </header>
-
-
-
-    <main class="container-lg my-5 d-flex justify-content-center align-items-center flex-column">
-        <div id="buttons" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <a href="" class="g-btn">Default</a>
-            <a href="" class="g-btn g-btn-primary">Primary</a>
-            <a href="" class="g-btn g-btn-secondary">Secondary</a>
-            <a href="" class="g-btn g-btn-info">Info</a>
-            <a href="" class="g-btn g-btn-warning">Warning</a>
-            <a href="" class="g-btn g-btn-danger">Danger</a>
-            <a href="" class="g-btn g-btn-success">Success</a>
-            <a href="" class="g-btn g-btn-dark">Dark</a>
-            <a href="" class="g-btn g-btn-light">Light</a>
-            <a href="" class="g-btn g-btn-link">Link</a>
-
-        </div>
-        <div id="collapses"
-            class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
-            <button class="g-btn" data-g-collapse-target="#this"> Collapse</button><br>
-            <div id="this" class="g-collapse text-center">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-
-            </div>
-
-        </div>
-        <div id="accordions"
-            class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
-            <div class="g-accordion" accordion-multiple="false">
-                <div class="g-accordion-item">
-                    <div class="g-accordion-header">
-                        Accordion Header 1
-                    </div>
-                    <div class="g-accordion-body">
-                        <div class="g-accordion-body-content">
-                            Accordion Body 1
-                        </div>
-                    </div>
-                </div>
-                <div class="g-accordion-item">
-                    <div class="g-accordion-header">
-                        Accordion Header 2
-                    </div>
-                    <div class="g-accordion-body">
-                        <div class="g-accordion-body-content">
-                            Accordion Body 2
-                        </div>
-                    </div>
-                </div>
-                <div class="g-accordion-item">
-                    <div class="g-accordion-header">
-                        Accordion Header 3
-                    </div>
-                    <div class="g-accordion-body">
-                        <div class="g-accordion-body-content">
-                            Accordion Body 3
-                        </div>
-                    </div>
-                </div>
-                <div class="g-accordion-item">
-                    <div class="g-accordion-header">
-                        Accordion Header 4
-                    </div>
-                    <div class="g-accordion-body">
-                        <div class="g-accordion-body-content">
-                            Accordion Body 4
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div id="modals" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-
-            <button class="g-btn g-btn-dark m-auto" data-target-modal="#g-modal">Modal</button>
-
-            <div class="g-modal-area">
-                <div class="g-modal" id="g-modal">
-                    <div class="g-modal-header">
-                        <div class="g-modal-title">Modal Title</div>
-                        <div class="icon-btn modal-close"> <i class="fas fa-times"></i>
-                        </div>
-                    </div>
-                    <div class="g-modal-body">
-                        Modal Body
-                    </div>
-                    <div class="g-modal-footer">Modal Footer</div>
-                </div>
-
-            </div>
-
-
-        </div>
-        <div id="toasts" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <button class="g-btn" onclick="GenesisToast('', 'title ma be', 'bodyContent', 3000)">custom toast</button>
-            <div class="button-container">
-                <!-- only for demo -->
-                <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 1"
-                    data-g-toast-html="Simple toast <b>with</b> default duration of 3s" data-g-toast-duration="0">
-                    Default duration</p>
-                <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 2"
-                    data-g-toast-html="Simple toast with custom duration of 5s - data-g-toast-duration=5000"
-                    data-g-toast-duration="5000">Custom duration</p>
-                <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 3"
-                    data-g-toast-html="Simple toast with no duration - data-g-toast-duration=0"
-                    data-g-toast-duration="0">No duration</p>
-            </div>
-            <div class="button-container">
-                <!-- only for demo -->
-                <p class="btn g-toast-toggle blue" data-g-toast-type="info" data-g-toast-title="Simple system toast"
-                    data-g-toast-html="Simple system toast - data-g-toast-type=system" data-g-toast-duration="0">System
-                    toast</p>
-                <p class="btn g-toast-toggle green" data-g-toast-type="success"
-                    data-g-toast-title="Simple success toast"
-                    data-g-toast-html="Simple success toast - data-g-toast-type=success" data-g-toast-duration="0">
-                    Success toast</p>
-                <p class="btn g-toast-toggle orange" data-g-toast-type="warning"
-                    data-g-toast-title="Simple warning toast"
-                    data-g-toast-html="Simple warning toast - data-g-toast-type=warning" data-g-toast-duration="0">
-                    Warning toast</p>
-                <p class="btn g-toast-toggle red" data-g-toast-type="danger" data-g-toast-title="Simple bug toast"
-                    data-g-toast-html="Simple bug toast - data-g-toast-type=bug" data-g-toast-duration="0">Bug toast</p>
-            </div>
-            <div class="g-toast-container">
-
-
-            </div>
-
-        </div>
-        <div id="tooltips" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <a data-g-tooltip-placement="top" data-g-tooltip-title="Tooltip Of Some">Tooltip
+                </span>
             </a>
+            <div class="SidenavBody">
+                <ul>
 
-        </div>
-        <div id="tabs" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <ul class="g-tab-bar" data-g-tab-target="tab">
-                <li class="g-tab-toggle " data-g-tab="tab1">Tab 1</li>
-                <li class="g-tab-toggle active" data-g-tab="tab2">Tab 2</li>
-                <li class="g-tab-toggle" data-g-tab="tab3">Tab 3</li>
-            </ul>
+                    <li>
+                        <a href="#">Link One</a>
+                    </li>
+                    <li>
+                        <a href="#"></i>Link Two</a>
+                    </li>
 
-            <div class="g-tabs-content" id="tab">
-                <div class="g-tab-content " id="tab1">
-                    Tab content 1
-                </div>
-                <div class="g-tab-content show" id="tab2">
-                    Tab content 2
-                </div>
-                <div class="g-tab-content" id="tab3">
-                    Tab content 3
-                </div>
-            </div>
-            <ul class="g-tabbed-bar" data-g-tab-target="tabbed">
-                <li class="g-tab-toggle" data-g-tab="tabbed1">Tab 1</li>
-                <li class="g-tab-toggle" data-g-tab="tabbed2">Tab 2</li>
-                <li class="g-tab-toggle" data-g-tab="tabbed3">Tab 3</li>
+                    <li>
+                        <a href="#">Link Three</a>
+                    </li>
 
-            </ul>
+                    <li class="SidenavCollapse">
+                        <button class="collapseToggle">Collapse Button</button>
 
-            <div class="g-tabs-content" id="tabbed">
-                <div class="g-tab-content " id="tabbed1">
-                    Tab content 1
-                </div>
-                <div class="g-tab-content" id="tabbed2">
-                    Tab content 2
-                </div>
-                <div class="g-tab-content" id="tabbed3">
-                    Tab content 3
-                </div>
-            </div>
-        </div>
-        <div id="sliced-menu" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                        <ul class="collapseList">
 
-            <div class="g-sliced-menu">
-                <ul class="g-sliced-outer-menu-list">
-                    <li class="g-sliced-menu-item" data-g-sliced-toggle="menu1">Menu Item 1</li>
-                    <li class="g-sliced-menu-item">Menu Item 2</li>
-                    <li class="g-sliced-menu-item">Menu Item 3</li>
-                    <li class="g-sliced-menu-item" data-g-sliced-toggle="inner-menu2">Menu Item 4</li>
-                    <li class="g-sliced-menu-item">Menu Item 5</li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Link Four</a>
+                    </li>
+                    <li class="SidenavCollapse">
+                        <button class="collapseToggle">Collapse Button</button>
+
+                        <ul class="collapseList">
+
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Some Link</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="g-sliced-inner-menu-list ">
-                    <ul class="g-sliced-inner-menu" id="menu1">
-                        <li class="g-sliced-menu-item"> inner menu item by 1</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 1</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 1</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 1</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 1</li>
+
+
+
+
+            </div>
+
+            <div class="SidenavFooter">
+                <div class="social">
+                    <a href="https://www.instagram.com/kanakkholwal/" target="_blank" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-instagram">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
+                    <a href="https://github.com/kkupgrader" target="_blank" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-github">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg></a>
+                    <a href="https://codepen.io/kkupgrader/" target="_blank" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-codepen">
+                            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                            <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                            <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                        </svg></a>
+                    <a href="https://www.linkedin.com/in/kanak-kholwal/" target="_blank" class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-linkedin">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg> </a>
+                </div>
+            </div>
+        </div>
+        <div class="G_BodyContent">
+
+
+
+                <nav class="G_Navbar">
+                    <div class="Start">
+                        <button class="navToggle" data-sidenav-toggle="#sidenav">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <a href="./" class="NavBrand">Genesis UI</a>
+                    </div>
+                    <div class="End">                     
+                        <a href="./" class="NavLink">Docs</a>
+                        <a href="./" class="NavLink">Author</a>
+                        <a href="./" class="NavLink">Github</a>
+                    </div>
+                </nav>
+
+            <header class="G_Header">
+
+                <h1 class="title">
+                    Genesis UI 
+                </h1>
+                <h3 class="description">
+                    Clean  component library for Dark UI.
+                </h3>
+
+            
+            </header>
+
+
+
+            <main class="container-lg my-5 d-flex justify-content-center align-items-center flex-column">
+                <div id="buttons"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <h2>Hierarchy</h2>
+                    <button class=" btn  btn-primary">Primary</button>
+                    <button class=" btn  btn-primary btn-h2">Secondary Level</button>
+                    <button class=" btn  btn-primary btn-h3">Tertiary Level</button>
+                    <hr>
+                    <button class=" btn  btn-primary">Primary</button>
+                    <button class=" btn  btn-secondary">Secondary</button>
+                    <button class=" btn  btn-info">Info</button>
+                    <button h class=" btn  btn-warning">Warning</button>
+                    <button class=" btn  btn-danger">Danger</button>
+                    <button class=" btn  btn-success">Success</button>
+                    <button class=" btn  btn-dark">Dark</button>
+                    <button class=" btn  btn-light">Light</button>
+                    <hr>
+                    <button class=" btn  btn-outline-primary">Primary</button>
+                    <button class=" btn   btn-outline-secondary">Secondary</button>
+                    <button class=" btn   btn-outline-info">Info</button>
+                    <button class=" btn   btn-outline-warning">Warning</button>
+                    <button class=" btn   btn-outline-danger">Danger</button>
+                    <button class=" btn   btn-outline-success">Success</button>
+                    <button class=" btn   btn-outline-dark">Dark</button>
+                    <button class=" btn   btn-outline-light">Light</button>
+                    <hr>
+                    <button class="btn btn-rounded btn-outline-primary ">Primary</button>
+                    <button class="btn btn-rounded  btn-outline-secondary">Secondary</button>
+                    <button class="btn btn-rounded  btn-outline-info">Info</button>
+                    <button class="btn btn-rounded  btn-outline-warning">Warning</button>
+                    <button class="btn btn-rounded  btn-outline-danger">Danger</button>
+                    <button class="btn btn-rounded  btn-outline-success">Success</button>
+                    <button class="btn btn-rounded  btn-outline-dark">Dark</button>
+                    <button class="btn btn-rounded  btn-outline-light">Light</button>
+
+                </div>
+                <div id="collapses"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
+                    <button class="g-btn" data-g-collapse-target="#this"> Collapse</button><br>
+                    <div id="this" class="g-collapse text-center">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        Nihil
+                        anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+
+                    </div>
+
+                </div>
+                <div id="accordions"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 flex-column mb-4">
+                    <div class="g-accordion" accordion-multiple="false">
+                        <div class="g-accordion-item">
+                            <div class="g-accordion-header">
+                                Accordion Header 1
+                            </div>
+                            <div class="g-accordion-body">
+                                <div class="g-accordion-body-content">
+                                    Accordion Body 1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-accordion-item">
+                            <div class="g-accordion-header">
+                                Accordion Header 2
+                            </div>
+                            <div class="g-accordion-body">
+                                <div class="g-accordion-body-content">
+                                    Accordion Body 2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-accordion-item">
+                            <div class="g-accordion-header">
+                                Accordion Header 3
+                            </div>
+                            <div class="g-accordion-body">
+                                <div class="g-accordion-body-content">
+                                    Accordion Body 3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-accordion-item">
+                            <div class="g-accordion-header">
+                                Accordion Header 4
+                            </div>
+                            <div class="g-accordion-body">
+                                <div class="g-accordion-body-content">
+                                    Accordion Body 4
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="modals"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+
+                    <button class="g-btn g-btn-dark m-auto" data-target-modal="#g-modal">Modal</button>
+
+                    <div class="g-modal-area">
+                        <div class="g-modal" id="g-modal">
+                            <div class="g-modal-header">
+                                <div class="g-modal-title">Modal Title</div>
+                                <div class="icon-btn modal-close"> <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="g-modal-body">
+                                Modal Body
+                            </div>
+                            <div class="g-modal-footer">Modal Footer</div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div id="toasts"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <button class="g-btn" onclick="GenesisToast('', 'title ma be', 'bodyContent', 3000)">custom
+                        toast</button>
+                    <div class="button-container">
+                        <!-- only for demo -->
+                        <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 1"
+                            data-g-toast-html="Simple toast <b>with</b> default duration of 3s"
+                            data-g-toast-duration="0">
+                            Default duration</p>
+                        <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 2"
+                            data-g-toast-html="Simple toast with custom duration of 5s - data-g-toast-duration=5000"
+                            data-g-toast-duration="5000">Custom duration</p>
+                        <p class="btn g-toast-toggle dark" data-g-toast-title="Simple toast 3"
+                            data-g-toast-html="Simple toast with no duration - data-g-toast-duration=0"
+                            data-g-toast-duration="0">No duration</p>
+                    </div>
+                    <div class="button-container">
+                        <!-- only for demo -->
+                        <p class="btn g-toast-toggle blue" data-g-toast-type="info"
+                            data-g-toast-title="Simple system toast"
+                            data-g-toast-html="Simple system toast - data-g-toast-type=system"
+                            data-g-toast-duration="0">System
+                            toast</p>
+                        <p class="btn g-toast-toggle green" data-g-toast-type="success"
+                            data-g-toast-title="Simple success toast"
+                            data-g-toast-html="Simple success toast - data-g-toast-type=success"
+                            data-g-toast-duration="0">
+                            Success toast</p>
+                        <p class="btn g-toast-toggle orange" data-g-toast-type="warning"
+                            data-g-toast-title="Simple warning toast"
+                            data-g-toast-html="Simple warning toast - data-g-toast-type=warning"
+                            data-g-toast-duration="0">
+                            Warning toast</p>
+                        <p class="btn g-toast-toggle red" data-g-toast-type="danger"
+                            data-g-toast-title="Simple bug toast"
+                            data-g-toast-html="Simple bug toast - data-g-toast-type=bug" data-g-toast-duration="0">Bug
+                            toast</p>
+                    </div>
+                    <div class="g-toast-container">
+
+
+                    </div>
+
+                </div>
+                <div id="tooltips"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <a data-g-tooltip-placement="top" data-g-tooltip-title="Tooltip Of Some">Tooltip
+                    </a>
+
+                </div>
+                <div id="tabs" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <ul class="g-tab-bar" data-g-tab-target="tab">
+                        <li class="g-tab-toggle " data-g-tab="tab1">Tab 1</li>
+                        <li class="g-tab-toggle active" data-g-tab="tab2">Tab 2</li>
+                        <li class="g-tab-toggle" data-g-tab="tab3">Tab 3</li>
                     </ul>
-                    <ul class="g-sliced-inner-menu" id="inner-menu2">
-                        <li class="g-sliced-menu-item"> inner menu item by 2</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 2</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 2</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 2</li>
-                        <li class="g-sliced-menu-item"> inner menu item by 2</li>
+
+                    <div class="g-tabs-content" id="tab">
+                        <div class="g-tab-content " id="tab1">
+                            Tab content 1
+                        </div>
+                        <div class="g-tab-content show" id="tab2">
+                            Tab content 2
+                        </div>
+                        <div class="g-tab-content" id="tab3">
+                            Tab content 3
+                        </div>
+                    </div>
+                    <ul class="g-tabbed-bar" data-g-tab-target="tabbed">
+                        <li class="g-tab-toggle" data-g-tab="tabbed1">Tab 1</li>
+                        <li class="g-tab-toggle" data-g-tab="tabbed2">Tab 2</li>
+                        <li class="g-tab-toggle" data-g-tab="tabbed3">Tab 3</li>
+
                     </ul>
 
-                </div>
-            </div>
-        </div>
-
-        <div class="g-section-title" g-section-title="Fieldset  Like Title" g-section-title-border="#eee"
-            g-section-title-bg="#fff">
-            <div class="g-card">
-                <div class="g-card-header">Featured</div>
-
-                <div class="g-card-body">
-                    <h5 class="g-card-title">Card title</h5>
-                    <h6 class="g-card-subtitle">Card subtitle</h6>
-
-                    <p class="g-card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <button type="button" class="g-btn g-btn-primary">Button</button>
-                </div>
-                <div class="g-card-footer "> <a href="#" class="g-card-link">Card link</a>
-                    <a href="#" class="g-card-link">Another link</a>
-                </div>
-
-
-            </div>
-        </div>
-        <div id="forms" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <input type="text" class="g-form-input" value="this is input"/>
-            <textarea name="demo Textarea"  class="g-form-input" cols="30" rows="10">TThis is Textarea</textarea>
-            <input type="range" class="g-form-range"  min="1" max="100" value="50">
-        </div>
-        <div id="cards" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-            <div class="g-card">
-                <div class="g-card-header">Featured</div>
-
-                <div class="g-card-body">
-                    <h5 class="g-card-title">Card title</h5>
-                    <h6 class="g-card-subtitle">Card subtitle</h6>
-
-                    <p class="g-card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <button type="button" class="g-btn g-btn-primary">Button</button>
-                </div>
-                <div class="g-card-footer "> <a href="#" class="g-card-link">Card link</a>
-                    <a href="#" class="g-card-link">Another link</a>
-                </div>
-
-
-            </div>
-        </div>
-        <div id="clipboard" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
-
-
-
-
-            <div id="clipdiv">Text To copy from div </div>
-            <input type="text" class="g-form-input" id="clip" value="Text from input">
-            <textarea name="" id="cliptext" cols="30"  class="g-form-input"  rows="10">dfsfgfffffff</textarea> <button class="g-btn"
-                data-g-clipboard-target="clip">Copy from Input </button>
-            <button class="g-btn" data-g-clipboard-target="cliptext">Copy from textarea </button>
-            <button class="g-btn" data-g-clipboard-target="clipdiv">Copy from Div </button>
-        </div>
-    </main>
-
-    <div class="mb-n3 pt-4 text-center text-white trans-bg">
-        <div class="container-fluid">
-            <section class="text-center">
-                <div id="subscribe">
-                    <div class="wrapper">
-                        <h3 class="text-white h2">Follow Us on Social Media</h3>
-                        <p class="mb-3">
-                            Subscribe to get updated when new templates arrive!
-                        </p>
-                        <div class="subscribe-box"></div>
-                        <div class="d-flex justify-content-center pt-3">
-                            <a class="me-4 text-white" href="https://t.me/kkupgrader" target="_blank"><i
-                                    class="fab fa-telegram-plane fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://gitub.com/kkupgrader" role="button"
-                                target="_blank"><i class="fab fa-github fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://Pinterest.com/kkupgrader" role="button"
-                                target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://codepen.io/kkupgrader" target="_blank"><i
-                                    class="fab fa-codepen fa-lg"></i></a>
-                            <a class="text-white me-4" href="https://instagram.com/kk.upgrader" role="button"
-                                target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                    <div class="g-tabs-content" id="tabbed">
+                        <div class="g-tab-content " id="tabbed1">
+                            Tab content 1
+                        </div>
+                        <div class="g-tab-content" id="tabbed2">
+                            Tab content 2
+                        </div>
+                        <div class="g-tab-content" id="tabbed3">
+                            Tab content 3
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="row mt-4 pb-4">
-                <div class="col-sm-3 mb-4 mb-md-0 section" id="logo">
-                    <div class="widget Image" data-version="2" id="Image1">
-                        <h5 class="text-uppercase text-white text-center mb-4">
-                            K K UPGRADER
-                        </h5>
-                        <p class="mb-2 text-center text-white">Learning with passion</p>
-                    </div>
-                </div>
-                <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 1">
-                    <div>
-                        <h5 class="text-uppercase text-white mb-4">Other Sites</h5>
-                        <hr />
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white" href="https://kkupgrader.blogspot.com/"><i
-                                        class="fas fa-arrow-right pe-3"></i>K K UPGRADER Blog</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white"
-                                    href="https://www.fs-themes.eu.org/2021/09/genesis-links-safelink-with-password.html"><i
-                                        class="fas fa-arrow-right pe-3"></i>Fs Themes</a>
-                            </li>
+                <div id="sliced-menu"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+
+                    <div class="g-sliced-menu">
+                        <ul class="g-sliced-outer-menu-list">
+                            <li class="g-sliced-menu-item" data-g-sliced-toggle="menu1">Menu Item 1</li>
+                            <li class="g-sliced-menu-item">Menu Item 2</li>
+                            <li class="g-sliced-menu-item">Menu Item 3</li>
+                            <li class="g-sliced-menu-item" data-g-sliced-toggle="inner-menu2">Menu Item 4</li>
+                            <li class="g-sliced-menu-item">Menu Item 5</li>
                         </ul>
+                        <div class="g-sliced-inner-menu-list ">
+                            <ul class="g-sliced-inner-menu" id="menu1">
+                                <li class="g-sliced-menu-item"> inner menu item by 1</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 1</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 1</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 1</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 1</li>
+                            </ul>
+                            <ul class="g-sliced-inner-menu" id="inner-menu2">
+                                <li class="g-sliced-menu-item"> inner menu item by 2</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 2</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 2</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 2</li>
+                                <li class="g-sliced-menu-item"> inner menu item by 2</li>
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 2">
-                    <div>
-                        <h5 class="text-uppercase text-white mb-4">Useful Links</h5>
-                        <hr />
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white" href="https://"><i
-                                        class="fas fa-arrow-right pe-3"></i>Advertise</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://"><i class="fas fa-arrow-right pe-3"></i>Contact
-                                    Us</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://"><i class="fas fa-arrow-right pe-3"></i>Privacy
-                                    Policy</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://"><i class="fas fa-arrow-right pe-3"></i>Cookies
-                                    Policy</a>
-                            </li>
-                        </ul>
+
+                <div class="g-section-title" g-section-title="Fieldset  Like Title" g-section-title-border="#eee"
+                    g-section-title-bg="#fff">
+                    <div class="g-card">
+                        <div class="g-card-header">Featured</div>
+
+                        <div class="g-card-body">
+                            <h5 class="g-card-title">Card title</h5>
+                            <h6 class="g-card-subtitle">Card subtitle</h6>
+
+                            <p class="g-card-text">Some quick example text to build on the card title and make up the
+                                bulk of
+                                the card's content.</p>
+                            <button type="button" class="g-btn g-btn-primary">Button</button>
+                        </div>
+                        <div class="g-card-footer "> <a href="#" class="g-card-link">Card link</a>
+                            <a href="#" class="g-card-link">Another link</a>
+                        </div>
+
+
                     </div>
                 </div>
-                <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 3">
-                    <div>
-                        <h5 class="text-uppercase text-white mb-4">Contact</h5>
-                        <hr />
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white" href="mailto:kkupgrader.fs@gmail.com"><i
-                                        class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white" href="https://instagram.com/kanakkholwal"><i
-                                        class="fab fa-instagram me-1"></i> kanakkholwal</a>
-                            </li>
-                        </ul>
+                <div id="forms" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <input type="text" class="g-form-input" value="this is input" />
+                    <textarea name="demo Textarea" class="g-form-input" cols="30" rows="10">TThis is Textarea</textarea>
+                    <input type="range" class="g-form-range" min="1" max="100" value="50">
+                </div>
+                <div id="cards" class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+                    <div class="g-card">
+                        <div class="g-card-header">Featured</div>
+
+                        <div class="g-card-body">
+                            <h5 class="g-card-title">Card title</h5>
+                            <h6 class="g-card-subtitle">Card subtitle</h6>
+
+                            <p class="g-card-text">Some quick example text to build on the card title and make up the
+                                bulk of
+                                the card's content.</p>
+                            <button type="button" class="g-btn g-btn-primary">Button</button>
+                        </div>
+                        <div class="g-card-footer "> <a href="#" class="g-card-link">Card link</a>
+                            <a href="#" class="g-card-link">Another link</a>
+                        </div>
+
+
                     </div>
                 </div>
-            </section>
+                <div id="clipboard"
+                    class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
+
+
+
+
+                    <div id="clipdiv">Text To copy from div </div>
+                    <input type="text" class="g-form-input" id="clip" value="Text from input">
+                    <textarea name="" id="cliptext" cols="30" class="g-form-input" rows="10">dfsfgfffffff</textarea>
+                    <button class="g-btn" data-g-clipboard-target="clip">Copy from Input </button>
+                    <button class="g-btn" data-g-clipboard-target="cliptext">Copy from textarea </button>
+                    <button class="g-btn" data-g-clipboard-target="clipdiv">Copy from Div </button>
+                </div>
+            </main>
+
+            <div class="mb-n3 pt-4 text-center text-white trans-bg">
+                <div class="container-fluid">
+                    <section class="text-center">
+                        <div id="subscribe">
+                            <div class="wrapper">
+                                <h3 class="text-white h2">Follow Us on Social Media</h3>
+                                <p class="mb-3">
+                                    Subscribe to get updated when new templates arrive!
+                                </p>
+                                <div class="subscribe-box"></div>
+                                <div class="d-flex justify-content-center pt-3">
+                                    <a class="me-4 text-white" href="https://t.me/kkupgrader" target="_blank"><i
+                                            class="fab fa-telegram-plane fa-lg"></i></a>
+                                    <a class="text-white me-4" href="https://gitub.com/kkupgrader" role="button"
+                                        target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                                    <a class="text-white me-4" href="https://Pinterest.com/kkupgrader" role="button"
+                                        target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
+                                    <a class="text-white me-4" href="https://codepen.io/kkupgrader" target="_blank"><i
+                                            class="fab fa-codepen fa-lg"></i></a>
+                                    <a class="text-white me-4" href="https://instagram.com/kk.upgrader" role="button"
+                                        target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row mt-4 pb-4">
+                        <div class="col-sm-3 mb-4 mb-md-0 section" id="logo">
+                            <div class="widget Image" data-version="2" id="Image1">
+                                <h5 class="text-uppercase text-white text-center mb-4">
+                                    K K UPGRADER
+                                </h5>
+                                <p class="mb-2 text-center text-white">Learning with passion</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 1">
+                            <div>
+                                <h5 class="text-uppercase text-white mb-4">Other Sites</h5>
+                                <hr />
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://kkupgrader.blogspot.com/"><i
+                                                class="fas fa-arrow-right pe-3"></i>K K UPGRADER Blog</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="text-white"
+                                            href="https://www.fs-themes.eu.org/2021/09/genesis-links-safelink-with-password.html"><i
+                                                class="fas fa-arrow-right pe-3"></i>Fs Themes</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 2">
+                            <div>
+                                <h5 class="text-uppercase text-white mb-4">Useful Links</h5>
+                                <hr />
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://"><i
+                                                class="fas fa-arrow-right pe-3"></i>Advertise</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://"><i
+                                                class="fas fa-arrow-right pe-3"></i>Contact
+                                            Us</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://"><i
+                                                class="fas fa-arrow-right pe-3"></i>Privacy
+                                            Policy</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://"><i
+                                                class="fas fa-arrow-right pe-3"></i>Cookies
+                                            Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mb-4 mb-md-0 text-start section" id="Footer Links 3">
+                            <div>
+                                <h5 class="text-uppercase text-white mb-4">Contact</h5>
+                                <hr />
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a class="text-white" href="mailto:kkupgrader.fs@gmail.com"><i
+                                                class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="text-white" href="https://instagram.com/kanakkholwal"><i
+                                                class="fab fa-instagram me-1"></i> kanakkholwal</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="searchify" tabindex="-1" aria-labelledby="search" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="search">Search Modal</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <img src="/content/images/load.svg" height="300" width="300" class="m-auto">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="G_Footer Start">
+                    Copyright &#169;
+                    <a href="/" title="K K UPGRADER" class="title">K K UPGRADER</a> - All Right
+                    Reserved
+            
+            </footer>
         </div>
     </div>
 
-    <div class="sidenav">
-        <div class="sidenav-header">
-            <div class="sidenav-title">
-                Genesis Docs
-            </div>
-            <div class="sidenav-close">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <div class="sidebar-body">
-            <div class="sidenav-heading">Normal List</div>
-            <ul class="list">
-                <li class="sidenavify-collapse">
-                    <a>
-                        <i class="fas fa-cubes"></i>Components
-                        <div class="nav-btn circle"><i class="fas fa-angle-up icon-status"></i></div>
-                    </a>
-                    <ul class="collapse-list">
+    <!-- <script src="./main.js" type="text/javascript"></script> -->
 
-                        <li>
-                            <a href="/docs/components/collapse/"><i class="fas fa-cubes"></i> Collapse</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-star me-1"></i>Link One</a>
-                </li>
-                <li>
-                    <a href="#"></i>Link Two</a>
-                </li>
-
-                <li>
-                    <a href="#">Link Three</a>
-                </li>
-
-                <div class="sidenav-heading">Normal List</div>
+    <script src="./genesis-ui.js"></script>
 
 
-                <li class="sidenavify-collapse">
-                    <a>
-                        <i class="fas fa-at me-1"></i>kkupgrader.fs@gmail.com
-                        <div class="nav-btn circle"><i class="fas fa-angle-up icon-status"></i></div>
-                    </a>
-                    <ul class="collapse-list">
-
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Some Link</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-star me-1"></i>Link One</a>
-                </li>
-                <li>
-                    <a href="#"></i>Link Two</a>
-                </li>
-
-                <li>
-                    <a href="#">Some Link</a>
-                </li>
-
-            </ul>
-            <div class="size" size="400px"></div>
-        </div>
-
-
-    </div>
-    <div class="modal fade" id="searchify" tabindex="-1" aria-labelledby="search" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="search">Search Modal</h5>
-                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <img src="/content/images/load.svg" height="300" width="300" class="m-auto">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer class=" text-center text-lg-start mt-3">
-        <div class="text-center text-white bg-dark p-3">
-            Copyright &#169;
-            <a href="/" title="K K UPGRADER"><span title="K K UPGRADER">K K UPGRADER</span></a> - All Right Reserved
-        </div>
-    </footer>
-
-    <script src="./main.js" type="text/javascript"></script>
-
-    <!-- Scripts -->
-    <script async="async" defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"
-        type="text/javascript"></script>
 </body>
 
 </html>
