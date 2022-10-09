@@ -5290,11 +5290,8 @@ html ::-webkit-scrollbar-track {
 .G_Accordion .G_Accordion_Item .G_Accordion_Header::after {
   transform: rotate(90deg);
 }
-.G_Accordion .G_Accordion_Item .G_Accordion_Header::before {
-  transform: translateX(-50%);
-}
 .G_Accordion .G_Accordion_Item .G_Accordion_Header.isActive::before {
-  transform: translateX(-50%) rotate(90deg);
+  transform: rotate(90deg);
 }
 .G_Accordion .G_Accordion_Item .G_Accordion_Body {
   overflow-x: hidden;
