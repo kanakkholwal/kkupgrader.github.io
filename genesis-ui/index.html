@@ -9,6 +9,9 @@
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <!-- <link href="main.css" rel="stylesheet" /> -->
     <!-- <link href="./style/style.css" rel="stylesheet" /> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500family=Inter:wght@200;300;400;500;600;700&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
     <link href="genesis-ui.css" rel="stylesheet" />
 
 </head>
@@ -141,68 +144,88 @@
 
 
 
-                <nav class="G_Navbar">
-                    <div class="Start">
-                        <button class="navToggle" data-sidenav-toggle="#sidenav">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <a href="./" class="NavBrand">Genesis UI</a>
-                    </div>
-                    <div class="End">                     
-                        <a href="./" class="NavLink">Docs</a>
-                        <a href="./" class="NavLink">Author</a>
-                        <a href="./" class="NavLink">Github</a>
-                    </div>
-                </nav>
+            <nav class="G_Navbar">
+                <div class="Start">
+                    <button class="navToggle" data-sidenav-toggle="#sidenav">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="./" class="NavBrand">Genesis UI</a>
+                </div>
+                <div class="End">
+                    <a href="./" class="NavLink">Docs</a>
+                    <a href="./" class="NavLink">Author</a>
+                    <a href="./" class="NavLink">Github</a>
+                </div>
+            </nav>
 
             <header class="G_Header">
-
                 <h1 class="title">
-                    Genesis UI 
+                    Genesis UI
                 </h1>
                 <h3 class="description">
-                    Clean  component library for Dark UI.
+                    Clean component library for Dark UI.
                 </h3>
-
-            
+                <a class=" btn  btn-secondary" href="">Get Started</a>
+                <a class=" btn  btn-secondary btn-h2" href="#demo">Demo</a>
             </header>
 
+            <main class="G_MainContent" id="demo">
+                <h1 class="text-center">Demo</h1>
+                <hr class="my-4" />
+                <section class="G_ContentSection" id="buttons">
+                    <div class="G_SectionTitle">
+                        <h2>Buttons</h2>
+                        <a href="http://" target="_blank" class="InfoBtn btn">Docs <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="G_SectionContent text-center">
+                        <button class=" btn  btn-primary">Primary</button>
+                        <button class=" btn  btn-primary btn-h2">Secondary Level</button>
+                        <button class=" btn  btn-primary btn-h3">Tertiary Level</button>
+                        <br class="mb-3" />
+                        <button class=" btn  btn-primary">Primary</button>
+                        <button class=" btn  btn-secondary">Secondary</button>
+                        <button class=" btn  btn-info">Info</button>
+                        <button class=" btn  btn-warning">Warning</button>
+                        <button class=" btn  btn-danger">Danger</button>
+                        <button class=" btn  btn-success">Success</button>
+                        <button class=" btn  btn-dark">Dark</button>
+                        <button class=" btn  btn-light">Light</button>
+                        <br class="mb-3" />
+                        <button class=" btn  btn-outline-primary">Primary</button>
+                        <button class=" btn   btn-outline-secondary">Secondary</button>
+                        <button class=" btn   btn-outline-info">Info</button>
+                        <button class=" btn   btn-outline-warning">Warning</button>
+                        <button class=" btn   btn-outline-danger">Danger</button>
+                        <button class=" btn   btn-outline-success">Success</button>
+                        <button class=" btn   btn-outline-dark">Dark</button>
+                        <button class=" btn   btn-outline-light">Light</button>
+                        <br class="mb-3" />
+                        <button class="btn btn-rounded btn-outline-primary ">Primary</button>
+                        <button class="btn btn-rounded  btn-outline-secondary">Secondary</button>
+                        <button class="btn btn-rounded  btn-outline-info">Info</button>
+                        <button class="btn btn-rounded  btn-outline-warning">Warning</button>
+                        <button class="btn btn-rounded  btn-outline-danger">Danger</button>
+                        <button class="btn btn-rounded  btn-outline-success">Success</button>
+                        <button class="btn btn-rounded  btn-outline-dark">Dark</button>
+                        <button class="btn btn-rounded  btn-outline-light">Light</button>
+                        <br class="mb-3" />
+                        <div class="mx-auto" style="max-width:500px ;">
+                            <button class=" btn  btn-primary btn-block">Block Level Button</button>
+                            <button class=" btn  btn-primary btn-h2 btn-block">Block Level Button</button>
+                        </div>
+                        <br class="mb-3" />
+                        <button class="btn  btn-primary btn-sm btn-circle"><i class="fab fa-linkedin-in"></i></button>
+                        <button class="btn  btn-warning btn-h2  btn-circle"><i class="fas fa-angle-right"></i></button>
+                        <button class="btn  btn-outline-dark btn-lg btn-circle"><i class="far fa-star"></i></button>
+                        <button class="btn  btn-success btn-h3 btn-circle"><i class="fab fa-google"></i></button>
 
-
-            <main class="container-lg my-5 d-flex justify-content-center align-items-center flex-column">
+                    </div>
+                </section>
                 <div id="buttons"
                     class="container d-flex justify-content-center align-items-center flex-wrap gap-3 mb-4">
                     <h2>Hierarchy</h2>
-                    <button class=" btn  btn-primary">Primary</button>
-                    <button class=" btn  btn-primary btn-h2">Secondary Level</button>
-                    <button class=" btn  btn-primary btn-h3">Tertiary Level</button>
-                    <hr>
-                    <button class=" btn  btn-primary">Primary</button>
-                    <button class=" btn  btn-secondary">Secondary</button>
-                    <button class=" btn  btn-info">Info</button>
-                    <button h class=" btn  btn-warning">Warning</button>
-                    <button class=" btn  btn-danger">Danger</button>
-                    <button class=" btn  btn-success">Success</button>
-                    <button class=" btn  btn-dark">Dark</button>
-                    <button class=" btn  btn-light">Light</button>
-                    <hr>
-                    <button class=" btn  btn-outline-primary">Primary</button>
-                    <button class=" btn   btn-outline-secondary">Secondary</button>
-                    <button class=" btn   btn-outline-info">Info</button>
-                    <button class=" btn   btn-outline-warning">Warning</button>
-                    <button class=" btn   btn-outline-danger">Danger</button>
-                    <button class=" btn   btn-outline-success">Success</button>
-                    <button class=" btn   btn-outline-dark">Dark</button>
-                    <button class=" btn   btn-outline-light">Light</button>
-                    <hr>
-                    <button class="btn btn-rounded btn-outline-primary ">Primary</button>
-                    <button class="btn btn-rounded  btn-outline-secondary">Secondary</button>
-                    <button class="btn btn-rounded  btn-outline-info">Info</button>
-                    <button class="btn btn-rounded  btn-outline-warning">Warning</button>
-                    <button class="btn btn-rounded  btn-outline-danger">Danger</button>
-                    <button class="btn btn-rounded  btn-outline-success">Success</button>
-                    <button class="btn btn-rounded  btn-outline-dark">Dark</button>
-                    <button class="btn btn-rounded  btn-outline-light">Light</button>
+
 
                 </div>
                 <div id="collapses"
@@ -582,10 +605,10 @@
                 </div>
             </div>
             <footer class="G_Footer Start">
-                    Copyright &#169;
-                    <a href="/" title="K K UPGRADER" class="title">K K UPGRADER</a> - All Right
-                    Reserved
-            
+                Copyright &#169;
+                <a href="/" title="K K UPGRADER" class="title">K K UPGRADER</a> - All Right
+                Reserved
+
             </footer>
         </div>
     </div>

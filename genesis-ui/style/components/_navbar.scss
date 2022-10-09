@@ -1,6 +1,5 @@
 @use "../variables";
 $sidenavBreakPoint :variables.$sidenavBreakPoint;
-// $sidenavWidth :variables.$sidenavWidth;
 
 .G_Body {
     display: flex;
@@ -20,12 +19,12 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
         transition: all .8s ease-in-out;
         padding: 0;
         padding-left: variables.$sidenavWidth;
-        
+
         @media screen and (max-width: $sidenavBreakPoint) {
             padding-left: 0;
 
         }
-        
+
     }
 
     .G_sidenav {
@@ -45,10 +44,11 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
     .G_Footer {
         position: fixed !important;
         bottom: 0;
+
         @media screen and (max-width: $sidenavBreakPoint) {
-            position: relative!important;
-        } 
-        
+            position: relative !important;
+        }
+
     }
 
     & .navToggle {
@@ -70,6 +70,7 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
     width: variables.$sidenavWidth;
     position: fixed;
     top: 0;
+    font-family: variables.$fontSidenav;
 
     @media screen and (max-width: $sidenavBreakPoint) {
 
@@ -169,7 +170,9 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
         .collapseToggle {
             border-top-right-radius: 0.5rem;
             border-bottom-right-radius: 0.5rem;
-            font-size: 1rem;
+            font-size: .89rem;
+            padding: 1rem 1.5rem;
+            height: 3rem;
             font-weight: 500;
             letter-spacing: 1px;
             text-align: left;
@@ -179,7 +182,7 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
             align-items: center;
             justify-content: space-between;
             transition: all 250ms ease;
-            color: variables.$primary;
+            color: variables.$dark;
             opacity: 0.75;
             width: 100%;
             outline: 0;
@@ -189,8 +192,9 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
             white-space: nowrap;
 
             &:hover {
-                background: variables.$primaryBg;
                 color: variables.$primary;
+                background: variables.$darkBg;
+
                 opacity: 1;
 
             }
@@ -247,7 +251,6 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
                 border-left: 2px solid variables.$borderColor;
                 transition: height .5s ease;
                 padding-top: 0.1rem;
-                font-size: 12px;
                 font-weight: 400;
                 letter-spacing: normal;
 
@@ -266,6 +269,8 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
                         width: calc(100% - 0.5rem);
                         border-top-right-radius: 0.75rem;
                         border-bottom-right-radius: 0.75rem;
+                        font-size: .8rem;
+                        height: 2rem;
                     }
                 }
             }
@@ -343,10 +348,9 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
 .G_Navbar {
     box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
     padding-top: 0.5625rem;
-    width: 100%;
     position: fixed;
     top: 0;
-
+    font-family: variables.$fontNavbar;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -360,6 +364,13 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
     border: 1px solid #c1b3b30f;
     z-index: 999;
 
+    width: -webkit-fill-available !important;
+    max-width: 100%;
+
+    @media screen and (min-width: $sidenavBreakPoint) {
+        width: calc(100% - variables.$sidenavWidth);
+    }
+
     .Start {
         @include variables.left;
         @include variables.flex;
@@ -369,6 +380,8 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
     .End {
         @include variables.right;
         @include variables.flex;
+        justify-content: flex-end;
+        column-gap: 0.5rem;
     }
 
     .Center {
@@ -382,9 +395,22 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
         color: variables.$link;
         letter-spacing: 1px;
         transition: all 500ms ease-in-out;
-        // @include variables.noAction;
+        font-family: variables.$fontLogo;
 
         &:is(:hover, :focus, :active) {
+            color: variables.$link;
+            text-shadow: 1px 1px 2px #009aff4a;
+        }
+    }
+
+    .NavLink {
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: normal;
+        color: variables.$dark;
+        transition: all 250ms ease;
+
+        &:is(:hover, :focus, :active, .active, .isActive) {
             color: variables.$link;
             text-shadow: 1px 1px 2px #009aff4a;
         }

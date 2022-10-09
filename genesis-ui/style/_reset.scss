@@ -165,7 +165,8 @@ h4,
 h5,
 h6 {
     font-weight: 700;
-    color: #fbfbfb;
+    color: variables.$bodyText;
+margin-bottom: 0.75rem;
 }
 
 h1 {

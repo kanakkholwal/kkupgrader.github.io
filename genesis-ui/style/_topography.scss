@@ -19,10 +19,22 @@
 }
 
 
+// Text Alignment
+.text-center {
+    text-align: center;   
+}
+.text-start{
+    text-align: left;
+}
+.text-end{
+    text-align: right;
+}
+.text-justify{
+    text-align:justify;
+}
 
 
-
-
+// Badge
 .badge {
     border-radius: 0.27rem;
     display: inline-block;
