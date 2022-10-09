@@ -17,6 +17,10 @@ $stickyHeight:3.125rem;
             top: $stickyHeight;
         }
     }
+    @media screen and (max-width: variables.$sm){
+        padding: 0;
+        
+    }
 }
 
 .G_ContentSection {

@@ -4895,7 +4895,6 @@ html ::-webkit-scrollbar-track {
   color: rgba(226, 231, 255, 0.7098039216) !important;
   font-weight: 500;
   letter-spacing: 1px;
-  line-height: 1rem;
   margin-bottom: 2.5rem;
 }
 
@@ -5080,6 +5079,11 @@ html ::-webkit-scrollbar-track {
 .G_MainContent.Sticky .G_SectionTitle {
   position: sticky;
   top: 3.125rem;
+}
+@media screen and (max-width: 576px) {
+  .G_MainContent {
+    padding: 0;
+  }
 }
 
 .G_ContentSection {
