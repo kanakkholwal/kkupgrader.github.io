@@ -1,5 +1,6 @@
 const RippleClass = ".ripple,.btn";
 const RippleInterval = 600;
+const CollapseAttribute = "data-collapse-toggle";
 const SidenavAttribute = "data-sidenav-toggle";
 const SidenavClass = "G_Sidenav";
 const openClass = "isOpen";
@@ -13,24 +14,36 @@ const SidenavCollapse = {
 function GCollapse(collapse) {
     if (!collapse.classList.contains(openClass)) {
         /** Show the collapse. */
+        console.log("Opening the Collapse");
+
         collapse.classList.add(openClass);
+        console.log(openClass + " class is added to collapse");
         collapse.style.height = "auto";
-
+        console.log(" height set to auto");
+        
         var height = collapse.clientHeight + "px";
-
-
+        
+        console.log(" height variable set to " + height);
+        
         collapse.style.height = "0px";
-
-
+        console.log(" height  set to 0");
+        
+        
         setTimeout(() => {
             collapse.style.height = height;
+            console.log(" height variable set to " + height);
         }, 0);
 
     } else {
+        console.log("Closing the Collapse");
+
         collapse.style.height = "0px";
+        console.log(" height variable set to 0px");
 
         collapse.addEventListener('transitionend', () => {
             collapse.classList.remove(openClass);
+            console.log(openClass + " class is removed");
+
         }, {
             once: true
         });
@@ -57,6 +70,14 @@ document.querySelectorAll(RippleClass).forEach((el) => {
             RippleElement.remove();
         }, RippleInterval);
     });
+});
+
+document.querySelectorAll(`[${CollapseAttribute}]`).forEach((toggler) => {
+    toggler.addEventListener("click", () => {
+        console.log(document.querySelector(toggler.getAttribute(CollapseAttribute)));
+        GCollapse(document.querySelector(toggler.getAttribute(CollapseAttribute)))
+    });
+    // toggler.addEventListener("click", () => GCollapse(document.querySelector(toggler.getAttribute(CollapseAttribute))));
 });
 
 document.querySelectorAll(`[${SidenavAttribute}]`).forEach((toggler) => {
