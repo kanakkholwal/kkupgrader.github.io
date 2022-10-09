@@ -5072,6 +5072,14 @@ html ::-webkit-scrollbar-track {
   width: 100%;
   padding: 1rem;
 }
+.G_MainContent.Sticky {
+  position: sticky;
+  top: 3.125rem;
+}
+.G_MainContent.Sticky .G_SectionTitle {
+  position: sticky;
+  top: 3.125rem;
+}
 
 .G_ContentSection {
   width: 100%;
@@ -5089,6 +5097,10 @@ html ::-webkit-scrollbar-track {
   width: 100%;
   border-bottom: 1px solid #374151;
   margin-bottom: 0.75rem;
+  background-color: #23272f;
+  vertical-align: middle;
+  z-index: 2;
+  padding-left: 0.25rem;
 }
 .G_SectionTitle .InfoBtn {
   display: inline-flex;
@@ -5135,6 +5147,7 @@ html ::-webkit-scrollbar-track {
 .G_SectionContent {
   padding: 0.5rem;
   width: 100%;
+  z-index: 1;
 }
 
 .G_Footer {

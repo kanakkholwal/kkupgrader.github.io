@@ -1,9 +1,21 @@
 @use "../variables";
 @use "../buttons";
 
+$stickyHeight:3.125rem;
+
 .G_MainContent {
     width: 100%;
     padding: 1rem;
+
+    &.Sticky {
+        position: sticky;
+        top: $stickyHeight;
+
+        .G_SectionTitle {
+            position: sticky;
+            top: $stickyHeight ;
+        }
+    }
 }
 
 .G_ContentSection {
@@ -21,7 +33,11 @@
     padding: 0.5rem;
     width: 100%;
     border-bottom: 1px solid variables.$borderColor;
-margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    background-color: variables.$bodyBg;
+    vertical-align: middle;
+    z-index: 2;
+padding-left: 0.25rem;
     .InfoBtn {
         @include buttons.btn;
         color: variables.$info;
@@ -39,7 +55,9 @@ margin-bottom: 0.75rem;
         }
     }
 }
-.G_SectionContent{
-    padding: 0.5rem ;
+
+.G_SectionContent {
+    padding: 0.5rem;
     width: 100%;
+    z-index: 1;
 }
