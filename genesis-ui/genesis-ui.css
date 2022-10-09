@@ -5071,6 +5071,7 @@ html ::-webkit-scrollbar-track {
 .G_MainContent {
   width: 100%;
   padding: 1rem;
+  margin-bottom: 3.125rem;
 }
 .G_MainContent.Sticky {
   position: sticky;

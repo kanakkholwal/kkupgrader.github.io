@@ -6,6 +6,7 @@ $stickyHeight:3.125rem;
 .G_MainContent {
     width: 100%;
     padding: 1rem;
+    margin-bottom: $stickyHeight;
 
     &.Sticky {
         position: sticky;
@@ -13,7 +14,7 @@ $stickyHeight:3.125rem;
 
         .G_SectionTitle {
             position: sticky;
-            top: $stickyHeight ;
+            top: $stickyHeight;
         }
     }
 }
@@ -37,7 +38,8 @@ $stickyHeight:3.125rem;
     background-color: variables.$bodyBg;
     vertical-align: middle;
     z-index: 2;
-padding-left: 0.25rem;
+    padding-left: 0.25rem;
+
     .InfoBtn {
         @include buttons.btn;
         color: variables.$info;
