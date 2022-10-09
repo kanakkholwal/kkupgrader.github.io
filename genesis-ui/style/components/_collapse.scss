@@ -1,13 +1,19 @@
 @use "../variables";
 
-.G_Collapse {
+
+@mixin Collapse {
     overflow-x: hidden;
     @include variables.overFlowY;
     transition: height .5s ease;
-    width: 100%;
 
     &:not(.isOpen) {
         display: none;
         padding: 0 !important;
-    }
+    } 
+}
+.G_Collapse {
+    @include Collapse;
+    width: 100%;
+
+ 
 }

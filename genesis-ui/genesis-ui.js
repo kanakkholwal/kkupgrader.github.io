@@ -11,6 +11,18 @@ const SidenavCollapse = {
     Toggle: ".collapseToggle",
     List: ".collapseList"
 };
+const AccordionSettings = {
+    className: ".G_Accordion",
+    item: ".G_Accordion_Item",
+    header: ".G_Accordion_Header",
+    body: ".G_Accordion_Body"
+};
+
+// PreBuilt Functions
+const getSiblings = (TargetNode) =>
+    [...TargetNode.parentNode.children].filter(
+        (siblings) => siblings !== TargetNode
+    );
 function GCollapse(collapse) {
     if (!collapse.classList.contains(openClass)) {
         /** Show the collapse. */
@@ -20,15 +32,15 @@ function GCollapse(collapse) {
         console.log(openClass + " class is added to collapse");
         collapse.style.height = "auto";
         console.log(" height set to auto");
-        
+
         var height = collapse.clientHeight + "px";
-        
+
         console.log(" height variable set to " + height);
-        
+
         collapse.style.height = "0px";
         console.log(" height  set to 0");
-        
-        
+
+
         setTimeout(() => {
             collapse.style.height = height;
             console.log(" height variable set to " + height);
@@ -42,6 +54,8 @@ function GCollapse(collapse) {
 
         collapse.addEventListener('transitionend', () => {
             collapse.classList.remove(openClass);
+            collapse.removeAttribute("style");
+
             console.log(openClass + " class is removed");
 
         }, {
@@ -50,6 +64,7 @@ function GCollapse(collapse) {
     }
 
 }
+
 document.querySelectorAll(RippleClass).forEach((el) => {
     if (!el.classList.contains("ripple")) el.classList.add("ripple");
     el.addEventListener("click", (e) => {
@@ -74,10 +89,8 @@ document.querySelectorAll(RippleClass).forEach((el) => {
 
 document.querySelectorAll(`[${CollapseAttribute}]`).forEach((toggler) => {
     toggler.addEventListener("click", () => {
-        console.log(document.querySelector(toggler.getAttribute(CollapseAttribute)));
         GCollapse(document.querySelector(toggler.getAttribute(CollapseAttribute)))
     });
-    // toggler.addEventListener("click", () => GCollapse(document.querySelector(toggler.getAttribute(CollapseAttribute))));
 });
 
 document.querySelectorAll(`[${SidenavAttribute}]`).forEach((toggler) => {
@@ -102,7 +115,37 @@ document.querySelectorAll(SidenavCollapse.Element).forEach((Collapse) => {
 
     });
 });
+document.querySelectorAll(AccordionSettings.className).forEach((Accordion) => {
+    Accordion.querySelectorAll(AccordionSettings.item).forEach((item) => {
+        item.querySelector(AccordionSettings.header).addEventListener("click", () => {
+            if (Accordion.hasAttribute("accordion-multiple") && Accordion.getAttribute("accordion-multiple").length === "true") {
+                item.classList.toggle(openClass);
+                item.querySelector(AccordionSettings.header).classList.toggle(activeClass);
+                GCollapse(item.querySelector(AccordionSettings.body));
+            }
+            else {
+                item.classList.toggle(openClass);
+                item.querySelector(AccordionSettings.header).classList.toggle(activeClass);
+                GCollapse(item.querySelector(AccordionSettings.body));
+                getSiblings(item).filter(sibling => sibling.classList.contains(openClass)).forEach((sibling) => {
+                    sibling.classList.remove(openClass);
+                    sibling.querySelector(AccordionSettings.header).classList.remove(activeClass);
+                    sibling.querySelector(AccordionSettings.body).style.height = "0px";
+                    sibling.querySelector(AccordionSettings.body).addEventListener('transitionend', () => {
+                        sibling.querySelector(AccordionSettings.body).classList.remove(openClass);
+                        sibling.querySelector(AccordionSettings.body).removeAttribute("style");
+                    }, {
+                        once: true
+                    });
+                });
 
 
+            }
+
+
+        });
+    });
+
+});
 
 

@@ -5204,6 +5204,112 @@ html ::-webkit-scrollbar-track {
   padding: 0 !important;
 }
 
+.G_Collapse {
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: height 0.5s ease;
+  width: 100%;
+}
+
+.G_Collapse::-webkit-scrollbar-track {
+  background-color: none;
+  background-clip: content-box;
+}
+
+.G_Collapse::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.G_Collapse:hover::-webkit-scrollbar-thumb {
+  background-color: #969faf;
+}
+
+.G_Collapse:not(.isOpen) {
+  display: none;
+  padding: 0 !important;
+}
+
+.G_Accordion .G_Accordion_Item {
+  border: 2px solid rgba(107, 117, 219, 0.2);
+  color: #a4acff;
+}
+.G_Accordion .G_Accordion_Item:not(:last-child, :first-child) {
+  border-top: 0;
+}
+.G_Accordion .G_Accordion_Item:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.G_Accordion .G_Accordion_Item:last-child {
+  border-top: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.G_Accordion .G_Accordion_Item.isOpen {
+  background-color: rgba(17, 24, 39, 0.2);
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.15rem 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+  cursor: pointer;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Header::before, .G_Accordion .G_Accordion_Item .G_Accordion_Header::after {
+  position: absolute;
+  content: "";
+  border-right: 2px solid;
+  display: block;
+  height: 1rem;
+  transform-origin: center center;
+  margin-top: -8px;
+  right: 1.5rem;
+  top: 50%;
+  width: 0;
+  transition: all 0.5s ease-in-out;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Header::after {
+  transform: rotate(90deg);
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Header::before {
+  transform: translateX(-50%);
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Header.isActive::before {
+  transform: translateX(-50%) rotate(90deg);
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: height 0.5s ease;
+  width: calc(100% - 10px);
+  margin-inline: auto;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Body::-webkit-scrollbar-track {
+  background-color: none;
+  background-clip: content-box;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Body:hover::-webkit-scrollbar-thumb {
+  background-color: #969faf;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Body:not(.isOpen) {
+  display: none;
+  padding: 0 !important;
+}
+.G_Accordion .G_Accordion_Item .G_Accordion_Body.isOpen {
+  border-top: 1px solid rgba(107, 117, 219, 0.2);
+}
+
 body {
   background-color: #23272f;
   font-weight: 400;
