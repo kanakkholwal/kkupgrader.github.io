@@ -17,6 +17,11 @@ const AccordionSettings = {
     header: ".G_Accordion_Header",
     body: ".G_Accordion_Body"
 };
+const ModalSettings = {
+    className: ".G_Modal",
+    toggle: "data-modal-toggle",
+    close: "data-modal-close",
+};
 
 // PreBuilt Functions
 const getSiblings = (TargetNode) =>
@@ -94,6 +99,8 @@ document.querySelectorAll(SidenavCollapse.Element).forEach((Collapse) => {
 
     });
 });
+
+
 document.querySelectorAll(AccordionSettings.className).forEach((Accordion) => {
     Accordion.querySelectorAll(AccordionSettings.item).forEach((item) => {
         item.querySelector(AccordionSettings.header).addEventListener("click", () => {
@@ -117,14 +124,36 @@ document.querySelectorAll(AccordionSettings.className).forEach((Accordion) => {
                         once: true
                     });
                 });
-
-
             }
-
-
         });
     });
 
 });
 
+
+
+document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => {
+    let modalId = ModalToggle.getAttribute(ModalSettings.toggle);
+    let modal = document.querySelector(modalId);
+    let modalBackDrop = modal.parentElement;
+    let modalClose = modal.querySelectorAll(`[${ModalSettings.close}]`);
+
+    ModalToggle.addEventListener("click", () => {
+        modalBackDrop.classList.toggle(openClass);
+        modal.classList.toggle(openClass);
+    });
+    modalClose.forEach((close) => {
+        close.addEventListener("click", () => {
+            modalBackDrop.classList.remove(openClass);
+            modal.classList.remove(openClass);
+        });
+    });
+
+    modalBackDrop.addEventListener("mouseup", function (e) {
+        if (!modal.contains(e.target)) {
+            modalBackDrop.classList.remove(openClass);
+            modal.classList.remove(openClass);
+        }
+    });
+});
 

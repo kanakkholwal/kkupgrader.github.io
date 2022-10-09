@@ -109,11 +109,15 @@
     &.btn-success {
         background: variables.$successBg;
         color: variables.$success;
+        // If want to add colored shadow
+        // box-shadow: 4px 4px 12px 4px variables.$successBg, -4px -4px 12px 4px  variables.$successBg;
+
     }
 
     &.btn-outline-success {
         border-color: variables.$successBg;
         color: variables.$success;
+
     }
 
     &.btn-danger {

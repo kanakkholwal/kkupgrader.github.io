@@ -169,6 +169,22 @@ hr.hr2 {
   height: 2px;
 }
 
+.G_Backdrop {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  display: none;
+}
+.G_Backdrop.isOpen {
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
   scrollbar-color: hsla(0deg, 0%, 100%, 0.2) transparent;
@@ -5319,6 +5335,77 @@ html ::-webkit-scrollbar-track {
 }
 .G_Accordion .G_Accordion_Item .G_Accordion_Body.isOpen {
   border-top: 1px solid rgba(107, 117, 219, 0.2);
+}
+
+.G_ModalBackdrop {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  display: none;
+}
+.G_ModalBackdrop.isOpen {
+  display: block;
+}
+.G_ModalBackdrop .G_Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001 !important;
+  background-color: #1f242e;
+  color: #f6f7f9;
+  border-radius: calc(0.5rem - 1px);
+  overflow: hidden;
+  min-width: calc(576px - 4rem);
+}
+.G_ModalBackdrop .G_Modal.isOpen {
+  position: fixed;
+}
+.G_ModalBackdrop .G_Modal .G_Modal_Header {
+  width: calc(100% - 10px);
+  padding: 0.75rem;
+  margin-inline: auto;
+  border-bottom: 1px solid #374151;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+  column-gap: 0.5rem;
+}
+.G_ModalBackdrop .G_Modal .G_Modal_Header .G_Modal_Title {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.G_ModalBackdrop .G_Modal .G_Modal_Header .ModalClose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 50% !important;
+  width: 2.3125rem;
+  height: 2.3125rem;
+  cursor: pointer;
+}
+.G_ModalBackdrop .G_Modal .G_Modal_Body {
+  width: calc(100% - 10px);
+  padding: 1.75rem 0.75rem;
+}
+.G_ModalBackdrop .G_Modal .G_Modal_Footer {
+  width: calc(100% - 10px);
+  padding: 0.75rem;
+  margin-inline: auto;
+  border-top: 1px solid #374151;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  vertical-align: middle;
+  column-gap: 0.5rem;
 }
 
 body {
