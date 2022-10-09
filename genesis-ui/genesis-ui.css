@@ -5240,6 +5240,9 @@ html ::-webkit-scrollbar-track {
   padding: 0 !important;
 }
 
+.G_Accordion {
+  margin-block: 1rem;
+}
 .G_Accordion .G_Accordion_Item {
   border: 2px solid rgba(107, 117, 219, 0.2);
   color: #a4acff;

@@ -2,7 +2,7 @@
 @use "./collapse";
 
 .G_Accordion {
-
+margin-block: 1rem;
     .G_Accordion_Item {
         border: 2px solid variables.$secondaryBg;
         color: variables.$secondary;

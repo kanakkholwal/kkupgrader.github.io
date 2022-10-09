@@ -26,43 +26,23 @@ const getSiblings = (TargetNode) =>
 function GCollapse(collapse) {
     if (!collapse.classList.contains(openClass)) {
         /** Show the collapse. */
-        console.log("Opening the Collapse");
-
         collapse.classList.add(openClass);
-        console.log(openClass + " class is added to collapse");
         collapse.style.height = "auto";
-        console.log(" height set to auto");
-
         var height = collapse.clientHeight + "px";
-
-        console.log(" height variable set to " + height);
-
         collapse.style.height = "0px";
-        console.log(" height  set to 0");
-
-
         setTimeout(() => {
             collapse.style.height = height;
-            console.log(" height variable set to " + height);
         }, 0);
 
     } else {
-        console.log("Closing the Collapse");
-
         collapse.style.height = "0px";
-        console.log(" height variable set to 0px");
-
         collapse.addEventListener('transitionend', () => {
             collapse.classList.remove(openClass);
             collapse.removeAttribute("style");
-
-            console.log(openClass + " class is removed");
-
         }, {
             once: true
         });
     }
-
 }
 
 document.querySelectorAll(RippleClass).forEach((el) => {
@@ -111,14 +91,13 @@ document.querySelectorAll(SidenavCollapse.Element).forEach((Collapse) => {
 
         Collapse.querySelector(SidenavCollapse.Toggle).classList.toggle(activeClass);
         GCollapse(Collapse.querySelector(SidenavCollapse.List))
-        // Collapse.querySelector(SidenavCollapse.List).classList.toggle(openClass);
 
     });
 });
 document.querySelectorAll(AccordionSettings.className).forEach((Accordion) => {
     Accordion.querySelectorAll(AccordionSettings.item).forEach((item) => {
         item.querySelector(AccordionSettings.header).addEventListener("click", () => {
-            if (Accordion.hasAttribute("accordion-multiple") && Accordion.getAttribute("accordion-multiple").length === "true") {
+            if (Accordion.hasAttribute("accordion-multiple") && Accordion.getAttribute("accordion-multiple") === "true") {
                 item.classList.toggle(openClass);
                 item.querySelector(AccordionSettings.header).classList.toggle(activeClass);
                 GCollapse(item.querySelector(AccordionSettings.body));
