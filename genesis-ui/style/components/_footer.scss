@@ -14,24 +14,32 @@
     border-top: 1px solid variables.$borderColor;
     box-shadow: -1px 20px 20px 5px rgb(0 0 0 / 20%), -12px 20px 20px 20px rgb(0 0 0 / 10%);
     z-index: 2;
-    .title{
+
+    .title {
         font-weight: 600;
         letter-spacing: 2px;
         margin-inline: 0.5rem;
     }
-    &.Center{
+
+    &.Center {
         justify-content: center;
         text-align: center;
-    } 
-    &.Start{
+    }
+
+    &.Start {
         justify-content: flex-start;
         text-align: left;
-    } 
-    &.End{
+    }
+
+    &.End {
         justify-content: flex-end;
         text-align: right;
-    } 
+    }
 
-    
+    @media screen and (max-width: variables.$sm) {
+        padding: 0.5rem;
+        font-size: 14px;
+
+    }
 
 }

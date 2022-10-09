@@ -29,6 +29,10 @@ $stickyHeight:3.125rem;
     padding: 0.5rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
+    @media screen and (max-width: variables.$sm) {
+        margin-left: 0;
+
+    }
 }
 
 .G_SectionTitle {

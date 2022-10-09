@@ -4493,11 +4493,6 @@ html ::-webkit-scrollbar-track {
   position: fixed !important;
   bottom: 0;
 }
-@media screen and (max-width: 1024px) {
-  .G_Body .G_Footer {
-    position: relative !important;
-  }
-}
 .G_Body .navToggle {
   outline: none;
   display: block;
@@ -5093,6 +5088,11 @@ html ::-webkit-scrollbar-track {
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 576px) {
+  .G_ContentSection {
+    margin-left: 0;
+  }
+}
 
 .G_SectionTitle {
   display: flex;
@@ -5186,6 +5186,12 @@ html ::-webkit-scrollbar-track {
 .G_Footer.End {
   justify-content: flex-end;
   text-align: right;
+}
+@media screen and (max-width: 576px) {
+  .G_Footer {
+    padding: 0.5rem;
+    font-size: 14px;
+  }
 }
 
 .G_Collapse {

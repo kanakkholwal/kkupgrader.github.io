@@ -45,9 +45,7 @@ $sidenavBreakPoint :variables.$sidenavBreakPoint;
         position: fixed !important;
         bottom: 0;
 
-        @media screen and (max-width: $sidenavBreakPoint) {
-            position: relative !important;
-        }
+       
 
     }
 
