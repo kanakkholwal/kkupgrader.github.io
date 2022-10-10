@@ -1,5 +1,5 @@
-const RippleClass = ".ripple,.btn";
-const RippleInterval = 600;
+const RippleClass = ".ripple,.btn,.G_Accordion_Header";
+const RippleInterval = 700; // in ms
 const CollapseAttribute = "data-collapse-toggle";
 const SidenavAttribute = "data-sidenav-toggle";
 const SidenavClass = "G_Sidenav";
@@ -21,6 +21,15 @@ const ModalSettings = {
     className: ".G_Modal",
     toggle: "data-modal-toggle",
     close: "data-modal-close",
+};
+const ToastSettings = {
+    container: ".G_Toast_Container",
+    selector: 'data-toast-toggle',
+    interval: 'data-toast-interval',
+    DefaultTime: 3000,
+    type: 'data-toast-type',
+    position: 'data-toast-position',
+    html: 'data-toast-content',
 };
 
 // PreBuilt Functions
@@ -140,20 +149,75 @@ document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => 
 
     ModalToggle.addEventListener("click", () => {
         modalBackDrop.classList.toggle(openClass);
-        modal.classList.toggle(openClass);
+        setTimeout(() => {
+            
+            modal.classList.toggle(openClass);
+        }, 100);
     });
     modalClose.forEach((close) => {
         close.addEventListener("click", () => {
-            modalBackDrop.classList.remove(openClass);
             modal.classList.remove(openClass);
+            setTimeout(() => {
+            
+                modalBackDrop.classList.remove(openClass);
+            }, 800);
         });
     });
 
     modalBackDrop.addEventListener("mouseup", function (e) {
         if (!modal.contains(e.target)) {
-            modalBackDrop.classList.remove(openClass);
             modal.classList.remove(openClass);
+            setTimeout(() => {
+            
+                modalBackDrop.classList.remove(openClass);
+            }, 800);
         }
     });
 });
+
+document.querySelectorAll(`[${ToastSettings.selector}]`).forEach((ToastToggle) => {
+
+    ToastToggle.addEventListener("click", () => {
+        if (ToastToggle.getAttribute(ToastSettings.position) === null)
+            ToastToggle.setAttribute(ToastSettings.position, "topRight");
+
+        const TargetContainerSelector = `.${ToastSettings.container.slice(1)}.${ToastToggle.getAttribute(ToastSettings.position)}`;
+        if (!document.querySelector(TargetContainerSelector)) {
+            const container = document.createElement("div");
+            container.className = TargetContainerSelector.split(".").join(" ");
+            document.body.appendChild(container);
+        }
+        const ToastContainer = document.querySelector(TargetContainerSelector);
+
+        const Toast = document.createElement("div");
+        Toast.classList.add("G_Toast");
+        Toast.innerHTML = ToastToggle.getAttribute(ToastSettings.html);
+        ToastContainer.appendChild(Toast);
+        setTimeout(() => {
+            Toast.classList.add(activeClass);
+        }, 50);
+        if (ToastToggle.getAttribute(ToastSettings.interval)) {
+            setTimeout(() => {
+                Toast.classList.remove(activeClass);
+                setTimeout(() => {
+                    Toast.remove();
+                    if (ToastContainer.innerHTML.length === 0)
+                        ToastContainer.remove();
+                }, 1000);
+            }, ToastToggle.getAttribute(ToastSettings.interval) + 50);
+        }
+        else {
+            setTimeout(() => {
+                Toast.classList.remove(activeClass);
+                setTimeout(() => {
+                    Toast.remove();
+                    if (ToastContainer.innerHTML.length === 0)
+                        ToastContainer.remove();
+
+                }, 1000);
+            }, ToastSettings.DefaultTime + 50);
+        }
+    });
+});
+
 
