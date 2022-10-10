@@ -28,7 +28,7 @@
         overflow: hidden;
 
         @media screen and (max-width: variables.$sm) {
-            min-width: calc(100% - 4rem);
+            min-width: calc(100% - 2rem);
             margin-inline: auto;
         }
         @media screen and (min-width: variables.$sm) {
