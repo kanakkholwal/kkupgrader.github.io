@@ -26,7 +26,15 @@
         color: variables.$bodyText;
         border-radius: calc(0.5rem - 1px);
         overflow: hidden;
-        min-width: calc(variables.$sm - 4rem);
+
+        @media screen and (max-width: variables.$sm) {
+            min-width: calc(100% - 4rem);
+            margin-inline: auto;
+        }
+        @media screen and (min-width: variables.$sm) {
+            min-width: calc(variables.$sm - 4rem);
+            margin-inline: auto;
+        }
 
         &.isOpen {
             position: fixed;

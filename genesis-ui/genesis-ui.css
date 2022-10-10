@@ -5362,7 +5362,18 @@ html ::-webkit-scrollbar-track {
   color: #f6f7f9;
   border-radius: calc(0.5rem - 1px);
   overflow: hidden;
-  min-width: calc(576px - 4rem);
+}
+@media screen and (max-width: 576px) {
+  .G_ModalBackdrop .G_Modal {
+    min-width: calc(100% - 4rem);
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 576px) {
+  .G_ModalBackdrop .G_Modal {
+    min-width: calc(576px - 4rem);
+    margin-inline: auto;
+  }
 }
 .G_ModalBackdrop .G_Modal.isOpen {
   position: fixed;
