@@ -206,7 +206,7 @@ html ::-webkit-scrollbar {
   transition: all 1s ease-in-out !important;
 }
 html ::-webkit-scrollbar-track {
-  background-color: none;
+  background: none;
   background-clip: content-box;
 }
 html ::-webkit-scrollbar-thumb {
@@ -5714,6 +5714,176 @@ html ::-webkit-scrollbar-track {
     visibility: visible;
   }
 }
+.G_Card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #23272f;
+  background-clip: border-box;
+  border-radius: 0.5rem;
+  box-shadow: 0 15px 35px rgba(55, 65, 81, 0.1), 0 5px 15px rgba(55, 65, 81, 0.1);
+}
+.G_Card .G_Card-body {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+}
+.G_Card .G_Card-header {
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 0;
+  background-color: inherit;
+  border-bottom: 1px solid #374151;
+}
+.G_Card .G_Card-header:first-child {
+  border-radius: calc(0.5rem - 1px) calc(0.5rem - 1px) 0 0;
+}
+.G_Card .G_Card-footer {
+  padding: 0.75rem 1.5rem;
+  background-color: inherit;
+  border-top: 1px solid #374151;
+}
+.G_Card .G_Card-footer:last-child {
+  border-radius: 0 0 calc(0.5rem - 1px) calc(0.5rem - 1px);
+}
+.G_Card .G_Card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.G_Card .G_Card-subtitle {
+  margin-top: -0.25rem;
+  font-size: 1rem;
+  color: #ebecf0 !important;
+  margin-bottom: 0.5rem;
+}
+.G_Card .G_Card-text {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.G_Card .G_Card-link {
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #85ceff;
+  text-decoration: none;
+  text-transform: capitalize;
+  opacity: 0.9;
+}
+.G_Card .G_Card-link:has(+ .G_Card-link) {
+  margin-right: 1rem;
+}
+.G_Card .G_Card-link:hover {
+  opacity: 1;
+}
+
+.G_Sliced-menu {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  width: 500px;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: #23272f;
+}
+.G_Sliced-menu .G_Sliced-Outer-menuList {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background-color: inherit;
+  height: 100%;
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+}
+.G_Sliced-menu .G_Sliced-Outer-menuList .G_Sliced-menuItem {
+  height: 3rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 0.75rem;
+  padding-left: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 250ms ease;
+  opacity: 0.75;
+  width: 100%;
+  outline: 0;
+  background: inherit;
+  border: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(107, 117, 219, 0.2);
+  color: #a4acff;
+  border-left: 0;
+  border-right: 0;
+}
+.G_Sliced-menu .G_Sliced-Outer-menuList .G_Sliced-menuItem:last-child {
+  border-bottom: 0;
+}
+.G_Sliced-menu .G_Sliced-Inner-menuList {
+  position: relative;
+  z-index: 1;
+  transform: translateX(100%);
+  height: 100%;
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+}
+.G_Sliced-menu .G_Sliced-Inner-menuList .G_Sliced-menuItem {
+  height: 3rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 0.75rem;
+  padding-left: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 250ms ease;
+  opacity: 0.75;
+  width: 100%;
+  outline: 0;
+  background: inherit;
+  border: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(107, 117, 219, 0.2);
+  color: #a4acff;
+  border-left: 0;
+  border-right: 0;
+}
+.G_Sliced-menu .G_Sliced-Inner-menuList .G_Sliced-menuItem:last-child {
+  border-bottom: 0;
+}
+.G_Sliced-menu .G_Sliced-Inner-menuList > .G_Sliced-Inner-menu {
+  display: none;
+}
+.G_Sliced-menu .G_Sliced-Inner-menuList > .G_Sliced-Inner-menu.isActive {
+  display: block;
+}
+.G_Sliced-menu .G_Sliced-Inner-menuList > .G_Sliced-Inner-menu .G_Sliced-menuItem:first-child {
+  justify-content: flex-start;
+  column-gap: 0.75rem;
+}
+.G_Sliced-menu.isOpen .G_Sliced-Outer-menuList {
+  transform: translateX(-100%);
+}
+.G_Sliced-menu.isOpen .G_Sliced-Inner-menuList {
+  transform: translateX(0);
+}
+
 body {
   background-color: #23272f;
   font-weight: 400;

@@ -31,11 +31,23 @@ const ToastSettings = {
     position: 'data-toast-position',
     html: 'data-toast-content',
 };
+
 const TabsSettings = {
     tabBar: "data-g-tab-target",
     toggle: 'data-g-tab',
 };
-
+const ToolTipSettings = {
+    selector: 'data-tooltip-toggle',
+    position: 'data-tooltip-position',
+    html: 'data-tooltip-content',
+};
+const SlicedMenuSetting = {
+    container: '.G_Sliced-menu',
+    outer: '.G_Sliced-Outer-menuList',
+    inner: '.G_Sliced-Inner-menuList',
+    item: '.G_Sliced-menuItem',
+    selector: 'data-G-Sliced-toggle',
+};
 // PreBuilt Functions
 const getSiblings = (TargetNode) =>
     [...TargetNode.parentNode.children].filter(
@@ -224,8 +236,6 @@ document.querySelectorAll(`[${ToastSettings.selector}]`).forEach((ToastToggle) =
 });
 
 
-
-
 document.querySelectorAll(`[${TabsSettings.tabBar}]`).forEach((tabBar) => {
     tabBar.querySelectorAll(`[${TabsSettings.toggle}]`).forEach((toggle) => {
         toggle.addEventListener("click", () => {
@@ -246,3 +256,52 @@ document.querySelectorAll(`[${TabsSettings.tabBar}]`).forEach((tabBar) => {
     });
 
 });
+
+document.querySelectorAll(`[${ToolTipSettings.selector}]`).forEach((ToolTipToggle) => {
+
+    ToolTipToggle.addEventListener("click", () => {
+        if (ToolTipToggle.getAttribute(ToolTipSettings.position) === null)
+            ToolTipToggle.setAttribute(ToolTipSettings.position, "Top");
+
+
+    });
+});
+
+document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
+    const inner = SlicedMenu.querySelector(SlicedMenuSetting.inner);
+    const outer = SlicedMenu.querySelector(SlicedMenuSetting.outer);
+
+    Array.from(outer.querySelectorAll(SlicedMenuSetting.item))
+        .filter(toggle => toggle.hasAttribute(SlicedMenuSetting.selector) && toggle.getAttribute(SlicedMenuSetting.selector) !== null)
+        .forEach((toggle) => {
+            const target = inner.querySelector('#' + toggle.getAttribute(SlicedMenuSetting.selector));
+
+            toggle.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`)
+            toggle.addEventListener("click", () => {
+                SlicedMenu.classList.add(openClass);
+                target.classList.add(activeClass);
+                getSiblings(target).filter(sibling => sibling.classList.contains(activeClass)).forEach((sibling) => {
+                    sibling.classList.remove(activeClass);
+                });
+            });
+            const exitBtn = target.firstElementChild.cloneNode(true);
+            exitBtn.innerText = toggle.textContent;
+            exitBtn.classList.add("exitBtn");
+            exitBtn.insertAdjacentHTML("afterbegin", `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>`);
+            target.insertAdjacentElement("afterbegin", exitBtn);
+            exitBtn.addEventListener("click", () => {
+                SlicedMenu.classList.remove(openClass);
+            })
+            Array.from(target.parentElement.children).filter(sibling => !sibling.classList.contains(activeClass)).forEach((sibling) => {
+                sibling.classList.add(activeClass);
+            });
+        });
+
+    document.addEventListener('mouseup', function (e) {
+        if (!SlicedMenu.contains(e.target)) {
+            SlicedMenu.classList.remove(openClass);
+        }
+    });
+})
+
+
