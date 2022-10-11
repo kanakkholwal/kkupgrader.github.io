@@ -6,7 +6,7 @@
     --bodyBg:#23272f;
 }
 
-@import "./style/reset", "./style/buttons", "./style/flex", "./style/forms", "./style/layout","./style/position", "./style/toast", "./style/topography", "./style/ripple";
+@import "./style/reset", "./style/buttons", "./style/flex", "./style/forms", "./style/layout","./style/position",  "./style/topography", "./style/ripple";
 
 @import "./style/components/navbar";
 @import "./style/components/header";
@@ -15,6 +15,7 @@
 @import "./style/components/collapse";
 @import "./style/components/accordion";
 @import "./style/components/modal";
+@import "./style/components/toast";
 
 body {
     background-color: variables.$bodyBg;

@@ -35,7 +35,7 @@
 
 
 // Badge
-.badge {
+.Badge {
     border-radius: 0.27rem;
     display: inline-block;
     padding: 0.35em 0.65em;
@@ -47,34 +47,51 @@
     white-space: nowrap;
     vertical-align: baseline;
     text-transform: capitalize;
-    background: linear-gradient(to right, #3282B8, #0059B2);
-    box-shadow: variables.$shadow;
+    background: linear-gradient(to right, #a4acff5c, #88a2b4b3);
+    // box-shadow: variables.$shadow;
     animation-fill-mode: both;
-
+    
     animation-iteration-count: infinite;
-
-    &.bg-primary {
-        background: linear-gradient(to right, variables.$secondary, variables.$primary);
+    
+    &.Badge_primary {
+        // background: linear-gradient(to right, #3282B8, #0059B2);
+        background: variables.$primaryBg;
+        color: variables.$primary;
     }
 
-    &.bg-danger {
-        background: linear-gradient(to right, variables.$danger-hvr, variables.$danger);
+    &.Badge_danger {
+        // background: linear-gradient(to right, variables.$danger-hvr, variables.$danger);
+        background: variables.$dangerBg;
+        color: variables.$danger;
     }
 
-    &.bg-warning {
-        background: linear-gradient(to right, variables.$warning-hvr, variables.$warning);
+    &.Badge_warning {
+        // background: linear-gradient(to right, variables.$warning-hvr, variables.$warning);
+        background: variables.$warningBg;
+        color: variables.$warning;
     }
 
-    &.bg-success {
-        background: linear-gradient(to right, variables.$success-hvr, variables.$success);
+    &.Badge_success {
+        // background: linear-gradient(to right, variables.$success-hvr, variables.$success);
+        background: variables.$successBg;
+        color: variables.$success;
     }
 
-    &.bg-dark {
-        background: linear-gradient(to right, variables.$dark3, variables.$dark);
+    &.Badge_dark {
+        // background: linear-gradient(to right, variables.$dark3, variables.$dark);
+        background: variables.$darkBg;
+        color: variables.$dark;
     }
 
-    &.bg-info {
-        background: linear-gradient(to right, variables.$info-hvr, variables.$info);
+    &.Badge_info {
+        // background: linear-gradient(to right, variables.$info-hvr, variables.$info);
+        background: variables.$infoBg;
+        color: variables.$info;
+    }
+    &.Badge_light {
+        // background: linear-gradient(to right, variables.$info-hvr, variables.$info);
+        background: variables.$lightBg;
+        color: variables.$light;
     }
 
 
