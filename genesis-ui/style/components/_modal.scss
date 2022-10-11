@@ -11,7 +11,7 @@
     backdrop-filter: blur(2px);
     z-index: 999;
     display: none;
-    transition: all 1s variables.$transitionCubic;
+    transition: all 750ms ease-in-out;
 
     &.isOpen {
         display: block;
@@ -27,7 +27,7 @@
         color: variables.$bodyText;
         border-radius: calc(0.5rem - 1px);
         overflow: hidden;
-transition: all 1s variables.$transitionCubic;
+transition: all 750ms ease-in-out;
         @media screen and (max-width: variables.$sm) {
             min-width: calc(100% - 2rem);
             margin-inline: auto;
