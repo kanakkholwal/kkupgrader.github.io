@@ -31,6 +31,10 @@ const ToastSettings = {
     position: 'data-toast-position',
     html: 'data-toast-content',
 };
+const TabsSettings = {
+    tabBar: "data-g-tab-target",
+    toggle: 'data-g-tab',
+};
 
 // PreBuilt Functions
 const getSiblings = (TargetNode) =>
@@ -140,7 +144,6 @@ document.querySelectorAll(AccordionSettings.className).forEach((Accordion) => {
 });
 
 
-
 document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => {
     let modalId = ModalToggle.getAttribute(ModalSettings.toggle);
     let modal = document.querySelector(modalId);
@@ -150,7 +153,7 @@ document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => 
     ModalToggle.addEventListener("click", () => {
         modalBackDrop.classList.toggle(openClass);
         setTimeout(() => {
-            
+
             modal.classList.toggle(openClass);
         }, 100);
     });
@@ -158,7 +161,7 @@ document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => 
         close.addEventListener("click", () => {
             modal.classList.remove(openClass);
             setTimeout(() => {
-            
+
                 modalBackDrop.classList.remove(openClass);
             }, 800);
         });
@@ -168,7 +171,7 @@ document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => 
         if (!modal.contains(e.target)) {
             modal.classList.remove(openClass);
             setTimeout(() => {
-            
+
                 modalBackDrop.classList.remove(openClass);
             }, 800);
         }
@@ -223,3 +226,23 @@ document.querySelectorAll(`[${ToastSettings.selector}]`).forEach((ToastToggle) =
 
 
 
+document.querySelectorAll(`[${TabsSettings.tabBar}]`).forEach((tabBar) => {
+    tabBar.querySelectorAll(`[${TabsSettings.toggle}]`).forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+
+            toggle.classList.add(activeClass);
+            getSiblings(toggle).filter(sibling => sibling.classList.contains(activeClass)).forEach((sibling) => {
+                sibling.classList.remove(activeClass);
+            });
+            const TargetContainer = document.querySelector(tabBar.getAttribute(TabsSettings.tabBar));
+            const TargetTab = TargetContainer.querySelector('#' + toggle.getAttribute(TabsSettings.toggle));
+            TargetTab.classList.add(openClass);
+            getSiblings(TargetTab).filter(sibling => sibling.classList.contains(openClass)).forEach((sibling) => {
+                sibling.classList.remove(openClass);
+            });
+
+
+        });
+    });
+
+});

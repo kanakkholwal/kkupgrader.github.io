@@ -102,6 +102,7 @@ video {
   padding: 0;
   list-style: none;
   text-decoration: none;
+  border: 0;
 }
 
 a {
@@ -128,6 +129,7 @@ h6 {
   font-weight: 700;
   color: #f6f7f9;
   margin-bottom: 0.75rem;
+  font-family: "Public Sans", sans-serif;
 }
 
 h1 {
@@ -152,6 +154,14 @@ h5 {
 
 h6 {
   font-size: 0.67em;
+}
+
+p {
+  font-family: "Sofia Pro", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 16px;
+  font-weight: 400;
 }
 
 hr {
@@ -257,7 +267,7 @@ html ::-webkit-scrollbar-track {
   background: #0d3b4e;
   color: #85ceff;
 }
-.btn:hover, .btn.active {
+.btn:hover, .btn.active, .btn.isActive {
   opacity: 1;
 }
 .btn.btn-h2 {
@@ -4089,12 +4099,12 @@ html ::-webkit-scrollbar-track {
   font-size: 0.75em;
   font-weight: 600;
   line-height: 1;
-  color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
   text-transform: capitalize;
-  background: linear-gradient(to right, rgba(164, 172, 255, 0.3607843137), rgba(136, 162, 180, 0.7019607843));
+  background: rgba(107, 117, 219, 0.2);
+  color: #a4acff;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
@@ -4326,13 +4336,14 @@ html ::-webkit-scrollbar-track {
 }
 
 /* Note */
-.note {
+.Note {
   position: relative;
   padding: 16px 20px 16px 50px;
-  background: linear-gradient(to right, #3282B8, #0059B2);
-  color: #c6d8e7;
+  background: rgba(107, 117, 219, 0.2);
+  color: #a4acff;
   font-size: 0.85rem;
-  line-height: 1.6em;
+  line-height: 1.4em;
+  letter-spacing: 1px;
   border-radius: 10px;
   overflow: hidden;
   word-wrap: break-word;
@@ -4341,7 +4352,7 @@ html ::-webkit-scrollbar-track {
   max-width: 992px;
   margin: 1rem auto;
 }
-.note::before {
+.Note::before {
   content: "";
   width: 60px;
   height: 60px;
@@ -4354,7 +4365,7 @@ html ::-webkit-scrollbar-track {
   left: -12px;
   opacity: 0.25;
 }
-.note::after {
+.Note::after {
   content: "*";
   position: absolute;
   left: 18px;
@@ -4363,23 +4374,51 @@ html ::-webkit-scrollbar-track {
   min-width: 15px;
   text-align: center;
 }
-.note.note-primary {
-  background: linear-gradient(to right, #a4acff, #85ceff);
+.Note.Note_primary {
+  background: #0d3b4e;
+  color: #85ceff;
 }
-.note.note-danger {
-  background: linear-gradient(to right, #d70c25, #ffb8a1);
+.Note.Note_danger {
+  background: rgba(204, 100, 100, 0.2);
+  color: #ffb8a1;
 }
-.note.note-warning {
-  background: linear-gradient(to right, #fdc83a, #fde047);
+.Note.Note_danger:before {
+  background-color: #ffb8a1;
 }
-.note.note-success {
-  background: linear-gradient(to right, rgba(1, 189, 98, 0.8666666667), #86efac);
+.Note.Note_warning {
+  background: rgba(250, 204, 21, 0.2);
+  color: #fde047;
 }
-.note.note-dark {
-  background: linear-gradient(to right, rgba(33, 41, 48, 0.9), #89b5f3);
+.Note.Note_warning:before {
+  background-color: #fde047;
 }
-.note.note-info {
-  background: linear-gradient(to right, rgba(0, 82, 207, 0.4), rgba(105, 219, 255, 0.8));
+.Note.Note_success {
+  background: rgba(22, 101, 52, 0.2);
+  color: #86efac;
+}
+.Note.Note_success:before {
+  background-color: #86efac;
+}
+.Note.Note_dark {
+  background: rgba(17, 24, 39, 0.2);
+  color: #89b5f3;
+}
+.Note.Note_dark:before {
+  background-color: #89b5f3;
+}
+.Note.Note_info {
+  background: rgba(20, 158, 202, 0.2);
+  color: #69dbff;
+}
+.Note.Note_info:before {
+  background-color: #69dbff;
+}
+.Note.Note_light {
+  background: #bbe1fa;
+  color: #2b394d;
+}
+.Note.Note_light:before {
+  background-color: #2b394d;
 }
 
 .ripple {
@@ -4880,7 +4919,7 @@ html ::-webkit-scrollbar-track {
   color: #85ceff;
 }
 
-.btn:hover, .btn.active {
+.btn:hover, .btn.active, .btn.isActive {
   opacity: 1;
 }
 
@@ -5093,7 +5132,7 @@ html ::-webkit-scrollbar-track {
   font-size: 0.7em;
   margin-right: 0.5rem;
 }
-.G_SectionTitle .InfoBtn:hover, .G_SectionTitle .InfoBtn.active {
+.G_SectionTitle .InfoBtn:hover, .G_SectionTitle .InfoBtn.active, .G_SectionTitle .InfoBtn.isActive {
   opacity: 1;
 }
 .G_SectionTitle .InfoBtn.btn-h2 {
@@ -5150,7 +5189,7 @@ html ::-webkit-scrollbar-track {
 @media screen and (max-width: 576px) {
   .G_Footer {
     padding: 0.5rem;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -5423,6 +5462,258 @@ html ::-webkit-scrollbar-track {
   transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.btn {
+  display: inline-flex;
+  color: #fff;
+  background: #85ceff;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.1019607843);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  vertical-align: bottom;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+  padding: 0.625rem 1.5rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0.9;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  background: #0d3b4e;
+  color: #85ceff;
+}
+
+.btn:hover, .btn.active, .btn.isActive {
+  opacity: 1;
+}
+
+.btn.btn-h2 {
+  box-shadow: none !important;
+}
+
+.btn.btn-h3, .btna {
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.btn[class^=btn-outline-], .btn[class*=" btn-outline"] {
+  background: none !important;
+  border-width: 3px !important;
+  border-style: solid !important;
+  box-shadow: none !important;
+  padding: calc(0.625rem - 3px) 1.5rem calc(0.5rem - 2px);
+}
+
+.btn.btn-primary {
+  background: #0d3b4e;
+  color: #85ceff;
+}
+
+.btn.btn-outline-primary {
+  border-color: #0d3b4e;
+  color: #85ceff;
+}
+
+.btn.btn-success {
+  background: rgba(22, 101, 52, 0.2);
+  color: #86efac;
+}
+
+.btn.btn-outline-success {
+  border-color: rgba(22, 101, 52, 0.2);
+  color: #86efac;
+}
+
+.btn.btn-danger {
+  background: rgba(204, 100, 100, 0.2);
+  color: #ffb8a1;
+}
+
+.btn.btn-outline-danger {
+  border-color: rgba(204, 100, 100, 0.2);
+  color: #ffb8a1;
+}
+
+.btn.btn-info {
+  background: rgba(20, 158, 202, 0.2);
+  color: #69dbff;
+}
+
+.btn.btn-outline-info {
+  border-color: rgba(20, 158, 202, 0.2);
+  color: #69dbff;
+}
+
+.btn.btn-secondary {
+  background: rgba(107, 117, 219, 0.2);
+  color: #a4acff;
+}
+
+.btn.btn-outline-secondary {
+  border-color: rgba(107, 117, 219, 0.2);
+  color: #a4acff;
+}
+
+.btn.btn-warning {
+  background: rgba(250, 204, 21, 0.2);
+  color: #fde047;
+}
+
+.btn.btn-outline-warning {
+  border-color: rgba(250, 204, 21, 0.2);
+  color: #fde047;
+}
+
+.btn.btn-dark {
+  background: rgba(17, 24, 39, 0.2);
+  color: #89b5f3;
+  box-shadow: 7px 5px 20px 3px rgba(0, 0, 0, 0.2), -20px -17px 20px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn-outline-dark {
+  border-color: #111418;
+  color: #a5b4ca;
+}
+
+.btn.btn-light {
+  background: #bbe1fa;
+  color: #2b394d;
+}
+
+.btn.btn-outline-light {
+  border-color: #bbe1fa;
+  color: #bbe1fa;
+}
+
+.btn.btn-sm {
+  padding: 0.375rem 1rem 0.3125rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.btn.btn-sm.btn-circle {
+  width: 1.8125rem;
+  height: 1.8125rem;
+}
+
+.btn.btn-block {
+  width: 100%;
+}
+
+.btn.btn-lg {
+  padding: 0.75rem 1.6875rem 0.6875rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.btn.btn-lg.btn-circle {
+  width: 2.8125rem;
+  height: 2.8125rem;
+}
+
+.btn.btn-rounded {
+  border-radius: 50px;
+}
+
+.btn.btn-circle {
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 50% !important;
+  width: 2.3125rem;
+  height: 2.3125rem;
+}
+
+.G_TabBar {
+  display: flex;
+  flex-direction: row;
+  margin-block: 0.75rem;
+}
+.G_TabBar.Vertical {
+  flex-direction: column;
+  margin-inline: 0.75rem;
+  margin-block: 0;
+}
+.G_TabBar.Fill .G_TabToggle {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.G_TabBar.Justify .G_TabToggle {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+.G_TabBar.G_Tabs .G_TabToggle {
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 0.1875rem;
+  border-color: rgba(0, 0, 0, 0);
+  background: none;
+  color: #a4acff;
+}
+.G_TabBar.G_Tabs .G_TabToggle.isActive {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: rgba(107, 117, 219, 0.2);
+  background: rgba(107, 117, 219, 0.2) !important;
+}
+.G_TabBar.G_Pills .G_TabToggle {
+  margin: 0.25rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 0.1875rem;
+  border: 0.1875rem solid rgba(107, 117, 219, 0.2);
+  box-shadow: none;
+  background: none;
+  color: #a4acff;
+  transition: all 150ms ease-in-out;
+}
+.G_TabBar.G_Pills .G_TabToggle.isActive {
+  background: rgba(107, 117, 219, 0.2) !important;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.G_TabToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0.25rem;
+  user-select: none;
+  padding: 0.4375rem 1.3125rem;
+}
+
+.G_TabContent {
+  display: none;
+}
+.G_TabContent.isOpen {
+  display: block;
+  animation: TabShow 250ms ease;
+}
+
+@keyframes TabShow {
+  from {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
 body {
   background-color: #23272f;
   font-weight: 400;

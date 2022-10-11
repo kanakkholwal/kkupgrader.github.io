@@ -20,7 +20,7 @@
     opacity: .9;
 
     &:hover,
-    &.active {
+    &.active ,&.isActive{
         opacity: 1;
 
     }
