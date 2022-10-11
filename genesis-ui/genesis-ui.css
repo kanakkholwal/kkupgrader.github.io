@@ -5784,7 +5784,6 @@ html ::-webkit-scrollbar-track {
   justify-content: flex-start;
   flex-wrap: nowrap;
   overflow-x: hidden;
-  width: 500px;
   border: 1px solid #374151;
   border-radius: 0.5rem;
   text-align: center;
