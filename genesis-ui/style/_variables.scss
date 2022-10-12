@@ -63,6 +63,7 @@ $borderColor:#374151;
 $sidenavBreakPoint:1024px;
 $SidenavBg:#23272f;
 $sidenavWidth:15rem;
+
 $HeaderBg:#1f242e;
 $HeaderColor:#7b88ca;
 $HeaderTitle:#7b88ca;
@@ -71,7 +72,14 @@ $HeaderDescription:#e2e7ffb5;
 $buttonFontFamily:"Roboto",
 sans-serif;
 $bodyBg:#23272f;
-$bodyText:#f6f7f9;;
+$bodyText:#f6f7f9;
+
+$FormBg:#23272f;
+$FormText:#ffffffbf;
+$FormLabel:#8597a3;
+$FormBorder:#374151;
+$FormPlaceholder:#ffffffbf;
+$FormActive:#6658d3;
 
 @mixin noAction {
     user-select: none;

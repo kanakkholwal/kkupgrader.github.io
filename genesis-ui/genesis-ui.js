@@ -6,6 +6,7 @@ const SidenavClass = "G_Sidenav";
 const openClass = "isOpen";
 const activeClass = "isActive";
 const ArrowHTML = `<i class="fas fa-angle-up arrow"></i>`;
+const autoResizeInput = `data-G-auto-resize`;
 const SidenavCollapse = {
     Element: ".SidenavCollapse",
     Toggle: ".collapseToggle",
@@ -285,7 +286,6 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
                 SlicedMenu.classList.add(openClass);
                 target.classList.add(activeClass);
 
-                SlicedMenu.style.height = "auto";
                 SlicedMenu.addEventListener('transitionstart', () => {
                     SlicedMenu.style.height = "auto";
                 }, {
@@ -307,7 +307,11 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
             target.insertAdjacentElement("afterbegin", exitBtn);
             exitBtn.addEventListener("click", () => {
                 SlicedMenu.classList.remove(openClass);
-                SlicedMenu.style.height = "auto";
+                SlicedMenu.addEventListener('transitionstart', () => {
+                    SlicedMenu.style.height = "auto";
+                }, {
+                    once: true
+                });
                 SlicedMenu.addEventListener('transitionend', () => {
                     SlicedMenu.style.height = outerHeight;
                 }, {
@@ -322,7 +326,11 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
     document.addEventListener('mouseup', function (e) {
         if (!SlicedMenu.contains(e.target)) {
             SlicedMenu.classList.remove(openClass);
-            SlicedMenu.style.height = "auto";
+            SlicedMenu.addEventListener('transitionstart', () => {
+                SlicedMenu.style.height = "auto";
+            }, {
+                once: true
+            });
             SlicedMenu.addEventListener('transitionend', () => {
                 SlicedMenu.style.height = outerHeight;
             }, {
@@ -333,3 +341,16 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
 })
 
 
+document.querySelectorAll(`.G_Form-textarea`).forEach((element) => {
+    element.style.boxSizing = "border-box";
+    var offset = element.offsetHeight - element.clientHeight;
+    if (!element.hasAttribute(autoResizeInput))
+        element.setAttribute(autoResizeInput, "true")
+
+    element.addEventListener("input", function (event) {
+        if (element.getAttribute(autoResizeInput) === "true") {
+            event.target.style.maxHeight = "auto";
+            event.target.style.height = event.target.scrollHeight + offset + "px";
+        }
+    });
+});
