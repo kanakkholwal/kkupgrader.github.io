@@ -56,18 +56,21 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: nowrap;
-    overflow-x: hidden;
+    overflow: hidden;
     border: 1px solid variables.$borderColor;
     border-radius: 0.5rem;
     text-align: center;
     background-color: variables.$bodyBg;
+    will-change: height;
+    transition: height 0.8s ease-in-out;
 
     .G_Sliced-Outer-menuList {
-        position: absolute;
+        position: relative;
         z-index: 2;
         inset: 0;
         background-color: inherit;
         @include Menu;
+        margin-right: -100%;
     }
 
     .G_Sliced-Inner-menuList {
@@ -78,6 +81,7 @@
 
         &>.G_Sliced-Inner-menu {
             display: none;
+
             &.isActive {
                 display: block;
             }

@@ -270,6 +270,8 @@ document.querySelectorAll(`[${ToolTipSettings.selector}]`).forEach((ToolTipToggl
 document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
     const inner = SlicedMenu.querySelector(SlicedMenuSetting.inner);
     const outer = SlicedMenu.querySelector(SlicedMenuSetting.outer);
+    const outerHeight = outer.clientHeight + 'px'
+    SlicedMenu.style.height = outerHeight;
 
     Array.from(outer.querySelectorAll(SlicedMenuSetting.item))
         .filter(toggle => toggle.hasAttribute(SlicedMenuSetting.selector) && toggle.getAttribute(SlicedMenuSetting.selector) !== null)
@@ -278,8 +280,22 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
 
             toggle.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`)
             toggle.addEventListener("click", () => {
+                SlicedMenu.style.height = "auto";
+
                 SlicedMenu.classList.add(openClass);
                 target.classList.add(activeClass);
+
+                SlicedMenu.style.height = "auto";
+                SlicedMenu.addEventListener('transitionstart', () => {
+                    SlicedMenu.style.height = "auto";
+                }, {
+                    once: true
+                });
+                SlicedMenu.addEventListener('transitionend', () => {
+                    SlicedMenu.style.height = target.clientHeight + 'px';
+                }, {
+                    once: true
+                });
                 getSiblings(target).filter(sibling => sibling.classList.contains(activeClass)).forEach((sibling) => {
                     sibling.classList.remove(activeClass);
                 });
@@ -291,6 +307,12 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
             target.insertAdjacentElement("afterbegin", exitBtn);
             exitBtn.addEventListener("click", () => {
                 SlicedMenu.classList.remove(openClass);
+                SlicedMenu.style.height = "auto";
+                SlicedMenu.addEventListener('transitionend', () => {
+                    SlicedMenu.style.height = outerHeight;
+                }, {
+                    once: true
+                });
             })
             Array.from(target.parentElement.children).filter(sibling => !sibling.classList.contains(activeClass)).forEach((sibling) => {
                 sibling.classList.add(activeClass);
@@ -300,6 +322,12 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
     document.addEventListener('mouseup', function (e) {
         if (!SlicedMenu.contains(e.target)) {
             SlicedMenu.classList.remove(openClass);
+            SlicedMenu.style.height = "auto";
+            SlicedMenu.addEventListener('transitionend', () => {
+                SlicedMenu.style.height = outerHeight;
+            }, {
+                once: true
+            });
         }
     });
 })

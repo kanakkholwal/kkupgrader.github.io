@@ -5783,14 +5783,16 @@ html ::-webkit-scrollbar-track {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow: hidden;
   border: 1px solid #374151;
   border-radius: 0.5rem;
   text-align: center;
   background-color: #23272f;
+  will-change: height;
+  transition: height 0.8s ease-in-out;
 }
 .G_Sliced-menu .G_Sliced-Outer-menuList {
-  position: absolute;
+  position: relative;
   z-index: 2;
   inset: 0;
   background-color: inherit;
@@ -5800,6 +5802,7 @@ html ::-webkit-scrollbar-track {
   will-change: transform;
   display: flex;
   flex-direction: column;
+  margin-right: -100%;
 }
 .G_Sliced-menu .G_Sliced-Outer-menuList .G_Sliced-menuItem {
   height: 3rem;
