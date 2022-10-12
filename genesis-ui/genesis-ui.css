@@ -850,7 +850,7 @@ html ::-webkit-scrollbar-track {
   caret-color: #a4acff;
 }
 .G_Form-input::placeholder {
-  color: rgba(255, 255, 255, 0.7490196078);
+  color: #8597a3;
   opacity: 0.75;
 }
 .G_Form-input:focus {
@@ -861,7 +861,7 @@ html ::-webkit-scrollbar-track {
   opacity: 1;
 }
 .G_Form-input:focus::placeholder {
-  color: rgba(255, 255, 255, 0.7490196078);
+  color: #8597a3;
   opacity: 1;
 }
 .G_Form-input:invalid, .G_Form-input.isInvalid {
@@ -908,7 +908,7 @@ html ::-webkit-scrollbar-track {
   background-color: #969faf;
 }
 .G_Form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.7490196078);
+  color: #8597a3;
   opacity: 0.75;
 }
 .G_Form-textarea:focus {
@@ -919,7 +919,7 @@ html ::-webkit-scrollbar-track {
   opacity: 1;
 }
 .G_Form-textarea:focus::placeholder {
-  color: rgba(255, 255, 255, 0.7490196078);
+  color: #8597a3;
   opacity: 1;
 }
 .G_Form-textarea:invalid, .G_Form-textarea.isInvalid {
