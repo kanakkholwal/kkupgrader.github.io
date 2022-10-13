@@ -50,10 +50,40 @@ const SlicedMenuSetting = {
     selector: 'data-G-Sliced-toggle',
 };
 // PreBuilt Functions
-const getSiblings = (TargetNode) =>
-    [...TargetNode.parentNode.children].filter(
-        (siblings) => siblings !== TargetNode
-    );
+const getSiblings = (TargetNode) => [...TargetNode.parentNode.children].filter((siblings) => siblings !== TargetNode);
+function isElement(obj) {
+    try {
+        //Using W3 DOM2 (works for FF, Opera and Chrome)
+        return obj instanceof HTMLElement;
+    }
+    catch (e) {
+        //Browsers not supporting W3 DOM2 don't have HTMLElement and
+        //an exception is thrown and we end up here. Testing some
+        //properties that all elements have (works on IE7)
+        return (typeof obj === "object") &&
+            (obj.nodeType === 1) && (typeof obj.style === "object") &&
+            (typeof obj.ownerDocument === "object");
+    }
+}
+const setAttributes = (TargetNode, Attributes) => {
+    if (!isElement(TargetNode)) throw new Error(TargetNode + " must be an Html Element");
+    if (!(typeof Attributes === "object")) throw new Error(Attributes + " must be HTML attribute Object");
+
+    // Object.assign(TargetNode,Attributes)
+    Object.keys(Attributes).forEach(attr => {
+        TargetNode.setAttribute(attr, Attributes[attr]);
+    });
+}
+function GenerateId(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
 function GCollapse(collapse) {
     if (!collapse.classList.contains(openClass)) {
         /** Show the collapse. */
@@ -158,10 +188,10 @@ document.querySelectorAll(AccordionSettings.className).forEach((Accordion) => {
 
 
 document.querySelectorAll(`[${ModalSettings.toggle}]`).forEach((ModalToggle) => {
-    let modalId = ModalToggle.getAttribute(ModalSettings.toggle);
-    let modal = document.querySelector(modalId);
-    let modalBackDrop = modal.parentElement;
-    let modalClose = modal.querySelectorAll(`[${ModalSettings.close}]`);
+    const modalId = ModalToggle.getAttribute(ModalSettings.toggle);
+    const modal = document.querySelector(modalId);
+    const modalBackDrop = modal.parentElement;
+    const modalClose = modal.querySelectorAll(`[${ModalSettings.close}]`);
 
     ModalToggle.addEventListener("click", () => {
         modalBackDrop.classList.toggle(openClass);
@@ -339,7 +369,79 @@ document.querySelectorAll(SlicedMenuSetting.container).forEach((SlicedMenu) => {
         }
     });
 })
+// clipboard
+const copyToClipboard = (id) => {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+};
 
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+const copyIOS = (id) => {
+    const text = document.getElementById(id).innerText;
+
+    if (!navigator.clipboard) {
+        const textarea = document.createElement("textarea");
+
+        textarea.value = text;
+        textarea.style.fontSize = "20px";
+        document.body.appendChild(textarea);
+
+        const range = document.createRange();
+        range.selectNodeContents(textarea);
+
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textarea.setSelectionRange(0, 999999);
+
+        document.execCommand("copy");
+
+        document.body.removeChild(textarea);
+    }
+
+    navigator.clipboard.writeText(text);
+};
+
+const copyTextById = (id) => {
+    if (isIOS) {
+        return copyIOS(id);
+    }
+    copyToClipboard(id);
+    console.log("Content Copied from Non-form elements");
+};
+
+// window.copyTextById = copyTextById;
+document.querySelectorAll("[data-g-clipboard-target]").forEach((clipboardToggle) => {
+    clipboardToggle.addEventListener("click", () => {
+        const target = clipboardToggle.getAttribute("data-g-clipboard-target");
+        const TempTxt = clipboardToggle.textContent;
+        const targetElement = document.getElementById(target);
+        if (
+            targetElement.tagName.toLowerCase() === "input" ||
+            targetElement.tagName.toLowerCase() === "textarea"
+        ) {
+            targetElement.select();
+            try {
+                var successful = document.execCommand("copy");
+                var msg = successful ? "successfully" : "unsuccessfully";
+                console.log("Content Copied " + msg);
+            } catch (err) {
+                console.log("Oops, unable to copy");
+            }
+        } else {
+            copyTextById(target);
+        }
+        clipboardToggle.innerText = "Copied !!";
+        setTimeout(() => {
+            clipboardToggle.innerText = TempTxt;
+        }, 1500);
+    });
+});
 
 document.querySelectorAll(`.G_Form-textarea`).forEach((element) => {
     element.style.boxSizing = "border-box";
@@ -353,4 +455,154 @@ document.querySelectorAll(`.G_Form-textarea`).forEach((element) => {
             event.target.style.height = event.target.scrollHeight + offset + "px";
         }
     });
+});
+
+document
+    .querySelectorAll("input[type=color].G_Form-color")
+    .forEach((picker) => {
+        const targetLabel = document.querySelector('label[for="' + picker.id + '"]') || (() => {
+            const targetLabel = document.createElement('label');
+            targetLabel.classList.add('G_Form-colorLabel');
+            picker.insertAdjacentElement("beforebegin", targetLabel);
+            targetLabel.appendChild(picker);
+            return targetLabel;
+        })(),
+            codeArea = document.createElement("span");
+        codeArea.innerHTML = picker.value;
+        targetLabel.appendChild(codeArea);
+
+        picker.addEventListener("input", () => {
+            codeArea.innerHTML = picker.value;
+        });
+    });
+// Range
+document.querySelectorAll("input[type=range].G_Form-range").forEach((range) => {
+    const targetLabel = document.querySelector('label[for="' + range.id + '"]') || (() => {
+        const targetLabel = document.createElement('label');
+        targetLabel.classList.add('G_Form-rangeLabel');
+        range.insertAdjacentElement("beforebegin", targetLabel);
+        targetLabel.appendChild(range);
+        return targetLabel;
+    })(),
+        valueArea = document.createElement("span");
+    valueArea.innerHTML = range.value;
+    targetLabel.appendChild(valueArea);
+    function updateValue() {
+        valueArea.innerHTML = range.value;
+        targetLabel.appendChild(valueArea);
+    }
+    range.addEventListener("input", updateValue);
+});
+// Select
+document.querySelectorAll("select.G_Form-select").forEach((select) => {
+    // Assign Id to select
+    const ID = GenerateId(6);
+
+    select.setAttribute("data-g-select-label-by", "G_Form-select_" + ID);
+
+    // Create Parent Wrapper
+    const wrapper = (() => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("G_Form-selectWrapper");
+        select.insertAdjacentElement("beforebegin", wrapper);
+        wrapper.appendChild(select);
+        return wrapper;
+    })();
+
+    wrapper.style.minWidth = select.clientWidth + "px";
+    select.classList.add('G_Form-selectInitialized');
+    // Create a Input Toggle button
+    const input = document.createElement("input");
+    setAttributes(input, {
+        type: "text",
+        class: "G_Form-SelectToggle",
+        id: `G_Form-selectToggle_${ID}`,
+        role: "listbox",
+        "aria-popup": "false",
+        readonly: "true",
+        value: select.options[select.selectedIndex].value
+    });
+    wrapper.insertAdjacentElement("beforeend", input);
+    // Add Icon to input element
+    wrapper.insertAdjacentHTML(
+        "beforeend",
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path
+            d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z" />
+      </svg>`
+    );
+
+    // Create DropDown
+    const DropDown = document.createElement("div"),
+        DropDownList = document.createElement("ul");
+    DropDown.classList.add("G_SelectDropdown");
+    DropDown.id = `G_SelectDropdown_${ID}`;
+    DropDown.appendChild(DropDownList);
+    wrapper.appendChild(DropDown);
+
+
+    Array.from(select.options).forEach((option) => {
+        const DropItem = document.createElement("li");
+        DropItem.className = "G_SelectDropdown-item";
+        DropItem.innerText = option.innerText;
+        DropItem.ariaSelected = "false";
+        DropItem.setAttribute("value", option.value);
+
+        if (option.value === select.options[select.selectedIndex].value) {
+            DropItem.ariaSelected = "true";
+            DropItem.classList.add(activeClass);
+        }
+        DropDownList.appendChild(DropItem);
+    });
+
+    // Toggle DropDown
+    input.addEventListener("click", () => {
+        input.classList.toggle(activeClass);
+        input.setAttribute(
+            'aria-popup',
+            input.getAttribute('aria-popup') === 'true'
+                ? 'false'
+                : 'true'
+        );
+        DropDown.classList.toggle(openClass);
+    });
+    document.addEventListener("mouseup", function (e) {
+        if (!input.contains(e.target) && !DropDown.contains(e.target)) {
+            input.classList.remove(activeClass);
+            input.setAttribute("aria-popup", "false");
+            DropDown.classList.remove(openClass);
+        }
+    });
+    DropDownList.childNodes.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            item.classList.add(activeClass);
+            item.ariaSelected = "true";
+            getSiblings(item).forEach((i) => {
+                i.classList.remove(activeClass);
+                i.ariaSelected = "false";
+            });
+            select.selectedIndex = index;
+            select.options[index].setAttribute("selected", "");
+
+            getSiblings(select.options[index]).forEach((i) => {
+                i.removeAttribute("selected");
+            });
+
+            input.classList.remove(activeClass);
+            input.setAttribute('aria-popup', 'false');
+            DropDown.classList.remove(openClass);
+            input.value = select.options[select.selectedIndex].innerText;
+
+        });
+    });
+    select.addEventListener("change", () => {
+        DropDownList.childNodes[select.selectedIndex].classList.add(activeClass);
+        DropDownList.childNodes[select.selectedIndex].ariaSelected = "true";
+        getSiblings(DropDownList.childNodes[select.selectedIndex]).forEach((i) => {
+            i.classList.remove(activeClass);
+            i.ariaSelected = "false";
+        });
+        input.value = select.options[select.selectedIndex].innerText;
+    })
+
 });

@@ -75,6 +75,7 @@ margin-block: 1rem;
 
         .G_Accordion_Body {
             @include collapse.Collapse;
+            overflow: hidden;
             width: calc(100% - 10px);
             margin-inline: auto;
 

@@ -636,7 +636,7 @@ const copyTextById = (id) => {
   console.log("Content Copied from Non-form elements");
 };
 
-window.copyTextById = copyTextById;
+// window.copyTextById = copyTextById;
 const GClipboard = document.querySelectorAll("[data-g-clipboard-target]");
 GClipboard.forEach((clipboardToggle) => {
   clipboardToggle.addEventListener("click", (e) => {

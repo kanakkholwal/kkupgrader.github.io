@@ -670,7 +670,7 @@
                     </div>
                 </section>
                 <!-- Clipboard Api  Section -->
-                <!-- <section class="G_ContentSection" id="clipboard">
+                <section class="G_ContentSection" id="clipboard">
                     <div class="G_SectionTitle">
                         <h2>ClipBoard Api</h2>
                         <a href="./docs/clipboard-api/" target="_blank" class="InfoBtn btn">docs <i
@@ -678,18 +678,22 @@
                     </div>
                     <div class="G_SectionContent">
 
-                                   <div id="clipdiv">Text To copy from div </div>
-                    <input type="text" class="g-form-input" id="clip" value="Text from input">
-                    <textarea name="" id="cliptext" cols="30" class="g-form-input" rows="10">dfsfgfffffff</textarea>
-                    <button class="g-btn" data-g-clipboard-target="clip">Copy from Input </button>
-                    <button class="g-btn" data-g-clipboard-target="cliptext">Copy from textarea </button>
-                    <button class="g-btn" data-g-clipboard-target="clipdiv">Copy from Div </button>
+                        <button class="btn" data-g-clipboard-target="clip">Copy from Input </button>
+                        <button class="btn" data-g-clipboard-target="cliptext">Copy from textarea </button>
+                        <button class="btn" data-g-clipboard-target="clipdiv">Copy from Div </button>
+                        <br>
+                        <div class="w-50 m-auto">
+
+                            <div id="clipdiv" class="p-2">Text To copy from div </div>
+                            <input type="text" class="G_Form-input" id="clip" value="Text from input">
+                            <textarea name="" id="cliptext" cols="10" class="G_Form-input" rows="5">Text from TextArea</textarea>
+                        </div>
             
 
                     </div>
-                </section> -->
+                </section>
 
-                <!-- Card  Section -->
+                <!-- Form  Section -->
                 <section class="G_ContentSection" id="forms">
                     <div class="G_SectionTitle">
                         <h2>Forms</h2>
@@ -739,7 +743,25 @@
                             placeholder="e.g. I want to work with you"></textarea>
                             <label for="message" class="G_Form-label">Enter Your Message</label>
                         </div>
-                        
+                        <hr class="mt-3 mb-4"/>
+                        <div class="d-flex">
+
+                            <div class="G_Form-element">
+                                <input type="color" class="G_Form-color" name="color" id="color">
+                            </div>
+                            <div class="G_Form-element">
+                                <input type="range" class="G_Form-range" value="5" min="0" max="25" step="0.5" id="range" />
+                            </div>
+                        </div>
+                        <div class="G_Form-element">
+                            <select class="G_Form-select" id="select" name="select">
+                                <option value="none" selected>none</option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                                <option value="option4">Option 4</option>
+                            </select>
+                        </div>
                     </div>
                 </section>
                           

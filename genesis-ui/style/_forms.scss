@@ -6,11 +6,11 @@
   opacity: 0.95;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  
+
   transition: all .2s linear;
   border-radius: 0.25rem;
   padding: calc(0.75rem + 1px) calc(0.5rem + 1px);
-  border: 1px solid variables.$FormBorder;
+  border: 2px solid variables.$FormBorder;
   background: variables.$FormBg;
   color: variables.$FormText;
   caret-color: variables.$secondary;
@@ -23,9 +23,7 @@
 
 
   &:focus {
-    padding: 0.75rem 0.5rem;
-    border-width: 2px;
-    border-style: solid;
+
     border-color: variables.$FormActive;
     opacity: 1;
 
@@ -35,7 +33,7 @@
     }
   }
 
-  &:invalid,
+  &.checkValid:invalid,
   &.isInvalid {
     border-color: variables.$danger-hvr !important;
     animation-name: invalid;
@@ -45,7 +43,7 @@
 
   }
 
-  &:focus:not(:placeholder-shown):valid,
+  &.checkValid:focus:not(:placeholder-shown):valid,
   &.isValid {
     animation-name: valid;
     border-color: variables.$success-hvr !important;
@@ -72,7 +70,7 @@
   &::placeholder {
     visibility: hidden;
     transition: all 0.25 ease;
-    
+
   }
 
   &:focus {
@@ -84,7 +82,7 @@
 
     &~.G_Form-label {
       z-index: 2;
-      color:  variables.$FormActive;
+      color: variables.$FormActive;
       transform: translateY(-1.5rem);
     }
   }
@@ -116,7 +114,7 @@
     &~.G_Form-label {
       z-index: 2;
 
-      color:  variables.$FormActive;
+      color: variables.$FormActive;
       transform: translateY(-0.75rem);
     }
   }
@@ -135,7 +133,6 @@
   align-items: flex-start;
   flex-direction: column;
   margin: 0.25rem auto;
-  width: calc(100% - 2rem);
 
   .G_Form-label {
     order: 1;
@@ -143,9 +140,7 @@
   }
 
   .G_Form-input,
-  .G_Form-textarea,
-  .G_Form-color-label,
-  .G_Form-range-label {
+  .G_Form-textarea {
     order: 2;
     width: calc(100% - 2rem);
 
@@ -194,7 +189,7 @@
       z-index: 0;
       background-color: variables.$FormBg;
       transform: translateY(0.75rem);
-      padding-inline:0.5rem;
+      padding-inline: 0.5rem;
       transition: .25s ease;
     }
 
@@ -224,6 +219,325 @@
   opacity: 0.8;
 }
 
+.G_Form-colorLabel {
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid variables.$borderColor;
+  background-color: variables.$FormBg;
+
+  span {
+    user-select: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    color: variables.$FormText;
+
+  }
+
+  &:is(:active, :focus) {
+    border-color: variables.$FormActive;
+
+  }
+
+
+
+  .G_Form-color[type='color'] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border: none;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+    }
+  }
+}
+
+.G_Form-rangeLabel {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid variables.$borderColor;
+  background-color: variables.$FormBg;
+
+
+
+  .G_Form-range[type="range"] {
+    flex: 1 1 auto;
+    order: 1;
+    width: 100%;
+    height: 0.25rem;
+    padding: 0;
+    border-radius: 0.25rem;
+    background-color: variables.$FormBorder;
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    outline: none;
+    // overflow: hidden;
+
+    // &::-webkit-slider-runnable-track {
+    //   background: variables.$grey;
+    // }
+
+    &::-webkit-slider-thumb {
+      cursor: pointer;
+      --webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: variables.$light;
+      border: 2px solid variables.$primary;
+      border-radius: 50%;
+
+      &:hover {
+        background: variables.$primary
+      }
+    }
+
+    // &:in-range {
+    //   background-color: $primary;
+    // }
+
+  }
+
+  span {
+    flex: 1 1 auto;
+    order: 2;
+    text-align: center;
+    font-weight: 600;
+    color: variables.$FormActive;
+    min-width: 3.75rem;
+    overflow: hidden;
+    margin-left: 0.625rem;
+
+
+    padding: 0.25rem 0.5rem;
+    will-change: width;
+    transition: width 0.8s ease-in-out;
+
+  }
+}
+
+
+
+
+.G_Form-select {
+  appearance: none;
+  @include inline-flex;
+  justify-content: space-between;
+  border-radius: 0.25rem;
+  width: 100%;
+  font-weight: 700;
+  padding: calc(0.75rem + 1px) calc(0.5rem + 1px);
+  border: 2px solid variables.$FormBorder;
+  background: variables.$FormBg;
+  color: variables.$FormText;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  cursor: pointer;
+
+  &:focus {
+    border-color: variables.$FormActive;
+  }
+
+  &.G_Form-selectInitialized {
+    display: none;
+  }
+
+
+}
+
+.G_Form-selectWrapper {
+  position: relative;
+
+
+
+  svg {
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    right: 0.65rem;
+    transform: translateY(-50%);
+    fill: #7a9fb76e;
+  }
+
+  .G_Form-SelectToggle {
+   
+    border-radius: 0.25rem;
+    padding: 0.65rem;
+    width: 100%;
+    font-weight: 700;
+    background: variables.$FormBg;
+    color: variables.$FormText;
+    border: 2px solid variables.$FormBorder;
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+    font-weight: bold;
+
+    // position: relative;
+    &:is(:focus, :focus-visible, :active, .isActive) {
+      border-color: variables.$FormActive;
+      color: variables.$FormActive;
+
+
+      &~svg {
+        fill: variables.$FormActive;
+      }
+    }
+
+  
+  }
+
+  .G_SelectDropdown {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    min-width: 100px;
+    margin: 0;
+    border-radius: 0.25rem;
+    outline: 0;
+
+    background-color: variables.$FormActive;
+    transition: all .2s;
+    transform: scaleY(.8);
+    opacity: 0;
+    visibility: hidden;
+    max-height: 200px;
+    overflow: auto;
+    box-shadow: variables.$FormShadow;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 0.5rem;
+      cursor: pointer !important;
+    }
+
+    &::-webkit-scrollbar:hover {
+      background-color: variables.$FormActive;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid transparent;
+      box-shadow: inset 0 0 0 24px rgba(0, 0, 0, .15);
+      border-radius: 24px
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      box-shadow: inset 0 0 0 24px rgba(0, 0, 0, .30);
+      border-radius: 24px
+    }
+
+
+
+    &.isOpen {
+      transform: scaleY(1);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    ul {
+      background-color: variables.$FormBg;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      border-radius: inherit;
+
+
+      li.G_SelectDropdown-item {
+        padding: 0.25rem 1rem;
+        color: variables.$FormText;
+        cursor: pointer;
+        height: 2.375rem;
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 1rem;
+        font-weight: 400;
+        border: 0;
+        outline: 0;
+        user-select: none;
+
+        &:is(:hover, :active) {
+          background-color: variables.$FormHover;
+
+        }
+
+        &.isActive {
+          color: variables.$FormActive;
+        }
+
+        &:first-child {
+          border-top-left-radius: 0.25rem;
+          border-top-right-radius: 0.25rem;
+        }
+
+        &:last-child {
+          border-bottom-left-radius: 0.25rem;
+          border-bottom-right-radius: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+.G_Form-submit {
+  display: inline-flex;
+  color: #fff;
+  // background: variables.$transparent;
+  background: #1d5eff;
+  font-weight: 700;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 2px 5px 0 #00000033, 0 2px 10px 0 #0000001a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+  padding: .625rem 1.5rem .5rem;
+  margin: 0.25rem;
+  border-radius: 0.5rem;
+  transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  min-width: 12rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+
+  opacity: .9;
+
+  &:hover,
+  &.active {
+    opacity: 1;
+    background: #1d5eff;
+    color: white;
+    transform: translateY(-0.1rem);
+  }
+}
 
 .G_Form-checkbox {
   width: 1em;
@@ -344,326 +658,6 @@
     pointer-events: none;
     filter: none;
     opacity: .5
-  }
-}
-
-.G_Form-color-label {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  border: 2px solid variables.$dark2;
-  background-color: variables.$transparent;
-
-  &:is(:active, :focus) {
-    border-color: variables.$primary;
-  }
-
-  span {
-    user-select: none;
-    // pointer-events: none;
-    cursor: pointer;
-  }
-}
-
-.G_Form-color[type='color'] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  padding: 0;
-  width: 15px;
-  height: 15px;
-  border: none;
-
-  &::-webkit-color-swatch-wrapper {
-    padding: 0;
-
-
-  }
-
-  &::-webkit-color-swatch {
-    border: none;
-
-  }
-}
-
-.G_Form-submit {
-  display: inline-flex;
-  color: #fff;
-  // background: variables.$transparent;
-  background: #1d5eff;
-  font-weight: 700;
-  backdrop-filter: blur(2px);
-  box-shadow: 0 2px 5px 0 #00000033, 0 2px 10px 0 #0000001a;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  user-select: none;
-  border: 0;
-  padding: .625rem 1.5rem .5rem;
-  margin: 0.25rem;
-  border-radius: 0.5rem;
-  transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  min-width: 12rem;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 2px;
-
-  opacity: .9;
-
-  &:hover,
-  &.active {
-    opacity: 1;
-    background: #1d5eff;
-    color: white;
-    transform: translateY(-0.1rem);
-  }
-}
-
-.G_Form-range-label {
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  max-width: calc(100% - 2rem);
-  padding: 0.5rem 1rem;
-
-  border-radius: 0.5rem;
-  background-color: variables.$transparent;
-
-
-  .G_Form-range[type="range"] {
-    flex: 1 1 auto;
-    order: 1;
-    width: 100%;
-    height: 0.25rem;
-    padding: 0;
-    border-radius: 0.25rem;
-    background-color: variables.$transparent;
-    appearance: none;
-    -webkit-appearance: none;
-
-    border: none;
-    outline: none;
-    // overflow: hidden;
-
-    // &::-webkit-slider-runnable-track {
-    //   background: variables.$grey;
-    // }
-
-    &::-webkit-slider-thumb {
-      cursor: pointer;
-      --webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      background: variables.$light;
-      border: 2px solid variables.$primary;
-      border-radius: 50%;
-
-      &:hover {
-        background: variables.$primary
-      }
-    }
-
-    // &:in-range {
-    //   background-color: $primary;
-    // }
-
-  }
-
-  span {
-    flex: 1 1 auto;
-    order: 2;
-    text-align: center;
-    font-weight: 600;
-    line-height: 40px;
-    @include PrimaryTextColor;
-    height: 40px;
-    min-width: 60px;
-    overflow: hidden;
-    margin-left: 10px;
-
-
-    padding: 0.25rem 0.5rem;
-  }
-}
-
-
-
-
-.G_Form-select {
-  appearance: none;
-  @include inline-flex;
-  justify-content: space-between;
-  border-radius: 0.25rem;
-  padding: 0.65rem;
-  width: 100%;
-  font-weight: 700;
-  background: variables.$transparent;
-  box-shadow: variables.$shadow;
-  color: #247e8de6;
-  border: 2px solid variables.$dark3;
-  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: relative;
-  cursor: pointer;
-
-  &:focus {
-    border-color: variables.$primary;
-  }
-
-
-
-}
-
-.select-initialized {
-  display: none;
-}
-
-.select-wrapper {
-  position: relative;
-
-  svg {
-    position: absolute;
-    height: 20px;
-    top: 50%;
-    right: 0.65rem;
-    transform: translateY(-50%);
-    fill: #7a9fb76e;
-  }
-
-  .select-placeholder {
-    // position: absolute;
-    // inset: 0;
-    border-radius: 0.25rem;
-    padding: 0.65rem;
-    width: 100%;
-    font-weight: 700;
-    background: variables.$transparent;
-    box-shadow: variables.$shadow;
-    color: #247e8de6;
-    border: 2px solid variables.$dark3;
-    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-    cursor: pointer;
-    user-select: none;
-    font-weight: bold;
-
-    // position: relative;
-    &:is(:focus, :focus-visible, :active, .active) {
-      border-color: variables.$primary;
-
-      &~svg {
-        fill: variables.$primary;
-      }
-    }
-
-    // &::after {
-    //   content: "▼";
-    //     }
-  }
-
-  .select-dropdown {
-    position: absolute;
-    top: calc(100% + 0.25rem);
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    min-width: 100px;
-    margin: 0;
-    border-radius: 0.25rem;
-    outline: 0;
-
-    background-color: variables.$grey;
-    box-shadow: variables.$shadow;
-    transition: all .2s;
-    transform: scaleY(.8);
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: variables.$shadow;
-
-    max-height: 200px;
-    overflow: auto;
-
-    &::-webkit-scrollbar {
-      width: 8px;
-      height: 0.5rem;
-      background-color: variables.$secondary;
-      cursor: pointer !important
-    }
-
-    &::-webkit-scrollbar:hover {
-      background-color: variables.$secondary
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border: 2px solid transparent;
-      box-shadow: inset 0 0 0 24px rgba(0, 0, 0, .15);
-      border-radius: 24px
-    }
-
-    &::-webkit-scrollbar-thumb:active {
-      box-shadow: inset 0 0 0 24px rgba(0, 0, 0, .30);
-      border-radius: 24px
-    }
-
-
-
-    &.show {
-
-      transform: scaleY(1);
-      opacity: 1;
-      visibility: visible;
-
-    }
-
-    ul {
-      background-color: inherit;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      border-radius: inherit;
-
-
-
-      li.select-drop-item {
-        background: variables.$secondary;
-        padding: 0.25rem 1rem;
-        color: variables.$light;
-        cursor: pointer;
-        height: 2.375rem;
-        width: 100%;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-
-        font-size: 1rem;
-        font-weight: 400;
-        border: 0;
-        outline: 0;
-        user-select: none;
-
-        &:is(:hover, :active, .active) {
-          background-color: variables.$primary;
-        }
-
-        &:first-child {
-          border-top-left-radius: 0.25rem;
-          border-top-right-radius: 0.25rem;
-        }
-
-        &:last-child {
-          border-bottom-left-radius: 0.25rem;
-          border-bottom-right-radius: 0.25rem;
-        }
-      }
-    }
   }
 }
 

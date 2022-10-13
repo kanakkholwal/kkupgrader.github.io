@@ -75,11 +75,13 @@ $bodyBg:#23272f;
 $bodyText:#f6f7f9;
 
 $FormBg:#23272f;
+$FormHover:#404652;
 $FormText:#ffffffbf;
 $FormLabel:#8597a3;
 $FormBorder:#374151;
 $FormPlaceholder:#8597a3;
 $FormActive:#6658d3;
+$FormShadow:2px 2px 13px 5px #090c1040;
 
 @mixin noAction {
     user-select: none;
