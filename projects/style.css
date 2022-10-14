@@ -130,7 +130,7 @@ ul.project-list li {
 ul.project-list li a {
     display: flex;
     align-items: center;
-    background:linear-gradient(to right, #3282B8, #0059B2);
+    background:linear-gradient(to right, #009688, #0c6e65);
     border-radius: 8px;
     padding: 12px 16px;
     font-weight: 500;
@@ -141,7 +141,7 @@ ul.project-list li a {
 }
 
 ul.project-list li a:hover {
-    background:#feb707;
+    background:linear-gradient(to right, #4caf50, #009688);
 }
 
 ul.project-list li:nth-child(even) {
