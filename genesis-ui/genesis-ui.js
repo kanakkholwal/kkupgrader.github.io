@@ -129,9 +129,11 @@ document.querySelectorAll(RippleClass).forEach((el) => {
 });
 
 document.querySelectorAll(`[${CollapseAttribute}]`).forEach((toggler) => {
-    toggler.addEventListener("click", () => {
-        GCollapse(document.querySelector(toggler.getAttribute(CollapseAttribute)))
-    });
+    const target = document.querySelector(toggler.getAttribute(CollapseAttribute));
+    if (!target.classList.contains('G_Collapse'))
+        target.classList.add('G_Collapse');
+
+    toggler.addEventListener("click", () => GCollapse(document.querySelector(toggler.getAttribute(CollapseAttribute))));
 });
 
 document.querySelectorAll(`[${SidenavAttribute}]`).forEach((toggler) => {

@@ -198,13 +198,16 @@ h6 {
     font-size: .67em;
 
 }
-p{
+
+p {
     font-family: variables.$fontPara;
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 16px;
     font-weight: 400;
+    color: #d4d4d4;
 }
+
 hr {
     width: 100%;
     display: block;
@@ -220,6 +223,19 @@ hr {
         height: 2px;
     }
 
+}
+
+:not(pre)>code:not([class]) {
+    display: inline;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    line-height: inherit;
+    color: #a6b4c3;
+    background: #1e2739;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: variables.$fontCode
 }
 
 .G_Backdrop {

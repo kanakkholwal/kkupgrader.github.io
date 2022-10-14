@@ -2,8 +2,9 @@
 
 
 @mixin Collapse {
-    overflow-x: hidden;
-    @include variables.overFlowY;
+    // overflow-x: hidden;
+    // @include variables.overFlowY;
+    overflow: hidden;
     transition: height .5s ease;
 
     &:not(.isOpen) {

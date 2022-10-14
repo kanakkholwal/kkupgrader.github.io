@@ -12,6 +12,7 @@ $fontBody:'Public Sans', sans-serif;
 $fontButton:'Roboto', sans-serif;
 $fontHeading:'Public Sans', sans-serif;
 $fontPara:'Sofia Pro', sans-serif;
+$fontCode:'Google Sans Mono',monospace;
 
 $primary:#85ceff;
 $primaryBg:#0d3b4e;
@@ -29,7 +30,6 @@ $dark:#89b5f3;
 $darkBg:#11182733;
 $light:#2b394d;
 $lightBg:#bbe1fa;
-
 $dark2:#001829;
 $dark3:#212930;
 $danger-hvr: #d70c25;
@@ -38,7 +38,6 @@ $success-hvr: #01bd62dd;
 $info-hvr: #0052cf;
 
 $link:#18c1f6;
-
 $main:#149eca;
 $muted:#ebecf0;
 $hoverBg:#343a46;
@@ -75,7 +74,8 @@ $bodyBg:#23272f;
 $bodyText:#f6f7f9;
 
 $FormBg:#23272f;
-$FormHover:#404652;
+$FormHoverBg:#404652;
+$FormHoverActive:#b4abff;
 $FormText:#ffffffbf;
 $FormLabel:#8597a3;
 $FormBorder:#374151;

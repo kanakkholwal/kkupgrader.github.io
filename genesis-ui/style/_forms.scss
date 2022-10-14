@@ -373,7 +373,7 @@
   }
 
   .G_Form-SelectToggle {
-   
+
     border-radius: 0.25rem;
     padding: 0.65rem;
     width: 100%;
@@ -398,7 +398,7 @@
       }
     }
 
-  
+
   }
 
   .G_SelectDropdown {
@@ -482,12 +482,19 @@
         user-select: none;
 
         &:is(:hover, :active) {
-          background-color: variables.$FormHover;
+          background-color: variables.$FormHoverBg;
+          // color: variables.$FormHoverActive;
 
         }
 
         &.isActive {
           color: variables.$FormActive;
+
+          &:is(:hover, :active) {
+            background-color: variables.$FormHoverBg;
+            color: variables.$FormHoverActive;
+
+          }
         }
 
         &:first-child {

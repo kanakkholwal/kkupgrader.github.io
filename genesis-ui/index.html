@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-gui-theme='light'>
+<html>
 
 <head>
     <title>Genesis UI</title>
@@ -7,10 +7,9 @@
 
     <link href="./content/fonts/default.min.css" rel="stylesheet" />
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
-    <!-- <link href="main.css" rel="stylesheet" /> -->
-    <!-- <link href="./style/style.css" rel="stylesheet" /> -->
+
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500family=Inter:wght@200;300;400;500;600;700&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500family=Inter:wght@200;300;400;500;600;700&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&family=Google+Sans+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
     <link href="genesis-ui.css" rel="stylesheet" />
 
@@ -744,7 +743,7 @@
                             <label for="message" class="G_Form-label">Enter Your Message</label>
                         </div>
                         <hr class="mt-3 mb-4"/>
-                        <div class="d-flex">
+                        <div class="d-flex flex-wrap">
 
                             <div class="G_Form-element">
                                 <input type="color" class="G_Form-color" name="color" id="color">
@@ -752,15 +751,15 @@
                             <div class="G_Form-element">
                                 <input type="range" class="G_Form-range" value="5" min="0" max="25" step="0.5" id="range" />
                             </div>
-                        </div>
-                        <div class="G_Form-element">
-                            <select class="G_Form-select" id="select" name="select">
-                                <option value="none" selected>none</option>
-                                <option value="option1">Option 1</option>
-                                <option value="option2">Option 2</option>
-                                <option value="option3">Option 3</option>
-                                <option value="option4">Option 4</option>
-                            </select>
+                            <div class="G_Form-element">
+                                <select class="G_Form-select" id="select" name="select">
+                                    <option value="none" selected>none</option>
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -901,7 +900,6 @@
         </div>
     </div>
 
-    <!-- <script src="./main.js" type="text/javascript"></script> -->
 
     <script src="./genesis-ui.js"></script>
 
