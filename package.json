@@ -1,0 +1,19 @@
+{
+  "name": "kkupgrader.github.io",
+  "version": "1.0.0",
+  "description": "🔭 I’m currently working on my College website <br>👯  looking to collaborate on Open Source Projects<br>🤝  looking for help with TypeScript<br>🌱  currently learning Node JS<br>💬 Ask me about Frontend<br>\r <br>\r [![](https://visitcount.itsvg.in/api?id=kkupgrader&label=Profile%20Views&color=0&icon=1&pretty=true)](https://visitcount.itsvg.in)\r # 📊 GitHub Stats:\r ![](https://github-readme-stats.vercel.app/api?username=kkupgrader&theme=react&hide_border=false&include_all_commits=false&count_private=false)<br/>\r ![](https://github-readme-streak-stats.herokuapp.com/?user=kkupgrader&theme=react&hide_border=false)<br/>\r ![](https://github-readme-stats.vercel.app/api/top-langs/?username=kkupgrader&theme=react&hide_border=false&include_all_commits=false&count_private=false&layout=compact)\r ## 🏆 GitHub Trophies\r ![](https://github-profile-trophy.vercel.app/?username=kkupgrader&theme=dark_dimmed&no-frame=true&no-bg=false&margin-w=4)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKUPGRADER/kkupgrader.github.io.git"
+  },
+  "author": "Kanak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KKUPGRADER/kkupgrader.github.io/issues"
+  },
+  "homepage": "https://github.com/KKUPGRADER/kkupgrader.github.io#readme"
+}
