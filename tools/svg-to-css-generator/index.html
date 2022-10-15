@@ -8,12 +8,7 @@
     <!-- Preload Cdns -->
     <link href='https://fonts.googleapis.com' rel='preconnect' />
     <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect' />
-    <link href='//cdn.jsdelivr.net' rel='preconnect' />
-    <link href='//raw.githack.com' rel='dns-prefetch' />
-    <link href='//ajax.googleapis.com' rel='dns-prefetch' />
-    <link href='//cdn.jsdelivr.net' rel='dns-prefetch' />
-    <link href='//cdnjs.cloudflare.com' rel='preload' />
-    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' />
+
     <link href='//kkupgrader.eu.org/' rel='dns-prefetch' />
 
     <!-- Preload Cdns -->
@@ -21,14 +16,11 @@
     <!-- Chrome, Firefox OS and Opera -->
     <meta content='' name='theme-color' />
     <!-- Windows Phone -->
-    <meta content='' name='msapplication-navbutton-color' />
     <link href='/favicon.ico' rel='icon' type='image/x-icon' />
     <link href='https://kkupgrader.eu.org/' rel='canonical' />
-    <link href="/assets/fonts/Roboto.css" rel="stylesheet" />
     <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet" />
     <link href="/main.css" rel="stylesheet" />
-    <script src="/assets/js/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -91,13 +83,19 @@
     </header>
     <div class="container-lg my-5" id="app">
         <div class="row g-3">
-            <div class="col-sm-4 my-3  input-area">
+            <div class="col-sm-4 my-3 mx-auto  input-area">
                 <div class="form-outline">
                     <textarea class="form-control" id="input" placeholder="<svg ..." rows="8"></textarea>
                     <label class="form-label" for="input">Enter Your SVG Here</label>
                 </div>
             </div>
-            <div class="col-sm-4 my-3">
+          
+            <div class="col-sm-4 my-3 ">
+                <div class="">
+                    <textarea class="form-control" id="output" rows="8" placeholder="Output"></textarea>
+                </div>
+            </div> 
+             <div class="col-12 my-3  mx-auto">
                 <h2 class="text-center"> Demo Svg </h2>
 
                 <div class="d-flex align-content-between flex-wrap justify-content-evenly mb-5">
@@ -127,19 +125,9 @@
                     </button>
                 </div>
                 <br/>
-                <div class=" m-auto mt-2">
-                    Background:
-                    <input type="color" value="#ffffff" class="form-outline" id="background-colour" />
-
-                </div>
+            
 
 
-
-            </div>
-            <div class="col-sm-4 my-3 ">
-                <div class="">
-                    <textarea class="form-control" id="output" rows="8" placeholder="Output"></textarea>
-                </div>
             </div>
         </div>
 

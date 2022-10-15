@@ -45,7 +45,8 @@
     <link href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css' rel='stylesheet' />
     <link href='/main.css' rel='stylesheet' />
     <script src='/assets/js/jquery/3.6.0/jquery.min.js'></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988693445063744"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -53,20 +54,25 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid ">
                 <div class="d-flex">
-                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg" height="50" alt="K K UPGRADER" loading="lazy" style="margin-top:2px"></a>
+                    <a class="navbar-brand home me-2 mb-1 d-flex align-items-center" href="/"><img src="/logo.svg"
+                            height="50" alt="K K UPGRADER" loading="lazy" style="margin-top:2px"></a>
                 </div>
                 <ul class="navbar-nav flex-row d-none mx-auto d-md-flex">
                     <li class="nav-item me-3 me-lg-1">
                         <form class="input-group w-auto my-auto d-none d-lg-flex">
-                            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
-                      class="fas fa-search"></i></span>
+                            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"
+                                style="min-width:25rem"> <span class="input-group-text border-0 d-none d-lg-flex"><i
+                                    class="fas fa-search"></i></span>
                         </form>
                     </li>
                 </ul>
                 <ul class="float-end navbar-nav d-flex flex-row align-items-center">
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="https://kkupgrader.blogspot.com/">Blog</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a></li>
-                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/portfolio/">PortFolio</a></li>
+                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page"
+                            href="https://kkupgrader.blogspot.com/">Blog</a></li>
+                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page" href="/tools/">Tools</a>
+                    </li>
+                    <li class="nav-item me-2"><a class="nav-link active" aria-current="page"
+                            href="/portfolio/">PortFolio</a></li>
 
 
                 </ul>
@@ -80,13 +86,16 @@
                     <h1 class="h4 fw-bold mb-3 mt-4">Meta Tag Generator Tool
 
                     </h1>
-                    <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as description. Meta tags are used by search engines to help index and to provide relevant content in their Google search results worldwide.</p>
+                    <p>Free SEO Meta tags are HTML tag content that provide metadata about your website such as
+                        description. Meta tags are used by search engines to help index and to provide relevant content
+                        in their Google search results worldwide.</p>
                     <div class="mt-3">
                         <a class="btn btn-primary me-1 mb-4" href="#!" role="button">Other tools<i
-                    class="fas fa-tools ms-2"></i></a>
+                                class="fas fa-tools ms-2"></i></a>
                         <a class="btn btn-success me-1 mb-4" href="#!" role="button">Design docs<i
-                    class="fas fa-file-alt ms-2"></i></a>
-                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i class="fas fa-download ms-2"></i></a>
+                                class="fas fa-file-alt ms-2"></i></a>
+                        <a class="btn btn-danger mb-4" href="#!" role="button">Home<i
+                                class="fas fa-download ms-2"></i></a>
                     </div>
 
 
@@ -100,30 +109,237 @@
     <div class="container-lg row justify-content-center my-5 mx-auto" id="app">
         <aside class="col-md-2"><a class="ads-here">Advertisement</a></aside>
         <main class="col-md-8">
-            <div class="position-relative">
-                <div id="somehow"></div>
-                <style>
-                    #closeBtn {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        z-index: 2;
-                        margin-right: -18px;
-                        margin-top: -13px;
-                        margin-left: auto;
-                    }
-                </style>
-                <textarea id="html_code" class="form-control" rows="8" cols="60" placeholder="Enter Code Here" onkeyup="parseHtml()"></textarea>
+
+
+            <style>
+                body {
+                    margin: 70px;
+                    background: #ebf2f4
+                }
+
+                #parser2 {
+                    position: relative;
+                    overflow: hidden
+                }
+
+                #parser2 .btn,
+                #parser2 .btn:active {
+                    background-image: none
+                }
+
+                #parser2 .btn {
+                    font-weight: 400;
+                    padding: 6px 12px;
+                    margin-bottom: 5px;
+                    font-size: 14px;
+                    line-height: 1.42857143;
+                    text-align: center;
+                    white-space: nowrap;
+                    -ms-touch-action: manipulation;
+                    touch-action: manipulation;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    border: 0;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: all .3s
+                }
+
+                #parser2 .btn:active:focus,
+                #parser2 .btn:focus {
+                    outline: 0
+                }
+
+                #parser2 .btn:focus,
+                #parser2 .btn:hover {
+                    color: #333;
+                    text-decoration: none;
+                    outline: 0
+                }
+
+                #parser2 .btn:active {
+                    outline: 0;
+                    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+                }
+
+                #parser2 .btn-primary {
+                    color: #fff;
+                    background: #3e51b5
+                }
+
+                #parser2 .btn-primary:focus,
+                .button-group button:disabled {
+                    color: #fff;
+                    background: #286090
+                }
+
+                #parser2 .btn-primary:active,
+                #parser2 .btn-primary:hover {
+                    color: #fff;
+                    opacity: .9
+                }
+
+                #parser2 .btn-danger {
+                    color: #fff;
+                    background: #f39c12
+                }
+
+                #parser2 .btn-danger:focus {
+                    color: #fff;
+                    opacity: .9
+                }
+
+                #parser2 .btn-danger:active,
+                #parser2 .btn-danger:hover {
+                    color: #fff;
+                    opacity: .9
+                }
+
+                #parser2 .btn-info {
+                    color: #fff;
+                    background: #5bc0de
+                }
+
+                #parser2 .btn-info:focus {
+                    color: #fff;
+                    background: #31b0d5
+                }
+
+                #parser2 .btn-info:active,
+                #parser2 .btn-info:hover {
+                    color: #fff;
+                    background: #31b0d5
+                }
+
+                #parser2 .btn-xs {
+                    font-size: 12px;
+                    line-height: 1.5;
+                    border-radius: 3px;
+                    padding: 1px 5px
+                }
+
+                #parser2 textarea#somewhere {
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    height: 300px;
+                    width: 100%;
+                    margin: 0 0 10px;
+                    box-sizing: border-box;
+                    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+                    color: #111;
+                    border-radius: 8px;
+                    padding: 20px;
+                    transition: all .6s
+                }
+
+                #parser2 textarea#somewhere:active,
+                #parser2 textarea#somewhere:focus {
+                    border-color: rgba(0, 0, 0, 0.15);
+                    outline: 0
+                }
+
+                #parser2 .btn-sm {
+                    display: inline-block;
+                    font-size: 13px;
+                    line-height: 1.5;
+                    border-radius: 5px;
+                    padding: 12px;
+                    margin: 0 auto 10px auto;
+                    width: 30%;
+                    box-shadow: 0 3px 1.2rem -0.8rem rgba(0, 0, 0, 0.8)
+                }
+
+                #parser2 .btn-xs {
+                    font-size: 13px;
+                    line-height: 1.5;
+                    border-radius: 5px;
+                    padding: 12px;
+                    margin: auto;
+                    width: 30%;
+                    box-shadow: 0 3px 1.2rem -0.8rem rgba(0, 0, 0, 0.8)
+                }
+
+                .collapse {
+                    display: none
+                }
+
+                .alert-success {
+                    color: #222;
+                    background: #fff
+                }
+
+                .alert {
+                    border: 0;
+                    padding: 5px 15px;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    min-width: 210px;
+                    color: #0984e3;
+                    font-size: 13px;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+                }
+
+                button.close {
+                    padding: 0;
+                    cursor: pointer;
+                    background: none;
+                    border: 0;
+                    -webkit-appearance: none
+                }
+
+                .close {
+                    float: right;
+                    font-size: 1.3rem;
+                    color: #0984e3;
+                    margin: 1px 0 0 0
+                }
+
+                button.close:focus {
+                    outline: 0
+                }
+
+                .close:hover {
+                    opacity: 1 !important
+                }
+
+                #btnInfo h4 {
+                    margin: 0;
+                    font-size: 13px;
+                    line-height: 2
+                }
+
+                #button-link {
+                    display: none
+                }
+
+                .clear {
+                    clear: both;
+                    display: block;
+                    margin-bottom: 2px
+                }
+
+                .alert br {
+                    display: none
+                }
+            </style>
+            <div id="parser2"><textarea id="somewhere"
+                    placeholder="Write/paste the code here then click the Parse Code button"></textarea><br />
+                <div class="alert alert-success margin-bottom-20 collapse" id="btnInfo" role="alert"><button
+                        class="close close-copy"
+                        onclick="document.getElementById(&quot;btnInfo&quot;).style.display = &quot;none&quot;;cdClear();"
+                        type="button"><span aria-hidden="true">&#215;</span></button> <br />
+                    <h4>Code copied to clipboard</h4>
+                </div><button class="btn btn-primary btn-sm btn-parse" onclick="convert();" type="button">Parse
+                    Code</button> <br />
+                <div class="clear"></div><button class="btn button-link btn-xs btn-info" data-clipboard-action="copy"
+                    data-clipboard-target="#somewhere" id="button-link" type="submit">Copy code to clipboard</button>
+                <button class="btn btn-danger btn-xs" id="btn_clear" onclick="cdClear();">Clean</button>
             </div>
-            <br/>
-            <br/>
-            <pre class="language-xml"><code id="parsed_code" style="color: #26998e;">Parsed Code Here</code></pre>
-
-
-
-
-
-            <script src="./script.js"></script>
+            <script src='https://cdn.jsdelivr.net/gh/KKUPGRADER/blogger@js/html-parser.min.js'></script>
 
         </main>
 
@@ -139,11 +355,16 @@
                         <h3 class="text-white h2">Follow Us on Social Media</h3>
                         <p class="mb-3">Subscribe to get updated when new templates arrive!</p>
                         <div class="subscribe-box"></div>
-                        <div class="d-flex justify-content-center pt-3"><a class="me-4 text-white" href="https://t.me/kkupgrader" target="_blank"><i
-                                    class="fab fa-telegram-plane fa-lg"></i></a> <a class="text-white me-4" href="https://gitub.com/kkupgrader" role="button" target="_blank"><i
-                                    class="fab fa-github fa-lg"></i></a> <a class="text-white me-4" href="https://Pinterest.com/kkupgrader" role="button" target="_blank"><i
-                                    class="fab fa-pinterest fa-lg"></i></a> <a class="text-white me-4" href="https://codepen.io/kkupgrader" target="_blank"><i
-                                    class="fab fa-codepen fa-lg"></i></a> <a class="text-white me-4" href="https://instagram.com/kk.upgrader" role="button" target="_blank"><i
+                        <div class="d-flex justify-content-center pt-3"><a class="me-4 text-white"
+                                href="https://t.me/kkupgrader" target="_blank"><i
+                                    class="fab fa-telegram-plane fa-lg"></i></a> <a class="text-white me-4"
+                                href="https://gitub.com/kkupgrader" role="button" target="_blank"><i
+                                    class="fab fa-github fa-lg"></i></a> <a class="text-white me-4"
+                                href="https://Pinterest.com/kkupgrader" role="button" target="_blank"><i
+                                    class="fab fa-pinterest fa-lg"></i></a> <a class="text-white me-4"
+                                href="https://codepen.io/kkupgrader" target="_blank"><i
+                                    class="fab fa-codepen fa-lg"></i></a> <a class="text-white me-4"
+                                href="https://instagram.com/kk.upgrader" role="button" target="_blank"><i
                                     class="fab fa-instagram fa-lg"></i></a></div>
                     </div>
                 </div>
@@ -211,7 +432,8 @@
     <script src="/main.js" type='text/javascript'></script>
 
     <!-- Scripts -->
-    <script async='async' defer='defer' src='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js' type='text/javascript'></script>
+    <script async='async' defer='defer' src='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js'
+        type='text/javascript'></script>
 </body>
 
 </html>
