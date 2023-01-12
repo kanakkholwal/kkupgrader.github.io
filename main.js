@@ -1,4 +1,7 @@
-
+ let text = "wanna try new version ? ";
+  if (confirm(text) == true) {
+window.location.href = "https://kkupgrader.eu.org/tools/";
+  } 
 (function() {
     var observer = new IntersectionObserver(onIntersect);
     document.querySelectorAll("[data-src]").forEach((img) => {
