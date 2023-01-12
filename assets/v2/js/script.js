@@ -1,3 +1,8 @@
+
+let text = "wanna try new version ? ";
+  if (confirm(text) == true) {
+window.location.href = "https://kkupgrader.eu.org/tools/";
+  } 
 // Ripple Effect
 document.querySelectorAll(".ripple-effect").forEach((el) => {
   el.addEventListener("click", (e) => {
